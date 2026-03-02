@@ -1,0 +1,13 @@
+# Ignore specific private directories
+.agent/
+agents/
+Consulting/
+Verträge/
+projects/
+
+# Ignore sensitive files (just in case)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
