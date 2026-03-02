@@ -2,13 +2,13 @@
 
 export default function WorkflowDiagram() {
     return (
-        <section id="workflow" className="py-24 px-6 bg-background">
+        <section id="workflow" className="py-16 md:py-24 px-6 bg-background">
             <div className="max-w-7xl mx-auto">
                 {/* Section Header */}
-                <div className="text-center mb-16">
+                <div className="text-center mb-10 md:mb-16">
                     <span className="text-xs font-bold tracking-[3px] uppercase text-sapphire mb-4 block">ARCHITEKTUR</span>
                     <h2
-                        className="text-[clamp(32px,5vw,56px)] font-bold tracking-tight leading-tight mb-4"
+                        className="text-[clamp(28px,6vw,56px)] font-bold tracking-tight leading-tight mb-4 break-words hyphens-auto"
                         style={{ fontFamily: 'var(--font-syne)' }}
                     >
                         So arbeitet dein KI-System

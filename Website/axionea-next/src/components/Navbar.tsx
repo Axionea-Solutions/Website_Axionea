@@ -33,10 +33,10 @@ export default function Navbar() {
                 </div>
 
                 {/* Desktop CTA */}
-                <div className="hidden md:flex items-center gap-3">
+                <div className="flex items-center gap-3">
                     <a
                         href="#kontakt"
-                        className="inline-flex h-10 items-center justify-center rounded-lg bg-sapphire px-5 text-sm font-medium text-white shadow transition-all hover:bg-sapphire-hover hover:shadow-lg hover:shadow-sapphire/20"
+                        className="inline-flex h-8 md:h-10 items-center justify-center rounded-lg bg-sapphire px-3 md:px-5 text-xs md:text-sm font-medium text-white shadow transition-all hover:bg-sapphire-hover hover:shadow-lg hover:shadow-sapphire/20"
                     >
                         Jetzt starten
                     </a>

@@ -199,10 +199,10 @@ function BenefitCard({
 
 export default function WhyChooseUs() {
     return (
-        <section id="warum" className="py-24 px-6 bg-background">
+        <section id="warum" className="py-16 md:py-24 px-6 bg-background">
             <div className="max-w-7xl mx-auto">
                 {/* Section Header */}
-                <div className="text-center mb-16">
+                <div className="text-center mb-10 md:mb-16">
                     <span className="inline-flex items-center gap-2 text-xs font-bold tracking-[3px] uppercase text-sapphire mb-4 bg-sapphire/10 px-4 py-2 rounded-full border border-sapphire/15">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5">
                             <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />

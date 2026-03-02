@@ -98,10 +98,10 @@ const team = [
 /* ──────────────── Main Team Section ──────────────── */
 export default function TeamSection() {
     return (
-        <section id="team" className="py-24 px-6 bg-background">
+        <section id="team" className="py-16 md:py-24 px-6 bg-background">
             <div className="max-w-7xl mx-auto">
                 {/* Section Header */}
-                <div className="text-center mb-16">
+                <div className="text-center mb-10 md:mb-16">
                     <span className="inline-flex items-center gap-2 text-xs font-bold tracking-[3px] uppercase text-sapphire mb-4 bg-sapphire/10 px-4 py-2 rounded-full border border-sapphire/15">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-3.5 h-3.5">
                             <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />

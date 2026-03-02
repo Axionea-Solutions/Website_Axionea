@@ -51,7 +51,7 @@ export default function ROICalculator() {
     const results = calculateROI(input);
 
     return (
-        <section id="roi" className="py-24 px-6 bg-background relative overflow-hidden">
+        <section id="roi" className="py-16 md:py-24 px-6 bg-background relative overflow-hidden">
 
             {/* Background ambient glow effect */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-sapphire/5 rounded-full blur-[120px] pointer-events-none" />
@@ -59,7 +59,7 @@ export default function ROICalculator() {
             <div className="max-w-6xl mx-auto relative z-10">
 
                 {/* Header */}
-                <div className="text-center mb-16">
+                <div className="text-center mb-10 md:mb-16">
                     <span className="inline-flex items-center gap-2 text-xs font-bold tracking-[3px] uppercase text-sapphire mb-4 bg-sapphire/10 px-4 py-2 rounded-full border border-sapphire/15">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -79,7 +79,7 @@ export default function ROICalculator() {
                         ROI CALCULATOR
                     </span>
                     <h2
-                        className="text-[clamp(32px,5vw,52px)] font-bold tracking-tight leading-tight mb-4"
+                        className="text-[clamp(28px,6vw,52px)] font-bold tracking-tight leading-tight mb-4 break-words hyphens-auto"
                         style={{ fontFamily: "var(--font-syne)" }}
                     >
                         <LetterReveal text="Berechnen Sie Ihren " />
@@ -213,7 +213,7 @@ export default function ROICalculator() {
                                 {/* Bottom Summary & CTA */}
                                 <div className="mt-auto flex flex-col items-center lg:items-start space-y-4 pt-6 border-t border-black/5 dark:border-white/5">
                                     <p className="text-lg text-foreground font-medium flex items-center gap-2">
-                                        <span className="text-xl">⚠️</span> Jährlicher Verlust durch Nichtstun:
+                                        Jährlicher Verlust durch Nichtstun:
                                         <span className="font-bold text-red-500 ml-1">
                                             ≈ <AnimatedCounter value={results.annualLossMin} /> <span className="font-normal mx-0.5">–</span> <AnimatedCounter value={results.annualLossMax} /> €
                                         </span>
@@ -221,7 +221,6 @@ export default function ROICalculator() {
 
                                     {results.paybackMonths > 0 && (
                                         <p className="text-sm text-muted-foreground flex items-center gap-2">
-                                            <span className="text-base">⏱️</span>
                                             ROI mit Axionea: Amortisation ab <strong className="text-foreground">Monat {results.paybackMonths}—{results.paybackMonths + 1}</strong>
                                         </p>
                                     )}

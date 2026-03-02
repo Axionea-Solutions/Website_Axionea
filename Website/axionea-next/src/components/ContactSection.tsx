@@ -78,10 +78,10 @@ export default function ContactSection() {
     };
 
     return (
-        <section id="kontakt" className="py-24 px-6 bg-background">
+        <section id="kontakt" className="py-16 md:py-24 px-6 bg-background">
             <div className="max-w-6xl mx-auto">
                 {/* Header */}
-                <div className="mb-14">
+                <div className="mb-10 md:mb-14">
                     <span className="inline-flex items-center gap-2 text-xs font-bold tracking-[3px] uppercase text-sapphire mb-4 bg-sapphire/10 px-4 py-2 rounded-full border border-sapphire/15">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5">
                             <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
