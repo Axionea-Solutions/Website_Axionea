@@ -195,18 +195,23 @@ const CardNav: React.FC<CardNavProps> = ({
             style={{ color: menuColor || '#000' }}
           >
             <div
-              className={`hamburger-line w-[30px] h-[2px] bg-current transition-[transform,opacity,margin] duration-300 ease-linear [transform-origin:50%_50%] ${isHamburgerOpen ? 'translate-y-[4px] rotate-45' : ''
+              className={`hamburger-line w-[30px] h-[2px] bg-current transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] [transform-origin:50%_50%] ${isHamburgerOpen ? 'translate-y-[8px] rotate-45' : ''
                 } group-hover:opacity-75`}
             />
             <div
-              className={`hamburger-line w-[30px] h-[2px] bg-current transition-[transform,opacity,margin] duration-300 ease-linear [transform-origin:50%_50%] ${isHamburgerOpen ? '-translate-y-[4px] -rotate-45' : ''
+              className={`hamburger-line w-[30px] h-[2px] bg-current transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${isHamburgerOpen ? 'opacity-0 scale-x-0' : 'opacity-100 scale-x-100'
+                } group-hover:opacity-75`}
+            />
+            <div
+              className={`hamburger-line w-[30px] h-[2px] bg-current transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] [transform-origin:50%_50%] ${isHamburgerOpen ? '-translate-y-[8px] -rotate-45' : ''
                 } group-hover:opacity-75`}
             />
           </div>
 
-          <div className="logo-container flex items-center gap-2 md:absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 order-1 md:order-none transition-all duration-500 hover:opacity-80 cursor-pointer">
-            <a href="/">
-              <img src={logo} alt={logoAlt} className="logo h-[32px] -mr-0.5 transition-all duration-500" />
+          <div className="logo-container flex items-center md:absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 order-1 md:order-none transition-all duration-500 hover:opacity-80 cursor-pointer">
+            <a href="/" className="flex items-center gap-[10px]">
+              <img src={logo} alt={logoAlt} className="logo h-[38px] transition-all duration-500" />
+              <span className="text-[22px] font-bold tracking-tight" style={{ fontFamily: 'var(--font-syne)' }}>Axionea</span>
             </a>
           </div>
 
