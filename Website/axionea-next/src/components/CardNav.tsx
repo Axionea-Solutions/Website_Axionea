@@ -212,9 +212,9 @@ const CardNav: React.FC<CardNavProps> = ({
             className="logo-container flex items-center md:absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 order-1 md:order-none transition-all duration-500 hover:opacity-80 cursor-pointer"
             style={{ color: menuColor || '#fff' }}
           >
-            <a href="/" className="flex items-center gap-[10px]">
+            <a href="/" className="flex items-center gap-1">
               <img src={logo} alt={logoAlt} className={`logo h-[38px] transition-all duration-500 ${menuColor === '#ffffff' ? 'brightness-0 invert' : ''}`} />
-              <span className="text-[22px] font-bold tracking-tight" style={{ fontFamily: 'var(--font-syne)' }}>Axionea</span>
+              <span className="text-[26px] font-bold tracking-tight" style={{ fontFamily: 'var(--font-syne)' }}>xionea</span>
             </a>
           </div>
 
