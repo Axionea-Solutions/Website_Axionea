@@ -188,7 +188,7 @@ const CardNav: React.FC<CardNavProps> = ({
       >
         <div className="card-nav-top absolute inset-x-0 top-0 h-[60px] flex items-center justify-between p-2 pl-[1.1rem] md:pl-[1.1rem] z-[2]">
           <div
-            className={`hamburger-menu ${isHamburgerOpen ? 'open' : ''} group h-full flex flex-col items-center justify-center cursor-pointer gap-[6px] order-2 md:order-none`}
+            className={`hamburger-menu ${isHamburgerOpen ? 'open' : ''} group h-full flex items-center justify-center flex-col cursor-pointer gap-[6px] order-1 md:order-none z-10 w-10`}
             onClick={toggleMenu}
             role="button"
             aria-label={isExpanded ? 'Close menu' : 'Open menu'}
@@ -210,7 +210,7 @@ const CardNav: React.FC<CardNavProps> = ({
           </div>
 
           <div
-            className="logo-container flex items-center md:absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 order-1 md:order-none transition-all duration-500 hover:opacity-80 cursor-pointer"
+            className="logo-container flex items-center absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-500 hover:opacity-80 cursor-pointer z-10"
             style={{ color: menuColor || '#fff' }}
           >
             <Link
@@ -229,7 +229,7 @@ const CardNav: React.FC<CardNavProps> = ({
             </Link>
           </div>
 
-          <div className="flex items-center gap-2 order-2 overflow-visible">
+          <div className="flex items-center gap-2 order-3 md:order-none overflow-visible z-10">
             <a href="#kontakt" className="group relative overflow-hidden inline-flex h-9 md:h-10 items-center justify-center rounded-lg bg-sapphire px-3 md:px-5 text-sm font-semibold text-white shadow transition-all duration-300 hover:bg-sapphire-hover hover:shadow-[0_4px_16px_rgba(15,82,186,0.3)] hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50">
               {/* Shine effect */}
               <div className="absolute inset-0 z-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-[150%] skew-x-[-20deg] group-hover:translate-x-[150%] transition-transform duration-1000 ease-in-out" />

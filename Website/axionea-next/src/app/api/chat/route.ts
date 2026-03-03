@@ -79,8 +79,8 @@ export async function POST(req: Request) {
         });
 
         return result.toTextStreamResponse();
-    } catch (error) {
+    } catch (error: any) {
         console.error("Chat API Error:", error);
-        return new Response('Fehler beim Abrufen der Antwort.', { status: 500 });
+        return new Response('Fehler beim Abrufen der Antwort: ' + (error.message || 'Unbekannter API Fehler'), { status: 500 });
     }
 }

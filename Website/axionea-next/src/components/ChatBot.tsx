@@ -36,7 +36,8 @@ export default function ChatBot() {
             });
 
             if (!response.ok) {
-                throw new Error(`Error: ${response.statusText} `);
+                const errText = await response.text();
+                throw new Error(errText || response.statusText);
             }
 
             // Handle the stream
@@ -153,7 +154,7 @@ export default function ChatBot() {
                             {error && (
                                 <div className="flex gap-3 justify-center">
                                     <div className="text-xs text-red-500 bg-red-50 dark:bg-red-500/10 px-3 py-1.5 rounded-lg border border-red-200 dark:border-red-500/20">
-                                        Ax hat gerade Verbindungsstörungen. (Rate Limit erreicht?)
+                                        Ax meldet ein Problem: {error.message}
                                     </div>
                                 </div>
                             )}
