@@ -85,13 +85,13 @@ const team = [
         name: "Maximilian Zvada",
         role: "CEO & Founder",
         initials: "MZ",
-        description: "Visionär und Stratege — verbindet Business-Expertise mit modernster KI-Technologie, um Unternehmen in die Zukunft zu führen",
+        description: "Verbindet technisches Verständnis mit strategischer Planung, um passgenaue Automatisierungslösungen für den Mittelstand zu konzipieren.",
     },
     {
         name: "Nico Fisseler",
-        role: "Co-Founder & CTO",
+        role: "CTO & Founder",
         initials: "NF",
-        description: "KI-Architekt und Technik-Lead — entwickelt skalierbare KI-Systeme und automatisierte Workflows mit höchster Qualität",
+        description: "Verantwortlich für die technische Umsetzung und Architektur. Entwickelt zuverlässige KI-Agenten und nahtlose Software-Integrationen.",
     },
 ];
 
