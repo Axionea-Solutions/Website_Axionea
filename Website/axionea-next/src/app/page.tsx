@@ -10,10 +10,12 @@ import Footer from '@/components/Footer';
 import ComparisonSection from '@/components/ComparisonSection';
 import ROICalculator from '@/components/ROICalculator';
 import ContactSection from '@/components/ContactSection';
+import InteractiveParticles from '@/components/ui/InteractiveParticles';
 
 export default function Home() {
   return (
     <main className="relative min-h-screen w-full bg-background text-foreground flex flex-col pt-16 overflow-hidden">
+      <InteractiveParticles />
       <HeroContent />
 
       {/* Section Divider */}
@@ -21,6 +23,7 @@ export default function Home() {
 
       {/* Industry Tags Carousel */}
       <IndustryTagsBand />
+
 
       {/* Why Choose Us Section */}
       <WhyChooseUs />

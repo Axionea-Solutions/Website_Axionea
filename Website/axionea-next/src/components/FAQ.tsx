@@ -105,7 +105,7 @@ const faqs = [
 /* ──────────────── Main FAQ Section ──────────────── */
 export default function FAQ() {
     return (
-        <section id="faq" className="py-16 md:py-24 px-6 bg-background">
+        <section id="faq" className="py-16 md:py-24 px-6">
             <div className="max-w-3xl mx-auto">
                 {/* Section Header */}
                 <div className="text-center mb-10 md:mb-16">

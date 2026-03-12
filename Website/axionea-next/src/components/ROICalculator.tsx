@@ -51,7 +51,7 @@ export default function ROICalculator() {
     const results = calculateROI(input);
 
     return (
-        <section id="roi" className="py-16 md:py-24 px-6 bg-background relative overflow-hidden">
+        <section id="roi" className="py-16 md:py-24 px-6 relative overflow-hidden">
 
             {/* Background ambient glow effect */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-sapphire/5 rounded-full blur-[120px] pointer-events-none" />
@@ -79,8 +79,7 @@ export default function ROICalculator() {
                         ROI CALCULATOR
                     </span>
                     <h2
-                        className="text-[clamp(28px,6vw,52px)] font-bold tracking-tight leading-tight mb-4 break-words hyphens-auto"
-                        style={{ fontFamily: "var(--font-syne)" }}
+                        className="text-[clamp(28px,6vw,52px)] font-sans font-medium tracking-tight leading-tight mb-4 break-words hyphens-auto"
                     >
                         <LetterReveal text="Berechnen Sie Ihren " />
                         <br className="hidden sm:block" />
@@ -157,7 +156,7 @@ export default function ROICalculator() {
                                             <line x1="5" y1="12" x2="19" y2="12"></line>
                                         </svg>
                                     </div>
-                                    <h3 className="text-xl font-bold text-foreground mb-2" style={{ fontFamily: "var(--font-syne)" }}>
+                                    <h3 className="text-xl font-sans font-medium tracking-tight text-foreground mb-2">
                                         Wählen Sie Ihre Branche
                                     </h3>
                                     <p className="text-muted-foreground max-w-md">
@@ -172,7 +171,7 @@ export default function ROICalculator() {
                                     <p className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-2">
                                         Ihre monatlichen Kosten für repetitive Arbeit
                                     </p>
-                                    <div className="text-5xl sm:text-6xl md:text-7xl font-bold text-foreground drop-shadow-sm flex items-center justify-center lg:justify-start" style={{ fontFamily: "var(--font-syne)" }}>
+                                    <div className="text-5xl sm:text-6xl md:text-7xl font-sans font-medium tracking-tight text-foreground drop-shadow-sm flex items-center justify-center lg:justify-start">
                                         <AnimatedCounter value={results.monthlyRepetitiveCost} />
                                         <span className="text-3xl sm:text-4xl text-muted-foreground ml-2">€</span>
                                     </div>
@@ -214,8 +213,8 @@ export default function ROICalculator() {
                                 <div className="mt-auto flex flex-col items-center lg:items-start space-y-4 pt-6 border-t border-black/5 dark:border-white/5">
                                     <p className="text-lg text-foreground font-medium flex items-center gap-2">
                                         Jährlicher Verlust durch Nichtstun:
-                                        <span className="font-bold text-red-500 ml-1">
-                                            ≈ <AnimatedCounter value={results.annualLossMin} /> <span className="font-normal mx-0.5">–</span> <AnimatedCounter value={results.annualLossMax} /> €
+                                        <span className="font-sans font-medium tracking-tight text-red-500 ml-1">
+                                            ≈ <AnimatedCounter value={results.annualLossMin} /> <span className="font-sans font-normal mx-0.5">–</span> <AnimatedCounter value={results.annualLossMax} /> €
                                         </span>
                                     </p>
 

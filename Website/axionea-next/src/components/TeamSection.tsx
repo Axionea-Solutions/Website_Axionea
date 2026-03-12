@@ -98,7 +98,7 @@ const team = [
 /* ──────────────── Main Team Section ──────────────── */
 export default function TeamSection() {
     return (
-        <section id="team" className="py-16 md:py-24 px-6 bg-background">
+        <section id="team" className="py-16 md:py-24 px-6">
             <div className="max-w-7xl mx-auto">
                 {/* Section Header */}
                 <div className="text-center mb-10 md:mb-16">

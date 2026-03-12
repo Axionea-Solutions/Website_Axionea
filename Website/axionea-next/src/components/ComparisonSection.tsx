@@ -42,7 +42,7 @@ export default function ComparisonSection() {
     const { ref, isInView } = useInView(0.1);
 
     return (
-        <section id="vergleich" className="py-16 md:py-24 px-6 bg-background">
+        <section id="vergleich" className="py-16 md:py-24 px-6">
             <div className="max-w-4xl mx-auto">
                 {/* Header */}
                 <div className="text-center mb-10 md:mb-14">

@@ -78,7 +78,7 @@ export default function ContactSection() {
     };
 
     return (
-        <section id="kontakt" className="py-16 md:py-24 px-6 bg-background">
+        <section id="kontakt" className="py-16 md:py-24 px-6">
             <div className="max-w-6xl mx-auto">
                 {/* Header */}
                 <div className="mb-10 md:mb-14">

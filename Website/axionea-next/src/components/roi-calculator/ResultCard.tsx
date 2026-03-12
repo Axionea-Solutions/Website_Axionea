@@ -35,16 +35,16 @@ export function ResultCard({
                 <h4 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-4">
                     {title}
                 </h4>
-                <div className="mb-2" style={{ fontFamily: "var(--font-syne)" }}>
+                <div className="mb-2">
                     {valueMax && valueMax > valueMin ? (
-                        <div className="flex flex-wrap items-baseline gap-x-1 gap-y-1 text-[clamp(1.25rem,2vw,1.75rem)] font-bold text-foreground">
+                        <div className="flex flex-wrap items-baseline gap-x-1 gap-y-1 text-[clamp(1.25rem,2vw,1.75rem)] font-sans font-medium tracking-tight text-foreground">
                             <AnimatedCounter value={valueMin} />
                             <span className="text-xl mx-0.5 font-normal text-muted-foreground">–</span>
                             <AnimatedCounter value={valueMax} />
                             <span className="text-xl ml-0.5 text-muted-foreground">€</span>
                         </div>
                     ) : (
-                        <div className="flex items-baseline gap-1 text-[clamp(1.75rem,3vw,2.25rem)] font-bold text-foreground">
+                        <div className="flex items-baseline gap-1 text-[clamp(1.75rem,3vw,2.25rem)] font-sans font-medium tracking-tight text-foreground">
                             <AnimatedCounter value={valueMin} />
                             <span className="text-2xl ml-1 text-muted-foreground">€</span>
                         </div>

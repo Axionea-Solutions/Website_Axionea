@@ -59,32 +59,82 @@ Regeln:
 
 export async function POST(req: Request) {
     try {
-        // Extract IP for rate limiting
-        // In Next.js App Router, extracting IP can be done via headers config depending on deployment
-        // Very rudimentary fallback for IP
+        console.log("--- CHAT API INCOMING REQUEST ---");
+
+        // 1. API Key Check
+        if (!process.env.GOOGLE_GENERATIVE_AI_API_KEY) {
+            console.error("FATAL ERROR: GOOGLE_GENERATIVE_AI_API_KEY is not set in environment variables!");
+            return new Response(JSON.stringify({ error: "API Configuration Error: API key is missing." }), {
+                status: 500,
+                headers: { 'Content-Type': 'application/json' }
+            });
+        }
+
+        // 2. Extract IP for rate limiting
         const forwardedFor = req.headers.get('x-forwarded-for');
         const realIp = req.headers.get('x-real-ip');
         const ip = forwardedFor ? forwardedFor.split(',')[0].trim() : (realIp || 'unknown-ip');
 
         if (isRateLimited(ip)) {
+            console.warn(`[RATE LIMIT] Exceeded for IP: ${ip}`);
             return new Response(
                 'Rate limit exceeded. Ax muss seine Akkus aufladen! Bitte versuche es in ein paar Minuten nochmal.',
                 { status: 429 }
             );
         }
 
-        const { messages } = await req.json();
+        // 3. Parse and Validate Payload
+        const body = await req.json();
+        const messages = body.messages;
 
+        if (!messages || !Array.isArray(messages)) {
+            console.error("INVALID PAYLOAD: 'messages' array is missing or invalid.", body);
+            return new Response(JSON.stringify({ error: "Invalid request: 'messages' is required." }), {
+                status: 400,
+                headers: { 'Content-Type': 'application/json' }
+            });
+        }
+
+        console.log(`[CHAT REQUEST] IP: ${ip} | Messages count: ${messages.length}`);
+        console.log(`[LATEST MESSAGE]: `, messages[messages.length - 1]);
+
+        // 4. Stream Response
         const result = streamText({
             model: google('gemini-2.5-flash'), // or gemini-1.5-[flash/pro] depending on SDK version
             system: SYSTEM_PROMPT,
             messages,
-            // optional params: temperature: 0.7, maxTokens:...
+            // You can tune settings here for stability:
+            temperature: 0.7,
         });
 
-        return result.toTextStreamResponse();
+        // Error handling during stream configuration
+        if (!result) {
+            throw new Error("streamText returned null or undefined");
+        }
+
+        return result.toTextStreamResponse({
+            headers: {
+                // Ensure proper streaming headers
+                'X-Content-Type-Options': 'nosniff',
+            }
+        });
     } catch (error: any) {
-        console.error("Chat API Error:", error);
-        return new Response('Fehler beim Abrufen der Antwort: ' + (error.message || 'Unbekannter API Fehler'), { status: 500 });
+        console.error("--- CHAT API FATAL ERROR ---");
+        console.error("Error Name:", error.name);
+        console.error("Error Message:", error.message);
+        if (error.cause) console.error("Error Cause:", error.cause);
+        if (error.stack) console.error("Error Stack:", error.stack);
+
+        // Return a clean error to the frontend
+        return new Response(
+            JSON.stringify({
+                error: 'Fehler beim Abrufen der Antwort. Bitte versuche es später erneut.',
+                details: process.env.NODE_ENV === 'development' ? error.message : undefined
+            }),
+            {
+                status: 500,
+                headers: { 'Content-Type': 'application/json' }
+            }
+        );
     }
 }

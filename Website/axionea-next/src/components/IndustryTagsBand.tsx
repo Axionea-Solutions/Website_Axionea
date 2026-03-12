@@ -39,7 +39,7 @@ function TagItem({ label, icon }: { label: string; icon: string }) {
 
 export default function IndustryTagsBand() {
     return (
-        <section className="py-8 px-6 border-t border-b border-black/5 dark:border-white/5 bg-background">
+        <section className="py-8 px-6 border-t border-b border-black/5 dark:border-white/5">
             <div className="relative max-w-7xl mx-auto overflow-hidden rounded-2xl">
                 {/* Left fade */}
                 <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />

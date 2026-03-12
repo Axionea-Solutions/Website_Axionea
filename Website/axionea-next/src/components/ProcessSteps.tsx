@@ -110,7 +110,7 @@ function ProcessCard({
 /* ──────────────── Main Section ──────────────── */
 export default function ProcessSteps() {
     return (
-        <section id="prozess" className="py-16 md:py-24 px-6 bg-background">
+        <section id="prozess" className="py-16 md:py-24 px-6">
             <div className="max-w-7xl mx-auto">
                 {/* Section Header — Badge + Heading structure */}
                 <div className="text-center mb-10 md:mb-16">

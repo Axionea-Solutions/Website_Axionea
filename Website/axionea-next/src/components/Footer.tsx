@@ -11,7 +11,7 @@ export default function Footer() {
     ];
 
     return (
-        <footer className="relative pt-32 pb-12 px-6 bg-background overflow-hidden">
+        <footer className="relative pt-32 pb-12 px-6 overflow-hidden">
             {/* Ambient glow — large soft radial gradient behind the logo */}
             <div
                 className="absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full pointer-events-none opacity-[0.08] dark:opacity-[0.06]"

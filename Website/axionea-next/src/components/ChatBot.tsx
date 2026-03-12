@@ -36,8 +36,19 @@ export default function ChatBot() {
             });
 
             if (!response.ok) {
-                const errText = await response.text();
-                throw new Error(errText || response.statusText);
+                let errorMessage = response.statusText;
+                try {
+                    const errData = await response.json();
+                    if (errData.error) {
+                        errorMessage = errData.error;
+                        if (errData.details) errorMessage += ` (${errData.details})`;
+                    }
+                } catch (e) {
+                    // Fallback if not JSON
+                    const errText = await response.text();
+                    if (errText) errorMessage = errText;
+                }
+                throw new Error(errorMessage);
             }
 
             // Handle the stream
@@ -97,89 +108,99 @@ export default function ChatBot() {
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 20, scale: 0.9 }}
                         transition={{ type: "spring", damping: 25, stiffness: 300 }}
-                        className="mb-4 w-[350px] sm:w-[400px] h-[500px] bg-white/90 dark:bg-[#070d1a]/95 backdrop-blur-xl border border-gray-200 dark:border-white/10 rounded-2xl shadow-2xl flex flex-col overflow-hidden"
+                        className="mb-4 bg-white/90 dark:bg-[#070d1a]/95 backdrop-blur-xl border border-gray-200 dark:border-white/10 rounded-2xl shadow-2xl flex flex-col relative"
+                        style={{
+                            width: "clamp(320px, 90vw, 500px)",
+                            height: "clamp(400px, 85vh, 600px)",
+                            resize: "both",
+                            overflow: "hidden",
+                            direction: "rtl" // Moves the native resize handle to Bottom-Left for RTL, but Top-Left isn't native. Let's use standard resize but position absolute.
+                        }}
                     >
-                        {/* Header */}
-                        <div className="h-16 border-b border-gray-200 dark:border-white/10 flex items-center justify-between px-6 bg-sapphire/5">
-                            <div className="flex items-center gap-3">
-                                {/* Small Eve Icon for Header */}
-                                <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center shadow-sm overflow-hidden relative border border-gray-100">
-                                    <div className="w-[80%] h-[50%] bg-black rounded-full flex items-center justify-center gap-[2px] mt-[-2px]">
-                                        <div className="w-2 h-[2px] bg-blue-500 rounded-full" />
-                                        <div className="w-2 h-[2px] bg-blue-500 rounded-full" />
+                        {/* We wrap content to reset direction */}
+                        <div className="flex-1 flex flex-col w-full h-full" style={{ direction: "ltr" }}>
+                            {/* Header */}
+                            <div className="h-16 border-b border-gray-200 dark:border-white/10 flex items-center justify-between px-6 bg-sapphire/5">
+                                <div className="flex items-center gap-3">
+                                    {/* Small Eve Icon for Header */}
+                                    <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center shadow-sm overflow-hidden relative border border-gray-100">
+                                        <div className="w-[80%] h-[50%] bg-black rounded-full flex items-center justify-center gap-[2px] mt-[-2px]">
+                                            <div className="w-2 h-[2px] bg-blue-500 rounded-full" />
+                                            <div className="w-2 h-[2px] bg-blue-500 rounded-full" />
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h3 className="font-bold text-sm" style={{ fontFamily: "var(--font-syne)" }}>Ax</h3>
+                                        <p className="text-[10px] text-green-500 font-medium tracking-wide uppercase">Online</p>
                                     </div>
                                 </div>
-                                <div>
-                                    <h3 className="font-bold text-sm" style={{ fontFamily: "var(--font-syne)" }}>Ax</h3>
-                                    <p className="text-[10px] text-green-500 font-medium tracking-wide uppercase">Online</p>
-                                </div>
-                            </div>
-                            <button
-                                onClick={() => setIsOpen(false)}
-                                className="w-8 h-8 rounded-full hover:bg-gray-200 dark:hover:bg-white/10 flex items-center justify-center transition-colors text-gray-500"
-                            >
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
-                            </button>
-                        </div>
-
-                        {/* Chat History */}
-                        <div className="flex-1 overflow-y-auto p-4 space-y-4 scroll-smooth">
-                            {/* Initial Welcome Message */}
-                            {messages.length === 0 && (
-                                <div className="flex gap-3 justify-start">
-                                    <div className="max-w-[80%] rounded-2xl p-3 px-4 bg-gray-100 dark:bg-[#0f172a] text-sm text-gray-800 dark:text-gray-200 rounded-tl-none">
-                                        Beep boop! Ich bin Ax, der digitale Assistent von Axionea. Wie kann ich dir heute mit KI und Automatisierung weiterhelfen? ✨
-                                    </div>
-                                </div>
-                            )}
-
-                            {messages.map((m: any) => (
-                                <div key={m.id} className={`flex gap-3 ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-                                    <div className={`max-w-[80%] rounded-2xl p-3 px-4 text-sm whitespace-pre-wrap ${m.role === 'user' ? 'bg-sapphire text-white rounded-tr-none' : 'bg-gray-100 dark:bg-[#0f172a] text-gray-800 dark:text-gray-200 rounded-tl-none'}`}>
-                                        {m.content}
-                                    </div>
-                                </div>
-                            ))}
-
-                            {isLoading && (
-                                <div className="flex gap-3 justify-start">
-                                    <div className="max-w-[80%] rounded-2xl p-4 px-4 bg-gray-100 dark:bg-[#0f172a] rounded-tl-none flex items-center gap-1.5">
-                                        <motion.div className="w-1.5 h-1.5 bg-sapphire/50 rounded-full" animate={{ y: [0, -5, 0] }} transition={{ repeat: Infinity, duration: 0.6, delay: 0 }} />
-                                        <motion.div className="w-1.5 h-1.5 bg-sapphire/50 rounded-full" animate={{ y: [0, -5, 0] }} transition={{ repeat: Infinity, duration: 0.6, delay: 0.2 }} />
-                                        <motion.div className="w-1.5 h-1.5 bg-sapphire/50 rounded-full" animate={{ y: [0, -5, 0] }} transition={{ repeat: Infinity, duration: 0.6, delay: 0.4 }} />
-                                    </div>
-                                </div>
-                            )}
-
-                            {error && (
-                                <div className="flex gap-3 justify-center">
-                                    <div className="text-xs text-red-500 bg-red-50 dark:bg-red-500/10 px-3 py-1.5 rounded-lg border border-red-200 dark:border-red-500/20">
-                                        Ax meldet ein Problem: {error.message}
-                                    </div>
-                                </div>
-                            )}
-
-                            <div ref={messagesEndRef} />
-                        </div>
-
-                        {/* Input Area */}
-                        <div className="p-4 bg-white dark:bg-[#070d1a] border-t border-gray-100 dark:border-white/10">
-                            <form onSubmit={handleSubmit} className="flex gap-2">
-                                <input
-                                    className="flex-1 bg-gray-50 dark:bg-[#0a1628] border border-gray-200 dark:border-white/10 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-1 focus:ring-sapphire transition-all dark:text-white"
-                                    value={input}
-                                    placeholder="Frag Ax..."
-                                    onChange={handleInputChange}
-                                    disabled={isLoading}
-                                />
                                 <button
-                                    type="submit"
-                                    disabled={isLoading || !input.trim()}
-                                    className="bg-sapphire hover:bg-sapphire-hover text-white rounded-xl w-10 h-10 flex items-center justify-center transition-colors shadow-sm disabled:opacity-50 disabled:cursor-not-allowed shrink-0"
+                                    onClick={() => setIsOpen(false)}
+                                    className="w-8 h-8 rounded-full hover:bg-gray-200 dark:hover:bg-white/10 flex items-center justify-center transition-colors text-gray-500"
                                 >
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m22 2-7 20-4-9-9-4Z" /><path d="M22 2 11 13" /></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
                                 </button>
-                            </form>
+                            </div>
+
+                            {/* Chat History */}
+                            <div className="flex-1 overflow-y-auto p-4 space-y-4 scroll-smooth">
+                                {/* Initial Welcome Message */}
+                                {messages.length === 0 && (
+                                    <div className="flex gap-3 justify-start">
+                                        <div className="max-w-[80%] rounded-2xl p-3 px-4 bg-gray-100 dark:bg-[#0f172a] text-sm text-gray-800 dark:text-gray-200 rounded-tl-none">
+                                            Beep boop! Ich bin Ax, der digitale Assistent von Axionea. Wie kann ich dir heute mit KI und Automatisierung weiterhelfen? ✨
+                                        </div>
+                                    </div>
+                                )}
+
+                                {messages.map((m: any) => (
+                                    <div key={m.id} className={`flex gap-3 ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}>
+                                        <div className={`max-w-[80%] rounded-2xl p-3 px-4 text-sm whitespace-pre-wrap ${m.role === 'user' ? 'bg-sapphire text-white rounded-tr-none' : 'bg-gray-100 dark:bg-[#0f172a] text-gray-800 dark:text-gray-200 rounded-tl-none'}`}>
+                                            {m.content}
+                                        </div>
+                                    </div>
+                                ))}
+
+                                {isLoading && (
+                                    <div className="flex gap-3 justify-start">
+                                        <div className="max-w-[80%] rounded-2xl p-4 px-4 bg-gray-100 dark:bg-[#0f172a] rounded-tl-none flex items-center gap-1.5">
+                                            <motion.div className="w-1.5 h-1.5 bg-sapphire/50 rounded-full" animate={{ y: [0, -5, 0] }} transition={{ repeat: Infinity, duration: 0.6, delay: 0 }} />
+                                            <motion.div className="w-1.5 h-1.5 bg-sapphire/50 rounded-full" animate={{ y: [0, -5, 0] }} transition={{ repeat: Infinity, duration: 0.6, delay: 0.2 }} />
+                                            <motion.div className="w-1.5 h-1.5 bg-sapphire/50 rounded-full" animate={{ y: [0, -5, 0] }} transition={{ repeat: Infinity, duration: 0.6, delay: 0.4 }} />
+                                        </div>
+                                    </div>
+                                )}
+
+                                {error && (
+                                    <div className="flex gap-3 justify-center">
+                                        <div className="text-xs text-red-500 bg-red-50 dark:bg-red-500/10 px-3 py-1.5 rounded-lg border border-red-200 dark:border-red-500/20">
+                                            Ax meldet ein Problem: {error.message}
+                                        </div>
+                                    </div>
+                                )}
+
+                                <div ref={messagesEndRef} />
+                            </div>
+
+                            {/* Input Area */}
+                            <div className="p-4 bg-white dark:bg-[#070d1a] border-t border-gray-100 dark:border-white/10">
+                                <form onSubmit={handleSubmit} className="flex gap-2">
+                                    <input
+                                        className="flex-1 bg-gray-50 dark:bg-[#0a1628] border border-gray-200 dark:border-white/10 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-1 focus:ring-sapphire transition-all dark:text-white"
+                                        value={input}
+                                        placeholder="Frag Ax..."
+                                        onChange={handleInputChange}
+                                        disabled={isLoading}
+                                    />
+                                    <button
+                                        type="submit"
+                                        disabled={isLoading || !input.trim()}
+                                        className="bg-sapphire hover:bg-sapphire-hover text-white rounded-xl w-10 h-10 flex items-center justify-center transition-colors shadow-sm disabled:opacity-50 disabled:cursor-not-allowed shrink-0"
+                                    >
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m22 2-7 20-4-9-9-4Z" /><path d="M22 2 11 13" /></svg>
+                                    </button>
+                                </form>
+                            </div>
                         </div>
                     </motion.div>
                 )}
