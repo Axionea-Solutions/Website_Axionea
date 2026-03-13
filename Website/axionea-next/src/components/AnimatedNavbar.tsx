@@ -13,10 +13,10 @@ export default function AnimatedNavbar() {
             bgColor: isDark ? "rgba(15, 82, 186, 0.15)" : "rgba(15, 82, 186, 0.08)",
             textColor: isDark ? "#ffffff" : "#000926",
             links: [
-                { label: "Warum Axionea", href: "#warum", ariaLabel: "Gründe für Axionea" },
-                { label: "ROI-Rechner", href: "#roi", ariaLabel: "Automatisierungs-ROI berechnen" },
-                { label: "Vergleich", href: "#vergleich", ariaLabel: "Axionea vs Andere" },
-                { label: "Team", href: "#team", ariaLabel: "Unser Team" },
+                { label: "Warum Axionea", href: "/#warum-axionea", ariaLabel: "Warum Axionea" },
+                { label: "ROI-Rechner", href: "/#roi-rechner", ariaLabel: "ROI-Rechner öffnen" },
+                { label: "Vergleich", href: "/#vergleich", ariaLabel: "Zum Vergleich" },
+                { label: "Team", href: "/#team", ariaLabel: "Zum Team" },
             ],
         },
         {
@@ -24,9 +24,9 @@ export default function AnimatedNavbar() {
             bgColor: isDark ? "rgba(255, 255, 255, 0.06)" : "rgba(0, 0, 0, 0.04)",
             textColor: isDark ? "#ffffff" : "#000926",
             links: [
-                { label: "Alle Services", href: "#services", ariaLabel: "Übersicht der Services" },
-                { label: "Unser Prozess", href: "#prozess", ariaLabel: "Wie wir arbeiten" },
-                { label: "KI-Architektur", href: "#workflow", ariaLabel: "Technische Architektur" },
+                { label: "Alle Services", href: "/#services", ariaLabel: "Alle Services ansehen" },
+                { label: "Unser Prozess", href: "/#prozess", ariaLabel: "Unser Prozess" },
+                { label: "KI-Architektur", href: "/#architektur", ariaLabel: "KI-Architektur" },
             ],
         },
         {
@@ -34,8 +34,7 @@ export default function AnimatedNavbar() {
             bgColor: isDark ? "rgba(15, 82, 186, 0.25)" : "rgba(15, 82, 186, 0.10)",
             textColor: isDark ? "#ffffff" : "#000926",
             links: [
-                { label: "Kontakt aufnehmen", href: "#kontakt", ariaLabel: "Zum Kontaktformular" },
-                { label: "FAQ", href: "#faq", ariaLabel: "Häufige Fragen" },
+                { label: "FAQ", href: "/#faq", ariaLabel: "Häufige Fragen" },
             ],
         },
     ];

@@ -2,11 +2,11 @@
 
 export default function Footer() {
     const links = [
-        { label: "Services", href: "#services" },
-        { label: "Kontakt", href: "#kontakt" },
-        { label: "Prozess", href: "#prozess" },
-        { label: "FAQ", href: "#faq" },
-        { label: "Datenschutz", href: "#" },
+        { label: "Services", href: "/#services" },
+        { label: "Kontakt", href: "/#kontakt" },
+        { label: "Prozess", href: "/#prozess" },
+        { label: "FAQ", href: "/#faq" },
+        { label: "Datenschutz", href: "/datenschutz" },
         { label: "Impressum", href: "/impressum" },
     ];
 

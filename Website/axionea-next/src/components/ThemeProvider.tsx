@@ -26,7 +26,9 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
         // Read saved theme or default to dark
         const saved = localStorage.getItem("axionea-theme") as Theme | null;
         const initial = saved || "dark";
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setTheme(initial);
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setMounted(true);
     }, []);
 

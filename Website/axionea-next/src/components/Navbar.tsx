@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 export default function Navbar() {
@@ -11,7 +12,7 @@ export default function Navbar() {
             <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
 
                 {/* Logo */}
-                <a href="/" className="flex items-center gap-2.5 group" aria-label="Axionea Startseite">
+                <Link href="/" className="flex items-center gap-2.5 group" aria-label="Axionea Startseite">
                     <Image
                         src="/assets/logo/Asset 4@4x.png"
                         alt="Axionea Logo"
@@ -22,7 +23,7 @@ export default function Navbar() {
                     <span className="text-lg font-bold tracking-tight" style={{ fontFamily: 'var(--font-syne)' }}>
                         Axionea
                     </span>
-                </a>
+                </Link>
 
                 {/* Desktop Nav Links */}
                 <div className="hidden md:flex items-center gap-8">

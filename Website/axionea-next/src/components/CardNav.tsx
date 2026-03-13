@@ -230,7 +230,7 @@ const CardNav: React.FC<CardNavProps> = ({
           </div>
 
           <div className="flex items-center gap-2 order-3 md:order-none overflow-visible z-10">
-            <a href="#kontakt" className="group relative overflow-hidden inline-flex h-9 md:h-10 items-center justify-center rounded-lg bg-sapphire px-3 md:px-5 text-sm font-semibold text-white shadow transition-all duration-300 hover:bg-sapphire-hover hover:shadow-[0_4px_16px_rgba(15,82,186,0.3)] hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50">
+            <a href="/#kontakt" className="group relative overflow-hidden inline-flex h-9 md:h-10 items-center justify-center rounded-lg bg-sapphire px-3 md:px-5 text-sm font-semibold text-white shadow transition-all duration-300 hover:bg-sapphire-hover hover:shadow-[0_4px_16px_rgba(15,82,186,0.3)] hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50">
               {/* Shine effect */}
               <div className="absolute inset-0 z-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-[150%] skew-x-[-20deg] group-hover:translate-x-[150%] transition-transform duration-1000 ease-in-out" />
 

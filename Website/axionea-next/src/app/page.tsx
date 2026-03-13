@@ -1,5 +1,6 @@
 import HeroContent from '@/components/HeroContent';
 import IndustryTagsBand from '@/components/IndustryTagsBand';
+import ComplianceBadges from '@/components/ComplianceBadges';
 import WhyChooseUs from '@/components/WhyChooseUs';
 import ServicesGrid from '@/components/ServicesGrid';
 import ProcessSteps from '@/components/ProcessSteps';
@@ -24,7 +25,6 @@ export default function Home() {
       {/* Industry Tags Carousel */}
       <IndustryTagsBand />
 
-
       {/* Why Choose Us Section */}
       <WhyChooseUs />
 
@@ -33,6 +33,9 @@ export default function Home() {
 
       {/* Services Grid Section */}
       <ServicesGrid />
+
+      {/* Trust & Compliance Badges */}
+      <ComplianceBadges />
 
       {/* Comparison Section */}
       <ComparisonSection />
