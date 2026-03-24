@@ -27,11 +27,13 @@ Axionea/
 │   │       └── SKILL.md             ← B.L.A.S.T. + A.N.T. 3-Layer Architektur
 │   │
 │   └── projects/                    ← 🚀 Projektspezifische Skills
-│       └── scraper/
+│       ├── scraper/
+│       └── lej-coaching/
 │           └── SKILL.md             ← Scraper-spezifische Regeln
 │
 ├── projects/                        ← Eigentliche Projektdateien
-│   └── Scraper/                     ← B.L.A.S.T.-Struktur je Projekt
+│   ├── Scraper/                     ← B.L.A.S.T.-Struktur je Projekt
+│   └── lej-coaching/                ← 🆕 Le. J Coaching Website
 │
 ├── agents/                          ← Agenten-Definitionen
 │
@@ -55,6 +57,7 @@ Axionea/
 | Skill | Trigger |
 |---|---|
 | `scraper` | Scraping, Datenextraktion, Pipeline |
+| `lej-coaching` | Le. J Coaching Website, Coaching-Projekt |
 
 ---
 
@@ -63,6 +66,7 @@ Axionea/
 | Projekt | Beschreibung | Status |
 |---|---|---|
 | Scraper | [Beschreibung] | 🟡 In Entwicklung |
+| lej-coaching | Website für Coaching-Kunde Le. J Coaching | 🟡 In Planung |
 
 ---
 

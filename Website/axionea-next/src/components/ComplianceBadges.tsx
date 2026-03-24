@@ -29,7 +29,7 @@ export default function ComplianceBadges() {
         
         <div className="relative max-w-6xl mx-auto">
             <div className="text-center mb-10">
-                <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-4" style={{ fontFamily: "var(--font-syne)" }}>
+                <h2 className="text-[clamp(28px,6vw,52px)] font-bold tracking-tight leading-tight mb-4" style={{ fontFamily: "var(--font-syne)" }}>
                     Trust & Compliance
                 </h2>
                 <p className="text-muted-foreground max-w-2xl mx-auto text-lg">

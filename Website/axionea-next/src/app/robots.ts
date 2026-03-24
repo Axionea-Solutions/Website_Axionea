@@ -2,11 +2,14 @@ import { MetadataRoute } from 'next';
 
 export default function robots(): MetadataRoute.Robots {
     return {
-        rules: {
-            userAgent: '*',
-            allow: '/',
-            disallow: '/api/',
-        },
-        sitemap: 'https://axionea.de/sitemap.xml', // Replace with final deployed domain
+        rules: [
+            {
+                userAgent: '*',
+                allow: '/',
+                disallow: ['/api/'],
+            },
+        ],
+        sitemap: 'https://axionea.de/sitemap.xml',
+        host: 'https://axionea.de',
     };
 }

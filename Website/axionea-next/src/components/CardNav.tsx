@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useLayoutEffect, useRef, useState, useEffect } from 'react';
+import React, { useLayoutEffect, useRef, useState, useEffect, useCallback } from 'react';
 import { gsap } from 'gsap';
 import { GoArrowUpRight } from 'react-icons/go';
 import Link from 'next/link';
@@ -102,7 +102,7 @@ const CardNav: React.FC<CardNavProps> = ({
     return 260;
   };
 
-  const createTimeline = () => {
+  const createTimeline = useCallback(() => {
     const navEl = navRef.current;
     if (!navEl) return null;
 
@@ -120,7 +120,8 @@ const CardNav: React.FC<CardNavProps> = ({
     tl.to(cardsRef.current, { y: 0, opacity: 1, duration: 0.4, ease, stagger: 0.08 }, '-=0.1');
 
     return tl;
-  };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [ease, items]);
 
   useLayoutEffect(() => {
     const tl = createTimeline();
@@ -130,7 +131,7 @@ const CardNav: React.FC<CardNavProps> = ({
       tl?.kill();
       tlRef.current = null;
     };
-  }, [ease, items]);
+  }, [createTimeline]);
 
   useLayoutEffect(() => {
     const handleResize = () => {
@@ -230,7 +231,7 @@ const CardNav: React.FC<CardNavProps> = ({
           </div>
 
           <div className="flex items-center gap-2 order-3 md:order-none overflow-visible z-10">
-            <a href="/#kontakt" className="group relative overflow-hidden inline-flex h-9 md:h-10 items-center justify-center rounded-lg bg-sapphire px-3 md:px-5 text-sm font-semibold text-white shadow transition-all duration-300 hover:bg-sapphire-hover hover:shadow-[0_4px_16px_rgba(15,82,186,0.3)] hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50">
+            <Link href="/#kontakt" className="group relative overflow-hidden inline-flex h-9 md:h-10 items-center justify-center rounded-lg bg-sapphire px-3 md:px-5 text-sm font-semibold text-white shadow transition-all duration-300 hover:bg-sapphire-hover hover:shadow-[0_4px_16px_rgba(15,82,186,0.3)] hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50">
               {/* Shine effect */}
               <div className="absolute inset-0 z-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-[150%] skew-x-[-20deg] group-hover:translate-x-[150%] transition-transform duration-1000 ease-in-out" />
 
@@ -253,7 +254,7 @@ const CardNav: React.FC<CardNavProps> = ({
                   <path d="m12 5 7 7-7 7" />
                 </svg>
               </div>
-            </a>
+            </Link>
           </div>
         </div>
 

@@ -2,16 +2,6 @@
 
 import { useRef, useEffect, useState } from "react";
 import { LetterReveal } from "./ui/LetterReveal";
-import dynamic from 'next/dynamic';
-
-const Spline = dynamic(() => import('@splinetool/react-spline'), {
-    ssr: false,
-    loading: () => (
-        <div className="w-full h-full flex items-center justify-center">
-            <div className="w-12 h-12 rounded-xl bg-sapphire/10 border border-sapphire/20 animate-pulse" />
-        </div>
-    ),
-});
 
 /* ──────────────── useInView hook ──────────────── */
 function useInView(threshold = 0.15) {

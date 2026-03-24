@@ -65,25 +65,32 @@ export default function ChatBot() {
                 const assistantId = (Date.now() + 1).toString();
                 setMessages(prev => [...prev, { id: assistantId, role: 'assistant', content: '' }]);
 
-                let done = false;
-                while (!done) {
-                    const { value, done: readerDone } = await reader.read();
-                    done = readerDone;
-                    if (value) {
-                        const chunk = decoder.decode(value, { stream: true });
-                        setMessages(prev => {
-                            const updated = [...prev];
-                            const lastIndex = updated.length - 1;
-                            // Ensure we only update the latest assistant message
-                            if (updated[lastIndex].role === 'assistant') {
-                                updated[lastIndex] = {
-                                    ...updated[lastIndex],
-                                    content: updated[lastIndex].content + chunk
-                                };
-                            }
-                            return updated;
-                        });
+                try {
+                    let done = false;
+                    while (!done) {
+                        const { value, done: readerDone } = await reader.read();
+                        done = readerDone;
+                        if (value) {
+                            const chunk = decoder.decode(value, { stream: true });
+                            setMessages(prev => {
+                                const updated = [...prev];
+                                const lastIndex = updated.length - 1;
+                                // Ensure we only update the latest assistant message
+                                if (updated[lastIndex].role === 'assistant') {
+                                    updated[lastIndex] = {
+                                        ...updated[lastIndex],
+                                        content: updated[lastIndex].content + chunk
+                                    };
+                                }
+                                return updated;
+                            });
+                        }
                     }
+                } catch (streamErr: unknown) {
+                    console.error("Stream read error:", streamErr);
+                    throw streamErr instanceof Error ? streamErr : new Error("Verbindung zum Server unterbrochen.");
+                } finally {
+                    reader.releaseLock();
                 }
             }
         } catch (err: unknown) {

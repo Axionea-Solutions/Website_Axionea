@@ -13,8 +13,8 @@ export default function AnimatedNavbar() {
             bgColor: isDark ? "rgba(15, 82, 186, 0.15)" : "rgba(15, 82, 186, 0.08)",
             textColor: isDark ? "#ffffff" : "#000926",
             links: [
-                { label: "Warum Axionea", href: "/#warum-axionea", ariaLabel: "Warum Axionea" },
-                { label: "ROI-Rechner", href: "/#roi-rechner", ariaLabel: "ROI-Rechner öffnen" },
+                { label: "Warum Axionea", href: "/#warum", ariaLabel: "Warum Axionea" },
+                { label: "ROI-Rechner", href: "/#roi", ariaLabel: "ROI-Rechner öffnen" },
                 { label: "Vergleich", href: "/#vergleich", ariaLabel: "Zum Vergleich" },
                 { label: "Team", href: "/#team", ariaLabel: "Zum Team" },
             ],
@@ -26,7 +26,7 @@ export default function AnimatedNavbar() {
             links: [
                 { label: "Alle Services", href: "/#services", ariaLabel: "Alle Services ansehen" },
                 { label: "Unser Prozess", href: "/#prozess", ariaLabel: "Unser Prozess" },
-                { label: "KI-Architektur", href: "/#architektur", ariaLabel: "KI-Architektur" },
+                { label: "KI-Architektur", href: "/#workflow", ariaLabel: "KI-Architektur" },
             ],
         },
         {

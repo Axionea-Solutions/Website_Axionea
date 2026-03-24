@@ -27,6 +27,7 @@ function ProcessCard({
     description,
     icon,
     imageSrc,
+    imageAlt,
     index,
     className = "",
 }: {
@@ -35,6 +36,7 @@ function ProcessCard({
     description: string;
     icon: React.ReactNode;
     imageSrc: string;
+    imageAlt?: string;
     index: number;
     className?: string;
 }) {
@@ -93,7 +95,7 @@ function ProcessCard({
                 <div className="relative mx-4 mb-4 rounded-2xl overflow-hidden border border-white/[0.06] bg-white/[0.02]">
                     <Image
                         src={imageSrc}
-                        alt={title}
+                        alt={imageAlt ?? title}
                         width={600}
                         height={400}
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
@@ -141,9 +143,10 @@ export default function ProcessSteps() {
                         title="Workflow-Analyse"
                         description="Wir analysieren deine bestehenden Abläufe und identifizieren, wo KI den größten Mehrwert liefern kann"
                         imageSrc="/images/process-analyse-v2.png"
+                        imageAlt="Axionea Workflow-Analyse: Identifikation von Automatisierungspotenzialen in Geschäftsprozessen"
                         className="md:row-span-2"
                         icon={
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-sapphire">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-sapphire" aria-hidden="true">
                                 <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
                             </svg>
                         }
@@ -156,8 +159,9 @@ export default function ProcessSteps() {
                         title="Mit Sicherheit deployen"
                         description="Unser Team entwickelt maßgeschneiderte KI-Systeme, die auf deine Ziele ausgerichtet sind — sicher und zuverlässig"
                         imageSrc="/images/process-deploy-v2.png"
+                        imageAlt="Axionea KI-System Deployment: Sichere und zuverlässige Implementierung maßgeschneiderter KI-Lösungen"
                         icon={
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-sapphire">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-sapphire" aria-hidden="true">
                                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
                                 <polyline points="14 2 14 8 20 8" />
                                 <line x1="16" y1="13" x2="8" y2="13" />
@@ -173,8 +177,9 @@ export default function ProcessSteps() {
                         title="Laufende Optimierung"
                         description="Nach dem Deployment unterstützen und optimieren wir deine KI-Systeme, damit sie immer auf Höchstleistung laufen"
                         imageSrc="/images/process-optimize-v2.png"
+                        imageAlt="Axionea Laufende KI-Optimierung: Kontinuierliche Verbesserung und Monitoring der KI-Automatisierungssysteme"
                         icon={
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-sapphire">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-sapphire" aria-hidden="true">
                                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                             </svg>
                         }

@@ -22,7 +22,7 @@ export interface ROIIndustryFactor {
 }
 
 export interface ROIDataSchema {
-    meta: any;
+    meta: Record<string, unknown>;
     constants: {
         weeks_per_month: number;
         realization_rate_without_help: number;
@@ -35,8 +35,8 @@ export interface ROIDataSchema {
         axionea_investment_note: string;
     };
     industries: Record<string, ROIIndustryFactor>;
-    global_facts: any;
-    sources_registry: any[];
+    global_facts: Record<string, unknown>;
+    sources_registry: Record<string, unknown>[];
 }
 
 // Strongly typed cast of the imported JSON
@@ -115,7 +115,7 @@ export function calculateROI(input: CalculatorInput): CalculatorResults {
     const monthlyNetGain = realizationWith - realizationWithout;
 
     // Guard against divide by zero (should not happen if inputs > 0)
-    const paybackMonths = monthlyNetGain > 0 ? Math.ceil(axioneaInvestment / monthlyNetGain) : 0;
+    const paybackMonths = monthlyNetGain > 0 ? Math.min(360, Math.ceil(axioneaInvestment / monthlyNetGain)) : 0;
 
     return {
         monthlyRepetitiveCost,

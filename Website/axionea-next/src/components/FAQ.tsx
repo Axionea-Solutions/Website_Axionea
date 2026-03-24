@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useLayoutEffect } from "react";
 import { LetterReveal } from "./ui/LetterReveal";
 
 /* ──────────────── useInView hook ──────────────── */
@@ -27,9 +27,8 @@ function FAQItem({ question, answer, index }: { question: string; answer: string
     const [height, setHeight] = useState(0);
     const { ref, isInView } = useInView(0.1);
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         if (contentRef.current) {
-            // eslint-disable-next-line react-hooks/set-state-in-effect
             setHeight(isOpen ? contentRef.current.scrollHeight : 0);
         }
     }, [isOpen]);

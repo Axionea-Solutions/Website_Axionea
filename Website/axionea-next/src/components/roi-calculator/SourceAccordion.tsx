@@ -46,7 +46,7 @@ export function SourceAccordion({ industry }: SourceAccordionProps) {
                             </p>
 
                             {industry && (
-                                <div className="bg-black/[0.02] dark:bg-white-[0.02] border border-black/5 dark:border-white/5 rounded-lg p-4">
+                                <div className="bg-black/[0.02] dark:bg-white/[0.02] border border-black/5 dark:border-white/5 rounded-lg p-4">
                                     <p className="font-semibold text-foreground mb-1">
                                         <a href={industry.primary_source.url} target="_blank" rel="noopener noreferrer" className="hover:text-sapphire underline underline-offset-2">
                                             {industry.primary_source.name}

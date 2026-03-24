@@ -2,6 +2,19 @@ import React from 'react';
 import Link from 'next/link';
 import Footer from '@/components/Footer';
 import AnimatedNavbar from '@/components/AnimatedNavbar';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: 'Datenschutzerklärung',
+    description: 'Datenschutzerklärung der Axionea GbR gemäß DSGVO. Wir verarbeiten Ihre Daten DSGVO-konform auf Servern in Deutschland.',
+    robots: {
+        index: false,
+        follow: false,
+    },
+    alternates: {
+        canonical: 'https://axionea.de/datenschutz',
+    },
+};
 
 export default function Datenschutz() {
     return (

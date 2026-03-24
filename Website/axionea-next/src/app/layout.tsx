@@ -6,6 +6,7 @@ import Preloader from "@/components/Preloader";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import ChatBot from "@/components/ChatBot";
 import CookieBanner from "@/components/CookieBanner";
+import StructuredData from "@/components/StructuredData";
 
 const syne = Syne({
   variable: "--font-syne",
@@ -19,8 +20,11 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://axionea.de"),
-  title: "Axionea | KI-Automatisierung für den Mittelstand",
-  description: "Axionea ist die führende KI-Agentur im DACH-Raum für den Mittelstand. Wir automatisieren Prozesse mit KI-Agenten, Chatbots und nahtloser Software-Integration – ohne versteckte Kosten.",
+  title: {
+    default: "Axionea | KI-Automatisierung für den Mittelstand",
+    template: "%s | Axionea",
+  },
+  description: "Axionea automatisiert repetitive Prozesse in kleinen und mittelständischen Unternehmen — ohne eigene IT-Abteilung, ohne monatelange Einführung, ohne Enterprise-Budget. Live in 4 Wochen. DSGVO-konform. Server in Deutschland.",
   keywords: [
     "KI-Automatisierung",
     "Mittelstand",
@@ -29,29 +33,72 @@ export const metadata: Metadata = {
     "Axionea",
     "Prozesse automatisieren",
     "Künstliche Intelligenz",
-    "Chatbots für Unternehmen",
+    "KI-Chatbot",
+    "Voice Agents",
     "Voicebots",
+    "KI-Agenten",
     "KI Integration",
-    "Make",
-    "Zapier",
     "Workflow Automatisierung",
-    "DACH"
+    "Prozessautomatisierung",
+    "KMU Automatisierung",
+    "DSGVO-konform",
+    "No-Code Automatisierung",
+    "Lead Generation KI",
+    "Make Automatisierung",
+    "Zapier Alternative",
+    "KI Agentur Deutschland",
+    "DACH",
+    "KI für KMU",
+    "Automatisierung ohne IT-Abteilung",
   ],
-  authors: [{ name: "Axionea GbR" }],
+  authors: [
+    { name: "Maximilian Zvada", url: "https://axionea.de" },
+    { name: "Nico Fisseler", url: "https://axionea.de" },
+  ],
   creator: "Axionea GbR",
   publisher: "Axionea GbR",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: "https://axionea.de",
+    languages: {
+      "de-DE": "https://axionea.de",
+    },
+  },
   openGraph: {
     type: "website",
     locale: "de_DE",
     url: "https://axionea.de",
     title: "Axionea | KI-Automatisierung für den Mittelstand",
-    description: "KI-Automatisierung für den Mittelstand — ohne IT-Abteilung, ohne Technik-Kenntnisse, ohne versteckte Kosten.",
+    description: "Axionea automatisiert repetitive Prozesse in KMU — ohne IT-Abteilung, ohne Enterprise-Budget. Live in 4 Wochen. DSGVO-konform.",
     siteName: "Axionea",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Axionea — KI-Automatisierung für den Mittelstand",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Axionea | KI-Automatisierung für den Mittelstand",
-    description: "KI-Automatisierung für den Mittelstand — ohne IT-Abteilung, ohne Technik-Kenntnisse, ohne versteckte Kosten.",
+    description: "Axionea automatisiert repetitive Prozesse in KMU — ohne IT-Abteilung, ohne Enterprise-Budget. Live in 4 Wochen. DSGVO-konform.",
+    images: ["/og-image.png"],
+    creator: "@axionea",
+  },
+  verification: {
+    // google: "DEIN_GOOGLE_VERIFICATION_CODE",  // TODO: nach Google Search Console Einrichtung eintragen
   },
 };
 
@@ -66,6 +113,7 @@ export default function RootLayout({
         className={`${syne.variable} ${dmSans.variable} font-sans antialiased`}
       >
         <ThemeProvider>
+          <StructuredData />
           <Preloader />
           <AnimatedNavbar />
           <ChatBot />

@@ -2,6 +2,19 @@ import React from 'react';
 import Link from 'next/link';
 import Footer from '@/components/Footer';
 import AnimatedNavbar from '@/components/AnimatedNavbar';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: 'Impressum',
+    description: 'Impressum der Axionea GbR — Angaben gemäß § 5 TMG. Axionea ist eine KI-Automatisierungsagentur mit Sitz in Gaimersheim, Bayern.',
+    robots: {
+        index: false,
+        follow: false,
+    },
+    alternates: {
+        canonical: 'https://axionea.de/impressum',
+    },
+};
 
 export default function Impressum() {
     return (

@@ -5,35 +5,59 @@ import { google } from '@ai-sdk/google';
 export const dynamic = 'force-dynamic';
 export const maxDuration = 60;
 
-// Very strict in-memory rate limiter
-const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000; // 10 minutes
-const MAX_REQUESTS_PER_WINDOW = 50;
+// In-memory rate limiter (per Lambda-Instanz auf AWS Amplify/Serverless).
+// Hinweis: Auf Serverless-Plattformen teilen sich Instanzen keinen Speicher —
+// für echtes Cross-Instance-Limiting ist Redis (z.B. Upstash) nötig.
+// Dieser Limiter schützt dennoch vor Request-Flooding innerhalb einer Instanz
+// und bereinigt automatisch abgelaufene Einträge.
+const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000; // 10 Minuten
+const MAX_REQUESTS_PER_WINDOW = 20;
+const CLEANUP_INTERVAL_MS = 5 * 60 * 1000; // Cleanup alle 5 Minuten
 
-// Store IPs and request counts
 const rateLimitMap = new Map<string, { count: number; expires: number }>();
+
+// Bereinigt abgelaufene Einträge aus der Map, um Memory Leaks zu verhindern
+function cleanupExpiredEntries(): void {
+    const now = Date.now();
+    for (const [key, record] of rateLimitMap.entries()) {
+        if (now > record.expires) {
+            rateLimitMap.delete(key);
+        }
+    }
+}
+
+// Cleanup-Timer starten (läuft im gleichen serverless-Kontext)
+let lastCleanup = Date.now();
 
 function isRateLimited(ip: string): boolean {
     const now = Date.now();
+
+    // Periodisches Cleanup um Memory Leak zu verhindern
+    if (now - lastCleanup > CLEANUP_INTERVAL_MS) {
+        cleanupExpiredEntries();
+        lastCleanup = now;
+    }
+
     const limitRecord = rateLimitMap.get(ip);
 
-    // If no record exists, create one
+    // Kein Eintrag → neuen anlegen
     if (!limitRecord) {
         rateLimitMap.set(ip, { count: 1, expires: now + RATE_LIMIT_WINDOW_MS });
         return false;
     }
 
-    // If the window has expired, reset the record
+    // Fenster abgelaufen → zurücksetzen
     if (now > limitRecord.expires) {
         rateLimitMap.set(ip, { count: 1, expires: now + RATE_LIMIT_WINDOW_MS });
         return false;
     }
 
-    // If within window, check count
+    // Limit überschritten
     if (limitRecord.count >= MAX_REQUESTS_PER_WINDOW) {
         return true;
     }
 
-    // Increment count
+    // Zähler erhöhen
     limitRecord.count += 1;
     return false;
 }
@@ -95,15 +119,38 @@ export async function POST(req: Request) {
             });
         }
 
+        const MAX_MESSAGE_LENGTH = 2000;
+        const MAX_MESSAGES = 20;
+        if (messages.length > MAX_MESSAGES) {
+            return new Response(JSON.stringify({ error: "Too many messages in conversation." }), { status: 400, headers: { 'Content-Type': 'application/json' } });
+        }
+        for (const msg of messages) {
+            if (typeof msg.content !== 'string' || msg.content.length > MAX_MESSAGE_LENGTH) {
+                return new Response(JSON.stringify({ error: "Invalid message format or content too long." }), { status: 400, headers: { 'Content-Type': 'application/json' } });
+            }
+            if (!['user', 'assistant'].includes(msg.role)) {
+                return new Response(JSON.stringify({ error: "Invalid message role." }), { status: 400, headers: { 'Content-Type': 'application/json' } });
+            }
+        }
+
         console.log(`[CHAT REQUEST] IP: ${ip} | Messages count: ${messages.length}`);
-        console.log(`[LATEST MESSAGE]: `, messages[messages.length - 1]);
 
         // 4. Stream Response
+        // gemini-2.5-flash ist ein Thinking-Modell. Mit thinkingBudget: 0 deaktivieren wir
+        // das Thinking, damit (a) temperature funktioniert, (b) Antworten schneller kommen
+        // und (c) keine internen Thinking-Tokens im Stream auftauchen.
         const result = streamText({
             model: google('gemini-2.5-flash'),
             system: SYSTEM_PROMPT,
             messages,
             temperature: 0.7,
+            providerOptions: {
+                google: {
+                    thinkingConfig: {
+                        thinkingBudget: 0,  // Thinking deaktivieren für Chat-Use-Case
+                    },
+                },
+            },
             onError({ error }) {
                 console.error('[STREAM ERROR]:', error);
             },
