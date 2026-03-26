@@ -52,18 +52,17 @@ export default function HeroContent() {
                 </motion.div>
             </div>
 
-            {/* Bottom elements: Mehr erfahren & Blinking Scroll Arrow */}
+            {/* Bottom: Mehr erfahren + Scroll Arrow */}
             <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1, delay: 1.2 }}
-                className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-4 pointer-events-auto"
+                className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-1 pointer-events-auto"
             >
-                <a href="#warum" className="px-6 py-2.5 rounded-full bg-white/5 text-gray-300 font-medium text-sm hover:bg-white/10 hover:text-white transition-all border border-white/10 text-center backdrop-blur-md">
+                <a href="#warum" className="text-gray-500 text-xs font-medium tracking-widest uppercase hover:text-gray-300 transition-colors">
                     Mehr erfahren
                 </a>
-
-                <a href="#warum" className="block animate-[pulse-arrow_2.5s_ease-in-out_infinite] mt-2">
+                <a href="#warum" className="block animate-[pulse-arrow_2.5s_ease-in-out_infinite]">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 100 40"
