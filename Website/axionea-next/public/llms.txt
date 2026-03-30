@@ -1,0 +1,19 @@
+# Axionea Solutions
+
+> Axionea ist eine KI-Automatisierungsagentur aus dem DACH-Raum, die mittelständischen Unternehmen hilft, repetitive Geschäftsprozesse durch KI-Agenten, Chatbots und automatisierte Workflows zu ersetzen — ohne IT-Abteilung oder Programmierkenntnisse.
+
+## Docs
+
+- [Homepage](https://www.axionea-solutions.de/): Übersicht über alle KI-Services, ROI-Rechner und Kontaktmöglichkeiten.
+- [KI-Services](https://www.axionea-solutions.de/#services): KI-Strategie & Beratung, Content-Generierung, KI-Chatbots, automatisierte Workflows und Agenten für den Mittelstand.
+- [Unser Prozess](https://www.axionea-solutions.de/#prozess): Dreistufiger Implementierungsprozess: Workflow-Analyse, sicheres Deployment, laufende Optimierung.
+- [FAQ](https://www.axionea-solutions.de/#faq): Häufige Fragen zu Kosten, Implementierungsdauer, technischen Anforderungen und Branchen-Eignung.
+- [Team](https://www.axionea-solutions.de/#team): Gründer Maximilian Zvada (CEO) und Nico Fisseler (CTO) — KI-Experten mit Fokus auf Mittelstand-Automatisierung.
+- [Impressum](https://www.axionea-solutions.de/impressum): Rechtliche Angaben: Axionea GbR, Leprosenweg 1b, 85080 Gaimersheim.
+- [Datenschutz](https://www.axionea-solutions.de/datenschutz): Datenschutzerklärung gemäß DSGVO.
+
+## Optional
+
+- [ROI-Rechner](https://www.axionea-solutions.de/#roi): Interaktives Tool zur Berechnung monatlicher Effizienzkosten durch manuelle Prozesse — basierend auf McKinsey & EY Branchendaten für 10 Branchen.
+- Einstiegspreise ab 990€, Implementierung in 2–6 Wochen, DSGVO-konform, Server in Deutschland.
+- Branchen: Versicherung, Banken, Konsumgüter, Marketing, Öffentlicher Sektor, Gesundheitswesen, Handwerk, Büro/Administration, Automotive, KMU allgemein.

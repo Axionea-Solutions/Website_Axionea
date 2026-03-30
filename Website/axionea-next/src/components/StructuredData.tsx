@@ -11,13 +11,13 @@
 const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "@id": "https://axionea.de/#organization",
+    "@id": "https://www.axionea-solutions.de/#organization",
     name: "Axionea",
     legalName: "Axionea GbR",
-    url: "https://axionea.de",
+    url: "https://www.axionea-solutions.de",
     logo: {
         "@type": "ImageObject",
-        url: "https://axionea.de/assets/logo/Asset 4@4x.png",
+        url: "https://www.axionea-solutions.de/assets/logo/Asset 4@4x.png",
         width: 400,
         height: 400,
     },
@@ -62,18 +62,18 @@ const organizationSchema = {
         "No-Code Automatisierung",
         "DSGVO-konforme KI",
     ],
-    sameAs: [],
+    sameAs: ["https://www.linkedin.com/company/axionea"],
 };
 
 const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "@id": "https://axionea.de/#website",
-    url: "https://axionea.de",
+    "@id": "https://www.axionea-solutions.de/#website",
+    url: "https://www.axionea-solutions.de",
     name: "Axionea",
     description: "KI-Automatisierung für den Mittelstand",
     publisher: {
-        "@id": "https://axionea.de/#organization",
+        "@id": "https://www.axionea-solutions.de/#organization",
     },
     inLanguage: "de-DE",
 };
@@ -81,10 +81,10 @@ const websiteSchema = {
 const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "@id": "https://axionea.de/#localbusiness",
+    "@id": "https://www.axionea-solutions.de/#localbusiness",
     name: "Axionea",
-    image: "https://axionea.de/og-image.png",
-    url: "https://axionea.de",
+    image: "https://www.axionea-solutions.de/og-image.png",
+    url: "https://www.axionea-solutions.de",
     telephone: "+49 173 1726939",
     email: "info@axionea-solutions.de",
     address: {
@@ -125,7 +125,7 @@ const localBusinessSchema = {
         closes: "18:00",
     },
     parentOrganization: {
-        "@id": "https://axionea.de/#organization",
+        "@id": "https://www.axionea-solutions.de/#organization",
     },
 };
 

@@ -19,7 +19,7 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://axionea.de"),
+  metadataBase: new URL("https://www.axionea-solutions.de"),
   title: {
     default: "Axionea | KI-Automatisierung für den Mittelstand",
     template: "%s | Axionea",
@@ -52,8 +52,8 @@ export const metadata: Metadata = {
     "Automatisierung ohne IT-Abteilung",
   ],
   authors: [
-    { name: "Maximilian Zvada", url: "https://axionea.de" },
-    { name: "Nico Fisseler", url: "https://axionea.de" },
+    { name: "Maximilian Zvada", url: "https://www.axionea-solutions.de" },
+    { name: "Nico Fisseler", url: "https://www.axionea-solutions.de" },
   ],
   creator: "Axionea GbR",
   publisher: "Axionea GbR",
@@ -69,15 +69,15 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://axionea.de",
+    canonical: "https://www.axionea-solutions.de",
     languages: {
-      "de-DE": "https://axionea.de",
+      "de-DE": "https://www.axionea-solutions.de",
     },
   },
   openGraph: {
     type: "website",
     locale: "de_DE",
-    url: "https://axionea.de",
+    url: "https://www.axionea-solutions.de",
     title: "Axionea | KI-Automatisierung für den Mittelstand",
     description: "Axionea automatisiert repetitive Prozesse in KMU — ohne IT-Abteilung, ohne Enterprise-Budget. Live in 4 Wochen. DSGVO-konform.",
     siteName: "Axionea",

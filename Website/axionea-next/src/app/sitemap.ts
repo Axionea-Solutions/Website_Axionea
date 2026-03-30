@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://axionea.de';
+    const baseUrl = 'https://www.axionea-solutions.de';
     const lastModified = new Date();
 
     return [
