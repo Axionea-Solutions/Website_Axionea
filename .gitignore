@@ -4,10 +4,30 @@ agents/
 Consulting/
 Verträge/
 projects/
+Businessplan/
+Input_ROI_Rechner/
+Website/ROI_Rechner/
 
-# Ignore sensitive files (just in case)
+# Ignore AI/IDE configuration
+.claude/
+.gemini/
+
+# Ignore sensitive files
 .env
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
+
+# Ignore sensitive/personal documents
+Back-up_Codes_HubSpot.pdf
+*.xlsx
+
+# Ignore build/debug logs and temp files
+deploy_configs.txt
+Website/axionea-next/*.txt
+
+# Ignore node artifacts
+node_modules/
+.next/
+out/
