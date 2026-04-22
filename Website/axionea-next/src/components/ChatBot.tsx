@@ -113,6 +113,14 @@ export default function ChatBot() {
     return (
         <div className="fixed bottom-6 right-6 z-[100] flex flex-col items-end">
 
+            {/* Mobile backdrop — tap to close */}
+            {isOpen && (
+                <div
+                    className="fixed inset-0 z-[99] bg-black/20 backdrop-blur-sm md:hidden"
+                    onClick={() => setIsOpen(false)}
+                />
+            )}
+
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
@@ -120,13 +128,12 @@ export default function ChatBot() {
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 20, scale: 0.9 }}
                         transition={{ type: "spring", damping: 25, stiffness: 300 }}
-                        className="mb-4 bg-white/90 dark:bg-[#070d1a]/95 backdrop-blur-xl border border-gray-200 dark:border-white/10 rounded-2xl shadow-2xl flex flex-col relative"
+                        className="mb-4 bg-white/90 dark:bg-[#070d1a]/95 backdrop-blur-xl border border-gray-200 dark:border-white/10 rounded-2xl shadow-2xl flex flex-col relative resize-none md:resize"
                         style={{
                             width: "clamp(320px, 90vw, 500px)",
                             height: "clamp(400px, 85vh, 600px)",
-                            resize: "both",
                             overflow: "hidden",
-                            direction: "rtl" // Moves the native resize handle to Bottom-Left for RTL, but Top-Left isn't native. Let's use standard resize but position absolute.
+                            direction: "rtl"
                         }}
                     >
                         {/* We wrap content to reset direction */}
@@ -148,7 +155,7 @@ export default function ChatBot() {
                                 </div>
                                 <button
                                     onClick={() => setIsOpen(false)}
-                                    className="w-8 h-8 rounded-full hover:bg-gray-200 dark:hover:bg-white/10 flex items-center justify-center transition-colors text-gray-500"
+                                    className="w-11 h-11 rounded-full hover:bg-gray-200 dark:hover:bg-white/10 flex items-center justify-center transition-colors text-gray-500"
                                 >
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
                                 </button>
