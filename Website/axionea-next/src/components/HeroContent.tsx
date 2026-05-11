@@ -48,7 +48,7 @@ export default function HeroContent() {
                         transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
                         className="pointer-events-auto"
                     >
-                        <a href="#roi" className="px-8 py-4 rounded-full bg-sapphire text-white font-semibold text-lg hover:bg-sapphire-hover transition-all hover:scale-[1.03] shadow-[0_0_30px_rgba(15,82,186,0.6)] text-center inline-block">
+                        <a href="#roi" className="px-8 py-4 rounded-full bg-sapphire text-white font-semibold text-lg hover:bg-sapphire-hover transition-all shadow-[0_0_30px_rgba(15,82,186,0.6)] hover:shadow-[0_0_40px_rgba(15,82,186,0.8)] text-center inline-block">
                             Jetzt Potenzialanalyse starten
                         </a>
                     </motion.div>

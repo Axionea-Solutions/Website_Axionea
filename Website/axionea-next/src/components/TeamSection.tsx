@@ -1,24 +1,9 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
 import { LetterReveal } from "./ui/LetterReveal";
+import { useInView } from "@/hooks/useInView";
 
-/* ──────────────── useInView hook ──────────────── */
-function useInView(threshold = 0.1) {
-    const ref = useRef<HTMLDivElement>(null);
-    const [isInView, setIsInView] = useState(false);
-    useEffect(() => {
-        const el = ref.current;
-        if (!el) return;
-        const obs = new IntersectionObserver(
-            ([e]) => { if (e.isIntersecting) { setIsInView(true); obs.unobserve(el); } },
-            { threshold }
-        );
-        obs.observe(el);
-        return () => obs.disconnect();
-    }, [threshold]);
-    return { ref, isInView };
-}
+
 
 /* ──────────────── Team Member Card ──────────────── */
 function TeamCard({
@@ -46,7 +31,7 @@ function TeamCard({
                 transition: `all 1.5s cubic-bezier(0.16, 1, 0.3, 1) ${index * 0.25}s`,
             }}
         >
-            <div className="group relative h-full rounded-3xl border border-gray-200 bg-white p-8 transition-all duration-500 hover:border-sapphire/30 hover:shadow-[0_20px_60px_-15px_rgba(15,82,186,0.12)] shadow-[0_2px_16px_-4px_rgba(0,0,0,0.06)]">
+            <div className="group relative h-full rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-md p-8 transition-all duration-500 hover:border-sapphire/30 hover:shadow-[0_20px_60px_-15px_rgba(15,82,186,0.2)] shadow-[0_2px_24px_-4px_rgba(0,0,0,0.3)]">
                 {/* Inner highlight */}
                 <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-sapphire/[0.02] via-transparent to-transparent pointer-events-none" />
 
@@ -60,7 +45,7 @@ function TeamCard({
 
                     {/* Name & Role */}
                     <h3
-                        className="text-lg font-bold text-slate-900 mb-1 tracking-tight group-hover:text-sapphire transition-colors duration-300"
+                        className="text-lg font-bold text-foreground mb-1 tracking-tight group-hover:text-sapphire transition-colors duration-300"
                         style={{ fontFamily: "var(--font-syne)" }}
                     >
                         {name}
@@ -70,7 +55,7 @@ function TeamCard({
                     </span>
 
                     {/* Description */}
-                    <p className="text-slate-600 text-sm leading-relaxed">
+                    <p className="text-muted-foreground text-sm leading-relaxed">
                         {description}
                     </p>
                 </div>
@@ -99,7 +84,7 @@ const team = [
 export default function TeamSection() {
     return (
         <section id="team" className="py-16 md:py-24 px-6">
-            <div className="max-w-7xl mx-auto">
+            <div className="max-w-6xl mx-auto">
                 {/* Section Header */}
                 <div className="text-center mb-10 md:mb-16">
                     <span className="inline-flex items-center gap-2 text-xs font-bold tracking-[3px] uppercase text-sapphire mb-4 bg-sapphire/10 px-4 py-2 rounded-full border border-sapphire/15">
@@ -115,7 +100,7 @@ export default function TeamSection() {
                         className="text-[clamp(32px,5vw,56px)] font-bold tracking-tight leading-tight mb-4"
                         style={{ fontFamily: "var(--font-syne)" }}
                     >
-                        <LetterReveal text="Behind the Scenes" />
+                        <LetterReveal text="Hinter den Kulissen" />
                     </h2>
                     <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
                         <LetterReveal text="Das Team hinter Axionea — Experten mit Leidenschaft für KI und Innovation" delay={0.2} stagger={0.015} />

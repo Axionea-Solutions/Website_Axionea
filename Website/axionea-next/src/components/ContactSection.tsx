@@ -1,20 +1,10 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import { LetterReveal } from "./ui/LetterReveal";
+import { useInView } from "@/hooks/useInView";
 
-function useInView(threshold = 0.15) {
-    const ref = useRef<HTMLDivElement>(null);
-    const [isInView, setIsInView] = useState(false);
-    useEffect(() => {
-        const el = ref.current;
-        if (!el) return;
-        const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setIsInView(true); obs.disconnect(); } }, { threshold });
-        obs.observe(el);
-        return () => obs.disconnect();
-    }, [threshold]);
-    return { ref, isInView };
-}
+
 
 const contactInfo = [
     {
@@ -110,18 +100,18 @@ export default function ContactSection() {
                         {contactInfo.map((info, i) => (
                             <div
                                 key={i}
-                                className="group rounded-2xl border border-gray-200 bg-white shadow-[0_2px_16px_-4px_rgba(0,0,0,0.06)] p-6 transition-all duration-300 hover:border-sapphire/30"
+                                className="group rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-md shadow-[0_2px_24px_-4px_rgba(0,0,0,0.3)] p-6 transition-all duration-300 hover:border-sapphire/30"
                             >
-                                <div className="w-10 h-10 rounded-xl bg-slate-50 border border-gray-200 flex items-center justify-center text-slate-600 mb-3 group-hover:text-sapphire transition-colors duration-300">
+                                <div className="w-10 h-10 rounded-xl bg-white/[0.06] border border-white/10 flex items-center justify-center text-muted-foreground mb-3 group-hover:text-sapphire transition-colors duration-300">
                                     {info.icon}
                                 </div>
                                 <p className="text-sm font-bold text-sapphire mb-1">{info.label}</p>
                                 {info.href ? (
-                                    <a href={info.href} className="text-sm text-slate-600 hover:text-slate-900 transition-colors">
+                                    <a href={info.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                                         {info.value}
                                     </a>
                                 ) : (
-                                    <p className="text-sm text-slate-600">{info.value}</p>
+                                    <p className="text-sm text-muted-foreground">{info.value}</p>
                                 )}
                             </div>
                         ))}
@@ -137,8 +127,8 @@ export default function ContactSection() {
                                 </svg>
                             </div>
                             <div>
-                                <p className="text-sm font-bold text-sapphire">Book a Call</p>
-                                <p className="text-xs text-slate-500">Kostenloses 15-Min Erstgespräch buchen</p>
+                                <p className="text-sm font-bold text-sapphire">Termin buchen</p>
+                                <p className="text-xs text-muted-foreground">Kostenloses 15-Min Erstgespräch buchen</p>
                             </div>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 text-sapphire ml-auto group-hover:translate-x-1 transition-transform">
                                 <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
@@ -147,49 +137,49 @@ export default function ContactSection() {
                     </div>
 
                     {/* Right: Contact Form */}
-                    <div className="rounded-2xl border border-gray-200 bg-white shadow-[0_2px_16px_-4px_rgba(0,0,0,0.06)] p-8">
+                    <div className="rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-md shadow-[0_2px_24px_-4px_rgba(0,0,0,0.3)] p-8">
                         <form onSubmit={handleSubmit} className="space-y-5">
                             <div>
-                                <label className="block text-sm font-semibold text-slate-900 mb-2">Name</label>
+                                <label className="block text-sm font-semibold text-foreground mb-2">Name</label>
                                 <input
                                     type="text"
                                     required
                                     placeholder="Max Mustermann"
                                     value={formData.name}
                                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                                    className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-gray-200 text-slate-900 text-sm placeholder:text-slate-400 outline-none focus:border-sapphire/40 focus:ring-1 focus:ring-sapphire/20 transition-all"
+                                    className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 text-foreground text-sm placeholder:text-muted-foreground outline-none focus:border-sapphire/40 focus:ring-1 focus:ring-sapphire/20 transition-all"
                                 />
                             </div>
                             <div>
-                                <label className="block text-sm font-semibold text-slate-900 mb-2">Firma</label>
+                                <label className="block text-sm font-semibold text-foreground mb-2">Firma</label>
                                 <input
                                     type="text"
                                     placeholder="Muster GmbH"
                                     value={formData.company}
                                     onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                                    className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-gray-200 text-slate-900 text-sm placeholder:text-slate-400 outline-none focus:border-sapphire/40 focus:ring-1 focus:ring-sapphire/20 transition-all"
+                                    className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 text-foreground text-sm placeholder:text-muted-foreground outline-none focus:border-sapphire/40 focus:ring-1 focus:ring-sapphire/20 transition-all"
                                 />
                             </div>
                             <div>
-                                <label className="block text-sm font-semibold text-slate-900 mb-2">E-Mail</label>
+                                <label className="block text-sm font-semibold text-foreground mb-2">E-Mail</label>
                                 <input
                                     type="email"
                                     required
                                     placeholder="max@firma.de"
                                     value={formData.email}
                                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                                    className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-gray-200 text-slate-900 text-sm placeholder:text-slate-400 outline-none focus:border-sapphire/40 focus:ring-1 focus:ring-sapphire/20 transition-all"
+                                    className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 text-foreground text-sm placeholder:text-muted-foreground outline-none focus:border-sapphire/40 focus:ring-1 focus:ring-sapphire/20 transition-all"
                                 />
                             </div>
                             <div>
-                                <label className="block text-sm font-semibold text-slate-900 mb-2">Nachricht</label>
+                                <label className="block text-sm font-semibold text-foreground mb-2">Nachricht</label>
                                 <textarea
                                     required
                                     rows={4}
                                     placeholder="Wie kann Axionea dir helfen?"
                                     value={formData.message}
                                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                                    className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-gray-200 text-slate-900 text-sm placeholder:text-slate-400 outline-none focus:border-sapphire/40 focus:ring-1 focus:ring-sapphire/20 transition-all resize-none"
+                                    className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 text-foreground text-sm placeholder:text-muted-foreground outline-none focus:border-sapphire/40 focus:ring-1 focus:ring-sapphire/20 transition-all resize-none"
                                 />
                             </div>
                             <button

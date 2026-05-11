@@ -184,6 +184,67 @@ const faqSchema = {
     ],
 };
 
+const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    itemListElement: [
+        {
+            "@type": "Service",
+            name: "KI-Chatbot Entwicklung",
+            description: "Maßgeschneiderte KI-Chatbots für Kundenservice, Lead-Generierung und interne Prozesse — DSGVO-konform und auf Deutsch.",
+            provider: { "@id": "https://www.axionea-solutions.de/#organization" },
+            areaServed: ["DE", "AT", "CH"],
+            serviceType: "KI-Chatbot Entwicklung",
+            url: "https://www.axionea-solutions.de/#services",
+        },
+        {
+            "@type": "Service",
+            name: "Voice Agent Entwicklung",
+            description: "Intelligente Sprachassistenten für Telefon-Support und automatisierte Kundengespräche.",
+            provider: { "@id": "https://www.axionea-solutions.de/#organization" },
+            areaServed: ["DE", "AT", "CH"],
+            serviceType: "Voice Agent Entwicklung",
+            url: "https://www.axionea-solutions.de/#services",
+        },
+        {
+            "@type": "Service",
+            name: "Workflow Automatisierung",
+            description: "End-to-End Automatisierung repetitiver Geschäftsprozesse mit KI-gestützten Workflows.",
+            provider: { "@id": "https://www.axionea-solutions.de/#organization" },
+            areaServed: ["DE", "AT", "CH"],
+            serviceType: "Workflow Automatisierung",
+            url: "https://www.axionea-solutions.de/#services",
+        },
+        {
+            "@type": "Service",
+            name: "KI-Strategie Beratung",
+            description: "Strategische KI-Beratung für den Mittelstand — Potenzialanalyse, Roadmap und Implementierungsplanung.",
+            provider: { "@id": "https://www.axionea-solutions.de/#organization" },
+            areaServed: ["DE", "AT", "CH"],
+            serviceType: "KI-Strategie Beratung",
+            url: "https://www.axionea-solutions.de/#services",
+        },
+        {
+            "@type": "Service",
+            name: "KI-Content Automatisierung",
+            description: "Automatisierte Content-Erstellung mit KI für Social Media, Blog und Marketing.",
+            provider: { "@id": "https://www.axionea-solutions.de/#organization" },
+            areaServed: ["DE", "AT", "CH"],
+            serviceType: "KI-Content Automatisierung",
+            url: "https://www.axionea-solutions.de/#services",
+        },
+        {
+            "@type": "Service",
+            name: "KI-Agenten Entwicklung",
+            description: "Autonome KI-Agenten, die eigenständig Aufgaben erledigen und Entscheidungen treffen können.",
+            provider: { "@id": "https://www.axionea-solutions.de/#organization" },
+            areaServed: ["DE", "AT", "CH"],
+            serviceType: "KI-Agenten Entwicklung",
+            url: "https://www.axionea-solutions.de/#services",
+        },
+    ],
+};
+
 export default function StructuredData() {
     return (
         <>
@@ -202,6 +263,10 @@ export default function StructuredData() {
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
             />
         </>
     );

@@ -50,6 +50,11 @@ export const metadata: Metadata = {
     "DACH",
     "KI für KMU",
     "Automatisierung ohne IT-Abteilung",
+    "KI-Automatisierung Bayern",
+    "KI Beratung München",
+    "KI Agentur Ingolstadt",
+    "Prozessautomatisierung Süddeutschland",
+    "KI Lösungen Mittelstand Bayern",
   ],
   authors: [
     { name: "Maximilian Zvada", url: "https://www.axionea-solutions.de" },
@@ -72,6 +77,8 @@ export const metadata: Metadata = {
     canonical: "https://www.axionea-solutions.de",
     languages: {
       "de-DE": "https://www.axionea-solutions.de",
+      "de-AT": "https://www.axionea-solutions.de",
+      "de-CH": "https://www.axionea-solutions.de",
     },
   },
   openGraph: {
@@ -99,6 +106,12 @@ export const metadata: Metadata = {
   },
   verification: {
     // google: "DEIN_GOOGLE_VERIFICATION_CODE",  // TODO: nach Google Search Console Einrichtung eintragen
+  },
+  other: {
+    "geo.region": "DE-BY",
+    "geo.placename": "Gaimersheim",
+    "geo.position": "48.814;11.381",
+    "ICBM": "48.814, 11.381",
   },
 };
 

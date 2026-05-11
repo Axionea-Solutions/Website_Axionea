@@ -1,24 +1,10 @@
 "use client";
 
-import { useState, useRef, useEffect, useLayoutEffect } from "react";
+import { useState, useRef, useLayoutEffect } from "react";
 import { LetterReveal } from "./ui/LetterReveal";
+import { useInView } from "@/hooks/useInView";
 
-/* ──────────────── useInView hook ──────────────── */
-function useInView(threshold = 0.1) {
-    const ref = useRef<HTMLDivElement>(null);
-    const [isInView, setIsInView] = useState(false);
-    useEffect(() => {
-        const el = ref.current;
-        if (!el) return;
-        const obs = new IntersectionObserver(
-            ([e]) => { if (e.isIntersecting) { setIsInView(true); obs.unobserve(el); } },
-            { threshold }
-        );
-        obs.observe(el);
-        return () => obs.disconnect();
-    }, [threshold]);
-    return { ref, isInView };
-}
+
 
 /* ──────────────── FAQ Item ──────────────── */
 function FAQItem({ question, answer, index }: { question: string; answer: string; index: number }) {
@@ -36,7 +22,7 @@ function FAQItem({ question, answer, index }: { question: string; answer: string
     return (
         <div
             ref={ref}
-            className="border-b border-gray-200 last:border-b-0"
+            className="border-b border-white/10 last:border-b-0"
             style={{
                 opacity: isInView ? 1 : 0,
                 transform: isInView ? "translateY(0)" : "translateY(10px)",
@@ -48,13 +34,13 @@ function FAQItem({ question, answer, index }: { question: string; answer: string
                 className="w-full flex items-center justify-between py-5 px-6 text-left group cursor-pointer"
             >
                 <span
-                    className={`text-sm md:text-base font-medium transition-colors duration-300 ${isOpen ? 'text-sapphire' : 'text-slate-900 group-hover:text-sapphire'}`}
+                    className={`text-sm md:text-base font-medium transition-colors duration-300 ${isOpen ? 'text-sapphire' : 'text-foreground group-hover:text-sapphire'}`}
                     style={{ fontFamily: "var(--font-syne)" }}
                 >
                     {question}
                 </span>
-                <div className={`w-8 h-8 rounded-lg bg-slate-50 border border-gray-200 flex items-center justify-center shrink-0 ml-4 transition-all duration-300 ${isOpen ? 'bg-sapphire/10 border-sapphire/20 rotate-45' : 'group-hover:bg-gray-100'}`}>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={`w-4 h-4 transition-colors duration-300 ${isOpen ? 'text-sapphire' : 'text-slate-500'}`}>
+                <div className={`w-8 h-8 rounded-lg bg-white/[0.04] border border-white/10 flex items-center justify-center shrink-0 ml-4 transition-all duration-300 ${isOpen ? 'bg-sapphire/10 border-sapphire/20 rotate-45' : 'group-hover:bg-white/[0.06]'}`}>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={`w-4 h-4 transition-colors duration-300 ${isOpen ? 'text-sapphire' : 'text-muted-foreground'}`}>
                         <line x1="12" y1="5" x2="12" y2="19" />
                         <line x1="5" y1="12" x2="19" y2="12" />
                     </svg>
@@ -65,7 +51,7 @@ function FAQItem({ question, answer, index }: { question: string; answer: string
                 className="overflow-hidden transition-[height] duration-400 ease-[cubic-bezier(0.16,1,0.3,1)]"
             >
                 <div ref={contentRef} className="px-6 pb-5">
-                    <p className="text-sm text-slate-600 leading-relaxed max-w-2xl">
+                    <p className="text-sm text-muted-foreground leading-relaxed max-w-2xl">
                         {answer}
                     </p>
                 </div>
@@ -106,7 +92,7 @@ const faqs = [
 export default function FAQ() {
     return (
         <section id="faq" className="py-16 md:py-24 px-6">
-            <div className="max-w-3xl mx-auto">
+            <div className="max-w-4xl mx-auto">
                 {/* Section Header */}
                 <div className="text-center mb-10 md:mb-16">
                     <span className="inline-flex items-center gap-2 text-xs font-bold tracking-[3px] uppercase text-sapphire mb-4 bg-sapphire/10 px-4 py-2 rounded-full border border-sapphire/15">
@@ -129,7 +115,7 @@ export default function FAQ() {
                 </div>
 
                 {/* FAQ Accordion */}
-                <div className="rounded-2xl border border-gray-200 bg-white shadow-[0_2px_16px_-4px_rgba(0,0,0,0.06)] overflow-hidden">
+                <div className="rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-md shadow-[0_2px_24px_-4px_rgba(0,0,0,0.3)] overflow-hidden">
                     {faqs.map((faq, i) => (
                         <FAQItem key={i} question={faq.question} answer={faq.answer} index={i} />
                     ))}

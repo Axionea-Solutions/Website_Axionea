@@ -18,7 +18,7 @@ export default function Footer() {
                 style={{ background: "radial-gradient(circle, var(--primary) 0%, transparent 70%)" }}
             />
 
-            <div className="relative max-w-4xl mx-auto flex flex-col items-center text-center">
+            <div className="relative max-w-5xl mx-auto flex flex-col items-center text-center">
                 {/* Social Icons */}
                 <div className="flex items-center gap-3 mb-10">
                     {/* X / Twitter */}
@@ -60,12 +60,12 @@ export default function Footer() {
                 {/* CTA Button */}
                 <a
                     href="#kontakt"
-                    className="group relative overflow-hidden inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-white text-slate-900 font-bold text-[15px] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_8px_32px_rgba(255,255,255,0.15)] hover:bg-slate-50 mb-12"
+                    className="group relative overflow-hidden inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-white text-slate-900 font-bold text-[15px] transition-all duration-300 hover:shadow-[0_8px_32px_rgba(255,255,255,0.25)] hover:bg-slate-50 mb-12"
                 >
                     {/* Shine effect */}
                     <div className="absolute inset-0 z-0 bg-gradient-to-r from-transparent via-black/10 to-transparent -translate-x-[150%] skew-x-[-20deg] group-hover:translate-x-[150%] transition-transform duration-1000 ease-in-out" />
 
-                    <span className="relative z-10 transition-colors duration-300 tracking-tight">Get Started</span>
+                    <span className="relative z-10 transition-colors duration-300 tracking-tight">Jetzt starten</span>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 text-sapphire relative z-10 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
                         <line x1="7" y1="17" x2="17" y2="7" />
                         <polyline points="7 7 17 7 17 17" />
@@ -88,9 +88,14 @@ export default function Footer() {
                 {/* Divider */}
                 <div className="w-full h-px bg-black/5 dark:bg-white/5 mb-6" />
 
+                {/* Address for Local SEO */}
+                <p className="text-xs text-muted-foreground mb-2">
+                    Axionea GbR · Gaimersheim, Bayern 🇩🇪
+                </p>
+
                 {/* Copyright */}
                 <p className="text-xs text-muted-foreground" suppressHydrationWarning>
-                    AXIONEA © {new Date().getFullYear()}. All rights reserved.
+                    AXIONEA © {new Date().getFullYear()}. Alle Rechte vorbehalten.
                 </p>
             </div>
         </footer>

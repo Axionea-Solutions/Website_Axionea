@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { LetterReveal } from "./ui/LetterReveal";
 import { IndustrySelector } from "./roi-calculator/IndustrySelector";
@@ -10,27 +10,9 @@ import { SourceAccordion } from "./roi-calculator/SourceAccordion";
 import { AnimatedCounter } from "./roi-calculator/AnimatedCounter";
 import { AnimatedGraphic } from "./roi-calculator/AnimatedGraphic";
 import { calculateROI, CalculatorInput } from "./roi-calculator/roi-calculator.utils";
+import { useInView } from "@/hooks/useInView";
 
-function useInView(threshold = 0.15) {
-    const ref = useRef<HTMLDivElement>(null);
-    const [isInView, setIsInView] = useState(false);
-    useEffect(() => {
-        const el = ref.current;
-        if (!el) return;
-        const obs = new IntersectionObserver(
-            ([e]) => {
-                if (e.isIntersecting) {
-                    setIsInView(true);
-                    obs.disconnect();
-                }
-            },
-            { threshold }
-        );
-        obs.observe(el);
-        return () => obs.disconnect();
-    }, [threshold]);
-    return { ref, isInView };
-}
+
 
 export default function ROICalculator() {
     const { ref, isInView } = useInView(0.1);
@@ -76,7 +58,7 @@ export default function ROICalculator() {
                             <line x1="8" y1="10" x2="16" y2="10" />
                             <line x1="8" y1="14" x2="12" y2="14" />
                         </svg>
-                        ROI CALCULATOR
+                        ROI RECHNER
                     </span>
                     <h2
                         className="text-[clamp(28px,6vw,52px)] font-sans font-medium tracking-tight leading-tight mb-4 break-words hyphens-auto"
@@ -226,7 +208,7 @@ export default function ROICalculator() {
 
                                     <a
                                         href="#kontakt"
-                                        className="mt-6 w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-sapphire text-white font-semibold text-base transition-all duration-300 hover:bg-sapphire-hover hover:scale-[1.02] shadow-[0_8px_32px_rgba(15,82,186,0.3)]"
+                                        className="mt-6 w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-sapphire text-white font-semibold text-base transition-all duration-300 hover:bg-sapphire-hover hover:shadow-[0_8px_32px_rgba(15,82,186,0.5)] shadow-[0_8px_32px_rgba(15,82,186,0.3)]"
                                     >
                                         Kostenloses Erstgespräch buchen
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">

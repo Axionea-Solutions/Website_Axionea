@@ -3,7 +3,7 @@
 export default function WorkflowDiagram() {
     return (
         <section id="workflow" className="py-16 md:py-24 px-6">
-            <div className="max-w-7xl mx-auto">
+            <div className="max-w-6xl mx-auto">
                 {/* Section Header */}
                 <div className="text-center mb-10 md:mb-16">
                     <span className="text-xs font-bold tracking-[3px] uppercase text-sapphire mb-4 block">ARCHITEKTUR</span>

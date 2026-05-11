@@ -1,24 +1,9 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
 import Image from "next/image";
+import { useInView } from "@/hooks/useInView";
 
-/* ──────────────── useInView hook ──────────────── */
-function useInView(threshold = 0.1) {
-    const ref = useRef<HTMLDivElement>(null);
-    const [isInView, setIsInView] = useState(false);
-    useEffect(() => {
-        const el = ref.current;
-        if (!el) return;
-        const obs = new IntersectionObserver(
-            ([e]) => { if (e.isIntersecting) { setIsInView(true); obs.unobserve(el); } },
-            { threshold }
-        );
-        obs.observe(el);
-        return () => obs.disconnect();
-    }, [threshold]);
-    return { ref, isInView };
-}
+
 
 /* ──────────────── Process Card ──────────────── */
 function ProcessCard({
@@ -52,25 +37,25 @@ function ProcessCard({
                 transition: `all 1.5s cubic-bezier(0.16, 1, 0.3, 1) ${index * 0.25}s`,
             }}
         >
-            <div className="group relative h-full rounded-3xl border border-gray-200 bg-white transition-all duration-500 hover:border-sapphire/30 hover:shadow-[0_20px_60px_-15px_rgba(15,82,186,0.12)] shadow-[0_2px_16px_-4px_rgba(0,0,0,0.06)] overflow-hidden">
+            <div className="group relative h-full rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-md transition-all duration-500 hover:border-sapphire/30 hover:shadow-[0_20px_60px_-15px_rgba(15,82,186,0.2)] shadow-[0_2px_24px_-4px_rgba(0,0,0,0.3)] overflow-hidden">
                 {/* Inner highlight */}
                 <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-sapphire/[0.02] via-transparent to-transparent pointer-events-none" />
 
                 {/* Content section */}
                 <div className="relative p-6 pb-4">
                     {/* Icon */}
-                    <div className="w-11 h-11 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-center mb-4 shadow-sm text-sapphire">
+                    <div className="w-11 h-11 rounded-xl bg-white/[0.06] border border-white/10 flex items-center justify-center mb-4 shadow-sm text-sapphire">
                         {icon}
                     </div>
 
                     {/* Title & Description */}
                     <h3
-                        className="text-base font-bold text-slate-900 mb-2 tracking-tight group-hover:text-sapphire transition-colors duration-300"
+                        className="text-base font-bold text-foreground mb-2 tracking-tight group-hover:text-sapphire transition-colors duration-300"
                         style={{ fontFamily: "var(--font-syne)" }}
                     >
                         {title}
                     </h3>
-                    <p className="text-slate-600 text-sm leading-relaxed">
+                    <p className="text-muted-foreground text-sm leading-relaxed">
                         {description}
                     </p>
                 </div>
@@ -78,7 +63,7 @@ function ProcessCard({
                 {/* Step number row */}
                 <div className="relative flex items-center justify-between px-6 py-3">
                     <span
-                        className="text-3xl font-bold text-slate-200 tracking-tight"
+                        className="text-3xl font-bold text-white/15 tracking-tight"
                         style={{ fontFamily: "var(--font-syne)" }}
                     >
                         {step}
@@ -86,8 +71,8 @@ function ProcessCard({
                     {/* Dots */}
                     <div className="flex gap-1.5">
                         <div className="w-2 h-2 rounded-full bg-sapphire" />
-                        <div className="w-2 h-2 rounded-full bg-slate-200" />
-                        <div className="w-2 h-2 rounded-full bg-slate-200" />
+                        <div className="w-2 h-2 rounded-full bg-white/15" />
+                        <div className="w-2 h-2 rounded-full bg-white/15" />
                     </div>
                 </div>
 
@@ -113,7 +98,7 @@ function ProcessCard({
 export default function ProcessSteps() {
     return (
         <section id="prozess" className="py-16 md:py-24 px-6">
-            <div className="max-w-7xl mx-auto">
+            <div className="max-w-6xl mx-auto">
                 {/* Section Header — Badge + Heading structure */}
                 <div className="text-center mb-10 md:mb-16">
                     <span className="inline-flex items-center gap-2 text-xs font-bold tracking-[3px] uppercase text-sapphire mb-4 bg-sapphire/10 px-4 py-2 rounded-full border border-sapphire/15">

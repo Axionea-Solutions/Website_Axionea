@@ -1,24 +1,10 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { LetterReveal } from "./ui/LetterReveal";
+import { useInView } from "@/hooks/useInView";
 
-/* ──────────────── useInView hook ──────────────── */
-function useInView(threshold = 0.15) {
-    const ref = useRef<HTMLDivElement>(null);
-    const [isInView, setIsInView] = useState(false);
-    useEffect(() => {
-        const el = ref.current;
-        if (!el) return;
-        const obs = new IntersectionObserver(
-            ([e]) => { if (e.isIntersecting) { setIsInView(true); obs.unobserve(el); } },
-            { threshold }
-        );
-        obs.observe(el);
-        return () => obs.disconnect();
-    }, [threshold]);
-    return { ref, isInView };
-}
+
 
 /* ──────────────── Animated Illustrations ──────────────── */
 
@@ -31,13 +17,13 @@ function ClockIllustration() {
     return (
         <div className="relative w-full h-48 flex items-center justify-center">
             {/* Clock face */}
-            <div className="relative w-32 h-32 rounded-full bg-white border border-slate-200 shadow-md">
+            <div className="relative w-32 h-32 rounded-full bg-white/[0.06] border border-white/10 shadow-md">
                 {/* Inner shadow ring */}
-                <div className="absolute inset-1 rounded-full border border-slate-100" />
+                <div className="absolute inset-1 rounded-full border border-white/5" />
                 {/* Hour markers */}
                 {[0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330].map(deg => (
                     <div key={deg} className="absolute w-full h-full" style={{ transform: `rotate(${deg}deg)` }}>
-                        <div className="absolute top-2 left-1/2 -translate-x-1/2 w-0.5 h-2 bg-slate-300 rounded-full" />
+                        <div className="absolute top-2 left-1/2 -translate-x-1/2 w-0.5 h-2 bg-white/20 rounded-full" />
                     </div>
                 ))}
                 {/* Minute hand */}
@@ -50,7 +36,7 @@ function ClockIllustration() {
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-sapphire shadow-[0_0_8px_rgba(15,82,186,0.4)]" />
             </div>
             {/* 12 o'clock indicator */}
-            <div className="absolute top-3 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-slate-100 border border-slate-300 shadow-sm" />
+            <div className="absolute top-3 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-white/10 border border-white/20 shadow-sm" />
         </div>
     );
 }
@@ -169,24 +155,24 @@ function BenefitCard({
                 transition: `all 1.5s cubic-bezier(0.16, 1, 0.3, 1) ${index * 0.25}s`,
             }}
         >
-            <div className="group relative h-full rounded-3xl border border-gray-200 bg-white transition-all duration-500 hover:border-sapphire/30 hover:shadow-[0_20px_60px_-15px_rgba(15,82,186,0.12)] shadow-[0_2px_16px_-4px_rgba(0,0,0,0.06)] overflow-hidden">
+            <div className="group relative h-full rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-md transition-all duration-500 hover:border-sapphire/30 hover:shadow-[0_20px_60px_-15px_rgba(15,82,186,0.2)] shadow-[0_2px_24px_-4px_rgba(0,0,0,0.3)] overflow-hidden">
                 {/* Inner highlight */}
                 <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-sapphire/[0.02] via-transparent to-transparent pointer-events-none" />
 
                 {/* Illustration area */}
-                <div className="relative border-b border-white/[0.04]">
+                <div className="relative border-b border-white/[0.06]">
                     {illustration}
                 </div>
 
                 {/* Content */}
                 <div className="p-6">
                     <h3
-                        className="text-base font-bold text-slate-900 mb-2 tracking-tight group-hover:text-sapphire transition-colors duration-300"
+                        className="text-base font-bold text-foreground mb-2 tracking-tight group-hover:text-sapphire transition-colors duration-300"
                         style={{ fontFamily: "var(--font-syne)" }}
                     >
                         {title}
                     </h3>
-                    <p className="text-slate-600 text-sm leading-relaxed">
+                    <p className="text-muted-foreground text-sm leading-relaxed">
                         {description}
                     </p>
                 </div>
@@ -200,14 +186,14 @@ function BenefitCard({
 export default function WhyChooseUs() {
     return (
         <section id="warum" className="py-16 md:py-24 px-6">
-            <div className="max-w-7xl mx-auto">
+            <div className="max-w-6xl mx-auto">
                 {/* Section Header */}
                 <div className="text-center mb-10 md:mb-16">
                     <span className="inline-flex items-center gap-2 text-xs font-bold tracking-[3px] uppercase text-sapphire mb-4 bg-sapphire/10 px-4 py-2 rounded-full border border-sapphire/15">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5">
                             <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
                         </svg>
-                        BENEFITS
+                        VORTEILE
                     </span>
                     <h2
                         className="text-[clamp(32px,5vw,56px)] font-bold tracking-tight leading-tight mb-4"
