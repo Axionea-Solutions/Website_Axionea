@@ -37,7 +37,7 @@ function ProcessCard({
                 transition: `all 1.5s cubic-bezier(0.16, 1, 0.3, 1) ${index * 0.25}s`,
             }}
         >
-            <div className="group relative h-full rounded-3xl border border-slate-200 bg-white transition-all duration-500 hover:border-sapphire/30 hover:shadow-[0_20px_60px_-15px_rgba(15,82,186,0.15)] shadow-[0_4px_24px_-4px_rgba(0,0,0,0.08)] overflow-hidden">
+            <div className="group relative h-full rounded-3xl border border-slate-200 bg-white transition-all duration-500 hover:border-sapphire/40 hover:shadow-[0_20px_60px_-10px_rgba(15,82,186,0.25)] hover:-translate-y-1 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.08)] overflow-hidden">
                 {/* Inner highlight */}
                 <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-sapphire/[0.01] via-transparent to-transparent pointer-events-none" />
 
@@ -50,7 +50,7 @@ function ProcessCard({
 
                     {/* Title & Description */}
                     <h3
-                        className="text-base font-bold text-foreground mb-2 tracking-tight group-hover:text-sapphire transition-colors duration-300"
+                        className="text-base font-bold text-sapphire mb-2 tracking-tight"
                         style={{ fontFamily: "var(--font-syne)" }}
                     >
                         {title}
