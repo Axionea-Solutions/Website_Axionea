@@ -9,8 +9,12 @@ Input_ROI_Rechner/
 Website/ROI_Rechner/
 
 # Ignore AI/IDE configuration
-.claude/
 .gemini/
+
+# Claude Code — persönliche Overrides gitignoren, geteilte Konfigs tracken
+.claude/settings.local.json
+.claude/worktrees/
+CLAUDE.local.md
 
 # Ignore sensitive files
 .env

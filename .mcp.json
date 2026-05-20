@@ -1,0 +1,22 @@
+{
+  "mcpServers": {
+    "hubspot": {
+      "type": "http",
+      "url": "https://mcp.hubspot.com/",
+      "note": "HubSpot CRM — Authentifizierung via OAuth (kein API-Key nötig)"
+    },
+    "context7": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp@latest"],
+      "note": "Injiziert aktuelle Library-Docs in den Kontext — einfach 'use context7' an Prompts anhängen"
+    },
+    "playwright": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@playwright/mcp@latest"],
+      "note": "Browser-Automation — scrapet JS-rendered Seiten, Screenshots, UI-Tests"
+    }
+  },
+  "_note": "Secrets (API-Keys, Tokens) gehören in .env — niemals in diese Datei"
+}
