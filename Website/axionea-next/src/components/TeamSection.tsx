@@ -31,9 +31,9 @@ function TeamCard({
                 transition: `all 1.5s cubic-bezier(0.16, 1, 0.3, 1) ${index * 0.25}s`,
             }}
         >
-            <div className="group relative h-full rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-md p-8 transition-all duration-500 hover:border-sapphire/30 hover:shadow-[0_20px_60px_-15px_rgba(15,82,186,0.2)] shadow-[0_2px_24px_-4px_rgba(0,0,0,0.3)]">
+            <div className="group relative h-full rounded-3xl border border-slate-200 bg-white p-8 transition-all duration-500 hover:border-sapphire/30 hover:shadow-[0_20px_60px_-15px_rgba(15,82,186,0.15)] shadow-[0_4px_24px_-4px_rgba(0,0,0,0.08)]">
                 {/* Inner highlight */}
-                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-sapphire/[0.02] via-transparent to-transparent pointer-events-none" />
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-sapphire/[0.01] via-transparent to-transparent pointer-events-none" />
 
                 <div className="relative flex flex-col items-center text-center">
                     {/* Avatar */}

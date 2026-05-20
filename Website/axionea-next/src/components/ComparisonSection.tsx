@@ -61,10 +61,10 @@ export default function ComparisonSection() {
                         transition: "all 1s cubic-bezier(0.16, 1, 0.3, 1)",
                     }}
                 >
-                    <div className="rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-md shadow-[0_2px_24px_-4px_rgba(0,0,0,0.3)] overflow-hidden">
+                    <div className="rounded-3xl border border-slate-200 bg-white shadow-[0_4px_24px_-4px_rgba(0,0,0,0.08)] overflow-hidden">
                         <div className="grid grid-cols-1 md:grid-cols-2">
                             {/* Axionea Column */}
-                            <div className="p-8 md:p-10 md:border-r border-b md:border-b-0 border-white/10">
+                            <div className="p-8 md:p-10 md:border-r border-b md:border-b-0 border-slate-200">
                                 <h3
                                     className="text-2xl md:text-3xl font-bold text-sapphire mb-8 tracking-tight"
                                     style={{ fontFamily: "var(--font-syne)" }}
@@ -72,7 +72,7 @@ export default function ComparisonSection() {
                                     Axionea
                                 </h3>
 
-                                <div className="h-px w-full bg-white/10 mb-6" style={{ backgroundImage: "repeating-linear-gradient(90deg, currentColor 0, currentColor 4px, transparent 4px, transparent 10px)", backgroundSize: "10px 1px", opacity: 0.15 }} />
+                                <div className="h-px w-full bg-slate-200 mb-6" style={{ backgroundImage: "repeating-linear-gradient(90deg, currentColor 0, currentColor 4px, transparent 4px, transparent 10px)", backgroundSize: "10px 1px", opacity: 0.3 }} />
 
                                 <ul className="space-y-4">
                                     {axioneaFeatures.map((f, i) => (
@@ -102,7 +102,7 @@ export default function ComparisonSection() {
                             </div>
 
                             {/* Others Column */}
-                            <div className="p-8 md:p-10 bg-white/[0.02]">
+                            <div className="p-8 md:p-10 bg-slate-50/50">
                                 <h3
                                     className="text-2xl md:text-3xl font-bold mb-8 tracking-tight text-muted-foreground"
                                     style={{ fontFamily: "var(--font-syne)" }}

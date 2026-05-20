@@ -17,13 +17,13 @@ function ClockIllustration() {
     return (
         <div className="relative w-full h-48 flex items-center justify-center">
             {/* Clock face */}
-            <div className="relative w-32 h-32 rounded-full bg-white/[0.06] border border-white/10 shadow-md">
+            <div className="relative w-32 h-32 rounded-full bg-slate-50 border border-slate-200 shadow-md">
                 {/* Inner shadow ring */}
-                <div className="absolute inset-1 rounded-full border border-white/5" />
+                <div className="absolute inset-1 rounded-full border border-slate-100" />
                 {/* Hour markers */}
                 {[0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330].map(deg => (
                     <div key={deg} className="absolute w-full h-full" style={{ transform: `rotate(${deg}deg)` }}>
-                        <div className="absolute top-2 left-1/2 -translate-x-1/2 w-0.5 h-2 bg-white/20 rounded-full" />
+                        <div className="absolute top-2 left-1/2 -translate-x-1/2 w-0.5 h-2 bg-slate-300 rounded-full" />
                     </div>
                 ))}
                 {/* Minute hand */}
@@ -36,7 +36,7 @@ function ClockIllustration() {
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-sapphire shadow-[0_0_8px_rgba(15,82,186,0.4)]" />
             </div>
             {/* 12 o'clock indicator */}
-            <div className="absolute top-3 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-white/10 border border-white/20 shadow-sm" />
+            <div className="absolute top-3 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-slate-100 border border-slate-200 shadow-sm" />
         </div>
     );
 }
@@ -155,12 +155,12 @@ function BenefitCard({
                 transition: `all 1.5s cubic-bezier(0.16, 1, 0.3, 1) ${index * 0.25}s`,
             }}
         >
-            <div className="group relative h-full rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-md transition-all duration-500 hover:border-sapphire/30 hover:shadow-[0_20px_60px_-15px_rgba(15,82,186,0.2)] shadow-[0_2px_24px_-4px_rgba(0,0,0,0.3)] overflow-hidden">
+            <div className="group relative h-full rounded-3xl border border-slate-200 bg-white transition-all duration-500 hover:border-sapphire/30 hover:shadow-[0_20px_60px_-15px_rgba(15,82,186,0.15)] shadow-[0_4px_24px_-4px_rgba(0,0,0,0.08)] overflow-hidden">
                 {/* Inner highlight */}
-                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-sapphire/[0.02] via-transparent to-transparent pointer-events-none" />
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-sapphire/[0.01] via-transparent to-transparent pointer-events-none" />
 
                 {/* Illustration area */}
-                <div className="relative border-b border-white/[0.06]">
+                <div className="relative border-b border-slate-100">
                     {illustration}
                 </div>
 

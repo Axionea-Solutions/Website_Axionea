@@ -37,14 +37,14 @@ function ProcessCard({
                 transition: `all 1.5s cubic-bezier(0.16, 1, 0.3, 1) ${index * 0.25}s`,
             }}
         >
-            <div className="group relative h-full rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-md transition-all duration-500 hover:border-sapphire/30 hover:shadow-[0_20px_60px_-15px_rgba(15,82,186,0.2)] shadow-[0_2px_24px_-4px_rgba(0,0,0,0.3)] overflow-hidden">
+            <div className="group relative h-full rounded-3xl border border-slate-200 bg-white transition-all duration-500 hover:border-sapphire/30 hover:shadow-[0_20px_60px_-15px_rgba(15,82,186,0.15)] shadow-[0_4px_24px_-4px_rgba(0,0,0,0.08)] overflow-hidden">
                 {/* Inner highlight */}
-                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-sapphire/[0.02] via-transparent to-transparent pointer-events-none" />
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-sapphire/[0.01] via-transparent to-transparent pointer-events-none" />
 
                 {/* Content section */}
                 <div className="relative p-6 pb-4">
                     {/* Icon */}
-                    <div className="w-11 h-11 rounded-xl bg-white/[0.06] border border-white/10 flex items-center justify-center mb-4 shadow-sm text-sapphire">
+                    <div className="w-11 h-11 rounded-xl bg-sapphire/5 border border-sapphire/10 flex items-center justify-center mb-4 shadow-sm text-sapphire">
                         {icon}
                     </div>
 
@@ -63,7 +63,7 @@ function ProcessCard({
                 {/* Step number row */}
                 <div className="relative flex items-center justify-between px-6 py-3">
                     <span
-                        className="text-3xl font-bold text-white/15 tracking-tight"
+                        className="text-3xl font-bold text-slate-200 tracking-tight"
                         style={{ fontFamily: "var(--font-syne)" }}
                     >
                         {step}
@@ -71,13 +71,13 @@ function ProcessCard({
                     {/* Dots */}
                     <div className="flex gap-1.5">
                         <div className="w-2 h-2 rounded-full bg-sapphire" />
-                        <div className="w-2 h-2 rounded-full bg-white/15" />
-                        <div className="w-2 h-2 rounded-full bg-white/15" />
+                        <div className="w-2 h-2 rounded-full bg-slate-200" />
+                        <div className="w-2 h-2 rounded-full bg-slate-200" />
                     </div>
                 </div>
 
                 {/* Image */}
-                <div className="relative mx-4 mb-4 rounded-2xl overflow-hidden border border-white/[0.06] bg-white/[0.02]">
+                <div className="relative mx-4 mb-4 rounded-2xl overflow-hidden border border-slate-100 bg-slate-50">
                     <Image
                         src={imageSrc}
                         alt={imageAlt ?? title}

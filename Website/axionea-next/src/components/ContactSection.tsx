@@ -100,9 +100,9 @@ export default function ContactSection() {
                         {contactInfo.map((info, i) => (
                             <div
                                 key={i}
-                                className="group rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-md shadow-[0_2px_24px_-4px_rgba(0,0,0,0.3)] p-6 transition-all duration-300 hover:border-sapphire/30"
+                                className="group rounded-2xl border border-slate-200 bg-white shadow-[0_4px_24px_-4px_rgba(0,0,0,0.08)] p-6 transition-all duration-300 hover:border-sapphire/30"
                             >
-                                <div className="w-10 h-10 rounded-xl bg-white/[0.06] border border-white/10 flex items-center justify-center text-muted-foreground mb-3 group-hover:text-sapphire transition-colors duration-300">
+                                <div className="w-10 h-10 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-center text-muted-foreground mb-3 group-hover:text-sapphire transition-colors duration-300">
                                     {info.icon}
                                 </div>
                                 <p className="text-sm font-bold text-sapphire mb-1">{info.label}</p>
@@ -137,7 +137,7 @@ export default function ContactSection() {
                     </div>
 
                     {/* Right: Contact Form */}
-                    <div className="rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-md shadow-[0_2px_24px_-4px_rgba(0,0,0,0.3)] p-8">
+                    <div className="rounded-2xl border border-slate-200 bg-white shadow-[0_4px_24px_-4px_rgba(0,0,0,0.08)] p-8">
                         <form onSubmit={handleSubmit} className="space-y-5">
                             <div>
                                 <label className="block text-sm font-semibold text-foreground mb-2">Name</label>
@@ -147,7 +147,7 @@ export default function ContactSection() {
                                     placeholder="Max Mustermann"
                                     value={formData.name}
                                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                                    className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 text-foreground text-sm placeholder:text-muted-foreground outline-none focus:border-sapphire/40 focus:ring-1 focus:ring-sapphire/20 transition-all"
+                                    className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-foreground text-sm placeholder:text-muted-foreground outline-none focus:border-sapphire/40 focus:ring-1 focus:ring-sapphire/20 transition-all"
                                 />
                             </div>
                             <div>
@@ -157,7 +157,7 @@ export default function ContactSection() {
                                     placeholder="Muster GmbH"
                                     value={formData.company}
                                     onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                                    className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 text-foreground text-sm placeholder:text-muted-foreground outline-none focus:border-sapphire/40 focus:ring-1 focus:ring-sapphire/20 transition-all"
+                                    className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-foreground text-sm placeholder:text-muted-foreground outline-none focus:border-sapphire/40 focus:ring-1 focus:ring-sapphire/20 transition-all"
                                 />
                             </div>
                             <div>
@@ -168,7 +168,7 @@ export default function ContactSection() {
                                     placeholder="max@firma.de"
                                     value={formData.email}
                                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                                    className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 text-foreground text-sm placeholder:text-muted-foreground outline-none focus:border-sapphire/40 focus:ring-1 focus:ring-sapphire/20 transition-all"
+                                    className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-foreground text-sm placeholder:text-muted-foreground outline-none focus:border-sapphire/40 focus:ring-1 focus:ring-sapphire/20 transition-all"
                                 />
                             </div>
                             <div>
@@ -179,7 +179,7 @@ export default function ContactSection() {
                                     placeholder="Wie kann Axionea dir helfen?"
                                     value={formData.message}
                                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                                    className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 text-foreground text-sm placeholder:text-muted-foreground outline-none focus:border-sapphire/40 focus:ring-1 focus:ring-sapphire/20 transition-all resize-none"
+                                    className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-foreground text-sm placeholder:text-muted-foreground outline-none focus:border-sapphire/40 focus:ring-1 focus:ring-sapphire/20 transition-all resize-none"
                                 />
                             </div>
                             <button

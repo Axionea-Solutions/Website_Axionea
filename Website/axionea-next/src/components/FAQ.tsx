@@ -22,7 +22,7 @@ function FAQItem({ question, answer, index }: { question: string; answer: string
     return (
         <div
             ref={ref}
-            className="border-b border-white/10 last:border-b-0"
+            className="border-b border-slate-200 last:border-b-0"
             style={{
                 opacity: isInView ? 1 : 0,
                 transform: isInView ? "translateY(0)" : "translateY(10px)",
@@ -39,7 +39,7 @@ function FAQItem({ question, answer, index }: { question: string; answer: string
                 >
                     {question}
                 </span>
-                <div className={`w-8 h-8 rounded-lg bg-white/[0.04] border border-white/10 flex items-center justify-center shrink-0 ml-4 transition-all duration-300 ${isOpen ? 'bg-sapphire/10 border-sapphire/20 rotate-45' : 'group-hover:bg-white/[0.06]'}`}>
+                <div className={`w-8 h-8 rounded-lg bg-slate-50 border border-slate-200 flex items-center justify-center shrink-0 ml-4 transition-all duration-300 ${isOpen ? 'bg-sapphire/10 border-sapphire/20 rotate-45' : 'group-hover:bg-slate-100'}`}>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={`w-4 h-4 transition-colors duration-300 ${isOpen ? 'text-sapphire' : 'text-muted-foreground'}`}>
                         <line x1="12" y1="5" x2="12" y2="19" />
                         <line x1="5" y1="12" x2="19" y2="12" />
@@ -115,7 +115,7 @@ export default function FAQ() {
                 </div>
 
                 {/* FAQ Accordion */}
-                <div className="rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-md shadow-[0_2px_24px_-4px_rgba(0,0,0,0.3)] overflow-hidden">
+                <div className="rounded-2xl border border-slate-200 bg-white shadow-[0_4px_24px_-4px_rgba(0,0,0,0.08)] overflow-hidden">
                     {faqs.map((faq, i) => (
                         <FAQItem key={i} question={faq.question} answer={faq.answer} index={i} />
                     ))}
