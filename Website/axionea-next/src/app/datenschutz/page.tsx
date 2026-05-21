@@ -5,14 +5,14 @@ import AnimatedNavbar from '@/components/AnimatedNavbar';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Datenschutzerklärung',
-    description: 'Datenschutzerklärung der Axionea GbR gemäß DSGVO. Wir verarbeiten Ihre Daten DSGVO-konform auf Servern in Deutschland.',
+    title: 'Datenschutz | Axionea Solutions',
+    description: 'Datenschutzerklärung der Axionea Solutions GbR. Wir verarbeiten Daten DSGVO-konform und ausschließlich in der EU.',
     robots: {
-        index: false,
-        follow: false,
+        index: true,
+        follow: true,
     },
     alternates: {
-        canonical: 'https://axionea.de/datenschutz',
+        canonical: 'https://www.axionea-solutions.de/datenschutz',
     },
 };
 

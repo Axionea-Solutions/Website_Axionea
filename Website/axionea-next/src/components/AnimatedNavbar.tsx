@@ -25,6 +25,7 @@ export default function AnimatedNavbar() {
             textColor: isDark ? "#ffffff" : "#000926",
             links: [
                 { label: "Alle Services", href: "/#services", ariaLabel: "Alle Services ansehen" },
+                { label: "KI-Schulungen", href: "/#services", ariaLabel: "KI-Schulungen" },
                 { label: "Unser Prozess", href: "/#prozess", ariaLabel: "Unser Prozess" },
                 { label: "KI-Architektur", href: "/#workflow", ariaLabel: "KI-Architektur" },
             ],

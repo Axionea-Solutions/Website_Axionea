@@ -1,10 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { LetterReveal } from "./ui/LetterReveal";
 import { useInView } from "@/hooks/useInView";
-
-
+import { LetterReveal } from "./ui/LetterReveal";
 
 const contactInfo = [
     {
@@ -51,21 +48,6 @@ const contactInfo = [
 
 export default function ContactSection() {
     const { ref, isInView } = useInView(0.1);
-    const [formData, setFormData] = useState({ name: "", company: "", email: "", message: "" });
-    const [isSubmitting, setIsSubmitting] = useState(false);
-    const [submitted, setSubmitted] = useState(false);
-
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        setIsSubmitting(true);
-        // Simulate submission
-        setTimeout(() => {
-            setIsSubmitting(false);
-            setSubmitted(true);
-            setFormData({ name: "", company: "", email: "", message: "" });
-            setTimeout(() => setSubmitted(false), 4000);
-        }, 1500);
-    };
 
     return (
         <section id="kontakt" className="py-16 md:py-24 px-6">
@@ -100,26 +82,33 @@ export default function ContactSection() {
                         {contactInfo.map((info, i) => (
                             <div
                                 key={i}
-                                className="group rounded-2xl border border-slate-200 bg-white shadow-[0_4px_24px_-4px_rgba(0,0,0,0.08)] p-6 transition-all duration-300 hover:border-sapphire/30"
+                                className="group rounded-2xl border border-slate-200 bg-white shadow-[0_4px_24px_-4px_rgba(0,0,0,0.08)] p-6 transition-all duration-500 hover:border-sapphire/50 hover:shadow-[0_0_20px_rgba(15,82,186,0.25),0_0_50px_rgba(15,82,186,0.12)] hover:-translate-y-1"
                             >
-                                <div className="w-10 h-10 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-center text-muted-foreground mb-3 group-hover:text-sapphire transition-colors duration-300">
+                                <div className="w-10 h-10 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-center text-slate-500 mb-3 group-hover:text-sapphire transition-colors duration-300">
                                     {info.icon}
                                 </div>
                                 <p className="text-sm font-bold text-sapphire mb-1">{info.label}</p>
                                 {info.href ? (
-                                    <a href={info.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                                    <a href={info.href} className="text-sm text-slate-600 hover:text-slate-900 transition-colors">
                                         {info.value}
                                     </a>
                                 ) : (
-                                    <p className="text-sm text-muted-foreground">{info.value}</p>
+                                    <p className="text-sm text-slate-600">{info.value}</p>
                                 )}
                             </div>
                         ))}
 
                         {/* Book a Call */}
-                        <a
-                            href="#"
-                            className="group rounded-2xl border border-sapphire/20 bg-sapphire/5 p-6 flex items-center gap-4 transition-all duration-300 hover:bg-sapphire/10 hover:border-sapphire/30 cursor-pointer"
+                        <button
+                            onClick={(e) => {
+                                e.preventDefault();
+                                // @ts-ignore
+                                if (window.Calendly) {
+                                    // @ts-ignore
+                                    window.Calendly.initPopupWidget({ url: '[CALENDLY-LINK EINFÜGEN]' });
+                                }
+                            }}
+                            className="w-full text-left group rounded-2xl border border-sapphire/20 bg-sapphire/5 p-6 flex items-center gap-4 transition-all duration-300 hover:bg-sapphire/10 hover:border-sapphire/30 cursor-pointer"
                         >
                             <div className="w-10 h-10 rounded-xl bg-sapphire/15 border border-sapphire/20 flex items-center justify-center text-sapphire shrink-0">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
@@ -128,84 +117,28 @@ export default function ContactSection() {
                             </div>
                             <div>
                                 <p className="text-sm font-bold text-sapphire">Termin buchen</p>
-                                <p className="text-xs text-muted-foreground">Kostenloses 15-Min Erstgespräch buchen</p>
+                                <p className="text-xs text-slate-600">Kostenloses 15-Min Erstgespräch buchen</p>
                             </div>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 text-sapphire ml-auto group-hover:translate-x-1 transition-transform">
                                 <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
                             </svg>
-                        </a>
+                        </button>
                     </div>
 
                     {/* Right: Contact Form */}
-                    <div className="rounded-2xl border border-slate-200 bg-white shadow-[0_4px_24px_-4px_rgba(0,0,0,0.08)] p-8">
-                        <form onSubmit={handleSubmit} className="space-y-5">
-                            <div>
-                                <label className="block text-sm font-semibold text-foreground mb-2">Name</label>
-                                <input
-                                    type="text"
-                                    required
-                                    placeholder="Max Mustermann"
-                                    value={formData.name}
-                                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                                    className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-foreground text-sm placeholder:text-muted-foreground outline-none focus:border-sapphire/40 focus:ring-1 focus:ring-sapphire/20 transition-all"
-                                />
-                            </div>
-                            <div>
-                                <label className="block text-sm font-semibold text-foreground mb-2">Firma</label>
-                                <input
-                                    type="text"
-                                    placeholder="Muster GmbH"
-                                    value={formData.company}
-                                    onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                                    className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-foreground text-sm placeholder:text-muted-foreground outline-none focus:border-sapphire/40 focus:ring-1 focus:ring-sapphire/20 transition-all"
-                                />
-                            </div>
-                            <div>
-                                <label className="block text-sm font-semibold text-foreground mb-2">E-Mail</label>
-                                <input
-                                    type="email"
-                                    required
-                                    placeholder="max@firma.de"
-                                    value={formData.email}
-                                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                                    className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-foreground text-sm placeholder:text-muted-foreground outline-none focus:border-sapphire/40 focus:ring-1 focus:ring-sapphire/20 transition-all"
-                                />
-                            </div>
-                            <div>
-                                <label className="block text-sm font-semibold text-foreground mb-2">Nachricht</label>
-                                <textarea
-                                    required
-                                    rows={4}
-                                    placeholder="Wie kann Axionea dir helfen?"
-                                    value={formData.message}
-                                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                                    className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-foreground text-sm placeholder:text-muted-foreground outline-none focus:border-sapphire/40 focus:ring-1 focus:ring-sapphire/20 transition-all resize-none"
-                                />
-                            </div>
-                            <button
-                                type="submit"
-                                disabled={isSubmitting}
-                                className="w-full flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-sapphire text-white font-semibold text-sm transition-all duration-300 hover:bg-sapphire-hover hover:shadow-[0_8px_32px_rgba(15,82,186,0.3)] disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer"
-                            >
-                                {isSubmitting ? (
-                                    <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                                ) : submitted ? (
-                                    <>
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
-                                            <polyline points="20 6 9 17 4 12" />
-                                        </svg>
-                                        Nachricht gesendet!
-                                    </>
-                                ) : (
-                                    <>
-                                        Nachricht senden
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
-                                            <line x1="22" y1="2" x2="11" y2="13" /><polygon points="22 2 15 22 11 13 2 9 22 2" />
-                                        </svg>
-                                    </>
-                                )}
-                            </button>
-                        </form>
+                    <div className="rounded-2xl border border-slate-200 bg-white shadow-[0_4px_24px_-4px_rgba(0,0,0,0.08)] p-8 transition-all duration-500 hover:border-sapphire/50 hover:shadow-[0_0_20px_rgba(15,82,186,0.25),0_0_50px_rgba(15,82,186,0.12)]">
+                        {/* HubSpot Form Placeholder */}
+                        <div id="hubspot-form-container" className="min-h-[500px] flex flex-col items-center justify-center border-2 border-dashed border-slate-200 rounded-xl bg-slate-50 text-slate-500 p-8 text-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-10 h-10 mb-4 text-slate-300">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                                <polyline points="14 2 14 8 20 8" />
+                                <line x1="16" y1="13" x2="8" y2="13" />
+                                <line x1="16" y1="17" x2="8" y2="17" />
+                                <polyline points="10 9 9 9 8 9" />
+                            </svg>
+                            <p className="font-medium text-slate-700 mb-2">HubSpot Formular</p>
+                            <p className="text-sm">Hier wird das HubSpot Embed-Skript eingefügt.</p>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -41,12 +41,12 @@ export default function ComplianceBadges() {
                 {badges.map((badge, idx) => (
                     <div 
                         key={idx}
-                        className="group relative flex flex-col items-center text-center p-8 rounded-2xl border border-slate-200 bg-white shadow-[0_4px_24px_-4px_rgba(0,0,0,0.08)] hover:border-sapphire/40 hover:shadow-[0_20px_60px_-10px_rgba(15,82,186,0.25)] hover:-translate-y-1 transition-all duration-300"
+                        className="group relative flex flex-col items-center text-center p-8 rounded-2xl border border-slate-200 bg-white shadow-[0_4px_24px_-4px_rgba(0,0,0,0.08)] hover:border-sapphire/50 hover:shadow-[0_0_20px_rgba(15,82,186,0.25),0_0_50px_rgba(15,82,186,0.12)] hover:-translate-y-1 transition-all duration-300"
                     >
                         <div className="mb-4 p-4 rounded-full bg-sapphire/10 border border-sapphire/20 group-hover:shadow-[0_0_20px_rgba(15,82,186,0.3)] transition-all duration-300">
                             {badge.icon}
                         </div>
-                        <h3 className="text-xl font-bold text-foreground mb-2" style={{ fontFamily: "var(--font-syne)" }}>
+                        <h3 className="text-xl font-bold text-sapphire mb-2" style={{ fontFamily: "var(--font-syne)" }}>
                             {badge.title}
                         </h3>
                         <p className="text-muted-foreground text-sm leading-relaxed">

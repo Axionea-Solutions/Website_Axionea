@@ -6,25 +6,25 @@ import { useInView } from "@/hooks/useInView";
 
 
 const axioneaFeatures = [
-    "Automatisierte Workflows",
-    "Agents",
-    "Personalisierte KI-Strategien",
-    "Datengestützte Echtzeit-Insights",
-    "Skalierbare KI-Systeme",
-    "Trainierte Chatbots",
-    "Schnelle KI-generierte Inhalte",
-    "Echtzeit-Datenanalyse",
+    "Echtes Developer-Wissen (kein 'VibeCoding')",
+    "Konzern-Governance & IT-Sicherheit",
+    "Nachhaltiges Change Management",
+    "Tiefes Enterprise AI-Wissen",
+    "Maßgeschneiderte KI-Architekturen",
+    "Skalierbare System-Integration",
+    "Autonome KI-Agenten & Chatbots",
+    "Laufende Team-Befähigung",
 ];
 
 const othersFeatures = [
-    "Manuelle Workflows",
-    "Keine Agents",
+    "Zusammenkopierter 'VibeCode'",
+    "Schatten-IT & Compliance-Risiken",
+    "Projekte enden nach dem Go-Live",
+    "Oberflächliches Prompting",
     "Generische Einheitslösungen",
-    "Entscheidungen auf Bauchgefühl",
     "Fehlende Skalierbarkeit",
-    "Standard-Chatbots",
-    "Zeitaufwändige Content-Erstellung",
-    "Verzögerte Datenauswertung",
+    "Standard-Chatbots ohne Kontext",
+    "Keine langfristige Betreuung",
 ];
 
 export default function ComparisonSection() {
@@ -61,7 +61,7 @@ export default function ComparisonSection() {
                         transition: "all 1s cubic-bezier(0.16, 1, 0.3, 1)",
                     }}
                 >
-                    <div className="rounded-3xl border border-slate-200 bg-white shadow-[0_4px_24px_-4px_rgba(0,0,0,0.08)] overflow-hidden">
+                    <div className="rounded-3xl border border-slate-200 bg-white shadow-[0_4px_24px_-4px_rgba(0,0,0,0.08)] overflow-hidden transition-all duration-500 hover:border-sapphire/50 hover:shadow-[0_0_20px_rgba(15,82,186,0.25),0_0_50px_rgba(15,82,186,0.12)]">
                         <div className="grid grid-cols-1 md:grid-cols-2">
                             {/* Axionea Column */}
                             <div className="p-8 md:p-10 md:border-r border-b md:border-b-0 border-slate-200">
@@ -80,7 +80,7 @@ export default function ComparisonSection() {
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 text-sapphire shrink-0 mt-0.5">
                                                 <polyline points="20 6 9 17 4 12" />
                                             </svg>
-                                            <span className="text-sm text-foreground/80">{f}</span>
+                                            <span className="text-sm text-slate-800">{f}</span>
                                         </li>
                                     ))}
                                 </ul>

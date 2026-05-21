@@ -20,48 +20,24 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.axionea-solutions.de"),
-  title: {
-    default: "Axionea | KI-Automatisierung für den Mittelstand",
-    template: "%s | Axionea",
-  },
-  description: "Axionea automatisiert repetitive Prozesse in kleinen und mittelständischen Unternehmen — ohne eigene IT-Abteilung, ohne monatelange Einführung, ohne Enterprise-Budget. Live in 4 Wochen. DSGVO-konform. Server in Deutschland.",
+  title: "Axionea | KI-Lösungen für Arztpraxen, Kieferorthopäden & Makler",
+  description: "KI-Automatisierung für Arztpraxen, Kieferorthopäden und Immobilienmakler. DSGVO-konform, EU-AI-Act-ready, praxiserprobt. Inkl. KI-Schulungen für dein Team. Jetzt kostenloses Erstgespräch buchen.",
   keywords: [
-    "KI-Automatisierung",
-    "Mittelstand",
-    "KI Beratung",
-    "KI Agentur",
-    "Axionea",
-    "Prozesse automatisieren",
-    "Künstliche Intelligenz",
-    "KI-Chatbot",
-    "Voice Agents",
-    "Voicebots",
-    "KI-Agenten",
-    "KI Integration",
-    "Workflow Automatisierung",
-    "Prozessautomatisierung",
-    "KMU Automatisierung",
-    "DSGVO-konform",
-    "No-Code Automatisierung",
-    "Lead Generation KI",
-    "Make Automatisierung",
-    "Zapier Alternative",
-    "KI Agentur Deutschland",
-    "DACH",
-    "KI für KMU",
-    "Automatisierung ohne IT-Abteilung",
-    "KI-Automatisierung Bayern",
-    "KI Beratung München",
-    "KI Agentur Ingolstadt",
-    "Prozessautomatisierung Süddeutschland",
-    "KI Lösungen Mittelstand Bayern",
+    "KI für Arztpraxen",
+    "KI für Kieferorthopäden",
+    "KI für Immobilienmakler",
+    "KI-Schulung Mitarbeiter",
+    "DSGVO KI",
+    "EU AI Act",
+    "KI Beratung Mittelstand",
+    "KI Agentur DACH"
   ],
   authors: [
     { name: "Maximilian Zvada", url: "https://www.axionea-solutions.de" },
     { name: "Nico Fisseler", url: "https://www.axionea-solutions.de" },
   ],
-  creator: "Axionea GbR",
-  publisher: "Axionea GbR",
+  creator: "Axionea Solutions GbR",
+  publisher: "Axionea Solutions GbR",
   robots: {
     index: true,
     follow: true,
@@ -85,8 +61,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "de_DE",
     url: "https://www.axionea-solutions.de",
-    title: "Axionea | KI-Automatisierung für den Mittelstand",
-    description: "Axionea automatisiert repetitive Prozesse in KMU — ohne IT-Abteilung, ohne Enterprise-Budget. Live in 4 Wochen. DSGVO-konform.",
+    title: "Axionea | KI-Lösungen für Arztpraxen, Kieferorthopäden & Makler",
+    description: "KI-Automatisierung mit Branchenfokus — DSGVO-konform, sofort einsetzbar, inkl. Team-Schulungen.",
     siteName: "Axionea",
     images: [
       {
@@ -99,8 +75,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Axionea | KI-Automatisierung für den Mittelstand",
-    description: "Axionea automatisiert repetitive Prozesse in KMU — ohne IT-Abteilung, ohne Enterprise-Budget. Live in 4 Wochen. DSGVO-konform.",
+    title: "Axionea | KI-Lösungen für Arztpraxen, Kieferorthopäden & Makler",
+    description: "KI-Automatisierung mit Branchenfokus — DSGVO-konform, sofort einsetzbar.",
     images: ["/og-image.png"],
     creator: "@axionea",
   },
@@ -122,6 +98,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="de" className="dark" suppressHydrationWarning>
+      <head>
+        {/* Calendly Widget CSS and Script */}
+        <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+        <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+      </head>
       <body
         className={`${syne.variable} ${dmSans.variable} font-sans antialiased`}
       >

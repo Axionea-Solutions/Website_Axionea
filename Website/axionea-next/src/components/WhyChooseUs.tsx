@@ -36,7 +36,7 @@ function ClockIllustration() {
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-sapphire shadow-[0_0_8px_rgba(15,82,186,0.4)]" />
             </div>
             {/* 12 o'clock indicator */}
-            <div className="absolute top-3 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-slate-100 border border-slate-200 shadow-sm" />
+            <div className="absolute top-3 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-slate-200 border border-slate-300 shadow-sm" />
         </div>
     );
 }
@@ -47,7 +47,7 @@ function BarChartIllustration() {
         <div ref={ref} className="relative w-full h-48 flex items-end justify-center pb-4 px-6">
             {/* Labels */}
             <div className="absolute top-3 left-6">
-                <span className="text-[10px] text-slate-500 bg-slate-50 border border-slate-200 px-2.5 py-1 rounded-md shadow-sm">
+                <span className="text-[10px] text-slate-600 bg-white border border-slate-200 px-2.5 py-1 rounded-md shadow-sm">
                     80% Automatisierung
                 </span>
             </div>
@@ -67,9 +67,9 @@ function BarChartIllustration() {
             {/* Bars */}
             <div className="flex items-end gap-2 h-28">
                 {[
-                    { h: 35, color: "from-slate-300 to-slate-200" },
-                    { h: 50, color: "from-slate-300 to-slate-200" },
-                    { h: 40, color: "from-slate-300 to-slate-200" },
+                    { h: 35, color: "from-slate-200 to-slate-100" },
+                    { h: 50, color: "from-slate-200 to-slate-100" },
+                    { h: 40, color: "from-slate-200 to-slate-100" },
                     { h: 75, color: "from-sapphire/60 to-sapphire/30" },
                     { h: 90, color: "from-sapphire/80 to-sapphire/40" },
                     { h: 65, color: "from-sapphire/60 to-sapphire/30" },
@@ -95,7 +95,7 @@ function SyncIllustration() {
             {/* Main icon circle */}
             <div className="relative">
                 {/* Outer glow ring */}
-                <div className="absolute -inset-4 rounded-full bg-slate-50 opacity-50" />
+                <div className="absolute -inset-4 rounded-full bg-slate-100 opacity-50" />
                 {/* Main circle */}
                 <div className="w-20 h-20 rounded-full bg-white border border-slate-200 flex items-center justify-center shadow-md z-10 relative">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8 text-sapphire">
@@ -108,7 +108,7 @@ function SyncIllustration() {
                 </div>
                 {/* Floating user icon 1 */}
                 <div className="absolute -top-2 -right-6 w-10 h-10 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center shadow-sm z-20 animate-[float_3s_ease-in-out_infinite]">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4 text-slate-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4 text-slate-400">
                         <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
                         <circle cx="12" cy="7" r="4" />
                     </svg>
@@ -155,12 +155,12 @@ function BenefitCard({
                 transition: `all 1.5s cubic-bezier(0.16, 1, 0.3, 1) ${index * 0.25}s`,
             }}
         >
-            <div className="group relative h-full rounded-3xl border border-slate-200 bg-white transition-all duration-500 hover:border-sapphire/40 hover:shadow-[0_20px_60px_-10px_rgba(15,82,186,0.25)] hover:-translate-y-1 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.08)] overflow-hidden">
+            <div className="group relative h-full rounded-3xl border border-slate-200 bg-white transition-all duration-500 hover:border-sapphire/50 hover:shadow-[0_0_20px_rgba(15,82,186,0.25),0_0_50px_rgba(15,82,186,0.12)] hover:-translate-y-1 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.08)] overflow-hidden">
                 {/* Inner highlight */}
-                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-sapphire/[0.01] via-transparent to-transparent pointer-events-none" />
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-sapphire/[0.05] via-transparent to-transparent pointer-events-none" />
 
                 {/* Illustration area */}
-                <div className="relative border-b border-slate-100">
+                <div className="relative border-b border-slate-100 bg-slate-50/50">
                     {illustration}
                 </div>
 
@@ -172,7 +172,7 @@ function BenefitCard({
                     >
                         {title}
                     </h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">
+                    <p className="text-slate-600 text-sm leading-relaxed">
                         {description}
                     </p>
                 </div>
@@ -201,7 +201,7 @@ export default function WhyChooseUs() {
                     >
                         <LetterReveal text="Warum Axionea?" />
                     </h2>
-                    <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+                    <p className="text-gray-400 text-lg max-w-2xl mx-auto">
                         <LetterReveal text="Dein Partner für KI-Automatisierung — smarte Lösungen, die sofort wirken" delay={0.2} stagger={0.015} />
                     </p>
                 </div>

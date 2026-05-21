@@ -37,16 +37,16 @@ export default function Home() {
       {/* Trust & Compliance Badges */}
       <ComplianceBadges />
 
-      {/* Comparison Section */}
-      <ComparisonSection />
-
       {/* Process Steps Section */}
       <ProcessSteps />
 
       {/* Architecture / Workflow Diagram */}
       <WorkflowDiagram />
 
-      {/* Team Section */}
+      {/* Comparison Section (Präzision vs. Standard) */}
+      <ComparisonSection />
+
+      {/* Team Section (Hinter die Kulissen) */}
       <TeamSection />
 
       {/* FAQ Section */}

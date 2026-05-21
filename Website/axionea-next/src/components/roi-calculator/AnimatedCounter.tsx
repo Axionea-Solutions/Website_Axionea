@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+﻿import { useEffect, useRef } from "react";
 import { useInView, motion, animate } from "framer-motion";
 
 interface AnimatedCounterProps {

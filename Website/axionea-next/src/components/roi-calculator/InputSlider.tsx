@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 interface InputSliderProps {
     label: string;
@@ -22,7 +22,7 @@ export function InputSlider({
     return (
         <div className="w-full">
             <div className="flex items-center justify-between mb-3">
-                <label className="text-sm font-medium text-foreground max-w-[80%] text-left leading-tight">
+                <label className="text-sm font-medium text-slate-900 max-w-[80%] text-left leading-tight">
                     {label}
                 </label>
                 <span className="text-sm font-bold text-sapphire tabular-nums bg-sapphire/10 px-3 py-1 rounded-full border border-sapphire/20">

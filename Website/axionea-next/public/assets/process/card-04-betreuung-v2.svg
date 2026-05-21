@@ -1,0 +1,152 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 800" width="1280" height="800" fill="none">
+  <!-- Background -->
+  <rect width="1280" height="800" rx="24" fill="#F8FAFB"/>
+
+  <!-- Browser Chrome -->
+  <rect width="1280" height="52" rx="24" fill="#F0F2F5"/>
+  <circle cx="28" cy="26" r="7" fill="#FF5F57"/>
+  <circle cx="50" cy="26" r="7" fill="#FEBC2E"/>
+  <circle cx="72" cy="26" r="7" fill="#28C840"/>
+  <rect x="420" y="14" width="280" height="24" rx="6" fill="#E2E6EA"/>
+  <text x="480" y="31" font-family="system-ui,sans-serif" font-size="11" fill="#8B95A2">app.axionea.de/dashboard</text>
+
+  <!-- Sidebar -->
+  <rect x="0" y="52" width="180" height="748" fill="#FFFFFF"/>
+  <rect x="0" y="52" width="180" height="748" fill="white" stroke="#E8ECF0" stroke-width="1"/>
+
+  <!-- Logo -->
+  <circle cx="38" cy="88" r="16" fill="#0F52BA"/>
+  <text x="30" y="93" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="white">A</text>
+  <text x="62" y="93" font-family="system-ui,sans-serif" font-size="16" font-weight="700" fill="#1A2332">Axionea</text>
+
+  <!-- Sidebar Nav -->
+  <rect x="12" y="126" width="156" height="36" rx="8" fill="#EBF0FF"/>
+  <circle cx="32" cy="144" r="4" fill="#0F52BA"/>
+  <text x="44" y="149" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#0F52BA">Dashboard</text>
+
+  <text x="44" y="185" font-family="system-ui,sans-serif" font-size="13" fill="#6B7280">Projekte</text>
+  <text x="44" y="215" font-family="system-ui,sans-serif" font-size="13" fill="#6B7280">Reportings</text>
+  <text x="44" y="245" font-family="system-ui,sans-serif" font-size="13" fill="#6B7280">Termine</text>
+  <text x="44" y="275" font-family="system-ui,sans-serif" font-size="13" fill="#6B7280">Chat</text>
+  <text x="44" y="305" font-family="system-ui,sans-serif" font-size="13" fill="#6B7280">Schulungen</text>
+
+  <!-- Retainer Plan -->
+  <text x="24" y="380" font-family="system-ui,sans-serif" font-size="10" font-weight="700" letter-spacing="1.5" fill="#9CA3AF">RETAINER-PLAN</text>
+  <circle cx="32" cy="404" r="5" fill="#10B981"/>
+  <text x="44" y="408" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="#1A2332">Wöchentlich</text>
+  <text x="24" y="426" font-family="system-ui,sans-serif" font-size="11" fill="#6B7280">Nächster Call</text>
+  <text x="24" y="442" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="#0F52BA">Mi, 22.05. · 14:00</text>
+
+  <!-- Header -->
+  <text x="210" y="100" font-family="system-ui,sans-serif" font-size="26" font-weight="800" fill="#1A2332">Hi Maxi, hier ist dein Update</text>
+  <text x="210" y="124" font-family="system-ui,sans-serif" font-size="13" fill="#6B7280">KW 21 · Persönliche Betreuung · Stand 20.05.2026</text>
+
+  <!-- Retainer Badge -->
+  <rect x="1060" y="80" width="180" height="36" rx="18" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1"/>
+  <circle cx="1082" cy="98" r="6" fill="#10B981"/>
+  <text x="1096" y="103" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="#047857">Retainer aktiv</text>
+
+  <!-- KPI Cards -->
+  <!-- Card 1: Calls -->
+  <rect x="210" y="150" width="260" height="100" rx="16" fill="url(#grad1)"/>
+  <text x="230" y="178" font-family="system-ui,sans-serif" font-size="10" font-weight="700" letter-spacing="1.2" fill="rgba(255,255,255,0.85)">CALLS DIESEN MONAT</text>
+  <text x="230" y="222" font-family="system-ui,sans-serif" font-size="42" font-weight="800" fill="white">4/4</text>
+  <text x="230" y="240" font-family="system-ui,sans-serif" font-size="11" fill="rgba(255,255,255,0.8)">↗ Plan eingehalten</text>
+
+  <!-- Card 2: Optimierungen -->
+  <rect x="490" y="150" width="260" height="100" rx="16" fill="url(#grad2)"/>
+  <text x="510" y="178" font-family="system-ui,sans-serif" font-size="10" font-weight="700" letter-spacing="1.2" fill="rgba(255,255,255,0.85)">OPTIMIERUNGEN</text>
+  <text x="510" y="222" font-family="system-ui,sans-serif" font-size="42" font-weight="800" fill="white">12</text>
+  <text x="510" y="240" font-family="system-ui,sans-serif" font-size="11" fill="rgba(255,255,255,0.8)">↗ +3 zur Vorwoche</text>
+
+  <!-- Card 3: Zeitersparnis -->
+  <rect x="770" y="150" width="460" height="100" rx="16" fill="url(#grad3)"/>
+  <text x="790" y="178" font-family="system-ui,sans-serif" font-size="10" font-weight="700" letter-spacing="1.2" fill="rgba(255,255,255,0.85)">ZEITERSPARNIS DIESE WOCHE</text>
+  <text x="790" y="222" font-family="system-ui,sans-serif" font-size="42" font-weight="800" fill="white">38 h</text>
+  <text x="790" y="240" font-family="system-ui,sans-serif" font-size="11" fill="rgba(255,255,255,0.8)">↗ +12 % gegenüber Vormonat</text>
+
+  <!-- System Performance Card -->
+  <rect x="210" y="272" width="540" height="260" rx="16" fill="white" stroke="#E8ECF0" stroke-width="1"/>
+  <text x="234" y="304" font-family="system-ui,sans-serif" font-size="16" font-weight="700" fill="#1A2332">System-Performance</text>
+  <text x="234" y="322" font-family="system-ui,sans-serif" font-size="12" fill="#9CA3AF">Letzte 8 Wochen · Live-Daten</text>
+  <rect x="660" y="290" width="68" height="28" rx="14" fill="#ECFDF5"/>
+  <text x="672" y="309" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="#047857">+34 %</text>
+
+  <!-- Chart line -->
+  <polyline points="260,480 330,470 400,440 470,430 540,390 610,370 680,340 710,310" fill="none" stroke="#0F52BA" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="710" cy="310" r="6" fill="#0F52BA" stroke="white" stroke-width="3"/>
+
+  <!-- Chart X labels -->
+  <text x="255" y="510" font-family="system-ui,sans-serif" font-size="10" fill="#9CA3AF">KW 13</text>
+  <text x="395" y="510" font-family="system-ui,sans-serif" font-size="10" fill="#9CA3AF">KW 15</text>
+  <text x="535" y="510" font-family="system-ui,sans-serif" font-size="10" fill="#9CA3AF">KW 17</text>
+  <text x="610" y="510" font-family="system-ui,sans-serif" font-size="10" fill="#9CA3AF">KW 19</text>
+  <text x="690" y="510" font-family="system-ui,sans-serif" font-size="10" fill="#9CA3AF">KW 21</text>
+
+  <!-- Anstehende Termine Card -->
+  <rect x="770" y="272" width="460" height="260" rx="16" fill="white" stroke="#E8ECF0" stroke-width="1"/>
+  <text x="794" y="304" font-family="system-ui,sans-serif" font-size="16" font-weight="700" fill="#1A2332">Anstehende Termine</text>
+  <text x="794" y="322" font-family="system-ui,sans-serif" font-size="12" fill="#9CA3AF">Mit deinem Axionea-Team</text>
+
+  <!-- Termin 1 -->
+  <rect x="794" y="340" width="410" height="52" rx="10" fill="#F8FAFB"/>
+  <rect x="810" y="348" width="40" height="36" rx="6" fill="#0F52BA"/>
+  <text x="818" y="365" font-family="system-ui,sans-serif" font-size="8" font-weight="700" fill="rgba(255,255,255,0.8)">MAI</text>
+  <text x="820" y="379" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="white">22</text>
+  <text x="862" y="364" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#1A2332">Strategie-Call · Quartalsplanung</text>
+  <text x="862" y="380" font-family="system-ui,sans-serif" font-size="11" fill="#6B7280">14:00 – 15:00 · mit Nico &amp; Maxi</text>
+
+  <!-- Termin 2 -->
+  <rect x="794" y="400" width="410" height="52" rx="10" fill="#F8FAFB"/>
+  <rect x="810" y="408" width="40" height="36" rx="6" fill="#10B981"/>
+  <text x="818" y="425" font-family="system-ui,sans-serif" font-size="8" font-weight="700" fill="rgba(255,255,255,0.8)">MAI</text>
+  <text x="820" y="439" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="white">28</text>
+  <text x="862" y="424" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#1A2332">Reporting-Review · April</text>
+  <text x="862" y="440" font-family="system-ui,sans-serif" font-size="11" fill="#6B7280">10:30 – 11:00 · mit Maxi</text>
+
+  <!-- Termin 3 -->
+  <rect x="794" y="460" width="410" height="52" rx="10" fill="#F8FAFB"/>
+  <rect x="810" y="468" width="40" height="36" rx="6" fill="#F97316"/>
+  <text x="818" y="485" font-family="system-ui,sans-serif" font-size="8" font-weight="700" fill="rgba(255,255,255,0.8)">MAI</text>
+  <text x="820" y="499" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="white">30</text>
+  <text x="862" y="484" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#1A2332">Optimierungs-Sprint · Chatbot</text>
+  <text x="862" y="500" font-family="system-ui,sans-serif" font-size="11" fill="#6B7280">09:00 – 12:00 · mit Nico</text>
+
+  <!-- Team Chat Card -->
+  <rect x="210" y="552" width="1020" height="200" rx="16" fill="white" stroke="#E8ECF0" stroke-width="1"/>
+  <text x="234" y="584" font-family="system-ui,sans-serif" font-size="16" font-weight="700" fill="#1A2332">Team-Chat</text>
+  <circle cx="328" cy="578" r="4" fill="#10B981"/>
+  <text x="338" y="584" font-family="system-ui,sans-serif" font-size="12" fill="#6B7280">2 aktiv</text>
+
+  <!-- Nico message -->
+  <circle cx="254" cy="624" r="16" fill="#8B5CF6"/>
+  <text x="248" y="629" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="white">NF</text>
+  <text x="280" y="618" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#1A2332">Nico</text>
+  <text x="310" y="618" font-family="system-ui,sans-serif" font-size="11" fill="#9CA3AF">vor 12 Min</text>
+  <rect x="280" y="628" width="420" height="32" rx="10" fill="#F3F4F6"/>
+  <text x="296" y="649" font-family="system-ui,sans-serif" font-size="12" fill="#374151">Hab das neue Reporting-Template fertig — schick's dir gleich.</text>
+
+  <!-- Maxi message -->
+  <text x="920" y="690" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#1A2332">Maxi</text>
+  <text x="955" y="690" font-family="system-ui,sans-serif" font-size="11" fill="#9CA3AF">vor 8 Min</text>
+  <circle cx="1004" cy="702" r="16" fill="#EF4444"/>
+  <text x="994" y="707" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="white">MZ</text>
+  <rect x="620" y="698" width="370" height="32" rx="10" fill="#EBF0FF"/>
+  <text x="636" y="719" font-family="system-ui,sans-serif" font-size="12" fill="#1A2332">Perfekt — können wir morgen im Call kurz durchgehen?</text>
+
+  <!-- Gradients -->
+  <defs>
+    <linearGradient id="grad1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1E3A5F"/>
+      <stop offset="100%" stop-color="#0F52BA"/>
+    </linearGradient>
+    <linearGradient id="grad2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0F52BA"/>
+      <stop offset="100%" stop-color="#3B82F6"/>
+    </linearGradient>
+    <linearGradient id="grad3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F97316"/>
+      <stop offset="100%" stop-color="#FB923C"/>
+    </linearGradient>
+  </defs>
+</svg>

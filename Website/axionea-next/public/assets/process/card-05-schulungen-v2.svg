@@ -1,0 +1,173 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 800" width="1280" height="800" fill="none">
+  <!-- Background -->
+  <rect width="1280" height="800" rx="24" fill="#F8FAFB"/>
+
+  <!-- Browser Chrome -->
+  <rect width="1280" height="52" rx="24" fill="#F0F2F5"/>
+  <circle cx="28" cy="26" r="7" fill="#FF5F57"/>
+  <circle cx="50" cy="26" r="7" fill="#FEBC2E"/>
+  <circle cx="72" cy="26" r="7" fill="#28C840"/>
+  <rect x="420" y="14" width="280" height="24" rx="6" fill="#E2E6EA"/>
+  <text x="480" y="31" font-family="system-ui,sans-serif" font-size="11" fill="#8B95A2">app.axionea.de/academy</text>
+
+  <!-- Header -->
+  <circle cx="56" cy="96" r="22" fill="#0F52BA"/>
+  <text x="48" y="102" font-family="system-ui,sans-serif" font-size="16" font-weight="700" fill="white">A</text>
+  <text x="90" y="92" font-family="system-ui,sans-serif" font-size="22" font-weight="800" fill="#1A2332">Axionea Academy</text>
+  <text x="90" y="112" font-family="system-ui,sans-serif" font-size="12" fill="#6B7280">Dein KI-Lernpfad · Persönlich kuratiert für dein Team</text>
+
+  <!-- BAFA Badge -->
+  <rect x="1020" y="72" width="220" height="44" rx="22" fill="#FEF3C7" stroke="#FCD34D" stroke-width="1"/>
+  <circle cx="1046" cy="94" r="14" fill="#F59E0B"/>
+  <text x="1040" y="99" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="white">€</text>
+  <text x="1068" y="90" font-family="system-ui,sans-serif" font-size="10" font-weight="700" letter-spacing="0.5" fill="#92400E">BAFA-FÖRDERUNG</text>
+  <text x="1068" y="104" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="#78350F">bis zu 80 % möglich</text>
+
+  <!-- KPI Row -->
+  <!-- Fortschritt -->
+  <rect x="36" y="136" width="270" height="90" rx="16" fill="url(#agrad1)"/>
+  <text x="56" y="162" font-family="system-ui,sans-serif" font-size="9" font-weight="700" letter-spacing="1.5" fill="rgba(255,255,255,0.85)">FORTSCHRITT</text>
+  <text x="56" y="200" font-family="system-ui,sans-serif" font-size="40" font-weight="800" fill="white">68 %</text>
+  <text x="160" y="200" font-family="system-ui,sans-serif" font-size="12" fill="rgba(255,255,255,0.8)">8 von 12 Modulen</text>
+  <rect x="56" y="210" width="160" height="4" rx="2" fill="rgba(255,255,255,0.3)"/>
+  <rect x="56" y="210" width="109" height="4" rx="2" fill="#34D399"/>
+
+  <!-- Aktive Lernende -->
+  <rect x="322" y="136" width="280" height="90" rx="16" fill="url(#agrad2)"/>
+  <text x="342" y="162" font-family="system-ui,sans-serif" font-size="9" font-weight="700" letter-spacing="1.5" fill="rgba(255,255,255,0.85)">AKTIVE LERNENDE</text>
+  <text x="342" y="200" font-family="system-ui,sans-serif" font-size="40" font-weight="800" fill="white">14</text>
+  <text x="392" y="200" font-family="system-ui,sans-serif" font-size="12" fill="rgba(255,255,255,0.8)">Team-Mitglieder</text>
+
+  <!-- Zertifikate -->
+  <rect x="618" y="136" width="270" height="90" rx="16" fill="url(#agrad3)"/>
+  <text x="638" y="162" font-family="system-ui,sans-serif" font-size="9" font-weight="700" letter-spacing="1.5" fill="rgba(255,255,255,0.85)">ZERTIFIKATE</text>
+  <text x="638" y="200" font-family="system-ui,sans-serif" font-size="40" font-weight="800" fill="white">6</text>
+  <text x="670" y="190" font-family="system-ui,sans-serif" font-size="14" fill="rgba(255,255,255,0.9)">erworben</text>
+  <text x="638" y="214" font-family="system-ui,sans-serif" font-size="11" fill="rgba(255,255,255,0.7)">2 in Prüfung · 4 verfügbar</text>
+
+  <!-- Lernzeit -->
+  <rect x="904" y="136" width="340" height="90" rx="16" fill="url(#agrad4)"/>
+  <text x="924" y="162" font-family="system-ui,sans-serif" font-size="9" font-weight="700" letter-spacing="1.5" fill="rgba(255,255,255,0.85)">LERNZEIT</text>
+  <text x="924" y="204" font-family="system-ui,sans-serif" font-size="44" font-weight="800" fill="white">42 h</text>
+  <text x="924" y="220" font-family="system-ui,sans-serif" font-size="11" fill="rgba(255,255,255,0.8)">Diesen Monat</text>
+
+  <!-- LEFT: Dein Lernpfad -->
+  <text x="36" y="268" font-family="system-ui,sans-serif" font-size="18" font-weight="700" fill="#1A2332">Dein Lernpfad</text>
+  <text x="36" y="288" font-family="system-ui,sans-serif" font-size="12" fill="#9CA3AF">Strukturiert nach dem 4D-Framework</text>
+
+  <!-- Module 1 -->
+  <rect x="36" y="304" width="570" height="64" rx="12" fill="white" stroke="#E8ECF0" stroke-width="1"/>
+  <circle cx="72" cy="336" r="16" fill="#ECFDF5"/>
+  <text x="64" y="340" font-family="system-ui,sans-serif" font-size="14" fill="#10B981">✓</text>
+  <text x="100" y="328" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#1A2332">AI Fluency · Grundlagen</text>
+  <text x="100" y="348" font-family="system-ui,sans-serif" font-size="11" fill="#6B7280">Modul 1 · 4 Stunden</text>
+  <rect x="100" y="356" width="140" height="3" rx="1.5" fill="#D1FAE5"/>
+  <rect x="100" y="356" width="140" height="3" rx="1.5" fill="#10B981"/>
+  <text x="530" y="340" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#10B981">100%</text>
+
+  <!-- Module 2 -->
+  <rect x="36" y="380" width="570" height="64" rx="12" fill="#FFF7ED" stroke="#FED7AA" stroke-width="1"/>
+  <rect x="56" y="400" width="28" height="28" rx="8" fill="#FB923C"/>
+  <text x="66" y="419" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="white">2</text>
+  <text x="100" y="404" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#1A2332">Tool-Training · Claude im Praxisalltag</text>
+  <text x="100" y="424" font-family="system-ui,sans-serif" font-size="11" fill="#6B7280">Modul 2 · 6 Stunden</text>
+  <rect x="100" y="432" width="140" height="3" rx="1.5" fill="#FED7AA"/>
+  <rect x="100" y="432" width="84" height="3" rx="1.5" fill="#0F52BA"/>
+  <text x="518" y="416" font-family="system-ui,sans-serif" font-size="11" fill="#0F52BA">● 60%</text>
+
+  <!-- Module 3 -->
+  <rect x="36" y="456" width="570" height="64" rx="12" fill="white" stroke="#E8ECF0" stroke-width="1"/>
+  <rect x="56" y="476" width="28" height="28" rx="8" fill="#E0E7FF"/>
+  <text x="66" y="495" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#4F46E5">3</text>
+  <text x="100" y="482" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#1A2332">Branchen-Workshop · KI in der Arztpraxis</text>
+  <text x="100" y="502" font-family="system-ui,sans-serif" font-size="11" fill="#6B7280">Modul 3 · 8 Stunden · DSGVO-Fokus</text>
+  <text x="480" y="494" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="#EF4444">Startet 03.06.</text>
+
+  <!-- Module 4 -->
+  <rect x="36" y="532" width="570" height="64" rx="12" fill="white" stroke="#E8ECF0" stroke-width="1"/>
+  <rect x="56" y="552" width="28" height="28" rx="8" fill="#E0E7FF"/>
+  <text x="66" y="571" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#4F46E5">4</text>
+  <text x="100" y="558" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#1A2332">Train-the-Trainer · Multiplikatoren</text>
+  <text x="100" y="578" font-family="system-ui,sans-serif" font-size="11" fill="#6B7280">Modul 4 · 2 Tage · für interne Champions</text>
+  <text x="460" y="570" font-family="system-ui,sans-serif" font-size="12" font-weight="500" fill="#6B7280" font-style="italic">Verfügbar ab Q3</text>
+
+  <!-- RIGHT: 4D Framework -->
+  <text x="640" y="268" font-family="system-ui,sans-serif" font-size="18" font-weight="700" fill="#1A2332">4D-Framework</text>
+  <text x="640" y="288" font-family="system-ui,sans-serif" font-size="12" fill="#9CA3AF">Souverän mit KI arbeiten</text>
+
+  <!-- D1 Delegation -->
+  <rect x="640" y="304" width="290" height="80" rx="12" fill="white" stroke="#E8ECF0" stroke-width="1"/>
+  <rect x="660" y="320" width="36" height="36" rx="8" fill="#FECACA"/>
+  <text x="672" y="344" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#DC2626">D</text>
+  <text x="706" y="336" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#1A2332">DELEGATION</text>
+  <text x="706" y="354" font-family="system-ui,sans-serif" font-size="11" fill="#6B7280">Was übergebe ich an KI?</text>
+  <text x="706" y="370" font-family="system-ui,sans-serif" font-size="10" fill="#0F52BA">→ Aufgaben-Mapping</text>
+
+  <!-- D2 Description -->
+  <rect x="946" y="304" width="290" height="80" rx="12" fill="white" stroke="#E8ECF0" stroke-width="1"/>
+  <rect x="966" y="320" width="36" height="36" rx="8" fill="#BFDBFE"/>
+  <text x="978" y="344" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#2563EB">D</text>
+  <text x="1012" y="336" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#1A2332">DESCRIPTION</text>
+  <text x="1012" y="354" font-family="system-ui,sans-serif" font-size="11" fill="#6B7280">Wie beschreibe ich es klar?</text>
+  <text x="1012" y="370" font-family="system-ui,sans-serif" font-size="10" fill="#0F52BA">→ Prompt-Engineering</text>
+
+  <!-- D3 Discernment -->
+  <rect x="640" y="396" width="290" height="80" rx="12" fill="white" stroke="#E8ECF0" stroke-width="1"/>
+  <rect x="660" y="412" width="36" height="36" rx="8" fill="#D9F99D"/>
+  <text x="672" y="436" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#65A30D">D</text>
+  <text x="706" y="428" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#1A2332">DISCERNMENT</text>
+  <text x="706" y="446" font-family="system-ui,sans-serif" font-size="11" fill="#6B7280">Wie prüfe ich Ergebnisse?</text>
+  <text x="706" y="462" font-family="system-ui,sans-serif" font-size="10" fill="#0F52BA">→ Qualitätskontrolle</text>
+
+  <!-- D4 Diligence -->
+  <rect x="946" y="396" width="290" height="80" rx="12" fill="white" stroke="#E8ECF0" stroke-width="1"/>
+  <rect x="966" y="412" width="36" height="36" rx="8" fill="#E9D5FF"/>
+  <text x="978" y="436" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#7C3AED">D</text>
+  <text x="1012" y="428" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#1A2332">DILIGENCE</text>
+  <text x="1012" y="446" font-family="system-ui,sans-serif" font-size="11" fill="#6B7280">Wie bleibe ich verantwortlich?</text>
+  <text x="1012" y="462" font-family="system-ui,sans-serif" font-size="10" fill="#0F52BA">→ Verantwortung &amp; Ethik</text>
+
+  <!-- Certificate Card -->
+  <rect x="640" y="496" width="596" height="100" rx="16" fill="#FEF9C3" stroke="#FDE68A" stroke-width="1"/>
+  <text x="660" y="520" font-family="system-ui,sans-serif" font-size="9" font-weight="700" letter-spacing="1.5" fill="#92400E">ZERTIFIKAT · ABGESCHLOSSEN</text>
+  <circle cx="680" cy="556" r="18" fill="#F59E0B"/>
+  <text x="672" y="562" font-family="system-ui,sans-serif" font-size="16" fill="white">★</text>
+  <text x="710" y="544" font-family="system-ui,sans-serif" font-size="16" font-weight="700" fill="#1A2332">AI Fluency · Foundations</text>
+  <text x="710" y="564" font-family="system-ui,sans-serif" font-size="11" fill="#6B7280">Sarah K. · Praxismitarbeiterin · Mai 2026</text>
+  <text x="710" y="580" font-family="system-ui,sans-serif" font-size="10" fill="#9CA3AF">Verifiziert · ID #AXA-2026-0481</text>
+  <rect x="1100" y="538" width="112" height="36" rx="8" fill="#0F52BA"/>
+  <text x="1120" y="561" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="white">↓ Download</text>
+
+  <!-- Live Banner -->
+  <rect x="36" y="632" width="1208" height="56" rx="12" fill="white" stroke="#E8ECF0" stroke-width="1"/>
+  <circle cx="66" cy="660" r="6" fill="#EF4444"/>
+  <circle cx="66" cy="660" r="6" fill="#EF4444" opacity="0.4">
+    <animate attributeName="r" values="6;10;6" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.4;0;0.4" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <text x="82" y="656" font-family="system-ui,sans-serif" font-size="10" font-weight="700" letter-spacing="1" fill="#EF4444">LIVE</text>
+  <text x="120" y="666" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#1A2332">"Prompt-Engineering für Maklerteams"</text>
+  <text x="430" y="666" font-family="system-ui,sans-serif" font-size="12" fill="#6B7280">· Mi 22.05. · 16:00 Uhr · 3 Plätze frei</text>
+  <rect x="1100" y="644" width="120" height="32" rx="8" fill="#10B981"/>
+  <text x="1118" y="665" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="white">Anmelden →</text>
+
+  <!-- Gradients -->
+  <defs>
+    <linearGradient id="agrad1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1E3A5F"/>
+      <stop offset="100%" stop-color="#0F52BA"/>
+    </linearGradient>
+    <linearGradient id="agrad2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0F52BA"/>
+      <stop offset="100%" stop-color="#3B82F6"/>
+    </linearGradient>
+    <linearGradient id="agrad3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#34D399"/>
+    </linearGradient>
+    <linearGradient id="agrad4" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#A78BFA"/>
+    </linearGradient>
+  </defs>
+</svg>

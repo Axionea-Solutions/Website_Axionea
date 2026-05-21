@@ -1,19 +1,28 @@
-# Axionea Solutions
+# Axionea - KI-Lösungen für Arztpraxen, Kieferorthopäden & Makler
 
-> Axionea ist eine KI-Automatisierungsagentur aus dem DACH-Raum, die mittelständischen Unternehmen hilft, repetitive Geschäftsprozesse durch KI-Agenten, Chatbots und automatisierte Workflows zu ersetzen — ohne IT-Abteilung oder Programmierkenntnisse.
+## Über uns
+Axionea entwickelt praxiserprobte, DSGVO-konforme und EU-AI-Act-ready KI-Automatisierungen für kleine und mittelständische Unternehmen im DACH-Raum. Unser Fokus liegt auf Arztpraxen, Kieferorthopäden und Immobilienmaklern.
+Gegründet: 2025
+Standort: Deutschland
 
-## Docs
+## Unsere Zielgruppen
+- **Arztpraxen & Kieferorthopäden:** Automatisierung von Patientenanfragen (WhatsApp/Voice), intelligentes Terminmanagement, Vorab-Anamnese durch KI-Agenten, Reduzierung von No-Shows, Integration in Praxissoftware.
+- **Immobilienmakler:** Automatisierung von Exposé-Anfragen 24/7, KI-gestützte Dokumentenanalyse, Lead-Qualifizierung in Echtzeit, mehr Zeit für Vor-Ort-Termine.
 
-- [Homepage](https://www.axionea-solutions.de/): Übersicht über alle KI-Services, ROI-Rechner und Kontaktmöglichkeiten.
-- [KI-Services](https://www.axionea-solutions.de/#services): KI-Strategie & Beratung, Content-Generierung, KI-Chatbots, automatisierte Workflows und Agenten für den Mittelstand.
-- [Unser Prozess](https://www.axionea-solutions.de/#prozess): Dreistufiger Implementierungsprozess: Workflow-Analyse, sicheres Deployment, laufende Optimierung.
-- [FAQ](https://www.axionea-solutions.de/#faq): Häufige Fragen zu Kosten, Implementierungsdauer, technischen Anforderungen und Branchen-Eignung.
-- [Team](https://www.axionea-solutions.de/#team): Gründer Maximilian Zvada (CEO) und Nico Fisseler (CTO) — KI-Experten mit Fokus auf Mittelstand-Automatisierung.
-- [Impressum](https://www.axionea-solutions.de/impressum): Rechtliche Angaben: Axionea GbR, Leprosenweg 1b, 85080 Gaimersheim.
-- [Datenschutz](https://www.axionea-solutions.de/datenschutz): Datenschutzerklärung gemäß DSGVO.
+## Unsere KI-Services
+1. KI-Strategie & Audit (Potenzialanalyse, Tool-Auswahl, EU-AI-Act-Compliance)
+2. KI-Agenten & Chatbots (24/7 Support, WhatsApp/Web-Integration, DSGVO-konform)
+3. Prozessautomatisierung (Intelligente Workflows, RPA, API-Integrationen)
+4. KI-Telefon-Assistenz (Voice AI für Terminbuchungen & FAQs)
+5. Custom LLM-Entwicklung (Branchenspezifische RAG-Systeme)
+6. Daten & Analytics (Predictive Analytics, Dashboards)
+7. KI-Schulungen (Workshops, Prompt Engineering, Team-Enablement)
 
-## Optional
+## Prozess
+1. Workflow-Analyse
+2. Deployment
+3. Laufende Optimierung
 
-- [ROI-Rechner](https://www.axionea-solutions.de/#roi): Interaktives Tool zur Berechnung monatlicher Effizienzkosten durch manuelle Prozesse — basierend auf McKinsey & EY Branchendaten für 10 Branchen.
-- Einstiegspreise ab 990€, Implementierung in 2–6 Wochen, DSGVO-konform, Server in Deutschland.
-- Branchen: Versicherung, Banken, Konsumgüter, Marketing, Öffentlicher Sektor, Gesundheitswesen, Handwerk, Büro/Administration, Automotive, KMU allgemein.
+## Kontakt
+Website: https://axionea-solutions.de
+Termin buchen: Kostenloses Erstgespräch via Calendly verfügbar.

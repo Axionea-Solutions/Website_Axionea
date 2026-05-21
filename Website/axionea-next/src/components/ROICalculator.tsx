@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -69,7 +69,7 @@ export default function ROICalculator() {
                             <LetterReveal text="Verlust durch Ineffizienz" delay={0.3} />
                         </span>
                     </h2>
-                    <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
+                    <p className="text-slate-500 text-lg max-w-2xl mx-auto leading-relaxed">
                         <LetterReveal
                             text="Finden Sie heraus, wie viel Geld Ihr Unternehmen aktuell jeden Monat für manuelle, repetitive Aufgaben verbrennt – basierend auf echten Branchendaten von McKinsey & EY"
                             delay={0.6}
@@ -86,12 +86,12 @@ export default function ROICalculator() {
                         transform: isInView ? "translateY(0)" : "translateY(20px)",
                         transition: "all 1s cubic-bezier(0.16, 1, 0.3, 1)",
                     }}
-                    className="rounded-[2.5rem] border border-black/10 dark:border-white/10 bg-white dark:bg-[#040812] shadow-2xl overflow-hidden backdrop-blur-sm"
+                    className="rounded-[2.5rem] border border-slate-200  bg-white  shadow-2xl overflow-hidden backdrop-blur-sm"
                 >
-                    <div className="grid grid-cols-1 lg:grid-cols-12 divide-y lg:divide-y-0 lg:divide-x divide-black/10 dark:divide-white/10">
+                    <div className="grid grid-cols-1 lg:grid-cols-12 divide-y lg:divide-y-0 lg:divide-x divide-slate-200 ">
 
                         {/* LEFT COLUMN: Inputs */}
-                        <div className="lg:col-span-4 p-8 md:p-10 lg:p-12 flex flex-col justify-center space-y-10 bg-black/[0.01] dark:bg-white/[0.01]">
+                        <div className="lg:col-span-4 p-8 md:p-10 lg:p-12 flex flex-col justify-center space-y-10 bg-slate-50 ">
                             <IndustrySelector selectedId={industryId} onChange={setIndustryId} />
 
                             <div className="space-y-8">
@@ -131,17 +131,17 @@ export default function ROICalculator() {
 
                             {!industryId ? (
                                 // Empty State / Prompt
-                                <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center bg-background/50 backdrop-blur-sm z-10">
+                                <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center bg-white/50 backdrop-blur-sm z-10">
                                     <div className="w-16 h-16 rounded-full bg-sapphire/10 flex items-center justify-center mb-4 border border-sapphire/20">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8 text-sapphire">
                                             <line x1="12" y1="5" x2="12" y2="19"></line>
                                             <line x1="5" y1="12" x2="19" y2="12"></line>
                                         </svg>
                                     </div>
-                                    <h3 className="text-xl font-sans font-medium tracking-tight text-foreground mb-2">
+                                    <h3 className="text-xl font-sans font-medium tracking-tight text-slate-900 mb-2">
                                         Wählen Sie Ihre Branche
                                     </h3>
-                                    <p className="text-muted-foreground max-w-md">
+                                    <p className="text-slate-500 max-w-md">
                                         Um die detaillierten McKinsey & EY Potenziale zu sehen, wählen Sie bitte links Ihre Branche aus.
                                     </p>
                                 </div>
@@ -150,12 +150,12 @@ export default function ROICalculator() {
                             {/* Big Header Result */}
                             <div className={`transition-opacity duration-500 ${!industryId ? "opacity-30 blur-sm" : "opacity-100"}`}>
                                 <div className="mb-10 text-center lg:text-left">
-                                    <p className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-2">
+                                    <p className="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-2">
                                         Ihre monatlichen Kosten für repetitive Arbeit
                                     </p>
-                                    <div className="text-5xl sm:text-6xl md:text-7xl font-sans font-medium tracking-tight text-foreground drop-shadow-sm flex items-center justify-center lg:justify-start">
+                                    <div className="text-5xl sm:text-6xl md:text-7xl font-sans font-medium tracking-tight text-slate-900 drop-shadow-sm flex items-center justify-center lg:justify-start">
                                         <AnimatedCounter value={results.monthlyRepetitiveCost} />
-                                        <span className="text-3xl sm:text-4xl text-muted-foreground ml-2">€</span>
+                                        <span className="text-3xl sm:text-4xl text-slate-500 ml-2">€</span>
                                     </div>
                                 </div>
 
@@ -193,7 +193,7 @@ export default function ROICalculator() {
 
                                 {/* Bottom Summary & CTA */}
                                 <div className="mt-auto flex flex-col items-center lg:items-start space-y-4 pt-6 border-t border-black/5 dark:border-white/5">
-                                    <p className="text-lg text-foreground font-medium flex items-center gap-2">
+                                    <p className="text-lg text-slate-900 font-medium flex items-center gap-2">
                                         Jährlicher Verlust durch Nichtstun:
                                         <span className="font-sans font-medium tracking-tight text-red-500 ml-1">
                                             ≈ <AnimatedCounter value={results.annualLossMin} /> <span className="font-sans font-normal mx-0.5">–</span> <AnimatedCounter value={results.annualLossMax} /> €
@@ -201,8 +201,8 @@ export default function ROICalculator() {
                                     </p>
 
                                     {results.paybackMonths > 0 && (
-                                        <p className="text-sm text-muted-foreground flex items-center gap-2">
-                                            ROI mit Axionea: Amortisation ab <strong className="text-foreground">Monat {results.paybackMonths}—{results.paybackMonths + 1}</strong>
+                                        <p className="text-sm text-slate-500 flex items-center gap-2">
+                                            ROI mit Axionea: Amortisation ab <strong className="text-slate-900">Monat {results.paybackMonths}—{results.paybackMonths + 1}</strong>
                                         </p>
                                     )}
 
