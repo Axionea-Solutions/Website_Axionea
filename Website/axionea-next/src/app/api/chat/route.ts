@@ -83,8 +83,6 @@ Regeln:
 
 export async function POST(req: Request) {
     try {
-        console.log("--- CHAT API INCOMING REQUEST ---");
-
         // 1. API Key Check
         if (!process.env.GOOGLE_GENERATIVE_AI_API_KEY) {
             console.error("FATAL ERROR: GOOGLE_GENERATIVE_AI_API_KEY is not set in environment variables!");
@@ -132,8 +130,6 @@ export async function POST(req: Request) {
                 return new Response(JSON.stringify({ error: "Invalid message role." }), { status: 400, headers: { 'Content-Type': 'application/json' } });
             }
         }
-
-        console.log(`[CHAT REQUEST] IP: ${ip} | Messages count: ${messages.length}`);
 
         // 4. Stream Response
         // gemini-2.5-flash ist ein Thinking-Modell. Mit thinkingBudget: 0 deaktivieren wir

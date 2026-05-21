@@ -35,3 +35,17 @@ Website/axionea-next/*.txt
 node_modules/
 .next/
 out/
+
+# Dev/QA artifacts — Screenshots, Playwright outputs, panic logs
+*.png
+*.jpeg
+*.jpg
+!Website/axionea-next/public/**/*.png
+!Website/axionea-next/public/**/*.jpeg
+!Website/axionea-next/public/**/*.jpg
+.playwright-mcp/
+next-panic-*.log
+
+# OS junk
+.DS_Store
+Thumbs.db

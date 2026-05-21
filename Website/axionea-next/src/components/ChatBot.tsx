@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Link from 'next/link';
 
 export default function ChatBot() {
     const [isOpen, setIsOpen] = useState(false);
@@ -203,7 +204,7 @@ export default function ChatBot() {
 
                             {/* Input Area */}
                             <div className="p-4 bg-white dark:bg-[#070d1a] border-t border-gray-100 dark:border-white/10">
-                                <form onSubmit={handleSubmit} className="flex gap-2">
+                                <form onSubmit={handleSubmit} className="flex gap-2 mb-2">
                                     <input
                                         className="flex-1 bg-gray-50 dark:bg-[#0a1628] border border-gray-200 dark:border-white/10 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-1 focus:ring-sapphire transition-all dark:text-white"
                                         value={input}
@@ -219,6 +220,13 @@ export default function ChatBot() {
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m22 2-7 20-4-9-9-4Z" /><path d="M22 2 11 13" /></svg>
                                     </button>
                                 </form>
+                                <p className="text-[10px] text-gray-400 dark:text-gray-500 text-center leading-tight">
+                                    Bitte gib keine sensiblen Daten ein. Die Nutzung erfolgt gemäß unserer{" "}
+                                    <Link href="/datenschutz" className="underline hover:text-sapphire transition-colors">
+                                        Datenschutzerklärung
+                                    </Link>
+                                    .
+                                </p>
                             </div>
                         </div>
                     </motion.div>

@@ -1,32 +1,45 @@
 "use client";
 
 import { motion } from 'framer-motion';
+import { openCalendly } from '@/lib/calendly';
 
 export default function HeroContent() {
     return (
-        <div className="relative z-10 w-full min-h-[calc(100vh-4rem)] flex flex-col items-center px-6">
+        <div className="relative z-10 w-full min-h-[calc(100vh-8rem)] flex flex-col items-center px-6">
 
             {/* ─── Smooth Background Glow behind Text ─── */}
-            <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden flex items-center justify-center">
-                <div className="w-[800px] h-[600px] bg-sapphire/20 rounded-full blur-[150px] opacity-80 mix-blend-screen translate-y-[-10%]"></div>
+            {/* Kein overflow-hidden mehr → Glow fadet natürlich aus, keine harte Kante zur Navbar */}
+            <div className="absolute inset-0 z-0 pointer-events-none flex items-center justify-center">
+                <div className="w-[900px] h-[700px] bg-sapphire/20 rounded-full blur-[180px] opacity-80 mix-blend-screen translate-y-[-4%]"></div>
             </div>
 
             {/* ─── Main Content ─── */}
             {/* ─── Centered Content ─── */}
             <div className="flex-1 flex items-center justify-center w-full">
-                <div className="relative z-10 flex flex-col items-center text-center max-w-5xl pointer-events-none">
+                <div className="relative z-10 flex flex-col items-center text-center max-w-5xl">
 
                     {/* Title */}
                     <motion.h1
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+                        aria-label="Dein Unternehmen KI-gesteuert"
                         className="font-sans font-medium mb-6 leading-[1.1] md:leading-[1.2] pb-4"
                     >
-                        <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-normal text-transparent bg-clip-text bg-gradient-to-br from-blue-500 via-sky-400 to-cyan-300 drop-shadow-sm mb-2 pb-2">
+                        <span
+                            className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-normal text-white/95 mb-2 pb-2"
+                            style={{
+                                textShadow: '0 0 12px rgba(125,211,252,0.65), 0 0 28px rgba(56,189,248,0.45), 0 0 60px rgba(15,82,186,0.35)',
+                            }}
+                        >
                             Dein Unternehmen
                         </span>
-                        <span className="block text-6xl sm:text-8xl md:text-9xl lg:text-[8rem] tracking-tight text-transparent bg-clip-text bg-gradient-to-br from-sapphire via-blue-400 to-sky-200 drop-shadow-sm pb-8">
+                        <span
+                            className="block text-5xl sm:text-7xl md:text-8xl lg:text-9xl tracking-tight text-white pb-6"
+                            style={{
+                                textShadow: '0 0 16px rgba(125,211,252,0.75), 0 0 40px rgba(56,189,248,0.55), 0 0 90px rgba(15,82,186,0.55), 0 0 160px rgba(15,82,186,0.35)',
+                            }}
+                        >
                             KI-gesteuert
                         </span>
                     </motion.h1>
@@ -36,9 +49,9 @@ export default function HeroContent() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-                        className="text-xl sm:text-2xl md:text-3xl text-gray-300 max-w-4xl mb-12 leading-relaxed drop-shadow-md font-light tracking-wide"
+                        className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-3xl mb-10 leading-relaxed drop-shadow-md font-light tracking-wide"
                     >
-                        Maßgeschneiderte KI-Lösungen für Arztpraxen, Kieferorthopäden & Immobilienmakler — DSGVO-konform, praxiserprobt, sofort einsetzbar.
+                        DSGVO-konforme KI für Arztpraxen, Kieferorthopäden & Makler — sofort einsetzbar.
                     </motion.p>
 
                     {/* Main CTA Buttons */}
@@ -48,35 +61,53 @@ export default function HeroContent() {
                         transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
                         className="pointer-events-auto flex flex-col sm:flex-row items-center gap-4 mb-10"
                     >
-                        <button
-                            onClick={() => {
-                                // @ts-ignore
-                                if (window.Calendly) {
-                                    // @ts-ignore
-                                    window.Calendly.initPopupWidget({ url: '[CALENDLY-LINK EINFÜGEN]' });
+                        {/* Primary CTA — Calendly TODO: echten Link einsetzen, Fallback scrollt zu #kontakt */}
+                        <a
+                            href="#kontakt"
+                            aria-label="Kostenloses Erstgespräch buchen"
+                            onClick={(e) => {
+                                const calendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_URL || (typeof window !== 'undefined' ? window.__AXIONEA_CALENDLY_URL__ : null);
+                                if (calendlyUrl) {
+                                    e.preventDefault();
+                                    openCalendly(calendlyUrl);
                                 }
                             }}
                             className="px-8 py-4 rounded-full bg-sapphire text-white font-semibold text-lg hover:bg-sapphire-hover transition-all shadow-[0_0_30px_rgba(15,82,186,0.6)] hover:shadow-[0_0_40px_rgba(15,82,186,0.8)] text-center inline-block cursor-pointer"
                         >
                             Kostenloses Erstgespräch buchen →
-                        </button>
-                        <a href="#roi" className="px-8 py-4 rounded-full bg-white/10 border-2 border-white/20 text-white font-semibold text-lg hover:bg-white hover:text-sapphire hover:border-white transition-all text-center inline-block">
-                            Jetzt Potenzialanalyse starten
+                        </a>
+                        {/* Secondary CTA — visuell zurückgenommen */}
+                        <a
+                            href="#roi"
+                            aria-label="ROI-Rechner öffnen"
+                            className="px-8 py-4 rounded-full bg-transparent border border-white/25 text-white/90 font-medium text-base hover:bg-white/5 hover:border-white/40 transition-all text-center inline-block"
+                        >
+                            ROI berechnen
                         </a>
                     </motion.div>
 
-                    {/* Trust Strip */}
-                    <motion.div
+                    {/* Trust Strip — Mobile: 2×2 Grid, Desktop: single pill */}
+                    <motion.ul
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
-                        className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-sm md:text-base font-medium text-gray-400/80 bg-white/5 backdrop-blur-md border border-white/10 rounded-full px-6 py-3 pointer-events-auto shadow-[0_0_20px_rgba(0,0,0,0.2)]"
+                        aria-label="Vertrauenssignale"
+                        className="list-none grid grid-cols-2 gap-2 sm:flex sm:flex-wrap sm:items-center sm:justify-center sm:gap-8 text-xs sm:text-sm md:text-base font-medium text-gray-400/80 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl sm:rounded-full px-4 sm:px-6 py-3 pointer-events-auto shadow-[0_0_20px_rgba(0,0,0,0.2)] w-full max-w-xs sm:max-w-none sm:w-auto"
                     >
-                        <span className="flex items-center gap-2"><svg className="w-4 h-4 text-sapphire" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path></svg> Standort Deutschland</span>
-                        <span className="flex items-center gap-2"><svg className="w-4 h-4 text-sapphire" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path></svg> DSGVO-konform</span>
-                        <span className="flex items-center gap-2"><svg className="w-4 h-4 text-sapphire" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path></svg> EU AI Act Ready</span>
-                        <span className="flex items-center gap-2"><svg className="w-4 h-4 text-sapphire" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path></svg> Gegründet 2025</span>
-                    </motion.div>
+                        {[
+                            "Standort Deutschland",
+                            "DSGVO-konform",
+                            "EU AI Act Ready",
+                            "BAFA-förderfähig",
+                        ].map((label) => (
+                            <li key={label} className="flex items-center gap-2 justify-center sm:justify-start">
+                                <svg className="w-4 h-4 text-sapphire shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>{label}</span>
+                            </li>
+                        ))}
+                    </motion.ul>
                 </div>
             </div>
 
@@ -105,6 +136,12 @@ export default function HeroContent() {
                     </svg>
                 </a>
             </motion.div>
+
+            {/* Soft fade-out to next section — bridges Hero into IndustryTagsBand */}
+            <div
+                aria-hidden="true"
+                className="pointer-events-none absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-background z-[1]"
+            />
         </div>
     );
 }

@@ -17,26 +17,27 @@ const organizationSchema = {
     "url": "https://www.axionea-solutions.de",
     "logo": "https://www.axionea-solutions.de/assets/logo/Asset%204@4x.png",
     "description": "KI-Agentur mit Fokus auf Arztpraxen, Kieferorthopäden und Immobilienmakler. DSGVO-konform und EU-AI-Act-ready.",
-    "foundingDate": "2025",
+    "foundingDate": "2026-01-01",
     "founders": [
       {"@type": "Person", "name": "Maximilian Zvada", "jobTitle": "CEO & Founder"},
       {"@type": "Person", "name": "Nico Fisseler", "jobTitle": "CTO & Founder"}
     ],
     "address": {
       "@type": "PostalAddress",
+      "streetAddress": "Leprosenweg 1b",
+      "postalCode": "85080",
+      "addressLocality": "Gaimersheim",
+      "addressRegion": "Bayern",
       "addressCountry": "DE"
     },
     "contactPoint": [{
       "@type": "ContactPoint",
-      "telephone": "+49-176-44428884",
+      "telephone": "+49-173-1726939",
       "contactType": "customer service",
       "email": "info@axionea-solutions.de",
-      "availableLanguage": ["German", "English"]
-    }],
-    "sameAs": [
-      "[LinkedIn-URL einfügen]",
-      "[Instagram-URL einfügen]"
-    ]
+      "availableLanguage": ["German", "English"],
+      "areaServed": ["DE", "AT", "CH"]
+    }]
 };
 
 const websiteSchema = {
@@ -59,7 +60,7 @@ const localBusinessSchema = {
     name: "Axionea",
     image: "https://www.axionea-solutions.de/og-image.png",
     url: "https://www.axionea-solutions.de",
-    telephone: "+49 173 1726939",
+    telephone: "+49-173-1726939",
     email: "info@axionea-solutions.de",
     address: {
         "@type": "PostalAddress",

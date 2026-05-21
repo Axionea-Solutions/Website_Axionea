@@ -2,6 +2,7 @@
 
 import { useInView } from "@/hooks/useInView";
 import { LetterReveal } from "./ui/LetterReveal";
+import { openCalendly } from "@/lib/calendly";
 
 const contactInfo = [
     {
@@ -98,14 +99,20 @@ export default function ContactSection() {
                             </div>
                         ))}
 
-                        {/* Book a Call */}
+                        {/* Book a Call — Calendly TODO: echten Link einsetzen, Fallback fokussiert Kontaktformular */}
                         <button
+                            type="button"
+                            aria-label="Kostenloses 15-Min Erstgespräch buchen"
                             onClick={(e) => {
                                 e.preventDefault();
-                                // @ts-ignore
-                                if (window.Calendly) {
-                                    // @ts-ignore
-                                    window.Calendly.initPopupWidget({ url: '[CALENDLY-LINK EINFÜGEN]' });
+                                const calendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_URL || (typeof window !== 'undefined' ? window.__AXIONEA_CALENDLY_URL__ : null);
+                                if (calendlyUrl) {
+                                    openCalendly(calendlyUrl);
+                                } else {
+                                    const container = document.getElementById('hubspot-form-container');
+                                    if (container) {
+                                        container.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                                    }
                                 }
                             }}
                             className="w-full text-left group rounded-2xl border border-sapphire/20 bg-sapphire/5 p-6 flex items-center gap-4 transition-all duration-300 hover:bg-sapphire/10 hover:border-sapphire/30 cursor-pointer"

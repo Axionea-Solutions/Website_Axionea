@@ -35,7 +35,7 @@ export default function ComparisonSection() {
             <div className="max-w-6xl mx-auto">
                 {/* Header */}
                 <div className="text-center mb-10 md:mb-14">
-                    <span className="inline-flex items-center gap-2 text-xs font-bold tracking-[3px] uppercase text-muted-foreground mb-4 px-4 py-1.5 rounded-full border border-black/10 dark:border-white/10 bg-black/[0.02] dark:bg-white/[0.04]">
+                    <span className="inline-flex items-center gap-2 text-xs font-bold tracking-[3px] uppercase text-sapphire mb-4 bg-sapphire/10 px-4 py-2 rounded-full border border-sapphire/15">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5">
                             <line x1="18" y1="20" x2="18" y2="10" /><line x1="12" y1="20" x2="12" y2="4" /><line x1="6" y1="20" x2="6" y2="14" />
                         </svg>

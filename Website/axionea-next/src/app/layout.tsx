@@ -11,11 +11,13 @@ import StructuredData from "@/components/StructuredData";
 const syne = Syne({
   variable: "--font-syne",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -64,21 +66,14 @@ export const metadata: Metadata = {
     title: "Axionea | KI-Lösungen für Arztpraxen, Kieferorthopäden & Makler",
     description: "KI-Automatisierung mit Branchenfokus — DSGVO-konform, sofort einsetzbar, inkl. Team-Schulungen.",
     siteName: "Axionea",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Axionea — KI-Automatisierung für den Mittelstand",
-      },
-    ],
+    // OG-Image wird automatisch aus app/opengraph-image.tsx generiert
   },
   twitter: {
     card: "summary_large_image",
     title: "Axionea | KI-Lösungen für Arztpraxen, Kieferorthopäden & Makler",
     description: "KI-Automatisierung mit Branchenfokus — DSGVO-konform, sofort einsetzbar.",
-    images: ["/og-image.png"],
     creator: "@axionea",
+    // Twitter-Image wird automatisch aus app/opengraph-image.tsx generiert
   },
   verification: {
     // google: "DEIN_GOOGLE_VERIFICATION_CODE",  // TODO: nach Google Search Console Einrichtung eintragen
@@ -98,11 +93,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="de" className="dark" suppressHydrationWarning>
-      <head>
-        {/* Calendly Widget CSS and Script */}
-        <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
-        <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
-      </head>
       <body
         className={`${syne.variable} ${dmSans.variable} font-sans antialiased`}
       >

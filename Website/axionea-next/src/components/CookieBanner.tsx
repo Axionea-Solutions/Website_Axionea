@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 export default function CookieBanner() {
     const [isVisible, setIsVisible] = useState(false);
@@ -50,7 +51,7 @@ export default function CookieBanner() {
                                 <p className="text-sm text-muted-foreground leading-relaxed">
                                     Wir nutzen Cookies zur Verbesserung der Website und für Analysen.
                                     <br />
-                                    <a href="#" className="text-sapphire hover:underline font-medium">Mehr zum Datenschutz</a>
+                                    <Link href="/datenschutz" className="text-sapphire hover:underline font-medium">Mehr zum Datenschutz</Link>
                                 </p>
                             </div>
                         </div>

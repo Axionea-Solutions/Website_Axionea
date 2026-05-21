@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { Shield, Lock, CheckCircle } from 'lucide-react';
+import { LetterReveal } from "./ui/LetterReveal";
 
 export default function ComplianceBadges() {
   const badges = [
@@ -28,12 +29,18 @@ export default function ComplianceBadges() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-sapphire/5 blur-[120px] rounded-[100%] pointer-events-none" />
         
         <div className="relative max-w-6xl mx-auto">
-            <div className="text-center mb-10">
-                <h2 className="text-[clamp(28px,6vw,52px)] font-bold tracking-tight leading-tight mb-4" style={{ fontFamily: "var(--font-syne)" }}>
-                    Sicherheit & Compliance
+            <div className="text-center mb-10 md:mb-16">
+                <span className="inline-flex items-center gap-2 text-xs font-bold tracking-[3px] uppercase text-sapphire mb-4 bg-sapphire/10 px-4 py-2 rounded-full border border-sapphire/15">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    </svg>
+                    SICHERHEIT
+                </span>
+                <h2 className="text-[clamp(32px,5vw,56px)] font-bold tracking-tight leading-tight mb-4" style={{ fontFamily: "var(--font-syne)" }}>
+                    <LetterReveal text="Sicherheit & Compliance" />
                 </h2>
-                <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-                    Sicherheit und Datenschutz stehen bei uns an erster Stelle. Unsere KI-Lösungen erfüllen die höchsten Standards für den europäischen Markt.
+                <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+                    <LetterReveal text="Sicherheit und Datenschutz stehen bei uns an erster Stelle. Unsere KI-Lösungen erfüllen die höchsten Standards für den europäischen Markt." delay={0.2} stagger={0.015} />
                 </p>
             </div>
 

@@ -1,20 +1,30 @@
 "use client";
 
+import { LetterReveal } from "./ui/LetterReveal";
+
 export default function WorkflowDiagram() {
     return (
         <section id="workflow" className="py-16 md:py-24 px-6">
             <div className="max-w-6xl mx-auto">
                 {/* Section Header */}
                 <div className="text-center mb-10 md:mb-16">
-                    <span className="text-xs font-bold tracking-[3px] uppercase text-sapphire mb-4 block">ARCHITEKTUR</span>
+                    <span className="inline-flex items-center gap-2 text-xs font-bold tracking-[3px] uppercase text-sapphire mb-4 bg-sapphire/10 px-4 py-2 rounded-full border border-sapphire/15">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5">
+                            <rect x="3" y="3" width="7" height="7" rx="1" />
+                            <rect x="14" y="3" width="7" height="7" rx="1" />
+                            <rect x="3" y="14" width="7" height="7" rx="1" />
+                            <rect x="14" y="14" width="7" height="7" rx="1" />
+                        </svg>
+                        ARCHITEKTUR
+                    </span>
                     <h2
-                        className="text-[clamp(28px,6vw,56px)] font-bold tracking-tight leading-tight mb-4 break-words hyphens-auto"
+                        className="text-[clamp(32px,5vw,56px)] font-bold tracking-tight leading-tight mb-4 break-words hyphens-auto"
                         style={{ fontFamily: 'var(--font-syne)' }}
                     >
-                        So arbeitet dein KI-System
+                        <LetterReveal text="So arbeitet dein KI-System" />
                     </h2>
-                    <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                        Daten rein, Ergebnisse raus — vollautomatisch, rund um die Uhr
+                    <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+                        <LetterReveal text="Daten rein, Ergebnisse raus — vollautomatisch, rund um die Uhr" delay={0.2} stagger={0.015} />
                     </p>
                 </div>
 

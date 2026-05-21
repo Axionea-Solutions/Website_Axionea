@@ -1,6 +1,8 @@
 "use client";
 
 import { useInView } from "@/hooks/useInView";
+import { openCalendly } from "@/lib/calendly";
+import { LetterReveal } from "./ui/LetterReveal";
 
 /* ══════════════════════════════════════════════════════════════
    Standard Process Card (Cards 01–03)
@@ -93,7 +95,6 @@ function ProcessCard({
    Enhanced Partnership Card (Cards 04–05)
    ══════════════════════════════════════════════════════════════ */
 function PartnershipCard({
-    step,
     title,
     subtitle,
     description,
@@ -103,7 +104,6 @@ function PartnershipCard({
     imageAlt,
     index,
 }: {
-    step: string;
     title: string;
     subtitle: string;
     description: string;
@@ -127,29 +127,20 @@ function PartnershipCard({
             <div className="group relative h-full rounded-3xl border border-slate-200 bg-white transition-all duration-500 hover:border-sapphire/30 hover:shadow-xl hover:-translate-y-1 overflow-hidden">
                 {/* Content section */}
                 <div className="relative p-6 pb-4">
-                    <div className="flex items-start gap-4 mb-4">
+                    <div className="flex items-center gap-4 mb-3">
                         {/* Icon */}
                         <div className="w-11 h-11 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center shadow-sm text-sapphire shrink-0">
                             {icon}
                         </div>
-                        {/* Step badge */}
-                        <div className="flex-1 mt-1">
-                            <span
-                                className="text-xs font-bold text-slate-400 tracking-widest uppercase"
-                                style={{ fontFamily: "var(--font-syne)" }}
-                            >
-                                Schritt {step}
-                            </span>
-                        </div>
+                        {/* Title — prominent, anstelle von "Schritt 04/05" */}
+                        <h3
+                            className="text-xl md:text-2xl font-bold text-slate-900 tracking-tight leading-tight"
+                            style={{ fontFamily: "var(--font-syne)" }}
+                        >
+                            {title}
+                        </h3>
                     </div>
 
-                    {/* Title */}
-                    <h3
-                        className="text-base font-bold text-slate-900 mb-2 tracking-tight"
-                        style={{ fontFamily: "var(--font-syne)" }}
-                    >
-                        {title}
-                    </h3>
                     {/* Subtitle */}
                     <p className="text-sapphire text-sm font-semibold uppercase tracking-wider mb-3">
                         {subtitle}
@@ -215,10 +206,10 @@ function SectionDivider() {
                     className="text-[clamp(28px,6vw,56px)] font-bold tracking-tight leading-tight mb-4 break-words hyphens-auto text-white"
                     style={{ fontFamily: "var(--font-syne)" }}
                 >
-                    Skalierbarkeit &amp; Planbarkeit
+                    <LetterReveal text="Persönliche Betreuung & Schulungen" />
                 </h2>
                 <p className="text-gray-400 text-lg max-w-3xl mx-auto leading-relaxed">
-                    Erfolgreiche KI-Projekte enden nicht mit dem Go-Live. Sie wachsen mit deinem Unternehmen mit. Wir bleiben an deiner Seite.
+                    <LetterReveal text="Erfolgreiche KI-Projekte enden nicht mit dem Go-Live. Sie wachsen mit deinem Unternehmen mit. Wir bleiben an deiner Seite." delay={0.2} stagger={0.012} />
                 </p>
             </div>
         </div>
@@ -245,10 +236,10 @@ export default function ProcessSteps() {
                         className="text-[clamp(28px,6vw,56px)] font-bold tracking-tight leading-tight mb-4 break-words hyphens-auto text-white"
                         style={{ fontFamily: "var(--font-syne)" }}
                     >
-                        Einfach &amp; Skalierbar
+                        <LetterReveal text="In 3 Schritten zur KI" />
                     </h2>
                     <p className="text-gray-400 text-lg max-w-3xl mx-auto leading-relaxed">
-                        Von der ersten Analyse bis zur langfristigen Partnerschaft. Wir setzen KI nicht nur um — wir bleiben an deiner Seite und entwickeln dein Team weiter.
+                        <LetterReveal text="Von der ersten Analyse bis zur langfristigen Partnerschaft. Wir setzen KI nicht nur um — wir bleiben an deiner Seite und entwickeln dein Team weiter." delay={0.2} stagger={0.012} />
                     </p>
                 </div>
 
@@ -311,7 +302,6 @@ export default function ProcessSteps() {
                     {/* Card 04 — Persönliche Betreuung */}
                     <PartnershipCard
                         index={3}
-                        step="04"
                         title="Persönliche Betreuung"
                         subtitle="Im Rhythmus, der zu dir passt"
                         description="Wir bleiben an deiner Seite. Im Retainer-Modell betreuen wir dich kontinuierlich — von der monatlichen Strategie-Session bis zum wöchentlichen Sparring. Du entscheidest, wie eng die Zusammenarbeit sein soll."
@@ -341,7 +331,6 @@ export default function ProcessSteps() {
                     {/* Card 05 — Schulungen & Team-Befähigung */}
                     <PartnershipCard
                         index={4}
-                        step="05"
                         title="Schulungen & Team-Befähigung"
                         subtitle="KI ist nur so gut wie dein Team"
                         description="Wir schulen deine Mitarbeitenden langfristig im souveränen Umgang mit KI. Vom Grundlagen-Workshop bis zum branchenspezifischen Tool-Training — damit eure KI-Systeme nicht nur laufen, sondern auch wirklich genutzt werden."
@@ -364,21 +353,27 @@ export default function ProcessSteps() {
 
                 {/* ─── CTA ─── */}
                 <div className="text-center mt-12 md:mt-16">
-                    <p className="text-slate-600 text-base mb-5">
-                        Welches Modell passt zu dir? Lass uns sprechen.
+                    <p className="text-gray-300 text-lg md:text-xl mb-2 font-medium" style={{ fontFamily: "var(--font-syne)" }}>
+                        Bereit für den nächsten Schritt?
                     </p>
-                    <button
-                        onClick={() => {
-                            // @ts-ignore
-                            if (window.Calendly) {
-                                // @ts-ignore
-                                window.Calendly.initPopupWidget({ url: '[CALENDLY-LINK EINFÜGEN]' });
+                    <p className="text-gray-400 text-base mb-6 max-w-xl mx-auto">
+                        In 15 Minuten finden wir heraus, wo KI bei dir den größten Hebel hat.
+                    </p>
+                    {/* Calendly TODO: echten Link einsetzen — Fallback navigiert zu #kontakt */}
+                    <a
+                        href="#kontakt"
+                        aria-label="Beratungsgespräch buchen"
+                        onClick={(e) => {
+                            const calendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_URL || (typeof window !== 'undefined' ? window.__AXIONEA_CALENDLY_URL__ : null);
+                            if (calendlyUrl) {
+                                e.preventDefault();
+                                openCalendly(calendlyUrl);
                             }
                         }}
-                        className="px-8 py-4 rounded-full bg-sapphire text-white font-semibold text-base hover:bg-sapphire-hover transition-all shadow-md hover:shadow-lg cursor-pointer"
+                        className="inline-block px-8 py-4 rounded-full bg-sapphire text-white font-semibold text-base hover:bg-sapphire-hover transition-all shadow-md hover:shadow-lg cursor-pointer"
                     >
                         Beratungsgespräch buchen →
-                    </button>
+                    </a>
                 </div>
             </div>
         </section>

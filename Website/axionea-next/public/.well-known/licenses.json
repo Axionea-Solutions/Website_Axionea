@@ -1,0 +1,50 @@
+{
+  "$schema": "https://rslstandard.org/schema/v1.0/license.json",
+  "version": "1.0",
+  "publisher": {
+    "name": "Axionea Solutions GbR",
+    "url": "https://www.axionea-solutions.de",
+    "contact": "info@axionea-solutions.de"
+  },
+  "licenses": [
+    {
+      "scope": "/",
+      "permits": {
+        "ai_training": "attribution",
+        "ai_search": "allow",
+        "ai_summarization": "allow",
+        "ai_inference": "attribution"
+      },
+      "requires": {
+        "attribution": {
+          "name": "Axionea",
+          "url": "https://www.axionea-solutions.de"
+        }
+      },
+      "denies": {
+        "republication_verbatim": true,
+        "resale": true
+      }
+    },
+    {
+      "scope": "/llms.txt",
+      "permits": {
+        "ai_training": "allow",
+        "ai_search": "allow",
+        "ai_summarization": "allow",
+        "ai_inference": "allow"
+      }
+    },
+    {
+      "scope": "/llms-full.txt",
+      "permits": {
+        "ai_training": "allow",
+        "ai_search": "allow",
+        "ai_summarization": "allow",
+        "ai_inference": "allow"
+      }
+    }
+  ],
+  "contact": "info@axionea-solutions.de",
+  "last_updated": "2026-05-21"
+}

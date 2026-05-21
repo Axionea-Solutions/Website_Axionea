@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useLayoutEffect } from "react";
+import { useState } from "react";
 import { LetterReveal } from "./ui/LetterReveal";
 import { useInView } from "@/hooks/useInView";
 
@@ -9,15 +9,7 @@ import { useInView } from "@/hooks/useInView";
 /* ──────────────── FAQ Item ──────────────── */
 function FAQItem({ question, answer, index }: { question: string; answer: string; index: number }) {
     const [isOpen, setIsOpen] = useState(false);
-    const contentRef = useRef<HTMLDivElement>(null);
-    const [height, setHeight] = useState(0);
     const { ref, isInView } = useInView(0.1);
-
-    useLayoutEffect(() => {
-        if (contentRef.current) {
-            setHeight(isOpen ? contentRef.current.scrollHeight : 0);
-        }
-    }, [isOpen]);
 
     return (
         <div
@@ -47,13 +39,15 @@ function FAQItem({ question, answer, index }: { question: string; answer: string
                 </div>
             </button>
             <div
-                style={{ height: `${height}px` }}
-                className="overflow-hidden transition-[height] duration-400 ease-[cubic-bezier(0.16,1,0.3,1)]"
+                className="grid transition-[grid-template-rows] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]"
+                style={{ gridTemplateRows: isOpen ? '1fr' : '0fr' }}
             >
-                <div ref={contentRef} className="px-6 pb-5">
-                    <p className="text-sm text-slate-600 leading-relaxed max-w-2xl">
-                        {answer}
-                    </p>
+                <div className="overflow-hidden">
+                    <div className="px-6 pb-5">
+                        <p className="text-sm text-slate-600 leading-relaxed max-w-2xl">
+                            {answer}
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>

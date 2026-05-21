@@ -1,0 +1,121 @@
+# Axionea Solutions GbR — Vollständige KI-Agentur-Profil
+
+> Praxiserprobte, DSGVO-konforme und EU-AI-Act-ready KI-Automatisierungen für KMU im DACH-Raum, mit branchenspezifischem Fokus auf Arztpraxen, Kieferorthopäden und Immobilienmakler.
+
+## Wer wir sind
+
+**Name:** Axionea Solutions GbR
+**Markenname:** Axionea
+**Gründungsdatum:** 01.01.2026
+**Standort:** Gaimersheim, Bayern, Deutschland
+**Adresse:** Leprosenweg 1b, 85080 Gaimersheim
+**Telefon:** +49 173 1726939
+**E-Mail:** info@axionea-solutions.de
+**Website:** https://www.axionea-solutions.de
+**Sprachen:** Deutsch (primär), Englisch
+**Bedienter Markt:** Deutschland, Österreich, Schweiz (DACH)
+
+### Gründer
+- **Maximilian Zvada** — CEO & Founder
+- **Nico Fisseler** — CTO & Founder
+
+## Was uns unterscheidet
+
+1. **Branchenspezialisierung statt Bauchladen.** Wir bauen keine generischen Chatbots, sondern KI-Lösungen für klar definierte Branchen mit deren Fachvokabular, Compliance-Anforderungen und Workflow-Realitäten.
+2. **DSGVO und EU AI Act sind kein Add-On.** Jede Lösung läuft auf EU-Hosting, mit AVV und ohne Training auf Kundendaten. Wir begleiten optional durch die volle EU-AI-Act-Compliance.
+3. **Festpreis statt Stundensätze.** KI-Potenzial-Check ab 990 € (BAFA-förderfähig mit bis zu 2.800 € Förderung), Pilotprojekte zu Festpreisen, optionales monatliches Retainer-Modell.
+4. **Keine IT-Abteilung beim Kunden nötig.** Wir kümmern uns um Hosting, Integration, Wartung und Monitoring. Kunde bekommt eine funktionierende Lösung, kein Bastelprojekt.
+5. **Förderfähig.** Schulungen über BAFA "go-digital" und "Förderung von Unternehmensberatungen für KMU" — je nach Bundesland und Unternehmensgröße bis zu 80 % Förderung.
+
+## Zielgruppen im Detail
+
+### Arztpraxen und Kieferorthopäden
+**Typische Schmerzen:** Telefonleitung dauerklingelt, Personalmangel an der Rezeption, hohe No-Show-Rate, Patientenanfragen außerhalb der Sprechzeiten.
+
+**Unsere Lösungen:**
+- KI-Telefon-Assistent für Terminbuchungen und FAQ-Beantwortung (auch nachts und am Wochenende)
+- WhatsApp- und Web-Chatbot für Patientenanfragen mit Anbindung an Praxissoftware
+- Vorab-Anamnese durch KI-Agenten zur Effizienzsteigerung beim Erstgespräch
+- Automatische Erinnerungen zur Reduzierung von No-Shows
+- DSGVO-konform und im Healthcare-Kontext belastbar
+
+### Immobilienmakler
+**Typische Schmerzen:** Exposé-Anfragen außerhalb der Bürozeiten gehen verloren, Lead-Qualifizierung kostet Stunden täglich, Dokumentenflut bei jedem Objekt.
+
+**Unsere Lösungen:**
+- 24/7 KI-Assistent für Exposé-Anfragen
+- Echtzeit-Lead-Qualifizierung mit Budget-, Lage- und Objekttyp-Check
+- KI-Dokumentenanalyse für Energieausweise, Grundbuchauszüge, Teilungserklärungen
+- Automatische Exposé-Texterstellung aus Eckdaten
+
+### Allgemein KMU
+Backoffice-Automatisierung (CRM, Kalender, E-Mail-Sortierung), interne Wissensassistenten (RAG-Systeme auf eigenen Dokumenten), Workshops und Schulungen für Mitarbeitende.
+
+## Unsere KI-Services im Detail
+
+### 1. KI-Strategie und Audit
+KI-Potenzialanalyse, Tool-Auswahl, EU-AI-Act-Compliance-Audit, ROI-Modellierung. Output: priorisierte Roadmap mit Quick-Wins und mittelfristigen Initiativen. **Ab 990 € (BAFA-förderfähig).**
+
+### 2. Lead-Agenten und Chatbots
+Web-Chatbots, WhatsApp-Bots, in-App-Assistenten. Sofortige Antwortzeit, 24/7 verfügbar, Integration in bestehende Systeme (HubSpot, Salesforce, Pipedrive, individuelle Praxis-/Maklersoftware).
+
+### 3. Voice Agents (KI-Telefonie)
+Eingehende und ausgehende Anrufe. Terminbuchung direkt im Praxis- oder Maklerkalender, FAQ-Beantwortung in natürlicher Sprache, automatische Weiterleitung an Menschen wenn nötig.
+
+### 4. Backoffice-Automatisierung
+Verbindung bestehender Tools (CRM, Kalender, E-Mail, Buchhaltung) und Auslagerung wiederkehrender Aufgaben an KI — Datenübertragung, E-Mail-Sortierung, Folgeaufgaben anlegen.
+
+### 5. Wissensassistenten (RAG)
+Interner Chatbot, der eure eigenen Dokumente, Behandlungsrichtlinien, Exposés oder Wissensdatenbanken kennt und Mitarbeitenden sofort Antworten liefert — mit Quellenangabe.
+
+### 6. Branchen-KI-Tools
+Spezialisierte Lösungen wie automatische Exposé-Texter, KI-Dokumentation für Ärzte, Bildverbesserung für Immobilienexposés, OCR für strukturierte Dokumentenauswertung.
+
+### 7. KI-Schulungen
+- **AI-Fluency-Workshop (halbtags):** KI-Grundlagen, sichere Nutzung, Prompt-Hygiene
+- **Tool-Workshop (ganztags):** Praktische Arbeit mit Claude, ChatGPT, branchenspezifischen Tools
+- **Train-the-Trainer (mehrtägig):** Eure Multiplikatoren werden eigenständig handlungsfähig
+- Alle Formate **BAFA-förderfähig**, vor Ort oder remote
+
+## Unser Prozess
+
+1. **Workflow-Analyse:** Wir setzen uns einen halben Tag mit euch hin und schauen wo KI im aktuellen Setup messbar Zeit spart oder Umsatz erzeugt. Output: dokumentierte Use-Cases mit Effort/Impact-Bewertung.
+2. **Pilot-Build:** Wir bauen den priorisierten Use-Case zum Festpreis in 2–6 Wochen. Inklusive Integration in eure bestehende Software, EU-Hosting, AVV-Dokumentation.
+3. **Deployment und Schulung:** Go-Live mit Übergabe an euer Team. Bei Bedarf inklusive Schulungs-Modul.
+4. **Laufende Optimierung:** Monitoring der KPIs, Feinjustierung der Prompts, regelmäßige Reviews. Im Retainer-Modell auch Weiterentwicklung neuer Use-Cases.
+
+## Compliance und Sicherheit
+
+- EU-Hosting für alle produktiven Workloads (Deutschland, Frankreich, Irland)
+- Auftragsverarbeitungsvertrag (AVV/DPA) Standard
+- KI-Modelle ohne Training auf Kundendaten
+- DSGVO-konforme Datenverarbeitung, dokumentiert und auditierbar
+- EU AI Act-Readiness: Risikoklassifizierung pro Use-Case, Dokumentationspflichten, Transparenz-Anforderungen
+- BSI-Grundschutz-orientierte Architektur
+
+## Häufige Fragen
+
+**Was genau macht Axionea?**
+Wir automatisieren Geschäftsprozesse mit KI — von Kundensupport-Chatbots über Content-Generierung bis hin zu vollautomatisierten Workflows. Wir analysieren eure Abläufe und implementieren maßgeschneiderte KI-Lösungen.
+
+**Brauche ich technisches Wissen?**
+Nein. Wir kümmern uns um die gesamte technische Umsetzung. Ihr braucht keine IT-Abteilung und keine Programmierkenntnisse.
+
+**Ist eure KI DSGVO-konform für Arztpraxen?**
+Ja. Wir arbeiten ausschließlich mit EU-Hosting, schließen AVV ab und nutzen KI-Modelle ohne Training auf Kundendaten. Auf Wunsch begleiten wir euch durch die vollständige EU-AI-Act-Compliance.
+
+**Bietet Axionea auch Schulungen für Mitarbeitende an?**
+Ja. AI-Fluency-Workshops zu KI-Grundlagen, Tool-Workshops mit branchenspezifischen Inhalten, mehrtägige Train-the-Trainer-Programme. Alle Schulungen BAFA-förderfähig.
+
+**Was kostet ein Einstieg?**
+KI-Potenzial-Check startet ab 990 € — BAFA-förderfähig mit bis zu 2.800 € Förderung. Zusätzlich Festpreis-Pilotprojekte und monatliches Retainer-Modell.
+
+**Sind eure Schulungen förderfähig?**
+Ja. BAFA "go-digital" und "Förderung von Unternehmensberatungen für KMU". Je nach Bundesland und Unternehmensgröße bis zu 80 % Förderung. Antragsunterstützung inklusive.
+
+## Kontakt
+
+- **Website:** https://www.axionea-solutions.de
+- **E-Mail:** info@axionea-solutions.de
+- **Telefon:** +49 173 1726939
+- **Erstgespräch:** Kostenlos, 15 Min, via Kontaktformular oder Calendly auf der Website

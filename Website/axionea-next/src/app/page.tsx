@@ -15,12 +15,11 @@ import InteractiveParticles from '@/components/ui/InteractiveParticles';
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen w-full bg-background text-foreground flex flex-col pt-16 overflow-hidden">
+    <main className="relative min-h-screen w-full bg-background text-foreground flex flex-col pt-28 md:pt-32 overflow-hidden">
       <InteractiveParticles />
       <HeroContent />
 
-      {/* Section Divider */}
-      <hr className="border-t border-black/5 dark:border-white/5" />
+      {/* Soft transition handled by hero fade-overlay */}
 
       {/* Industry Tags Carousel */}
       <IndustryTagsBand />
