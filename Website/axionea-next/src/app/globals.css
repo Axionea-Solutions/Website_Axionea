@@ -278,7 +278,9 @@ section[id] {
   .animate-scroll-left,
   .animate-core-pulse,
   .text-reveal-animate,
-  .workflow-line-glow {
+  .workflow-line-glow,
+  .ax-r1, .ax-r2, .ax-r3, .ax-r4, .ax-r5, .ax-r6, .ax-r7, .ax-r8,
+  .ax-bar {
     animation: none !important;
   }
 
@@ -288,3 +290,43 @@ section[id] {
     animation-iteration-count: 1 !important;
   }
 }
+
+/* ════════════════════════════════════════════════════════════
+   KFO Praxis-Grafiken — Loop-Animationen (Master-Periode 12 s)
+   Portiert aus den gelieferten Service-Karten, Akzent = Sapphire.
+   ════════════════════════════════════════════════════════════ */
+
+/* Gestaffelte Reveal-Loops */
+@keyframes axR1 { 0%,4%{opacity:0;transform:translateY(10px)} 8%,88%{opacity:1;transform:translateY(0)} 96%,100%{opacity:0} }
+@keyframes axR2 { 0%,10%{opacity:0;transform:translateY(10px)} 14%,88%{opacity:1;transform:translateY(0)} 96%,100%{opacity:0} }
+@keyframes axR3 { 0%,18%{opacity:0;transform:translateY(10px)} 22%,88%{opacity:1;transform:translateY(0)} 96%,100%{opacity:0} }
+@keyframes axR4 { 0%,28%{opacity:0;transform:translateY(10px)} 32%,88%{opacity:1;transform:translateY(0)} 96%,100%{opacity:0} }
+@keyframes axR5 { 0%,38%{opacity:0;transform:translateY(10px)} 42%,88%{opacity:1;transform:translateY(0)} 96%,100%{opacity:0} }
+@keyframes axR6 { 0%,48%{opacity:0;transform:translateY(10px)} 52%,88%{opacity:1;transform:translateY(0)} 96%,100%{opacity:0} }
+@keyframes axR7 { 0%,58%{opacity:0;transform:translateY(10px)} 62%,88%{opacity:1;transform:translateY(0)} 96%,100%{opacity:0} }
+@keyframes axR8 { 0%,68%{opacity:0;transform:translateY(10px)} 72%,88%{opacity:1;transform:translateY(0)} 96%,100%{opacity:0} }
+.ax-r1{animation:axR1 12s infinite both} .ax-r2{animation:axR2 12s infinite both}
+.ax-r3{animation:axR3 12s infinite both} .ax-r4{animation:axR4 12s infinite both}
+.ax-r5{animation:axR5 12s infinite both} .ax-r6{animation:axR6 12s infinite both}
+.ax-r7{animation:axR7 12s infinite both} .ax-r8{animation:axR8 12s infinite both}
+
+/* Balken-Wachstum (KPI/Chart) */
+@keyframes axBarGrow { 0%,4%{transform:scaleY(0)} 18%,88%{transform:scaleY(1)} 96%,100%{transform:scaleY(0)} }
+.ax-bar { transform-origin: bottom; animation: axBarGrow 12s infinite both; }
+
+/* Tipp-Punkte */
+@keyframes axTypeDot { 0%,60%,100%{transform:translateY(0);opacity:.4} 30%{transform:translateY(-3px);opacity:1} }
+
+/* Call-Agent: pulsierende Ringe */
+@keyframes axRingPulse { 0%{transform:scale(.85);opacity:0} 30%{opacity:.35} 100%{transform:scale(1.25);opacity:0} }
+
+/* Blinkender Cursor */
+@keyframes axCaret { 0%,49%{opacity:1} 50%,100%{opacity:0} }
+
+/* RAG: rotierender Highlight der Optionen */
+@keyframes axRagH0 { 0%,5%,38%,100%{background:#fff;color:#0A1628;border-color:#E2E8F0} 8%,35%{background:#E1ECF9;color:#0F52BA;border-color:#0F52BA} }
+@keyframes axRagH1 { 0%,38%,71%,100%{background:#fff;color:#0A1628;border-color:#E2E8F0} 42%,68%{background:#E1ECF9;color:#0F52BA;border-color:#0F52BA} }
+@keyframes axRagH2 { 0%,71%,100%{background:#fff;color:#0A1628;border-color:#E2E8F0} 75%,98%{background:#E1ECF9;color:#0F52BA;border-color:#0F52BA} }
+
+/* Recall: pulsierende Kalenderzelle */
+@keyframes axCellPulse { 0%,100%{box-shadow:0 0 0 0 rgba(15,82,186,.6)} 50%{box-shadow:0 0 0 8px rgba(15,82,186,0)} }

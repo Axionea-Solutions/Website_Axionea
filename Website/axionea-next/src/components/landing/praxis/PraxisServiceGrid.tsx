@@ -3,10 +3,12 @@
 import { useInView } from "@/hooks/useInView";
 import { PraxisIcon } from "./icons";
 import { SectionHeading } from "./SectionHeading";
+import { PRAXIS_GRAPHICS } from "./graphics/PraxisGraphics";
 import type { PraxisServiceCard } from "@/data/kfo-praxis";
 
 function ServiceCard({ card, index }: { card: PraxisServiceCard; index: number }) {
     const { ref, isInView } = useInView<HTMLElement>(0.1);
+    const Graphic = card.graphicKey ? PRAXIS_GRAPHICS[card.graphicKey] : null;
 
     return (
         <article
@@ -16,48 +18,35 @@ function ServiceCard({ card, index }: { card: PraxisServiceCard; index: number }
                 transform: isInView ? "translateY(0)" : "translateY(30px)",
                 transition: `all 1.2s cubic-bezier(0.16, 1, 0.3, 1) ${(index % 3) * 0.12}s`,
             }}
-            className={`group relative h-full rounded-2xl border p-6 backdrop-blur-md transition-all duration-300 ${
+            className={`group relative h-full overflow-hidden rounded-3xl bg-white shadow-[0_4px_24px_-4px_rgba(0,0,0,0.08)] transition-all duration-500 hover:-translate-y-1 ${
                 card.highlight
-                    ? "border-sapphire/30 bg-sapphire/10 hover:border-sapphire/50"
-                    : card.subtle
-                      ? "border-white/5 bg-white/[0.02] hover:border-white/15"
-                      : "border-white/10 bg-white/5 hover:border-sapphire/30 hover:bg-sapphire/5"
-            }`}
+                    ? "border-2 border-sapphire/40 hover:border-sapphire/70 hover:shadow-[0_0_24px_rgba(15,82,186,0.3)]"
+                    : "border border-slate-200 hover:border-sapphire/50 hover:shadow-[0_0_20px_rgba(15,82,186,0.25),0_0_50px_rgba(15,82,186,0.12)]"
+            } ${card.subtle ? "opacity-90" : ""}`}
         >
-            <div className="flex items-center justify-between mb-4">
-                <div
-                    className={`w-11 h-11 rounded-xl flex items-center justify-center text-sapphire ${
-                        card.subtle ? "bg-white/5 border border-white/10" : "bg-sapphire/15 border border-sapphire/20"
-                    }`}
-                >
-                    <PraxisIcon name={card.iconKey} className="w-5 h-5" />
-                </div>
-                <span className="text-[10px] font-bold tracking-[2px] uppercase text-sapphire/70">
+            {/* Illustration / Icon header */}
+            <div className="relative border-b border-slate-100">
+                {Graphic ? (
+                    <Graphic />
+                ) : (
+                    <div className="flex h-64 items-center justify-center bg-[#FBFCFE]">
+                        <div className="flex h-20 w-20 items-center justify-center rounded-2xl border border-slate-200 bg-white text-sapphire shadow-sm">
+                            <PraxisIcon name={card.iconKey} className="h-9 w-9" />
+                        </div>
+                    </div>
+                )}
+                <span className="absolute right-4 top-4 rounded-full bg-white/90 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[2px] text-sapphire/70 shadow-sm backdrop-blur-sm">
                     {card.phase}
                 </span>
             </div>
 
-            <h3 className="text-lg font-bold text-white mb-2" style={{ fontFamily: "var(--font-syne)" }}>
-                {card.title}
-            </h3>
-            <p className="text-gray-400 text-sm leading-relaxed mb-4">{card.description}</p>
-
-            <ul className="space-y-2">
-                {card.features.map((feature) => (
-                    <li key={feature} className="flex items-start gap-2.5 text-sm text-gray-300">
-                        <svg
-                            className="w-4 h-4 text-sapphire shrink-0 mt-0.5"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                            aria-hidden="true"
-                        >
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7" />
-                        </svg>
-                        <span>{feature}</span>
-                    </li>
-                ))}
-            </ul>
+            {/* Content */}
+            <div className="relative p-6">
+                <h3 className="mb-2 text-base font-bold tracking-tight text-sapphire" style={{ fontFamily: "var(--font-syne)" }}>
+                    {card.title}
+                </h3>
+                <p className="text-sm leading-relaxed text-slate-600">{card.description}</p>
+            </div>
         </article>
     );
 }
@@ -78,7 +67,7 @@ export function PraxisServiceGrid({
     return (
         <section className="mb-20">
             <SectionHeading eyebrow={eyebrow} eyebrowIcon={eyebrowIcon} title={title} subtitle={subtitle} />
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
                 {cards.map((card, i) => (
                     <ServiceCard key={card.title} card={card} index={i} />
                 ))}

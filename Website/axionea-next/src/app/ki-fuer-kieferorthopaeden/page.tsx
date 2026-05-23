@@ -5,6 +5,7 @@ import { PraxisHero } from "@/components/landing/praxis/PraxisHero";
 import { PraxisServiceGrid } from "@/components/landing/praxis/PraxisServiceGrid";
 import { PraxisRoadmap } from "@/components/landing/praxis/PraxisRoadmap";
 import { KnowledgeArchitecture } from "@/components/landing/praxis/KnowledgeArchitecture";
+import { PraxisWikiDemo } from "@/components/landing/praxis/PraxisWikiDemo";
 import { PraxisDifferentiators } from "@/components/landing/praxis/PraxisDifferentiators";
 import { PraxisFAQ } from "@/components/landing/praxis/PraxisFAQ";
 import { FoerderungTrustBlock } from "@/components/landing/praxis/FoerderungTrustBlock";
@@ -74,6 +75,8 @@ export default function KiFuerKieferorthopaeden() {
                     <PraxisRoadmap />
 
                     <KnowledgeArchitecture />
+
+                    <PraxisWikiDemo />
 
                     <PraxisDifferentiators />
 

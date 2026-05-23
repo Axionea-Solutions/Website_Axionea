@@ -4,6 +4,8 @@
  * (siehe components/landing/praxis/icons.tsx), damit dieses File CMS-ready bleibt.
  */
 
+import type { GraphicKey } from "@/components/landing/praxis/graphics/PraxisGraphics";
+
 export type PraxisIconKey =
     | "aligner"
     | "router"
@@ -34,6 +36,8 @@ export interface PraxisServiceCard {
     description: string;
     features: string[];
     iconKey: PraxisIconKey;
+    /** Animierte Grafik im Karten-Header; ohne Wert wird der Icon-Header gezeigt. */
+    graphicKey?: GraphicKey;
     /** Visuell zurückhaltender (z.B. Best-of-Breed-Block). */
     subtle?: boolean;
     /** KFO-spezifisch hervorgehoben. */
@@ -99,6 +103,7 @@ export const kfoUseCases: PraxisServiceCard[] = [
             "Übergabe ins PVS",
         ],
         iconKey: "aligner",
+        graphicKey: "chatbot",
         highlight: true,
     },
     {
@@ -113,6 +118,7 @@ export const kfoUseCases: PraxisServiceCard[] = [
             "Vorbereitete Patientenakte",
         ],
         iconKey: "router",
+        graphicKey: "engine",
         highlight: true,
     },
     {
@@ -127,6 +133,7 @@ export const kfoUseCases: PraxisServiceCard[] = [
             "Über gesamte Behandlungsdauer",
         ],
         iconKey: "bell",
+        graphicKey: "recall",
         highlight: true,
     },
 ];
@@ -154,6 +161,7 @@ export const kfoServiceCards: PraxisServiceCard[] = [
             "Inklusive Team-Schulung",
         ],
         iconKey: "mail",
+        graphicKey: "email",
     },
     {
         phase: "Phase 1",
@@ -184,6 +192,7 @@ export const kfoServiceCards: PraxisServiceCard[] = [
             "Privater Inhaber:in-Bereich getrennt",
         ],
         iconKey: "database",
+        graphicKey: "rag",
     },
     {
         phase: "Phase 3",
@@ -197,6 +206,7 @@ export const kfoServiceCards: PraxisServiceCard[] = [
             "DATEV-Anbindung",
         ],
         iconKey: "receipt",
+        graphicKey: "billing",
     },
     {
         phase: "Phase 4",
@@ -210,6 +220,7 @@ export const kfoServiceCards: PraxisServiceCard[] = [
             "4 Sprachen (DE · EN · TR · ES)",
         ],
         iconKey: "phone",
+        graphicKey: "call",
     },
     {
         phase: "Inklusive",
