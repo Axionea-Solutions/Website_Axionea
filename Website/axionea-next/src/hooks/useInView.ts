@@ -6,8 +6,8 @@ import { useRef, useEffect, useState } from "react";
  * Shared IntersectionObserver hook — fires once when the element enters the viewport.
  * Used across all animated sections (WhyChooseUs, ServicesGrid, ProcessSteps, FAQ, etc.).
  */
-export function useInView(threshold = 0.15) {
-    const ref = useRef<HTMLDivElement>(null);
+export function useInView<T extends HTMLElement = HTMLDivElement>(threshold = 0.15) {
+    const ref = useRef<T>(null);
     const [isInView, setIsInView] = useState(false);
     useEffect(() => {
         const el = ref.current;
