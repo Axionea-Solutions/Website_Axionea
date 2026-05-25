@@ -410,7 +410,7 @@ export const kfoFaqs: PraxisFAQ[] = [
     {
         question: "Was kostet das ungefähr?",
         answer:
-            "KI-Potenzial-Check ab 990 € (BAFA-förderfähig). Aligner-Routing-Pilot ab ca. 4.900 € Festpreis, Recall-Automatisierung ab ca. 2.900 €. Danach optional Retainer-Modell ab 490 €/Monat.",
+            "Das hängt von euren konkreten Anforderungen ab — pauschale Preislisten gibt es bei uns nicht. Im kostenlosen Erstgespräch analysieren wir gemeinsam, welche Bausteine für eure Praxis sinnvoll sind, und erstellen euch ein transparentes Angebot. Einfach einen Termin über das Kontaktformular buchen.",
     },
 ];
 
