@@ -18,17 +18,17 @@ function Card({ card, index }: { card: TrustCard; index: number }) {
                 transform: isInView ? "translateY(0)" : "translateY(30px)",
                 transition: `all 1.2s cubic-bezier(0.16, 1, 0.3, 1) ${index * 0.15}s`,
             }}
-            className="flex flex-col rounded-3xl border border-sapphire/20 bg-sapphire/[0.07] backdrop-blur-md p-8"
+            className="flex flex-col rounded-3xl border border-slate-200 bg-white shadow-[0_4px_24px_-4px_rgba(0,0,0,0.08)] p-8 hover:border-sapphire/40 hover:shadow-[0_0_24px_rgba(15,82,186,0.12)] transition-all duration-300"
         >
-            <span className="w-12 h-12 rounded-2xl bg-sapphire/15 border border-sapphire/20 flex items-center justify-center text-sapphire mb-5">
+            <span className="w-12 h-12 rounded-2xl bg-sapphire/10 border border-sapphire/20 flex items-center justify-center text-sapphire mb-5">
                 <PraxisIcon name={card.iconKey} className="w-6 h-6" />
             </span>
-            <h3 className="text-xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-syne)" }}>
+            <h3 className="text-xl font-bold text-slate-900 mb-4" style={{ fontFamily: "var(--font-syne)" }}>
                 {card.title}
             </h3>
             <ul className="space-y-2.5 mb-7 flex-1">
                 {card.points.map((point) => (
-                    <li key={point} className="flex items-start gap-2.5 text-sm text-gray-300">
+                    <li key={point} className="flex items-start gap-2.5 text-sm text-slate-600">
                         <svg
                             className="w-4 h-4 text-sapphire shrink-0 mt-0.5"
                             fill="none"

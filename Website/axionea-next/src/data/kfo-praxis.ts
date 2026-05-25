@@ -237,19 +237,6 @@ export const kfoServiceCards: PraxisServiceCard[] = [
         ],
         iconKey: "users",
     },
-    {
-        phase: "Auswahl & Setup",
-        title: "Dokumentations-Tool",
-        description:
-            "Wir bauen es nicht selbst, wir wählen das Beste für euch. Für Sprach-zu-Text-Dokumentation am Behandlungsstuhl gibt es bereits ausgezeichnete DSGVO-konforme Tools. Wir liefern Marktrecherche, Empfehlung, fachliche Konfiguration und Integration in eure Workflows.",
-        features: [
-            "Marktrecherche & Empfehlung",
-            "Fachliche Konfiguration",
-            "Integration in eure Workflows",
-        ],
-        iconKey: "fileSearch",
-        subtle: true,
-    },
 ];
 
 /* ──────────── Phasen-Roadmap ──────────── */

@@ -1,7 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
 import Footer from '@/components/Footer';
-import AnimatedNavbar from '@/components/AnimatedNavbar';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -24,8 +23,6 @@ export default function Datenschutz() {
                 <div className="absolute -top-[20%] -right-[10%] w-[500px] h-[500px] rounded-full bg-sapphire/20 blur-[120px]" />
                 <div className="absolute top-[20%] -left-[10%] w-[400px] h-[400px] rounded-full bg-blue-600/10 blur-[100px]" />
             </div>
-
-            <AnimatedNavbar />
 
             <div className="relative z-10 max-w-4xl mx-auto px-6 md:px-12 pt-6">
                 <Link

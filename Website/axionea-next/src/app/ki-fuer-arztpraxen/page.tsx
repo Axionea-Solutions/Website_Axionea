@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import AnimatedNavbar from "@/components/AnimatedNavbar";
 import Footer from "@/components/Footer";
 import IndustryLanding from "@/components/landing/IndustryLanding";
 
@@ -50,7 +49,6 @@ const ChipIcon = (
 export default function KiFuerArztpraxen() {
     return (
         <>
-            <AnimatedNavbar />
             <IndustryLanding
                 chip="ARZTPRAXEN"
                 chipIcon={ChipIcon}

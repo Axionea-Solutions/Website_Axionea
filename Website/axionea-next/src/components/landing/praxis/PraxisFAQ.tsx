@@ -16,16 +16,16 @@ export function PraxisFAQ() {
                 {kfoFaqs.map((faq) => (
                     <details
                         key={faq.question}
-                        className="group rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md p-6 open:bg-sapphire/5 open:border-sapphire/30 transition-all"
+                        className="group rounded-2xl border border-slate-200 bg-white shadow-sm p-6 open:bg-[#F0F5FF] open:border-sapphire/40 hover:border-sapphire/30 transition-all"
                     >
                         <summary
-                            className="cursor-pointer font-semibold text-white text-base md:text-lg list-none flex justify-between items-center gap-4"
+                            className="cursor-pointer font-semibold text-slate-900 text-base md:text-lg list-none flex justify-between items-center gap-4"
                             style={{ fontFamily: "var(--font-syne)" }}
                         >
                             <span>{faq.question}</span>
                             <span className="text-sapphire text-2xl group-open:rotate-45 transition-transform shrink-0">+</span>
                         </summary>
-                        <p className="text-gray-300 mt-4 leading-relaxed text-sm md:text-base">{faq.answer}</p>
+                        <p className="text-slate-600 mt-4 leading-relaxed text-sm md:text-base">{faq.answer}</p>
                     </details>
                 ))}
             </div>

@@ -50,10 +50,10 @@ export function KnowledgeArchitecture() {
                     {knowledgeSources.map((source) => (
                         <div
                             key={source.label}
-                            className="rounded-xl border border-white/10 bg-white/5 backdrop-blur-md px-4 py-3 text-center"
+                            className="rounded-xl border border-slate-200 bg-white shadow-sm px-4 py-3 text-center"
                         >
-                            <p className="text-sm font-semibold text-gray-200">{source.label}</p>
-                            <p className="text-[11px] text-gray-500 mt-0.5">{source.detail}</p>
+                            <p className="text-sm font-semibold text-slate-800">{source.label}</p>
+                            <p className="text-[11px] text-slate-500 mt-0.5">{source.detail}</p>
                         </div>
                     ))}
                 </div>
@@ -61,27 +61,27 @@ export function KnowledgeArchitecture() {
                 <FlowConnector label="fließt ein in" />
 
                 {/* Band 2 — Knowledge Base */}
-                <div className="rounded-3xl border border-sapphire/30 bg-sapphire/10 backdrop-blur-md p-6 md:p-8">
+                <div className="rounded-3xl border-2 border-sapphire/40 bg-white shadow-[0_4px_24px_-4px_rgba(15,82,186,0.15)] p-6 md:p-8">
                     <div className="flex items-center justify-center gap-3 mb-1">
-                        <span className="w-9 h-9 rounded-lg bg-sapphire/20 border border-sapphire/30 flex items-center justify-center text-sapphire shrink-0">
+                        <span className="w-9 h-9 rounded-lg bg-sapphire/10 border border-sapphire/20 flex items-center justify-center text-sapphire shrink-0">
                             <PraxisIcon name="database" className="w-5 h-5" />
                         </span>
                         <h3
-                            className="text-base md:text-lg font-bold text-white text-center"
+                            className="text-base md:text-lg font-bold text-slate-900 text-center"
                             style={{ fontFamily: "var(--font-syne)" }}
                         >
                             {knowledgeBase.title}
                         </h3>
                     </div>
-                    <p className="text-center text-xs md:text-sm text-sapphire/80 mb-5">{knowledgeBase.subtitle}</p>
+                    <p className="text-center text-xs md:text-sm text-sapphire mb-5">{knowledgeBase.subtitle}</p>
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                         {knowledgeBase.categories.map((category) => (
                             <div
                                 key={category.title}
-                                className="rounded-xl border border-white/10 bg-[#070d1a]/40 px-4 py-3 text-center"
+                                className="rounded-xl border border-slate-200 bg-[#F0F5FF] px-4 py-3 text-center"
                             >
-                                <p className="text-sm font-semibold text-white">{category.title}</p>
-                                <p className="text-[11px] text-gray-400 mt-0.5">{category.detail}</p>
+                                <p className="text-sm font-semibold text-slate-800">{category.title}</p>
+                                <p className="text-[11px] text-slate-500 mt-0.5">{category.detail}</p>
                             </div>
                         ))}
                     </div>
@@ -94,17 +94,17 @@ export function KnowledgeArchitecture() {
                     {knowledgeAgents.map((agent) => (
                         <div
                             key={agent.title}
-                            className="rounded-xl border border-white/10 bg-white/5 backdrop-blur-md px-5 py-4 hover:border-sapphire/30 transition-colors duration-300"
+                            className="rounded-xl border border-slate-200 bg-white shadow-sm px-5 py-4 hover:border-sapphire/50 hover:shadow-[0_0_16px_rgba(15,82,186,0.15)] transition-all duration-300"
                         >
                             <div className="flex items-center gap-2.5 mb-1.5">
-                                <span className="w-7 h-7 rounded-lg bg-sapphire/15 border border-sapphire/20 flex items-center justify-center text-sapphire shrink-0">
+                                <span className="w-7 h-7 rounded-lg bg-sapphire/10 border border-sapphire/20 flex items-center justify-center text-sapphire shrink-0">
                                     <PraxisIcon name="users" className="w-4 h-4" />
                                 </span>
-                                <p className="text-sm font-bold text-white" style={{ fontFamily: "var(--font-syne)" }}>
+                                <p className="text-sm font-bold text-slate-900" style={{ fontFamily: "var(--font-syne)" }}>
                                     {agent.title}
                                 </p>
                             </div>
-                            <p className="text-xs text-gray-400 leading-relaxed">{agent.description}</p>
+                            <p className="text-xs text-slate-500 leading-relaxed">{agent.description}</p>
                         </div>
                     ))}
                 </div>

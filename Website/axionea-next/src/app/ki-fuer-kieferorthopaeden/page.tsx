@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import AnimatedNavbar from "@/components/AnimatedNavbar";
 import Footer from "@/components/Footer";
 import { PraxisHero } from "@/components/landing/praxis/PraxisHero";
 import { PraxisServiceGrid } from "@/components/landing/praxis/PraxisServiceGrid";
@@ -40,7 +39,6 @@ export const metadata: Metadata = {
 export default function KiFuerKieferorthopaeden() {
     return (
         <>
-            <AnimatedNavbar />
             <main className="min-h-screen bg-[#070d1a] text-white selection:bg-sapphire selection:text-white pt-32 pb-16 overflow-hidden">
                 {/* Background Glows */}
                 <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">

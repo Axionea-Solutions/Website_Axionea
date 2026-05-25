@@ -17,16 +17,16 @@ function DifferentiatorCard({ item, index }: { item: PraxisDifferentiator; index
                 transform: isInView ? "translateY(0)" : "translateY(20px)",
                 transition: `all 1s cubic-bezier(0.16, 1, 0.3, 1) ${(index % 3) * 0.1}s`,
             }}
-            className="flex items-start gap-4 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md p-5 hover:border-sapphire/30 transition-all duration-300"
+            className="flex items-start gap-4 rounded-2xl border border-slate-200 bg-white shadow-[0_4px_24px_-4px_rgba(0,0,0,0.08)] p-5 hover:border-sapphire/50 hover:shadow-[0_0_20px_rgba(15,82,186,0.15)] transition-all duration-300"
         >
-            <span className="w-10 h-10 rounded-xl bg-sapphire/15 border border-sapphire/20 flex items-center justify-center text-sapphire shrink-0">
+            <span className="w-10 h-10 rounded-xl bg-sapphire/10 border border-sapphire/20 flex items-center justify-center text-sapphire shrink-0">
                 <PraxisIcon name={item.iconKey} className="w-5 h-5" />
             </span>
             <div>
-                <h3 className="text-sm font-bold text-white mb-1" style={{ fontFamily: "var(--font-syne)" }}>
+                <h3 className="text-sm font-bold text-slate-900 mb-1" style={{ fontFamily: "var(--font-syne)" }}>
                     {item.title}
                 </h3>
-                <p className="text-gray-400 text-sm leading-relaxed">{item.description}</p>
+                <p className="text-slate-500 text-sm leading-relaxed">{item.description}</p>
             </div>
         </div>
     );

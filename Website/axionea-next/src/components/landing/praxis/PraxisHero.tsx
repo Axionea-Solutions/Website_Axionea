@@ -59,12 +59,12 @@ export function PraxisHero({
                 {kfoStats.map((stat) => (
                     <div
                         key={stat.label}
-                        className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md p-6 text-center"
+                        className="rounded-2xl border border-slate-200 bg-white shadow-[0_4px_24px_-4px_rgba(0,0,0,0.08)] p-6 text-center"
                     >
                         <p className="text-3xl md:text-4xl font-bold text-sapphire mb-2" style={{ fontFamily: "var(--font-syne)" }}>
                             {stat.value}
                         </p>
-                        <p className="text-gray-400 text-sm">{stat.label}</p>
+                        <p className="text-slate-500 text-sm">{stat.label}</p>
                     </div>
                 ))}
             </div>

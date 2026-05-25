@@ -16,7 +16,6 @@ const EXAMPLE_QUESTIONS = [
     "Wie funktioniert das Recall-System?",
 ];
 
-// Vordefinierte Beispiel-Antwort für die Vorschau ohne API-Key.
 const FALLBACK_ANSWER =
     "Eine Aligner-Behandlung läuft typischerweise so ab: Erstberatung & Diagnostik → digitaler Scan → individueller Behandlungsplan → Aligner-Serie mit regelmäßigen Kontrollen → ggf. Retainer zur Stabilisierung. Die genaue Dauer hängt vom Befund ab — das klärt am besten das Praxisteam in einer persönlichen Beratung.";
 
@@ -54,7 +53,6 @@ export function PraxisWikiDemo() {
                 return;
             }
 
-            // Antwort wird als reiner Text-Stream geliefert.
             const reader = res.body.getReader();
             const decoder = new TextDecoder();
             let acc = "";
@@ -84,15 +82,15 @@ export function PraxisWikiDemo() {
                 subtitle="Stell eine Frage — der Praxis-Agent antwortet aus der Wissensbasis. So fühlt sich euer zukünftiger Agent an."
             />
 
-            <div className="mx-auto max-w-3xl rounded-3xl border border-white/10 bg-white/5 p-5 backdrop-blur-md md:p-6">
+            <div className="mx-auto max-w-3xl rounded-3xl border border-slate-200 bg-white shadow-[0_4px_24px_-4px_rgba(0,0,0,0.08)] p-5 md:p-6">
                 {/* Chat-Verlauf */}
                 <div ref={scrollRef} className="mb-4 max-h-80 space-y-3 overflow-y-auto" aria-live="polite">
                     {messages.length === 0 ? (
-                        <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
-                            <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-sapphire/15 text-sapphire">
+                        <div className="flex items-center gap-3 rounded-2xl border border-slate-100 bg-slate-50 px-4 py-3">
+                            <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-sapphire/10 text-sapphire">
                                 <PraxisIcon name="database" className="h-4 w-4" />
                             </span>
-                            <p className="text-sm text-gray-400">
+                            <p className="text-sm text-slate-500">
                                 Wähle eine Beispiel-Frage oder tippe deine eigene.
                             </p>
                         </div>
@@ -106,10 +104,10 @@ export function PraxisWikiDemo() {
                                 </div>
                             ) : (
                                 <div key={i} className="flex items-start gap-2.5">
-                                    <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-sapphire/15 text-sapphire">
+                                    <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-sapphire/10 text-sapphire">
                                         <PraxisIcon name="database" className="h-3.5 w-3.5" />
                                     </span>
-                                    <div className="max-w-[85%] rounded-2xl rounded-tl-sm border border-white/10 bg-white/5 px-4 py-2.5 text-sm leading-relaxed text-gray-200">
+                                    <div className="max-w-[85%] rounded-2xl rounded-tl-sm border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm leading-relaxed text-slate-700">
                                         {m.content || (isLoading ? "…" : "")}
                                     </div>
                                 </div>
@@ -132,7 +130,7 @@ export function PraxisWikiDemo() {
                             type="button"
                             onClick={() => ask(q)}
                             disabled={isLoading}
-                            className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-gray-300 transition-colors hover:border-sapphire/40 hover:text-white disabled:cursor-not-allowed disabled:opacity-50"
+                            className="rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-600 transition-colors hover:border-sapphire/40 hover:text-sapphire disabled:cursor-not-allowed disabled:opacity-50"
                         >
                             {q}
                         </button>
@@ -154,7 +152,7 @@ export function PraxisWikiDemo() {
                         placeholder="Eigene Frage stellen…"
                         maxLength={1000}
                         disabled={isLoading}
-                        className="flex-1 rounded-xl border border-white/10 bg-[#070d1a]/60 px-4 py-2.5 text-sm text-white placeholder:text-gray-500 outline-none transition-colors focus:border-sapphire/40 disabled:opacity-50"
+                        className="flex-1 rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm text-slate-800 placeholder:text-slate-400 outline-none transition-colors focus:border-sapphire/50 disabled:opacity-50"
                     />
                     <button
                         type="submit"
@@ -165,7 +163,7 @@ export function PraxisWikiDemo() {
                     </button>
                 </form>
 
-                <p className="mt-3 text-center text-[11px] text-gray-500">
+                <p className="mt-3 text-center text-[11px] text-slate-400">
                     Demo — keine medizinische Beratung. Antworten stammen aus einer simulierten Wissensbasis.
                 </p>
             </div>

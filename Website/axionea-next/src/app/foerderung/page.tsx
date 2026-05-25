@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import AnimatedNavbar from "@/components/AnimatedNavbar";
 import Footer from "@/components/Footer";
 import { LetterReveal } from "@/components/ui/LetterReveal";
 
@@ -167,7 +166,6 @@ function ProgramCard({ p }: { p: Programme }) {
 export default function FoerderungPage() {
     return (
         <>
-            <AnimatedNavbar />
             <main className="min-h-screen bg-[#070d1a] text-white selection:bg-sapphire selection:text-white pt-32 pb-16 overflow-hidden">
                 {/* Background Glows */}
                 <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
