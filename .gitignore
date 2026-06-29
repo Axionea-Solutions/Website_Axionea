@@ -27,6 +27,16 @@ CLAUDE.local.md
 Back-up_Codes_HubSpot.pdf
 *.xlsx
 
+# Ignore client documents, offers & invoices (vertraulich)
+Rechnungen/
+Sunny_Templates_final/
+
+# Ignore MCP setup scripts — enthalten Bearer-Tokens, NIEMALS committen
+Axionea-MCP-Setup.bat
+Axionea-MCP-Fix.bat
+axionea-mcp-setup.ps1
+axionea-mcp-fix.ps1
+
 # Ignore build/debug logs and temp files
 deploy_configs.txt
 Website/axionea-next/*.txt

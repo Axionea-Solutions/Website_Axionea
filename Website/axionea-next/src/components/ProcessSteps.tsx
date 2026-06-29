@@ -1,7 +1,7 @@
 "use client";
 
 import { useInView } from "@/hooks/useInView";
-import { openCalendly } from "@/lib/calendly";
+import { BookingButton } from "./hubspot";
 import { LetterReveal } from "./ui/LetterReveal";
 
 /* ══════════════════════════════════════════════════════════════
@@ -359,21 +359,12 @@ export default function ProcessSteps() {
                     <p className="text-gray-400 text-base mb-6 max-w-xl mx-auto">
                         In 15 Minuten finden wir heraus, wo KI bei dir den größten Hebel hat.
                     </p>
-                    {/* Calendly TODO: echten Link einsetzen — Fallback navigiert zu #kontakt */}
-                    <a
-                        href="#kontakt"
-                        aria-label="Beratungsgespräch buchen"
-                        onClick={(e) => {
-                            const calendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_URL || (typeof window !== 'undefined' ? window.__AXIONEA_CALENDLY_URL__ : null);
-                            if (calendlyUrl) {
-                                e.preventDefault();
-                                openCalendly(calendlyUrl);
-                            }
-                        }}
+                    <BookingButton
+                        ariaLabel="Beratungsgespräch buchen"
                         className="inline-block px-8 py-4 rounded-full bg-sapphire text-white font-semibold text-base hover:bg-sapphire-hover transition-all shadow-md hover:shadow-lg cursor-pointer"
                     >
                         Beratungsgespräch buchen →
-                    </a>
+                    </BookingButton>
                 </div>
             </div>
         </section>

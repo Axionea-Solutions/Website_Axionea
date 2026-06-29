@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Syne, DM_Sans } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import AnimatedNavbar from "@/components/AnimatedNavbar";
 import Preloader from "@/components/Preloader";
@@ -7,6 +8,10 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import ChatBot from "@/components/ChatBot";
 import CookieBanner from "@/components/CookieBanner";
 import StructuredData from "@/components/StructuredData";
+import {
+  HUBSPOT_FORM_SCRIPT_SRC,
+  HUBSPOT_MEETINGS_SCRIPT_SRC,
+} from "@/components/hubspot/config";
 
 const syne = Syne({
   variable: "--font-syne",
@@ -104,6 +109,14 @@ export default function RootLayout({
           {children}
           <CookieBanner />
         </ThemeProvider>
+        <Script
+          src={HUBSPOT_FORM_SCRIPT_SRC}
+          strategy="afterInteractive"
+        />
+        <Script
+          src={HUBSPOT_MEETINGS_SCRIPT_SRC}
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
