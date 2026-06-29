@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import { openCalendly } from '@/lib/calendly';
+import { BookingButton } from './hubspot';
 
 export default function HeroContent() {
     return (
@@ -61,21 +61,13 @@ export default function HeroContent() {
                         transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
                         className="pointer-events-auto flex flex-col sm:flex-row items-center gap-4 mb-10"
                     >
-                        {/* Primary CTA — Calendly TODO: echten Link einsetzen, Fallback scrollt zu #kontakt */}
-                        <a
-                            href="#kontakt"
-                            aria-label="Kostenloses Erstgespräch buchen"
-                            onClick={(e) => {
-                                const calendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_URL || (typeof window !== 'undefined' ? window.__AXIONEA_CALENDLY_URL__ : null);
-                                if (calendlyUrl) {
-                                    e.preventDefault();
-                                    openCalendly(calendlyUrl);
-                                }
-                            }}
+                        {/* Primary CTA — öffnet HubSpot Meetings im Modal */}
+                        <BookingButton
+                            ariaLabel="Kostenloses Erstgespräch buchen"
                             className="px-8 py-4 rounded-full bg-sapphire text-white font-semibold text-lg hover:bg-sapphire-hover transition-all shadow-[0_0_30px_rgba(15,82,186,0.6)] hover:shadow-[0_0_40px_rgba(15,82,186,0.8)] text-center inline-block cursor-pointer"
                         >
                             Kostenloses Erstgespräch buchen →
-                        </a>
+                        </BookingButton>
                         {/* Secondary CTA — visuell zurückgenommen */}
                         <a
                             href="#roi"

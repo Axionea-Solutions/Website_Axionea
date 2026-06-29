@@ -80,6 +80,7 @@ Vor dem Coden immer anlegen: `gemini.md`, `task_plan.md`, `findings.md`, `progre
 | `creating-skills/` | Neuen Skill erstellen |
 | `deploying-to-amplify/` | Next.js auf AWS Amplify deployen, Env-Vars setzen |
 | `error-handling-patterns/` | Error Handling in Code implementieren |
+| `hubspot-crm-fundament/` | HubSpot-CRM aufsetzen/aufräumen für Website-Leads (MCP-Audit + UI-Guides) |
 | `managing-rag-pipeline/` | PDFs / Dokumente als Chatbot-Wissensbasis einbinden |
 | `setting-up-nextjs-project/` | Neues Kundenprojekt (Next.js Website) scaffolden |
 | `using-firecrawl/` | Web-Scraping mit Firecrawl |

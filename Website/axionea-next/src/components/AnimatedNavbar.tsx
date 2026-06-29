@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useTheme } from "./ThemeProvider";
+import { BookingButton } from "./hubspot";
 
 type NavLink = {
     label: string;
@@ -328,31 +329,35 @@ export default function AnimatedNavbar() {
                             </div>
                         ))}
 
-                        {/* Footer-CTA im Panel */}
-                        <Link
-                            href="/#kontakt"
-                            onClick={() => setIsPanelOpen(false)}
-                            className={`mt-2 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-sapphire text-white text-sm font-bold tracking-tight transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:bg-sapphire-hover hover:shadow-[0_4px_20px_rgba(15,82,186,0.5)] ${
+                        {/* Footer-CTA im Panel — öffnet HubSpot Meetings im Modal */}
+                        <div
+                            className={`mt-2 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
                                 isPanelOpen ? "translate-x-0 opacity-100" : "translate-x-8 opacity-0"
                             }`}
                             style={{ transitionDelay: isPanelOpen ? `${120 + PANEL_SECTIONS.length * 80}ms` : "0ms" }}
                         >
-                            Kostenloses Erstgespräch buchen
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth="2.5"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                className="w-4 h-4"
-                                aria-hidden="true"
+                            <BookingButton
+                                ariaLabel="Kostenloses Erstgespräch buchen"
+                                onOpen={() => setIsPanelOpen(false)}
+                                className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-sapphire text-white text-sm font-bold tracking-tight transition-all duration-300 hover:bg-sapphire-hover hover:shadow-[0_4px_20px_rgba(15,82,186,0.5)]"
                             >
-                                <path d="M5 12h14" />
-                                <path d="m12 5 7 7-7 7" />
-                            </svg>
-                        </Link>
+                                Kostenloses Erstgespräch buchen
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeWidth="2.5"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    className="w-4 h-4"
+                                    aria-hidden="true"
+                                >
+                                    <path d="M5 12h14" />
+                                    <path d="m12 5 7 7-7 7" />
+                                </svg>
+                            </BookingButton>
+                        </div>
                     </div>
                 </div>
             </aside>

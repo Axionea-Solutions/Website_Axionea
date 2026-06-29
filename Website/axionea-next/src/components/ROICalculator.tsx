@@ -11,6 +11,7 @@ import { AnimatedCounter } from "./roi-calculator/AnimatedCounter";
 import { AnimatedGraphic } from "./roi-calculator/AnimatedGraphic";
 import { calculateROI, CalculatorInput } from "./roi-calculator/roi-calculator.utils";
 import { useInView } from "@/hooks/useInView";
+import { BookingButton } from "./hubspot";
 
 
 
@@ -206,15 +207,15 @@ export default function ROICalculator() {
                                         </p>
                                     )}
 
-                                    <a
-                                        href="#kontakt"
+                                    <BookingButton
+                                        ariaLabel="Kostenloses Erstgespräch buchen"
                                         className="mt-6 w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-sapphire text-white font-semibold text-base transition-all duration-300 hover:bg-sapphire-hover hover:shadow-[0_8px_32px_rgba(15,82,186,0.5)] shadow-[0_8px_32px_rgba(15,82,186,0.3)]"
                                     >
                                         Kostenloses Erstgespräch buchen
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
                                             <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
                                         </svg>
-                                    </a>
+                                    </BookingButton>
                                 </div>
 
                                 {/* Expanding Sources Section */}

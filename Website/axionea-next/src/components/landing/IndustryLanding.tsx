@@ -1,8 +1,8 @@
 "use client";
 
-import Link from "next/link";
 import { LetterReveal } from "@/components/ui/LetterReveal";
 import { useInView } from "@/hooks/useInView";
+import { BookingButton } from "@/components/hubspot";
 
 export interface UseCase {
     title: string;
@@ -171,12 +171,12 @@ export default function IndustryLanding({
                     <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
                         Wir analysieren in 15 Minuten ob KI bei dir wirklich Sinn macht — kostenlos, ohne Vertrag, ohne Verkaufsdruck.
                     </p>
-                    <Link
-                        href="/#kontakt"
-                        className="inline-block px-8 py-4 rounded-full bg-sapphire text-white font-semibold text-lg hover:bg-sapphire-hover transition-all shadow-[0_0_30px_rgba(15,82,186,0.6)] hover:shadow-[0_0_40px_rgba(15,82,186,0.8)]"
+                    <BookingButton
+                        ariaLabel="Kostenloses Erstgespräch buchen"
+                        className="inline-block px-8 py-4 rounded-full bg-sapphire text-white font-semibold text-lg hover:bg-sapphire-hover transition-all shadow-[0_0_30px_rgba(15,82,186,0.6)] hover:shadow-[0_0_40px_rgba(15,82,186,0.8)] cursor-pointer"
                     >
                         Kostenloses Erstgespräch buchen →
-                    </Link>
+                    </BookingButton>
                 </div>
             </div>
         </main>

@@ -2,6 +2,7 @@
 
 import { LetterReveal } from "./ui/LetterReveal";
 import { useInView } from "@/hooks/useInView";
+import { ContactButton } from "./hubspot";
 
 
 
@@ -85,10 +86,10 @@ export default function ComparisonSection() {
                                     ))}
                                 </ul>
 
-                                {/* CTA */}
-                                <a
-                                    href="#kontakt"
-                                    className="group relative overflow-hidden mt-10 w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-sapphire text-white font-semibold text-sm transition-all duration-300 hover:shadow-[0_8px_32px_rgba(15,82,186,0.4)] hover:bg-sapphire-hover"
+                                {/* CTA — öffnet HubSpot Kontaktformular im Modal */}
+                                <ContactButton
+                                    ariaLabel="Kontaktformular öffnen"
+                                    className="group relative overflow-hidden mt-10 w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-sapphire text-white font-semibold text-sm transition-all duration-300 hover:shadow-[0_8px_32px_rgba(15,82,186,0.4)] hover:bg-sapphire-hover cursor-pointer"
                                 >
                                     {/* Shine effect */}
                                     <div className="absolute inset-0 z-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-[150%] skew-x-[-20deg] group-hover:translate-x-[150%] transition-transform duration-1000 ease-in-out" />
@@ -98,7 +99,7 @@ export default function ComparisonSection() {
                                         <line x1="7" y1="17" x2="17" y2="7" />
                                         <polyline points="7 7 17 7 17 17" />
                                     </svg>
-                                </a>
+                                </ContactButton>
                             </div>
 
                             {/* Others Column */}

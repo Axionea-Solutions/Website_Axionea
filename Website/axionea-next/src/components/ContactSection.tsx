@@ -2,7 +2,7 @@
 
 import { useInView } from "@/hooks/useInView";
 import { LetterReveal } from "./ui/LetterReveal";
-import { openCalendly } from "@/lib/calendly";
+import { BookingButton, HubSpotForm } from "./hubspot";
 
 const contactInfo = [
     {
@@ -99,22 +99,9 @@ export default function ContactSection() {
                             </div>
                         ))}
 
-                        {/* Book a Call — Calendly TODO: echten Link einsetzen, Fallback fokussiert Kontaktformular */}
-                        <button
-                            type="button"
-                            aria-label="Kostenloses 15-Min Erstgespräch buchen"
-                            onClick={(e) => {
-                                e.preventDefault();
-                                const calendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_URL || (typeof window !== 'undefined' ? window.__AXIONEA_CALENDLY_URL__ : null);
-                                if (calendlyUrl) {
-                                    openCalendly(calendlyUrl);
-                                } else {
-                                    const container = document.getElementById('hubspot-form-container');
-                                    if (container) {
-                                        container.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                                    }
-                                }
-                            }}
+                        {/* Book a Call — öffnet HubSpot Meetings im Modal */}
+                        <BookingButton
+                            ariaLabel="Kostenloses 15-Min Erstgespräch buchen"
                             className="w-full text-left group rounded-2xl border border-sapphire/20 bg-sapphire/5 p-6 flex items-center gap-4 transition-all duration-300 hover:bg-sapphire/10 hover:border-sapphire/30 cursor-pointer"
                         >
                             <div className="w-10 h-10 rounded-xl bg-sapphire/15 border border-sapphire/20 flex items-center justify-center text-sapphire shrink-0">
@@ -129,22 +116,13 @@ export default function ContactSection() {
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 text-sapphire ml-auto group-hover:translate-x-1 transition-transform">
                                 <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
                             </svg>
-                        </button>
+                        </BookingButton>
                     </div>
 
-                    {/* Right: Contact Form */}
+                    {/* Right: Contact Form — HubSpot V3 Embed inline */}
                     <div className="rounded-2xl border border-slate-200 bg-white shadow-[0_4px_24px_-4px_rgba(0,0,0,0.08)] p-8 transition-all duration-500 hover:border-sapphire/50 hover:shadow-[0_0_20px_rgba(15,82,186,0.25),0_0_50px_rgba(15,82,186,0.12)]">
-                        {/* HubSpot Form Placeholder */}
-                        <div id="hubspot-form-container" className="min-h-[500px] flex flex-col items-center justify-center border-2 border-dashed border-slate-200 rounded-xl bg-slate-50 text-slate-500 p-8 text-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-10 h-10 mb-4 text-slate-300">
-                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                                <polyline points="14 2 14 8 20 8" />
-                                <line x1="16" y1="13" x2="8" y2="13" />
-                                <line x1="16" y1="17" x2="8" y2="17" />
-                                <polyline points="10 9 9 9 8 9" />
-                            </svg>
-                            <p className="font-medium text-slate-700 mb-2">HubSpot Formular</p>
-                            <p className="text-sm">Hier wird das HubSpot Embed-Skript eingefügt.</p>
+                        <div id="hubspot-form-container" className="min-h-[500px]">
+                            <HubSpotForm />
                         </div>
                     </div>
                 </div>

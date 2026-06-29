@@ -1,5 +1,7 @@
 "use client";
 
+import { ContactButton } from "./hubspot";
+
 export default function Footer() {
     const links = [
         { label: "Services", href: "/#services" },
@@ -75,10 +77,10 @@ export default function Footer() {
                     Next-gen KI-Systeme, gebaut für die Innovatoren von morgen.
                 </p>
 
-                {/* CTA Button */}
-                <a
-                    href="#kontakt"
-                    className="group relative overflow-hidden inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-white text-slate-900 font-bold text-[15px] transition-all duration-300 hover:shadow-[0_8px_32px_rgba(255,255,255,0.25)] hover:bg-slate-50 mb-12"
+                {/* CTA Button — öffnet HubSpot Kontaktformular im Modal */}
+                <ContactButton
+                    ariaLabel="Kontaktformular öffnen"
+                    className="group relative overflow-hidden inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-white text-slate-900 font-bold text-[15px] transition-all duration-300 hover:shadow-[0_8px_32px_rgba(255,255,255,0.25)] hover:bg-slate-50 mb-12 cursor-pointer"
                 >
                     {/* Shine effect */}
                     <div className="absolute inset-0 z-0 bg-gradient-to-r from-transparent via-black/10 to-transparent -translate-x-[150%] skew-x-[-20deg] group-hover:translate-x-[150%] transition-transform duration-1000 ease-in-out" />
@@ -88,7 +90,7 @@ export default function Footer() {
                         <line x1="7" y1="17" x2="17" y2="7" />
                         <polyline points="7 7 17 7 17 17" />
                     </svg>
-                </a>
+                </ContactButton>
 
                 {/* Nav Links */}
                 <nav className="flex flex-wrap items-center justify-center gap-8 mb-10">

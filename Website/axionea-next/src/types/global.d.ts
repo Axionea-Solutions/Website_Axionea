@@ -1,16 +1,22 @@
 /**
  * Global Window-Augmentierung für Drittanbieter-Skripte
- * (Calendly, etc.)
+ * (HubSpot Forms V3 & Meetings)
  */
 
-interface CalendlyAPI {
-    initPopupWidget: (opts: { url: string }) => void;
+interface HubSpotFormsAPI {
+    create: (opts: {
+        region: string;
+        portalId: string;
+        formId: string;
+        target: string;
+    }) => void;
 }
 
 declare global {
     interface Window {
-        Calendly?: CalendlyAPI;
-        __AXIONEA_CALENDLY_URL__?: string;
+        hbspt?: {
+            forms?: HubSpotFormsAPI;
+        };
     }
 }
 
