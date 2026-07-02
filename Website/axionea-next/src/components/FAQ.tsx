@@ -58,7 +58,7 @@ function FAQItem({ question, answer, index }: { question: string; answer: string
 const faqs = [
     {
         question: "Was genau macht Axionea?",
-        answer: "Axionea automatisiert Geschäftsprozesse mit KI — von Chatbots für die Terminvereinbarung über Voice-Agents für den Telefonsupport bis hin zu RAG-Wissensdatenbanken. Wir analysieren deine Abläufe und implementieren maßgeschneiderte KI-Lösungen.",
+        answer: "Axionea automatisiert Geschäftsprozesse mit KI — von Chatbots für die Terminvereinbarung über KI-Telefonassistenten für den Telefonsupport bis hin zu internen Wissens-Chatbots. Wir analysieren deine Abläufe und richten maßgeschneiderte KI-Lösungen für dich ein.",
     },
     {
         question: "Brauche ich technisches Wissen, um mit Axionea zu arbeiten?",

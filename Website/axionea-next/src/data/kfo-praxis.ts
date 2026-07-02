@@ -142,8 +142,8 @@ export const kfoUseCases: PraxisServiceCard[] = [
 
 export const kfoServicesIntro = {
     eyebrow: "BAUSTEINE",
-    title: "Sechs Bausteine für eure Praxis.",
-    subtitle: "Modular kombinierbar. Wir starten mit dem höchsten ROI für euch.",
+    title: "Sechs Bausteine für eure Praxis",
+    subtitle: "Modular kombinierbar — wir starten mit dem höchsten ROI für euch",
 };
 
 export const kfoServiceCards: PraxisServiceCard[] = [
@@ -243,8 +243,8 @@ export const kfoServiceCards: PraxisServiceCard[] = [
 
 export const kfoRoadmapIntro = {
     eyebrow: "VORGEHEN",
-    title: "Wie wir vorgehen.",
-    subtitle: "Vom Quick Win bis zur Skalierung — modular, in eurem Tempo.",
+    title: "Wie wir vorgehen",
+    subtitle: "Vom Quick Win bis zur Skalierung — modular, in eurem Tempo",
 };
 
 export const kfoPhases: PraxisPhase[] = [
@@ -276,15 +276,15 @@ export const kfoPhases: PraxisPhase[] = [
 
 export const kfoRoadmapBanner = {
     claim: "Wir bauen nicht einmal und verschwinden. Wir bleiben dran.",
-    subtitle: "Durchlaufend: Partnerschaft, monatliche Reports, Team-Schulung, BAFA-Begleitung.",
+    subtitle: "Durchlaufend: Partnerschaft, monatliche Reports, Team-Schulung, BAFA-Begleitung",
 };
 
 /* ──────────── Knowledge-Base-Architektur ──────────── */
 
 export const kfoArchitectureIntro = {
     eyebrow: "ARCHITEKTUR",
-    title: "Eine Quelle. Drei Agenten. Saubere Trennung.",
-    subtitle: "So bauen wir eure Praxis-Wissensbasis auf — und wer welche Antworten bekommt.",
+    title: "Eine Quelle · Drei Agenten · Saubere Trennung",
+    subtitle: "So bauen wir eure Praxis-Wissensbasis auf — und wer welche Antworten bekommt",
 };
 
 export const knowledgeSources: KnowledgeSource[] = [
@@ -314,8 +314,8 @@ export const knowledgeAgents: KnowledgeAgent[] = [
 
 export const kfoDifferentiatorsIntro = {
     eyebrow: "UNTERSCHIED",
-    title: "Was Axionea anders macht.",
-    subtitle: "Sechs Gründe, warum Praxen mit uns arbeiten.",
+    title: "Was Axionea anders macht",
+    subtitle: "Sechs Gründe, warum Praxen mit uns arbeiten",
 };
 
 export const kfoDifferentiators: PraxisDifferentiator[] = [
@@ -355,8 +355,8 @@ export const kfoDifferentiators: PraxisDifferentiator[] = [
 
 export const kfoTrustIntro = {
     eyebrow: "FÖRDERUNG & SICHERHEIT",
-    title: "Gefördert starten. Sicher betrieben.",
-    subtitle: "Bis zu 2.800 € BAFA-Förderung und DSGVO als Standard — nicht als Aufpreis.",
+    title: "Gefördert starten · Sicher betrieben",
+    subtitle: "Bis zu 2.800 € BAFA-Förderung und DSGVO als Standard — nicht als Aufpreis",
 };
 
 export const kfoTrustCards: TrustCard[] = [

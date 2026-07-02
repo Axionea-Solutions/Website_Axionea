@@ -23,7 +23,7 @@ export default function HeroContent() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-                        aria-label="Dein Unternehmen KI-gesteuert"
+                        aria-label="DSGVO-konform und sofort einsetzbar — KI, die dein Geschäft voranbringt"
                         className="font-sans font-medium mb-6 leading-[1.1] md:leading-[1.2] pb-4"
                     >
                         <span
@@ -32,15 +32,15 @@ export default function HeroContent() {
                                 textShadow: '0 0 12px rgba(125,211,252,0.65), 0 0 28px rgba(56,189,248,0.45), 0 0 60px rgba(15,82,186,0.35)',
                             }}
                         >
-                            Dein Unternehmen
+                            DSGVO-konform &amp; sofort einsetzbar
                         </span>
                         <span
-                            className="block text-5xl sm:text-7xl md:text-8xl lg:text-9xl tracking-tight text-white pb-6"
+                            className="block text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight text-white pb-6"
                             style={{
                                 textShadow: '0 0 16px rgba(125,211,252,0.75), 0 0 40px rgba(56,189,248,0.55), 0 0 90px rgba(15,82,186,0.55), 0 0 160px rgba(15,82,186,0.35)',
                             }}
                         >
-                            KI-gesteuert
+                            KI, die dein Geschäft voranbringt
                         </span>
                     </motion.h1>
 
@@ -51,7 +51,7 @@ export default function HeroContent() {
                         transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
                         className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-3xl mb-10 leading-relaxed drop-shadow-md font-light tracking-wide"
                     >
-                        DSGVO-konforme KI für Arztpraxen, Kieferorthopäden & Makler — sofort einsetzbar.
+                        Für Arztpraxen, Kieferorthopäden, Makler &amp; Steuerberater — wir automatisieren, was dich täglich Zeit kostet.
                     </motion.p>
 
                     {/* Main CTA Buttons */}
