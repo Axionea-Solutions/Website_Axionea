@@ -202,7 +202,7 @@ export default function WhyChooseUs() {
                         <LetterReveal text="Warum Axionea?" />
                     </h2>
                     <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-                        <LetterReveal text="Dein Partner für KI-Automatisierung — smarte Lösungen, die sofort wirken" delay={0.2} stagger={0.015} />
+                        <LetterReveal text="Die drei Sorgen, die wir dir abnehmen" delay={0.2} stagger={0.015} />
                     </p>
                 </div>
 
@@ -210,21 +210,21 @@ export default function WhyChooseUs() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
                     <BenefitCard
                         index={0}
-                        title="Echtzeit-Analysen"
-                        description="Deine Geschäftsdaten live aufbereitet — als verständliches Dashboard statt Excel-Chaos"
-                        illustration={<ClockIllustration />}
+                        title="Kein IT-Team? Brauchst du nicht"
+                        description="Kein Know-how, keine Zeit, kein Personal für KI — das ist die Regel, nicht die Ausnahme. Wir bauen, richten ein und erklären verständlich. Du lernst nichts Technisches."
+                        illustration={<SyncIllustration />}
                     />
                     <BenefitCard
                         index={1}
-                        title="KI-getriebenes Wachstum"
-                        description="Intelligentere Entscheidungen durch akkurate Echtzeit-Geschäftseinblicke und KI-Analysen"
-                        illustration={<BarChartIllustration />}
+                        title="Deine Daten bleiben deine Daten"
+                        description="EU-Hosting, DSGVO-konform, AVV inklusive — und keine KI-Trainings auf euren Patienten- oder Kundendaten. Datenschutz ist bei uns Standard, nicht Aufpreis."
+                        illustration={<ClockIllustration />}
                     />
                     <BenefitCard
                         index={2}
-                        title="Sync in Echtzeit"
-                        description="Verbinde dein Team sofort — verfolge Fortschritte und Updates in Echtzeit"
-                        illustration={<SyncIllustration />}
+                        title="Fairer Preis · Echter ROI · Wir bleiben"
+                        description="Wir starten klein mit dem, was sich rechnet, behalten deinen ROI im Blick — und lassen dich nach dem Start nicht allein. Über die laufende Betreuung sind wir auch beim nächsten Schritt dabei."
+                        illustration={<BarChartIllustration />}
                     />
                 </div>
             </div>

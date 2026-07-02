@@ -74,7 +74,7 @@ export default function Footer() {
                     AXIONEA
                 </h2>
                 <p className="text-muted-foreground text-lg mb-8 max-w-md">
-                    Next-gen KI-Systeme, gebaut für die Innovatoren von morgen.
+                    KI-Automatisierung für Arztpraxen, Kieferorthopäden, Makler &amp; Steuerberater — DSGVO-konform und persönlich betreut.
                 </p>
 
                 {/* CTA Button — öffnet HubSpot Kontaktformular im Modal */}
@@ -85,7 +85,7 @@ export default function Footer() {
                     {/* Shine effect */}
                     <div className="absolute inset-0 z-0 bg-gradient-to-r from-transparent via-black/10 to-transparent -translate-x-[150%] skew-x-[-20deg] group-hover:translate-x-[150%] transition-transform duration-1000 ease-in-out" />
 
-                    <span className="relative z-10 transition-colors duration-300 tracking-tight">Jetzt starten</span>
+                    <span className="relative z-10 transition-colors duration-300 tracking-tight">Kostenlos beraten lassen</span>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 text-sapphire relative z-10 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
                         <line x1="7" y1="17" x2="17" y2="7" />
                         <polyline points="7 7 17 7 17 17" />

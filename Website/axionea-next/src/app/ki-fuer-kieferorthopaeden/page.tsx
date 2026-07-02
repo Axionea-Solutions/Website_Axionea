@@ -58,7 +58,7 @@ export default function KiFuerKieferorthopaeden() {
                         eyebrow="KONKRET FÜR KFO"
                         eyebrowIcon="aligner"
                         title="Was wir konkret bauen"
-                        subtitle="Die Aligner-Patient-Journey — von der Erstanfrage bis zum letzten Recall."
+                        subtitle="Die Aligner-Patient-Journey — von der Erstanfrage bis zum letzten Recall"
                         cards={kfoUseCases}
                     />
 

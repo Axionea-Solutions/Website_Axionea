@@ -79,7 +79,7 @@ export function PraxisWikiDemo() {
                 eyebrow="INTERAKTIV"
                 eyebrowIcon="database"
                 title="Frag das Praxis-Wiki"
-                subtitle="Stell eine Frage — der Praxis-Agent antwortet aus der Wissensbasis. So fühlt sich euer zukünftiger Agent an."
+                subtitle="Stell eine Frage — der Praxis-Agent antwortet aus der Wissensbasis. So fühlt sich euer zukünftiger Agent an"
             />
 
             <div className="mx-auto max-w-3xl rounded-3xl border border-slate-200 bg-white shadow-[0_4px_24px_-4px_rgba(0,0,0,0.08)] p-5 md:p-6">
