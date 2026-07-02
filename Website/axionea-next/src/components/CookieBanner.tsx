@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import { getConsent, setConsent } from "@/lib/consent";
 
 export default function CookieBanner() {
     const [isVisible, setIsVisible] = useState(false);
@@ -10,8 +11,7 @@ export default function CookieBanner() {
     useEffect(() => {
         // Read local storage only after mount to prevent hydration errors
         const timer = setTimeout(() => {
-            const consent = localStorage.getItem("axionea_cookie_consent");
-            if (!consent) {
+            if (!getConsent()) {
                 setIsVisible(true);
             }
         }, 1500); // Slight delay for better UX (doesn't block initial render)
@@ -20,12 +20,12 @@ export default function CookieBanner() {
     }, []);
 
     const acceptAll = () => {
-        localStorage.setItem("axionea_cookie_consent", "all");
+        setConsent("all");
         setIsVisible(false);
     };
 
     const acceptEssential = () => {
-        localStorage.setItem("axionea_cookie_consent", "essential");
+        setConsent("essential");
         setIsVisible(false);
     };
 

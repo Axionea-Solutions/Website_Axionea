@@ -2,6 +2,8 @@
 
 import { useId } from "react";
 import { HUBSPOT_FORM } from "./config";
+import { useConsent } from "@/lib/consent";
+import ConsentNotice from "./ConsentNotice";
 
 /**
  * HubSpot Form V3 Embed.
@@ -11,8 +13,11 @@ import { HUBSPOT_FORM } from "./config";
  * erneut: doppeltes Laden des Embeds verursacht Render-Races (leeres Formular).
  */
 export default function HubSpotForm() {
+    const consent = useConsent();
     const rawId = useId();
     const targetId = `hs-form-${rawId.replace(/:/g, "")}`;
+
+    if (consent !== "all") return <ConsentNotice kind="form" />;
 
     return (
         <div
