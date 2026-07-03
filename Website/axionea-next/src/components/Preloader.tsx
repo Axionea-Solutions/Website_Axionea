@@ -34,7 +34,7 @@ export default function Preloader() {
                     initial={{ y: 0 }}
                     exit={{ y: "-100%" }}
                     transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
-                    className="fixed inset-0 z-[9999] bg-[#000000] flex flex-col items-center justify-center overflow-hidden"
+                    className="fixed inset-0 z-[90] bg-[#000000] flex flex-col items-center justify-center overflow-hidden"
                 >
                     {/* Glowing Logo Container */}
                     <div className="relative flex flex-col items-center justify-center">

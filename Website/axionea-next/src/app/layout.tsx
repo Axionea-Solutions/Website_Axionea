@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Syne, DM_Sans } from "next/font/google";
 import "./globals.css";
 import AnimatedNavbar from "@/components/AnimatedNavbar";
@@ -20,6 +20,12 @@ const dmSans = DM_Sans({
   subsets: ["latin"],
   display: "swap",
 });
+
+// Bildschirmtastatur (Mobile) verkleinert das Layout statt es zu überdecken —
+// wichtig für das Chat-Eingabefeld im Bottom-Sheet.
+export const viewport: Viewport = {
+  interactiveWidget: "resizes-content",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.axionea-solutions.de"),

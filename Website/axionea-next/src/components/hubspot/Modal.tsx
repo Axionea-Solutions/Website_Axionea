@@ -35,7 +35,7 @@ export default function Modal({ open, onClose, title, children }: ModalProps) {
             aria-modal="true"
             aria-label={title ?? "Dialog"}
             onClick={onClose}
-            className="fixed inset-0 z-[10000] flex items-center justify-center bg-black/70 backdrop-blur-sm p-3 sm:p-6"
+            className="fixed inset-0 z-[80] flex items-center justify-center bg-black/70 backdrop-blur-sm p-3 sm:p-6"
         >
             <div
                 onClick={(e) => e.stopPropagation()}

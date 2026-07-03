@@ -123,8 +123,8 @@ export default function AnimatedNavbar() {
                         : "w-[96%] max-w-[1280px] top-[1.2em] md:top-[1.6em]"
                 } ${
                     isPanelOpen
-                        ? "opacity-0 -translate-y-2 pointer-events-none z-[96]"
-                        : "opacity-100 z-[99]"
+                        ? "opacity-0 -translate-y-2 pointer-events-none z-[45]"
+                        : "opacity-100 z-[50]"
                 }`}
                 aria-hidden={isPanelOpen}
             >
@@ -207,7 +207,7 @@ export default function AnimatedNavbar() {
             {/* Backdrop */}
             <div
                 onClick={() => setIsPanelOpen(false)}
-                className={`fixed inset-0 z-[97] bg-black/55 backdrop-blur-sm transition-opacity duration-400 ${
+                className={`fixed inset-0 z-[55] bg-black/55 backdrop-blur-sm transition-opacity duration-400 ${
                     isPanelOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
                 }`}
                 aria-hidden="true"
@@ -219,7 +219,7 @@ export default function AnimatedNavbar() {
                 role="dialog"
                 aria-label="Erweiterte Navigation"
                 aria-modal="true"
-                className={`fixed top-0 right-0 bottom-0 z-[98] w-[88%] sm:w-[420px] max-w-full transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                className={`fixed top-0 right-0 bottom-0 z-[60] w-[88%] sm:w-[420px] max-w-full transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
                     isPanelOpen ? "translate-x-0" : "translate-x-full"
                 }`}
             >
