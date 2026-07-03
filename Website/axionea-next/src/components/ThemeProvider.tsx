@@ -29,7 +29,6 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
         const initial = saved || "dark";
         // eslint-disable-next-line react-hooks/set-state-in-effect
         setTheme(initial);
-        // eslint-disable-next-line react-hooks/set-state-in-effect
         setMounted(true);
     }, []);
 

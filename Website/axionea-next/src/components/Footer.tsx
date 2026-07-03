@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { ContactButton } from "./hubspot";
 
 export default function Footer() {
@@ -65,7 +66,7 @@ export default function Footer() {
 
                 {/* Logo + Brand */}
                 <div className="flex items-center gap-3 mb-4">
-                    <img src="/assets/logo/Asset 4@4x.png" alt="Axionea Logo" className="h-12 w-auto dark:invert-0" />
+                    <Image src="/assets/logo/Asset 4@4x.png" alt="Axionea Logo" width={973} height={870} className="h-12 w-auto dark:invert-0" />
                 </div>
                 <h2
                     className="text-3xl md:text-4xl font-bold tracking-tight mb-3"

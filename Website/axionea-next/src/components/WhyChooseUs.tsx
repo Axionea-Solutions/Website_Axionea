@@ -140,12 +140,6 @@ function BenefitCard({
 }) {
     const { ref, isInView } = useInView(0.15);
 
-    const getInitialTransform = () => {
-        if (index % 3 === 0) return "translateX(-30px)";
-        if (index % 3 === 2) return "translateX(30px)";
-        return "translateY(30px)";
-    };
-
     return (
         <div
             ref={ref}

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useTheme } from "./ThemeProvider";
 import { BookingButton } from "./hubspot";
 
@@ -146,9 +147,11 @@ export default function AnimatedNavbar() {
                         }}
                         aria-label="Axionea Startseite"
                     >
-                        <img
+                        <Image
                             src="/assets/logo/Asset 3@4x.png"
                             alt="Axionea Logo"
+                            width={973}
+                            height={870}
                             className={`h-[38px] w-auto transition-all duration-500 ${isDark ? "brightness-0 invert" : ""}`}
                         />
                         <span
@@ -236,9 +239,11 @@ export default function AnimatedNavbar() {
                             className="flex items-center gap-1 hover:opacity-80 transition-opacity"
                             aria-label="Axionea Startseite"
                         >
-                            <img
+                            <Image
                                 src="/assets/logo/Asset 3@4x.png"
                                 alt="Axionea Logo"
+                                width={973}
+                                height={870}
                                 className={`h-[34px] w-auto ${isDark ? "brightness-0 invert" : ""}`}
                             />
                             <span

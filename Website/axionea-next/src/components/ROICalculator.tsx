@@ -1,7 +1,6 @@
 ﻿"use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { LetterReveal } from "./ui/LetterReveal";
 import { IndustrySelector } from "./roi-calculator/IndustrySelector";
 import { InputSlider } from "./roi-calculator/InputSlider";

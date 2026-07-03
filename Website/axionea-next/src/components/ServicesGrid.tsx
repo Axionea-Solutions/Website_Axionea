@@ -390,11 +390,6 @@ function ServiceCard({
 }) {
     const { ref, isInView } = useInView(0.1);
 
-    const getTransform = () => {
-        if (index === 0 || index === 2) return "translateX(-30px)";
-        return "translateX(30px)";
-    };
-
     return (
         <div
             ref={ref}

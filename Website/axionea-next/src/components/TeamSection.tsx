@@ -20,7 +20,6 @@ function TeamCard({
     index: number;
 }) {
     const { ref, isInView } = useInView(0.1);
-    const fromLeft = index % 2 === 0;
 
     return (
         <div
