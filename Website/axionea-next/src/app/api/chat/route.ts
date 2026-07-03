@@ -115,40 +115,50 @@ export async function POST(req: Request) {
     const client = new Anthropic();
 
     const encoder = new TextEncoder();
+    // Referenz außerhalb von start(), damit cancel() den Upstream sofort abbrechen
+    // kann, wenn der Client (Tab zu, Chat geschlossen) mitten im Streaming abspringt.
+    let messageStream: ReturnType<typeof client.messages.stream> | undefined;
     const stream = new ReadableStream<Uint8Array>({
         async start(controller) {
             try {
-                const messageStream = client.messages.stream({
+                // Hinweis: Kein Prompt-Caching — der System-Prompt liegt weit unter
+                // dem Cache-Minimum von claude-haiku-4-5 (4096 Tokens); ein
+                // cache_control-Breakpoint wäre hier wirkungslos.
+                const ms = client.messages.stream({
                     model: "claude-haiku-4-5",
                     max_tokens: 1024,
                     temperature: 0.7,
-                    // Prompt-Caching auf dem statischen System-Prompt — Folgefragen
-                    // lesen den gecachten Prefix (cache_read), statt ihn neu zu zahlen.
-                    system: [
-                        {
-                            type: "text",
-                            text: SYSTEM_PROMPT,
-                            cache_control: { type: "ephemeral" },
-                        },
-                    ],
+                    system: SYSTEM_PROMPT,
                     messages: messages.map((m) => ({ role: m.role, content: m.content })),
                 });
+                messageStream = ms;
 
-                messageStream.on("text", (delta) => {
+                ms.on("text", (delta) => {
                     controller.enqueue(encoder.encode(delta));
                 });
 
-                await messageStream.finalMessage();
-                controller.close();
+                await ms.finalMessage();
+                try {
+                    controller.close();
+                } catch {
+                    // Stream wurde clientseitig bereits gecancelt
+                }
             } catch (error) {
+                if (error instanceof Anthropic.APIUserAbortError) {
+                    // Client-Disconnect (cancel() unten) — kein Fehler
+                    return;
+                }
                 console.error("[CHAT STREAM ERROR]:", error);
                 try {
                     controller.enqueue(encoder.encode("\n\n[Fehler beim Abrufen der Antwort. Bitte später erneut versuchen.]"));
+                    controller.close();
                 } catch {
-                    // Stream bereits geschlossen
+                    // Stream bereits geschlossen/gecancelt
                 }
-                controller.close();
             }
+        },
+        cancel() {
+            messageStream?.abort();
         },
     });
 

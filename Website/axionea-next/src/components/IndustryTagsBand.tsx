@@ -22,7 +22,7 @@ const tags: { label: string; icon: string; key?: boolean; href?: string }[] = [
     { label: "Personalwesen", icon: "M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M8.5 3a4 4 0 110 8 4 4 0 010-8zM20 8v6M23 11h-6" },
 ];
 
-function TagItem({ label, icon, isKey, href }: { label: string; icon: string; isKey?: boolean; href?: string }) {
+function TagItem({ label, icon, isKey, href, focusable = true }: { label: string; icon: string; isKey?: boolean; href?: string; focusable?: boolean }) {
     const className = `inline-flex items-center gap-2 px-5 py-2.5 rounded-full border text-sm whitespace-nowrap transition-all duration-300 shrink-0 ${
         isKey
             ? "border-sapphire/40 bg-sapphire/10 text-sapphire font-semibold shadow-[0_0_16px_rgba(15,82,186,0.15)]"
@@ -65,7 +65,13 @@ function TagItem({ label, icon, isKey, href }: { label: string; icon: string; is
 
     if (href) {
         return (
-            <Link href={href} aria-label={`KI für ${label} — zur Referenzseite`} className={className}>
+            <Link
+                href={href}
+                aria-label={`KI für ${label} — zur Referenzseite`}
+                className={className}
+                // Duplikat-Tracks (aria-hidden) dürfen keine Tab-Stops erzeugen
+                tabIndex={focusable ? undefined : -1}
+            >
                 {content}
             </Link>
         );
@@ -109,16 +115,15 @@ export default function IndustryTagsBand() {
                             <TagItem key={`a-${tag.label}`} label={tag.label} icon={tag.icon} isKey={tag.key} href={tag.href} />
                         ))}
                     </div>
-                    {/* Track 2 */}
-                    <div className="flex gap-4 shrink-0 pr-4">
+                    {/* Track 2 + 3: reine Loop-Duplikate — für Screenreader/Tastatur unsichtbar */}
+                    <div className="flex gap-4 shrink-0 pr-4" aria-hidden="true">
                         {tags.map((tag) => (
-                            <TagItem key={`b-${tag.label}`} label={tag.label} icon={tag.icon} isKey={tag.key} href={tag.href} />
+                            <TagItem key={`b-${tag.label}`} label={tag.label} icon={tag.icon} isKey={tag.key} href={tag.href} focusable={false} />
                         ))}
                     </div>
-                    {/* Track 3 */}
-                    <div className="flex gap-4 shrink-0 pr-4">
+                    <div className="flex gap-4 shrink-0 pr-4" aria-hidden="true">
                         {tags.map((tag) => (
-                            <TagItem key={`c-${tag.label}`} label={tag.label} icon={tag.icon} isKey={tag.key} href={tag.href} />
+                            <TagItem key={`c-${tag.label}`} label={tag.label} icon={tag.icon} isKey={tag.key} href={tag.href} focusable={false} />
                         ))}
                     </div>
                 </div>

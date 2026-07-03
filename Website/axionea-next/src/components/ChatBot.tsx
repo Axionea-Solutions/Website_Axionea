@@ -127,6 +127,21 @@ export default function ChatBot() {
         return () => window.removeEventListener("keydown", onKey);
     }, [isOpen]);
 
+    // Beim Öffnen Fokus in den Dialog bewegen (a11y: aria-modal verlangt das).
+    // Desktop: direkt ins Eingabefeld; Mobile: aufs Panel, damit die
+    // Bildschirmtastatur nicht ungefragt aufspringt.
+    useEffect(() => {
+        if (!isOpen) return;
+        const t = setTimeout(() => {
+            if (window.innerWidth >= 640) {
+                inputRef.current?.focus();
+            } else {
+                panelRef.current?.focus();
+            }
+        }, 60);
+        return () => clearTimeout(t);
+    }, [isOpen]);
+
     // iOS/Android: Wenn die Bildschirmtastatur aufgeht, schrumpft der visualViewport,
     // aber nicht immer das Layout. Panel-Höhe daran klemmen, damit das Eingabefeld
     // sichtbar bleibt.
@@ -170,6 +185,7 @@ export default function ChatBot() {
                         role="dialog"
                         aria-modal="true"
                         aria-label="Chat mit Ax, dem Axionea-Assistenten"
+                        tabIndex={-1}
                         initial={{ opacity: 0, y: 20, scale: 0.9 }}
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 20, scale: 0.9 }}
@@ -297,6 +313,8 @@ export default function ChatBot() {
                 className={`fixed bottom-6 right-6 z-[40] group w-20 h-24 flex flex-col items-center justify-center focus:outline-none transition-transform hover:scale-105 duration-300 ${isOpen ? 'opacity-0 pointer-events-none' : 'opacity-100 pointer-events-auto'}`}
                 aria-label="Chat mit Ax öffnen"
                 aria-expanded={isOpen}
+                // Unsichtbarer Trigger (opacity-0) darf kein Tab-Stop sein
+                tabIndex={isOpen ? -1 : 0}
             >
                 {/* Glow behind Ax */}
                 <div className="absolute inset-0 bg-blue-400/20 rounded-full blur-xl scale-125 pointer-events-none" aria-hidden="true" />
