@@ -174,7 +174,7 @@ export default function ChatBot() {
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 20, scale: 0.9 }}
                         transition={{ type: "spring", damping: 25, stiffness: 300 }}
-                        className="fixed z-[70] flex flex-col overflow-hidden bg-white/90 dark:bg-[#070d1a]/95 backdrop-blur-xl border border-gray-200 dark:border-white/10 shadow-2xl inset-x-0 bottom-0 rounded-t-3xl h-[85vh] max-h-[85dvh] sm:inset-x-auto sm:right-6 sm:bottom-6 sm:rounded-2xl sm:h-[min(600px,calc(100dvh-3rem))] sm:w-[min(420px,calc(100vw-3rem))]"
+                        className="fixed z-[70] flex flex-col overflow-hidden bg-white/90 dark:bg-navy-900/95 backdrop-blur-xl border border-gray-200 dark:border-white/10 shadow-2xl inset-x-0 bottom-0 rounded-t-3xl h-[85vh] max-h-[85dvh] sm:inset-x-auto sm:right-6 sm:bottom-6 sm:rounded-2xl sm:h-[min(600px,calc(100dvh-3rem))] sm:w-[min(420px,calc(100vw-3rem))]"
                     >
                         {/* Header */}
                         <div className="h-16 shrink-0 border-b border-gray-200 dark:border-white/10 flex items-center justify-between px-6 bg-sapphire/5">
@@ -208,7 +208,7 @@ export default function ChatBot() {
                             {/* Initial Welcome Message */}
                             {messages.length === 0 && (
                                 <div className="flex gap-3 justify-start">
-                                    <div className="max-w-[80%] rounded-2xl p-3 px-4 bg-gray-100 dark:bg-[#0f172a] text-sm text-gray-800 dark:text-gray-200 rounded-tl-none">
+                                    <div className="max-w-[80%] rounded-2xl p-3 px-4 bg-gray-100 dark:bg-navy-800 text-sm text-gray-800 dark:text-gray-200 rounded-tl-none">
                                         Beep boop! Ich bin Ax, der digitale Assistent von Axionea. Wie kann ich dir heute mit KI und Automatisierung weiterhelfen? ✨
                                     </div>
                                 </div>
@@ -216,7 +216,7 @@ export default function ChatBot() {
 
                             {messages.map((m) => (
                                 <div key={m.id} className={`flex gap-3 ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-                                    <div className={`max-w-[80%] rounded-2xl p-3 px-4 text-sm whitespace-pre-wrap ${m.role === 'user' ? 'bg-sapphire text-white rounded-tr-none' : 'bg-gray-100 dark:bg-[#0f172a] text-gray-800 dark:text-gray-200 rounded-tl-none'}`}>
+                                    <div className={`max-w-[80%] rounded-2xl p-3 px-4 text-sm whitespace-pre-wrap ${m.role === 'user' ? 'bg-sapphire text-white rounded-tr-none' : 'bg-gray-100 dark:bg-navy-800 text-gray-800 dark:text-gray-200 rounded-tl-none'}`}>
                                         {m.content}
                                     </div>
                                 </div>
@@ -224,7 +224,7 @@ export default function ChatBot() {
 
                             {isLoading && (
                                 <div className="flex gap-3 justify-start">
-                                    <div className="max-w-[80%] rounded-2xl p-4 px-4 bg-gray-100 dark:bg-[#0f172a] rounded-tl-none flex items-center gap-1.5">
+                                    <div className="max-w-[80%] rounded-2xl p-4 px-4 bg-gray-100 dark:bg-navy-800 rounded-tl-none flex items-center gap-1.5">
                                         <motion.div className="w-1.5 h-1.5 bg-sapphire/50 rounded-full" animate={{ y: [0, -5, 0] }} transition={{ repeat: Infinity, duration: 0.6, delay: 0 }} />
                                         <motion.div className="w-1.5 h-1.5 bg-sapphire/50 rounded-full" animate={{ y: [0, -5, 0] }} transition={{ repeat: Infinity, duration: 0.6, delay: 0.2 }} />
                                         <motion.div className="w-1.5 h-1.5 bg-sapphire/50 rounded-full" animate={{ y: [0, -5, 0] }} transition={{ repeat: Infinity, duration: 0.6, delay: 0.4 }} />
@@ -244,11 +244,11 @@ export default function ChatBot() {
                         </div>
 
                         {/* Input Area */}
-                        <div className="p-4 shrink-0 bg-white dark:bg-[#070d1a] border-t border-gray-100 dark:border-white/10 pb-[max(1rem,env(safe-area-inset-bottom))] sm:pb-4">
+                        <div className="p-4 shrink-0 bg-white dark:bg-navy-900 border-t border-gray-100 dark:border-white/10 pb-[max(1rem,env(safe-area-inset-bottom))] sm:pb-4">
                             <form onSubmit={handleSubmit} className="flex gap-2 mb-2">
                                 <input
                                     ref={inputRef}
-                                    className="flex-1 bg-gray-50 dark:bg-[#0a1628] border border-gray-200 dark:border-white/10 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-1 focus:ring-sapphire transition-all dark:text-white"
+                                    className="flex-1 bg-gray-50 dark:bg-navy-700 border border-gray-200 dark:border-white/10 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-1 focus:ring-sapphire transition-all dark:text-white"
                                     value={input}
                                     placeholder="Frag Ax..."
                                     aria-label="Deine Nachricht an Ax"

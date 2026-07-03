@@ -5,6 +5,9 @@
 export interface FaqEntry {
     question: string;
     answer: string;
+    // Optionaler weiterführender Link — nur im sichtbaren FAQ gerendert,
+    // nicht im JSON-LD (Google erwartet dort reinen Antworttext).
+    link?: { href: string; label: string };
 }
 
 export const faqs: FaqEntry[] = [
@@ -27,6 +30,7 @@ export const faqs: FaqEntry[] = [
     {
         question: "Ist eure KI DSGVO-konform?",
         answer: "Ja. Wir arbeiten ausschließlich mit EU-Hosting, schließen Auftragsverarbeitungsverträge (AVV) ab und nutzen KI-Modelle ohne Training auf euren Daten. Sensible Daten werden niemals unkontrolliert verarbeitet. Auf Wunsch begleiten wir euch durch die vollständige EU-AI-Act-Compliance.",
+        link: { href: "/#hosting", label: "Mehr zu sicherem Hosting & Compliance →" },
     },
     {
         question: "Was kostet ein Einstieg mit Axionea?",

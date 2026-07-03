@@ -87,16 +87,22 @@ export default function HeroContent() {
                         className="list-none grid grid-cols-2 gap-2 sm:flex sm:flex-wrap sm:items-center sm:justify-center sm:gap-8 text-xs sm:text-sm md:text-base font-medium text-gray-400/80 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl sm:rounded-full px-4 sm:px-6 py-3 pointer-events-auto shadow-[0_0_20px_rgba(0,0,0,0.2)] w-full max-w-xs sm:max-w-none sm:w-auto"
                     >
                         {[
-                            "Standort Deutschland",
-                            "DSGVO-konform",
-                            "EU AI Act Ready",
-                            "BAFA-förderfähig",
-                        ].map((label) => (
+                            { label: "Standort Deutschland" },
+                            { label: "DSGVO-konform", href: "#hosting" },
+                            { label: "EU AI Act Ready", href: "#hosting" },
+                            { label: "BAFA-förderfähig" },
+                        ].map(({ label, href }) => (
                             <li key={label} className="flex items-center gap-2 justify-center sm:justify-start">
                                 <svg className="w-4 h-4 text-sapphire shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
                                 </svg>
-                                <span>{label}</span>
+                                {href ? (
+                                    <a href={href} className="hover:text-gray-200 underline decoration-transparent hover:decoration-gray-400 underline-offset-4 transition-all">
+                                        {label}
+                                    </a>
+                                ) : (
+                                    <span>{label}</span>
+                                )}
                             </li>
                         ))}
                     </motion.ul>

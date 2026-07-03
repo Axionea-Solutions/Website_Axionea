@@ -31,6 +31,7 @@ const PANEL_SECTIONS: PanelSection[] = [
         title: "Plattform",
         links: [
             { label: "Warum Axionea", href: "/#warum", ariaLabel: "Warum Axionea" },
+            { label: "Sicheres Hosting", href: "/#hosting", ariaLabel: "Sicheres Hosting & Compliance" },
             { label: "ROI-Rechner", href: "/#roi", ariaLabel: "ROI-Rechner öffnen" },
             { label: "Services", href: "/#services", ariaLabel: "Alle Services" },
             { label: "Vergleich", href: "/#vergleich", ariaLabel: "Zum Vergleich" },

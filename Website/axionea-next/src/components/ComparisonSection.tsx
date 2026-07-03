@@ -58,8 +58,8 @@ export default function ComparisonSection() {
                     ref={ref}
                     style={{
                         opacity: isInView ? 1 : 0,
-                        transform: isInView ? "translateY(0)" : "translateY(20px)",
-                        transition: "all 1s cubic-bezier(0.16, 1, 0.3, 1)",
+                        transform: isInView ? "translateY(0)" : "translateY(16px)",
+                        transition: "all 0.7s cubic-bezier(0.16, 1, 0.3, 1)",
                     }}
                 >
                     <div className="rounded-3xl border border-slate-200 bg-white shadow-[0_4px_24px_-4px_rgba(0,0,0,0.08)] overflow-hidden transition-all duration-500 hover:border-sapphire/50 hover:shadow-[0_0_20px_rgba(15,82,186,0.25),0_0_50px_rgba(15,82,186,0.12)]">

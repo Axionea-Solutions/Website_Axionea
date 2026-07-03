@@ -8,7 +8,7 @@ import { faqs } from "@/lib/faq-data";
 
 
 /* ──────────────── FAQ Item ──────────────── */
-function FAQItem({ question, answer, index }: { question: string; answer: string; index: number }) {
+function FAQItem({ question, answer, link, index }: { question: string; answer: string; link?: { href: string; label: string }; index: number }) {
     const [isOpen, setIsOpen] = useState(false);
     const { ref, isInView } = useInView(0.1);
 
@@ -18,8 +18,8 @@ function FAQItem({ question, answer, index }: { question: string; answer: string
             className="border-b border-slate-100 last:border-b-0"
             style={{
                 opacity: isInView ? 1 : 0,
-                transform: isInView ? "translateY(0)" : "translateY(10px)",
-                transition: `all 1s cubic-bezier(0.16, 1, 0.3, 1) ${index * 0.08}s`,
+                transform: isInView ? "translateY(0)" : "translateY(16px)",
+                transition: `all 0.7s cubic-bezier(0.16, 1, 0.3, 1) ${index * 0.08}s`,
             }}
         >
             <button
@@ -48,6 +48,11 @@ function FAQItem({ question, answer, index }: { question: string; answer: string
                         <p className="text-sm text-slate-600 leading-relaxed max-w-2xl">
                             {answer}
                         </p>
+                        {link && (
+                            <a href={link.href} className="inline-block mt-3 text-sm font-medium text-sapphire hover:text-sapphire-hover transition-colors">
+                                {link.label}
+                            </a>
+                        )}
                     </div>
                 </div>
             </div>
@@ -84,7 +89,7 @@ export default function FAQ() {
                 {/* FAQ Accordion */}
                 <div className="rounded-3xl border border-slate-200 bg-white shadow-[0_4px_24px_-4px_rgba(0,0,0,0.08)] overflow-hidden transition-all duration-500 hover:border-sapphire/50 hover:shadow-[0_0_20px_rgba(15,82,186,0.25),0_0_50px_rgba(15,82,186,0.12)]">
                     {faqs.map((faq, i) => (
-                        <FAQItem key={i} question={faq.question} answer={faq.answer} index={i} />
+                        <FAQItem key={i} question={faq.question} answer={faq.answer} link={faq.link} index={i} />
                     ))}
                 </div>
             </div>

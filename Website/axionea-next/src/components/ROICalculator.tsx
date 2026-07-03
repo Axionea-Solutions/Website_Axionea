@@ -84,10 +84,10 @@ export default function ROICalculator() {
                     ref={ref}
                     style={{
                         opacity: isInView ? 1 : 0,
-                        transform: isInView ? "translateY(0)" : "translateY(20px)",
-                        transition: "all 1s cubic-bezier(0.16, 1, 0.3, 1)",
+                        transform: isInView ? "translateY(0)" : "translateY(16px)",
+                        transition: "all 0.7s cubic-bezier(0.16, 1, 0.3, 1)",
                     }}
-                    className="rounded-[2.5rem] border border-slate-200  bg-white  shadow-2xl overflow-hidden backdrop-blur-sm"
+                    className="rounded-3xl border border-slate-200 bg-white shadow-2xl overflow-hidden backdrop-blur-sm"
                 >
                     <div className="grid grid-cols-1 lg:grid-cols-12 divide-y lg:divide-y-0 lg:divide-x divide-slate-200 ">
 
@@ -169,7 +169,7 @@ export default function ROICalculator() {
                                         label="Mögliche Kostensenkung"
                                         progressPercent={100}
                                         colorClass="bg-blue-500"
-                                        bgClass="bg-[#F0F4FF] dark:bg-blue-900/10"
+                                        bgClass="bg-tint-blue dark:bg-blue-900/10"
                                         delay={0.1}
                                     />
                                     <ResultCard
@@ -178,7 +178,7 @@ export default function ROICalculator() {
                                         label="Tatsächliche Realisierung"
                                         progressPercent={25}
                                         colorClass="bg-red-500"
-                                        bgClass="bg-[#FFF0F0] dark:bg-red-900/10"
+                                        bgClass="bg-tint-red dark:bg-red-900/10"
                                         delay={0.2}
                                     />
                                     <ResultCard
@@ -187,7 +187,7 @@ export default function ROICalculator() {
                                         label="Sichere Realisierung"
                                         progressPercent={70}
                                         colorClass="bg-green-500"
-                                        bgClass="bg-[#F0FFF4] dark:bg-green-900/10"
+                                        bgClass="bg-tint-green dark:bg-green-900/10"
                                         delay={0.3}
                                     />
                                 </div>

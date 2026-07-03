@@ -27,14 +27,14 @@ export default function Home() {
       {/* Why Choose Us Section */}
       <WhyChooseUs />
 
-      {/* ROI Calculator — right after WhyChooseUs */}
+      {/* Sicheres Hosting & Compliance — prominent direkt nach den Vorteilen */}
+      <ComplianceBadges />
+
+      {/* ROI Calculator */}
       <ROICalculator />
 
       {/* Services Grid Section */}
       <ServicesGrid />
-
-      {/* Trust & Compliance Badges */}
-      <ComplianceBadges />
 
       {/* Process Steps Section */}
       <ProcessSteps />
