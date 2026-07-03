@@ -12,7 +12,7 @@ export function IndustrySelector({ selectedId, onChange }: IndustrySelectorProps
     return (
         <div className="w-full relative">
             <label className="block text-sm font-medium text-slate-900 mb-3 text-left">
-                In welcher Branche sind Sie tätig?
+                In welcher Branche bist du tätig?
             </label>
             <div className="relative">
                 <select

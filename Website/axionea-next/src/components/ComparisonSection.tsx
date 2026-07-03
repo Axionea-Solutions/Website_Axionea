@@ -9,7 +9,7 @@ import { ContactButton } from "./hubspot";
 const axioneaFeatures = [
     "Echte Entwickler — keine zusammengeklickten Bastellösungen",
     "DSGVO-konform & EU-Hosting — deine Daten bleiben sicher",
-    "Erprobt in deiner Branche: Praxis, KFO, Makler, Kanzlei",
+    "Erprobt in echten Betrieben — von der Praxis bis zur Kanzlei",
     "Fairer Festpreis — wir behalten deinen ROI im Blick",
     "Läuft mit deiner bestehenden Software — kein Umstieg",
     "KI-Telefonassistent & Chatbots, die wirklich helfen",
@@ -49,7 +49,7 @@ export default function ComparisonSection() {
                         <LetterReveal text="Präzision vs. Standard" />
                     </h2>
                     <p className="text-muted-foreground text-lg max-w-xl mx-auto">
-                        <LetterReveal text="Warum Praxen, Makler und Kanzleien lieber mit einem Spezialisten arbeiten als mit einer No-Name-Agentur" delay={0.2} stagger={0.015} />
+                        <LetterReveal text="Warum Unternehmen lieber mit einem Spezialisten arbeiten als mit einer Agentur von der Stange" delay={0.2} stagger={0.015} />
                     </p>
                 </div>
 

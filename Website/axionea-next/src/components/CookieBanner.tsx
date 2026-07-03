@@ -46,7 +46,7 @@ export default function CookieBanner() {
                             </div>
                             <div>
                                 <h3 className="text-lg font-bold text-foreground mb-1" style={{ fontFamily: "var(--font-syne)" }}>
-                                    Ihre Privatsphäre
+                                    Deine Privatsphäre
                                 </h3>
                                 <p className="text-sm text-muted-foreground leading-relaxed">
                                     Wir nutzen Cookies zur Verbesserung der Website und für Analysen.

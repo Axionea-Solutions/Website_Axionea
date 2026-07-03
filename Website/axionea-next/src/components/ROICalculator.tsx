@@ -64,7 +64,7 @@ export default function ROICalculator() {
                     <h2
                         className="text-[clamp(28px,6vw,52px)] font-sans font-medium tracking-tight leading-tight mb-4 break-words hyphens-auto"
                     >
-                        <LetterReveal text="Berechnen Sie Ihren " />
+                        <LetterReveal text="Berechne deinen " />
                         <br className="hidden sm:block" />
                         <span className="text-sapphire">
                             <LetterReveal text="Verlust durch Ineffizienz" delay={0.3} />
@@ -72,7 +72,7 @@ export default function ROICalculator() {
                     </h2>
                     <p className="text-slate-500 text-lg max-w-2xl mx-auto leading-relaxed">
                         <LetterReveal
-                            text="Finden Sie heraus, wie viel Geld Ihr Unternehmen aktuell jeden Monat für manuelle, repetitive Aufgaben verbrennt – basierend auf echten Branchendaten von McKinsey & EY"
+                            text="Finde heraus, wie viel Geld dein Unternehmen aktuell jeden Monat für manuelle, repetitive Aufgaben verbrennt – basierend auf echten Branchendaten von McKinsey & EY"
                             delay={0.6}
                             stagger={0.015}
                         />
@@ -97,7 +97,7 @@ export default function ROICalculator() {
 
                             <div className="space-y-8">
                                 <InputSlider
-                                    label="Wie viele Mitarbeitende hat Ihr Team?"
+                                    label="Wie viele Mitarbeitende hat dein Team?"
                                     value={teamSize}
                                     min={1}
                                     max={100}
@@ -140,10 +140,10 @@ export default function ROICalculator() {
                                         </svg>
                                     </div>
                                     <h3 className="text-xl font-sans font-medium tracking-tight text-slate-900 mb-2">
-                                        Wählen Sie Ihre Branche
+                                        Wähle deine Branche
                                     </h3>
                                     <p className="text-slate-500 max-w-md">
-                                        Um die detaillierten McKinsey & EY Potenziale zu sehen, wählen Sie bitte links Ihre Branche aus.
+                                        Um die detaillierten McKinsey-&-EY-Potenziale zu sehen, wähle links deine Branche aus.
                                     </p>
                                 </div>
                             ) : null}
@@ -152,7 +152,7 @@ export default function ROICalculator() {
                             <div className={`transition-opacity duration-500 ${!industryId ? "opacity-30 blur-sm" : "opacity-100"}`}>
                                 <div className="mb-10 text-center lg:text-left">
                                     <p className="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-2">
-                                        Ihre monatlichen Kosten für repetitive Arbeit
+                                        Deine monatlichen Kosten für repetitive Arbeit
                                     </p>
                                     <div className="text-5xl sm:text-6xl md:text-7xl font-sans font-medium tracking-tight text-slate-900 drop-shadow-sm flex items-center justify-center lg:justify-start">
                                         <AnimatedCounter value={results.monthlyRepetitiveCost} />

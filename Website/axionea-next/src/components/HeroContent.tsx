@@ -51,7 +51,7 @@ export default function HeroContent() {
                         transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
                         className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-3xl mb-10 leading-relaxed drop-shadow-md font-light tracking-wide"
                     >
-                        Für Arztpraxen, Kieferorthopäden, Makler &amp; Steuerberater — wir automatisieren, was dich täglich Zeit kostet.
+                        Wir automatisieren, was dich täglich Zeit kostet — von der Terminbuchung bis zum Backoffice. Ohne eigene IT-Abteilung, ohne versteckte Kosten.
                     </motion.p>
 
                     {/* Main CTA Buttons */}
