@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useInView } from "@/hooks/useInView";
 import { BookingButton } from "./hubspot";
 import { LetterReveal } from "./ui/LetterReveal";
@@ -76,13 +77,12 @@ function ProcessCard({
 
                 {/* Image */}
                 <div className="relative mx-4 mb-4 rounded-2xl overflow-hidden border border-slate-100 bg-slate-50">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
+                    <Image
                         src={imageSrc}
                         alt={imageAlt ?? title}
                         width={1280}
                         height={800}
-                        loading="lazy"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                         className="w-full h-auto opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
                     />
                 </div>
@@ -165,13 +165,12 @@ function PartnershipCard({
 
                 {/* Image */}
                 <div className="relative mx-4 mb-4 mt-6 rounded-2xl overflow-hidden border border-slate-100 bg-slate-50">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
+                    <Image
                         src={imageSrc}
                         alt={imageAlt ?? title}
                         width={1280}
                         height={800}
-                        loading="lazy"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                         className="w-full h-auto opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
                     />
                 </div>
