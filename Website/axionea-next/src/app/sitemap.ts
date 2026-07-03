@@ -2,7 +2,8 @@ import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://www.axionea-solutions.de';
-    const homeLastModified = new Date('2026-05-21');
+    // Startseiten-Relaunch (Overhaul): Copy, Design-System, Hosting-Sektion
+    const homeLastModified = new Date('2026-07-03');
     const industryLastModified = new Date('2026-05-21');
     const foerderungLastModified = new Date('2026-05-21');
     const legalLastModified = new Date('2026-01-15');

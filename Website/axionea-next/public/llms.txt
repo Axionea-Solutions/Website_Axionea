@@ -1,28 +1,38 @@
-# Axionea - KI-Lösungen für Arztpraxen, Kieferorthopäden & Makler
+# Axionea — KI-Automatisierung für den Mittelstand
 
 ## Über uns
-Axionea entwickelt praxiserprobte, DSGVO-konforme und EU-AI-Act-ready KI-Automatisierungen für kleine und mittelständische Unternehmen im DACH-Raum. Unser Fokus liegt auf Arztpraxen, Kieferorthopäden und Immobilienmaklern.
+Axionea entwickelt praxiserprobte, DSGVO-konforme und EU-AI-Act-ready KI-Automatisierungen für kleine und mittelständische Unternehmen im DACH-Raum — Chatbots, KI-Telefonassistenten, Workflow-Automatisierung und KI-Schulungen. Besonders viel Erfahrung haben wir in Arztpraxen, bei Kieferorthopäden, Immobilienmaklern und Steuerberatern gesammelt; die Lösungen funktionieren in jeder Branche mit wiederkehrenden Abläufen.
 Gegründet: 01.01.2026
-Standort: Deutschland
-
-## Unsere Zielgruppen
-- **Arztpraxen & Kieferorthopäden:** Automatisierung von Patientenanfragen (WhatsApp/Voice), intelligentes Terminmanagement, Vorab-Anamnese durch KI-Agenten, Reduzierung von No-Shows, Integration in Praxissoftware.
-- **Immobilienmakler:** Automatisierung von Exposé-Anfragen 24/7, KI-gestützte Dokumentenanalyse, Lead-Qualifizierung in Echtzeit, mehr Zeit für Vor-Ort-Termine.
+Standort: Gaimersheim, Bayern, Deutschland
 
 ## Unsere KI-Services
-1. KI-Strategie & Audit (Potenzialanalyse, Tool-Auswahl, EU-AI-Act-Compliance)
-2. KI-Agenten & Chatbots (24/7 Support, WhatsApp/Web-Integration, DSGVO-konform)
-3. Prozessautomatisierung (Intelligente Workflows, RPA, API-Integrationen)
-4. KI-Telefon-Assistenz (Voice AI für Terminbuchungen & FAQs)
-5. Custom LLM-Entwicklung (Branchenspezifische RAG-Systeme)
-6. Daten & Analytics (Predictive Analytics, Dashboards)
-7. KI-Schulungen (Workshops, Prompt Engineering, Team-Enablement)
+1. KI-Strategie & Audit (Potenzialanalyse, Tool-Auswahl, EU-AI-Act-Compliance) — ab 990 €, BAFA-förderfähig
+2. Chatbots & Termin-Assistenten (24/7, Web/WhatsApp, DSGVO-konform)
+3. KI-Telefonassistent (Voice AI für Terminbuchungen & FAQ)
+4. Backoffice-Automatisierung (CRM, Kalender, E-Mail — Integration statt Umstieg)
+5. Interne Wissens-Chatbots (Antworten aus euren eigenen Dokumenten)
+6. Branchen-KI-Tools (z. B. Exposé-Texter für Makler, KI-Dokumentation für Praxen)
+7. KI-Schulungen (AI-Fluency-Workshops, Tool-Trainings, Train-the-Trainer — BAFA-förderfähig)
+
+## Referenz-Branchen (eigene Detailseiten)
+- KI für Arztpraxen: https://www.axionea-solutions.de/ki-fuer-arztpraxen
+- KI für Kieferorthopäden: https://www.axionea-solutions.de/ki-fuer-kieferorthopaeden
+- KI für Immobilienmakler: https://www.axionea-solutions.de/ki-fuer-makler
+- KI für Steuerberater: Detailseite folgt — Leistungen bereits verfügbar
+
+## Sicheres Hosting & Compliance
+Hosting und Datenverarbeitung ausschließlich in EU-Rechenzentren. Verschlüsselte Übertragung und Speicherung, Auftragsverarbeitungsvertrag (AVV, DSGVO Art. 28) inklusive, keine KI-Trainings auf Kundendaten. Details: https://www.axionea-solutions.de/#hosting
 
 ## Prozess
 1. Workflow-Analyse
-2. Deployment
+2. Sicheres Deployment
 3. Laufende Optimierung
+Danach: langfristige Betreuung und Team-Schulung.
+
+## Förderung
+BAFA-Förderung für Beratung und Schulungen — bis zu 2.800 € Zuschuss möglich. Details: https://www.axionea-solutions.de/foerderung
 
 ## Kontakt
-Website: https://axionea-solutions.de
-Termin buchen: Kostenloses Erstgespräch via Calendly verfügbar.
+Website: https://www.axionea-solutions.de
+E-Mail: info@axionea-solutions.de
+Termin buchen: Kostenloses Erstgespräch direkt über die Online-Terminbuchung (HubSpot Meetings) auf der Website.

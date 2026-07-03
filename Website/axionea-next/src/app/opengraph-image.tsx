@@ -68,13 +68,15 @@ export default async function Image() {
                     }}
                 >
                     <span style={{ color: "#4d94ff", fontSize: "14px", fontWeight: 600, letterSpacing: "3px", textTransform: "uppercase" }}>
-                        KI-AUTOMATISIERUNG · LIVE IN 4 WOCHEN · DSGVO-KONFORM
+                        KI-AUTOMATISIERUNG · SOFORT EINSETZBAR · DSGVO-KONFORM
                     </span>
                 </div>
 
-                {/* Main headline */}
+                {/* Main headline — Satori verlangt explizites display:flex bei mehreren Kindern */}
                 <div
                     style={{
+                        display: "flex",
+                        flexDirection: "column",
                         fontSize: "72px",
                         fontWeight: 800,
                         color: "white",
@@ -84,7 +86,6 @@ export default async function Image() {
                     }}
                 >
                     <span style={{ color: "white" }}>Dein Unternehmen.</span>
-                    <br />
                     <span
                         style={{
                             background: "linear-gradient(90deg, #4d94ff, #60b8ff)",
@@ -133,7 +134,7 @@ export default async function Image() {
                         AXIONEA
                     </span>
                     <span style={{ fontSize: "18px", color: "rgba(255,255,255,0.4)", marginLeft: "4px" }}>
-                        axionea.de
+                        axionea-solutions.de
                     </span>
                 </div>
             </div>

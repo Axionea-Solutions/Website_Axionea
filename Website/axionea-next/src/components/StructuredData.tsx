@@ -60,7 +60,8 @@ const localBusinessSchema = {
     "@type": "ProfessionalService",
     "@id": "https://www.axionea-solutions.de/#localbusiness",
     name: "Axionea",
-    image: "https://www.axionea-solutions.de/og-image.png",
+    // Dynamisch generiertes OG-Image (app/opengraph-image.tsx)
+    image: "https://www.axionea-solutions.de/opengraph-image",
     url: "https://www.axionea-solutions.de",
     telephone: "+49-173-1726939",
     email: "info@axionea-solutions.de",

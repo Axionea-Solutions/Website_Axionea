@@ -1,6 +1,6 @@
 # Axionea Solutions GbR — Vollständige KI-Agentur-Profil
 
-> Praxiserprobte, DSGVO-konforme und EU-AI-Act-ready KI-Automatisierungen für KMU im DACH-Raum, mit branchenspezifischem Fokus auf Arztpraxen, Kieferorthopäden und Immobilienmakler.
+> Praxiserprobte, DSGVO-konforme und EU-AI-Act-ready KI-Automatisierungen für KMU im DACH-Raum. Besonders viel Erfahrung in Arztpraxen, Kieferorthopädie, Immobilien und Steuerberatung — die Lösungen funktionieren überall, wo Abläufe sich wiederholen.
 
 ## Wer wir sind
 
@@ -21,13 +21,15 @@
 
 ## Was uns unterscheidet
 
-1. **Branchenspezialisierung statt Bauchladen.** Wir bauen keine generischen Chatbots, sondern KI-Lösungen für klar definierte Branchen mit deren Fachvokabular, Compliance-Anforderungen und Workflow-Realitäten.
+1. **Branchenerfahrung statt Lösung von der Stange.** Wir bauen keine generischen Chatbots, sondern Lösungen, die zum Fachvokabular, den Compliance-Anforderungen und den echten Abläufen des jeweiligen Betriebs passen — erprobt u. a. in Arztpraxen, Kieferorthopädie, Immobilien und Steuerberatung.
 2. **DSGVO und EU AI Act sind kein Add-On.** Jede Lösung läuft auf EU-Hosting, mit AVV und ohne Training auf Kundendaten. Wir begleiten optional durch die volle EU-AI-Act-Compliance.
 3. **Festpreis statt Stundensätze.** KI-Potenzial-Check ab 990 € (BAFA-förderfähig mit bis zu 2.800 € Förderung), Pilotprojekte zu Festpreisen, optionales monatliches Retainer-Modell.
 4. **Keine IT-Abteilung beim Kunden nötig.** Wir kümmern uns um Hosting, Integration, Wartung und Monitoring. Kunde bekommt eine funktionierende Lösung, kein Bastelprojekt.
 5. **Förderfähig.** Schulungen über BAFA "go-digital" und "Förderung von Unternehmensberatungen für KMU" — je nach Bundesland und Unternehmensgröße bis zu 80 % Förderung.
 
-## Zielgruppen im Detail
+## Referenz-Branchen im Detail
+
+Eigene Detailseiten: /ki-fuer-arztpraxen, /ki-fuer-kieferorthopaeden, /ki-fuer-makler (Steuerberater-Seite folgt).
 
 ### Arztpraxen und Kieferorthopäden
 **Typische Schmerzen:** Telefonleitung dauerklingelt, Personalmangel an der Rezeption, hohe No-Show-Rate, Patientenanfragen außerhalb der Sprechzeiten.
@@ -96,13 +98,16 @@ Spezialisierte Lösungen wie automatische Exposé-Texter, KI-Dokumentation für 
 ## Häufige Fragen
 
 **Was genau macht Axionea?**
-Wir automatisieren Geschäftsprozesse mit KI — von Kundensupport-Chatbots über Content-Generierung bis hin zu vollautomatisierten Workflows. Wir analysieren eure Abläufe und implementieren maßgeschneiderte KI-Lösungen.
+Wir automatisieren Geschäftsprozesse mit KI — von Chatbots für die Terminvereinbarung über KI-Telefonassistenten bis hin zu internen Wissens-Chatbots. Wir analysieren eure Abläufe und richten maßgeschneiderte KI-Lösungen ein.
 
 **Brauche ich technisches Wissen?**
 Nein. Wir kümmern uns um die gesamte technische Umsetzung. Ihr braucht keine IT-Abteilung und keine Programmierkenntnisse.
 
-**Ist eure KI DSGVO-konform für Arztpraxen?**
-Ja. Wir arbeiten ausschließlich mit EU-Hosting, schließen AVV ab und nutzen KI-Modelle ohne Training auf Kundendaten. Auf Wunsch begleiten wir euch durch die vollständige EU-AI-Act-Compliance.
+**Für welche Branchen ist Axionea geeignet?**
+Für jede Branche, in der wiederkehrende Abläufe Zeit kosten. Besonders viel Erfahrung haben wir in Arztpraxen, bei Kieferorthopäden, Immobilienmaklern und Steuerberatern gesammelt.
+
+**Ist eure KI DSGVO-konform?**
+Ja. Wir arbeiten ausschließlich mit EU-Hosting, schließen AVV ab und nutzen KI-Modelle ohne Training auf euren Daten. Auf Wunsch begleiten wir euch durch die vollständige EU-AI-Act-Compliance.
 
 **Bietet Axionea auch Schulungen für Mitarbeitende an?**
 Ja. AI-Fluency-Workshops zu KI-Grundlagen, Tool-Workshops mit branchenspezifischen Inhalten, mehrtägige Train-the-Trainer-Programme. Alle Schulungen BAFA-förderfähig.
@@ -118,4 +123,4 @@ Ja. BAFA "go-digital" und "Förderung von Unternehmensberatungen für KMU". Je n
 - **Website:** https://www.axionea-solutions.de
 - **E-Mail:** info@axionea-solutions.de
 - **Telefon:** +49 173 1726939
-- **Erstgespräch:** Kostenlos, 15 Min, via Kontaktformular oder Calendly auf der Website
+- **Erstgespräch:** Kostenlos, 15 Min — direkt über die Online-Terminbuchung (HubSpot Meetings) oder das Kontaktformular auf der Website
