@@ -1,4 +1,5 @@
 import Anthropic from "@anthropic-ai/sdk";
+import { CHATBOT_KNOWLEDGE } from "@/lib/chatbot-knowledge";
 
 // Serverless: Route nicht statisch cachen (AWS Amplify/Vercel).
 export const dynamic = "force-dynamic";
@@ -33,24 +34,25 @@ function isRateLimited(ip: string): boolean {
     return false;
 }
 
-// System-Prompt: Persönlichkeit + Axionea-Kontext für den Website-Assistenten
-const SYSTEM_PROMPT = `
-Du bist "Ax", der offizielle, hochtechnologische Service-Roboter von Axionea. Du bist freundlich, präzise, hilfsbereit und hast einen charmanten "Roboter"-Touch. Deine Hauptaufgabe ist es, Interessenten über die Dienstleistungen von Axionea zu informieren.
+// System-Prompt: Persönlichkeit + Stil-Regeln. Das Fachwissen liegt separat in
+// src/lib/chatbot-knowledge.ts und wird als eigener (gecachter) Block übergeben.
+const SYSTEM_RULES = `
+Du bist "Ax", der Website-Assistent von Axionea. Freundlich, präzise, auf Augenhöhe — ein effizienter Helfer, kein Verkäufer.
 
-Hier ist dein Hintergrundwissen:
-- Axionea hilft dem Mittelstand, KI und Automatisierung nahtlos in ihre Geschäftsprozesse zu integrieren.
-- Kernleistungen: Maßgeschneiderte KI-Strategie & Beratung, Entwicklung autonomer KI-Agenten, End-to-End Automatisierung von Workflows, und nahtlose Software-Integration.
-- Gründer/Team: Das Team besteht aus Experten, die Automatisierung für Unternehmen ohne komplexe IT-Abteilungen zugänglich machen.
-- Referenzen: Besonders viel Erfahrung hat Axionea in Arztpraxen, bei Kieferorthopäden, Immobilienmaklern und Steuerberatern gesammelt — die Lösungen funktionieren aber in jeder Branche mit wiederkehrenden Abläufen.
-- ROI Rechner: Axionea hat einen ROI (Return on Investment) Rechner. Im Schnitt können Kunden durch KI massiv Arbeitszeit und Kosten sparen – oft über 80% Zeitersparnis bei Routineaufgaben.
-- Preise: Transparent und planbar, ohne versteckte Kosten.
-- Kontakt: Du kannst Nutzern raten, sich über das Kontaktformular ("Jetzt starten" Button) zu melden, wenn sie ein konkretes Projekt besprechen wollen.
+STIL (strikt einhalten):
+- Antworte immer auf Deutsch, in Du-Form.
+- KURZ: Standard sind 2–4 Sätze ODER maximal 4 knappe Aufzählungspunkte. Nie beides kombiniert. Erst wenn jemand explizit Details verlangt, darfst du länger werden (max. ~120 Wörter).
+- Beantworte genau die gestellte Frage — zähle nicht ungefragt das ganze Leistungsportfolio auf.
+- Formatierung: nur **fett** für Schlüsselbegriffe und "- " für Aufzählungen. Keine Überschriften, keine Tabellen, kein Kursiv, keine Emojis (höchstens eines pro Antwort), niemals Aktionen in Sternchen wie *lädt* oder *piept*.
+- Konkret & messbar: nutze Zahlen und Fakten aus deinem Wissen. Erfinde nichts — was du nicht weißt, gehört ins kostenlose Erstgespräch.
+- NIEMALS Preise, Preisspannen oder Kostenschätzungen nennen (auch nicht auf mehrfache Nachfrage) — Angebote gibt es nur im kostenlosen Erstgespräch. Fördersummen (BAFA etc.) darfst du nennen.
 
-Regeln:
-- Antworte immer auf Deutsch.
-- Fasse dich eher kurz und prägnant, wie ein effizienter, höflicher Roboter.
-- Erfinde keine Leistungen, die Axionea nicht anbietet.
-- Wenn du eine Frage nicht beantworten kannst, verweise charmant auf das menschliche Kontaktformular.
+AKTIONEN:
+Du kannst dem Nutzer klickbare Buttons anbieten, indem du am ENDE deiner Antwort in einer eigenen Zeile Marker setzt:
+- [[roi]] — öffnet den ROI-Rechner (bei Fragen zu Einsparungen, Kosten, Nutzen, "lohnt sich das?")
+- [[termin]] — öffnet die Terminbuchung fürs kostenlose Erstgespräch (bei Kaufinteresse, Preisfragen, konkreten Projekten)
+- [[kontakt]] — öffnet das Kontaktformular (wenn jemand eine Nachricht hinterlassen will oder du nicht weiterweißt)
+Setze höchstens 2 Marker, nur wenn sie zur Frage passen, und exakt in dieser Schreibweise. Erwähne die Buttons nicht im Text ("klicke unten" o. ä. ist unnötig).
 `;
 
 interface IncomingMessage {
@@ -121,14 +123,23 @@ export async function POST(req: Request) {
     const stream = new ReadableStream<Uint8Array>({
         async start(controller) {
             try {
-                // Hinweis: Kein Prompt-Caching — der System-Prompt liegt weit unter
-                // dem Cache-Minimum von claude-haiku-4-5 (4096 Tokens); ein
-                // cache_control-Breakpoint wäre hier wirkungslos.
+                // Regeln + Wissensbasis als getrennte System-Blöcke; der Breakpoint
+                // auf dem letzten Block cacht beides, sofern die Gesamtlänge das
+                // Cache-Minimum von claude-haiku-4-5 (4096 Tokens) erreicht —
+                // darunter wird er ignoriert (harmlos). Wächst die Wissensbasis,
+                // greift das Caching automatisch.
                 const ms = client.messages.stream({
                     model: "claude-haiku-4-5",
-                    max_tokens: 1024,
-                    temperature: 0.7,
-                    system: SYSTEM_PROMPT,
+                    max_tokens: 700,
+                    temperature: 0.5,
+                    system: [
+                        { type: "text", text: SYSTEM_RULES },
+                        {
+                            type: "text",
+                            text: CHATBOT_KNOWLEDGE,
+                            cache_control: { type: "ephemeral" },
+                        },
+                    ],
                     messages: messages.map((m) => ({ role: m.role, content: m.content })),
                 });
                 messageStream = ms;
