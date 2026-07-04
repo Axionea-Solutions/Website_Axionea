@@ -315,7 +315,7 @@ export default function ChatBot() {
                             <form onSubmit={handleSubmit} className="flex gap-2 mb-2">
                                 <input
                                     ref={inputRef}
-                                    className="flex-1 bg-gray-50 dark:bg-navy-700 border border-gray-200 dark:border-white/10 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-1 focus:ring-sapphire transition-all dark:text-white"
+                                    className="flex-1 min-h-[44px] bg-gray-50 dark:bg-navy-700 border border-gray-200 dark:border-white/10 rounded-xl px-4 py-2.5 text-base sm:text-sm focus:outline-none focus:ring-1 focus:ring-sapphire transition-all dark:text-white"
                                     value={input}
                                     placeholder="Frag Ax..."
                                     aria-label="Deine Nachricht an Ax"
@@ -332,7 +332,7 @@ export default function ChatBot() {
                                     type="submit"
                                     disabled={isLoading || !input.trim()}
                                     aria-label="Nachricht senden"
-                                    className="bg-sapphire hover:bg-sapphire-hover text-white rounded-xl w-10 h-10 flex items-center justify-center transition-colors shadow-sm disabled:opacity-50 disabled:cursor-not-allowed shrink-0"
+                                    className="bg-sapphire hover:bg-sapphire-hover text-white rounded-xl w-11 h-11 flex items-center justify-center transition-colors shadow-sm disabled:opacity-50 disabled:cursor-not-allowed shrink-0"
                                 >
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z" /><path d="M22 2 11 13" /></svg>
                                 </button>

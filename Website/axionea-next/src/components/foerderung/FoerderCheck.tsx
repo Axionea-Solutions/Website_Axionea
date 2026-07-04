@@ -134,7 +134,7 @@ function OptionRow<T extends string>({
                         type="button"
                         aria-pressed={selected === opt.value}
                         onClick={() => onSelect(opt.value)}
-                        className={`px-4 py-2 rounded-full text-sm font-medium border transition-all ${
+                        className={`min-h-[44px] px-4 py-2 rounded-full text-sm font-medium border transition-all ${
                             selected === opt.value
                                 ? "bg-sapphire text-white border-sapphire"
                                 : "bg-white/5 text-gray-300 border-white/10 hover:border-sapphire/40 hover:text-white"
@@ -222,7 +222,7 @@ export default function FoerderCheck() {
                                 title="Kostenlosen Förder-Check anfordern"
                                 ariaLabel="Kostenlosen Förder-Check anfordern"
                                 onOpen={handleContactOpen}
-                                className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-sapphire text-white font-semibold hover:bg-sapphire-hover transition-all shadow-[0_0_30px_rgba(15,82,186,0.6)] hover:shadow-[0_0_40px_rgba(15,82,186,0.8)]"
+                                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-sapphire text-white font-semibold hover:bg-sapphire-hover transition-all shadow-[0_0_30px_rgba(15,82,186,0.6)] hover:shadow-[0_0_40px_rgba(15,82,186,0.8)]"
                             >
                                 Ergebnis prüfen lassen — kostenlos →
                             </ContactButton>
@@ -239,7 +239,7 @@ export default function FoerderCheck() {
                                 title="Kostenlosen Förder-Check anfordern"
                                 ariaLabel="Kostenlosen Förder-Check anfordern"
                                 onOpen={handleContactOpen}
-                                className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-sapphire text-white font-semibold hover:bg-sapphire-hover transition-all shadow-[0_0_30px_rgba(15,82,186,0.6)]"
+                                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-sapphire text-white font-semibold hover:bg-sapphire-hover transition-all shadow-[0_0_30px_rgba(15,82,186,0.6)]"
                             >
                                 Individuell prüfen lassen →
                             </ContactButton>
