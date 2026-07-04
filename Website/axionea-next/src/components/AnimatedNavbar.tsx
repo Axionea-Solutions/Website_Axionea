@@ -20,7 +20,6 @@ const PRIMARY_LINKS: NavLink[] = [
     { label: "Kieferorthopäden", href: "/ki-fuer-kieferorthopaeden", ariaLabel: "KI für Kieferorthopäden" },
     { label: "Makler", href: "/ki-fuer-makler", ariaLabel: "KI für Makler" },
     { label: "Steuerberater", href: "/ki-fuer-steuerberater", ariaLabel: "KI für Steuerberater", xlOnly: true },
-    { label: "Förderung", href: "/foerderung", ariaLabel: "BAFA & Förderprogramme" },
 ];
 
 // Im Fächer-Panel: alle Sektionen der Hauptseite + Sub-Pages + Legal
