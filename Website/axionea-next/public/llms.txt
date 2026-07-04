@@ -1,5 +1,16 @@
 # Axionea — KI-Automatisierung für den Mittelstand
 
+> Axionea entwickelt DSGVO-konforme KI-Automatisierungen für KMU im DACH-Raum: Chatbots, KI-Telefonassistenten, Workflow-Automatisierung und Schulungen — EU-Hosting, Festpreise, BAFA-förderfähig.
+
+## Wichtigste Seiten
+
+- [Startseite](https://www.axionea-solutions.de/): Services, ROI-Rechner, sicheres Hosting, FAQ
+- [Förderung & BAFA](https://www.axionea-solutions.de/foerderung): Förderprogramme für KI-Projekte (bis 50.000 €)
+- [KI für Arztpraxen](https://www.axionea-solutions.de/ki-fuer-arztpraxen): Telefonassistent, Terminbuchung, Praxis-Automatisierung
+- [KI für Kieferorthopäden](https://www.axionea-solutions.de/ki-fuer-kieferorthopaeden): Praxis-Wiki, Patientenkommunikation
+- [KI für Immobilienmakler](https://www.axionea-solutions.de/ki-fuer-makler): Exposé-Anfragen, Lead-Qualifizierung, Dokumentenanalyse
+- [KI für Steuerberater](https://www.axionea-solutions.de/ki-fuer-steuerberater): Mandanten-Assistent, Beleg-Vorsortierung, Fristen-Automatik
+
 ## Über uns
 Axionea entwickelt praxiserprobte, DSGVO-konforme und EU-AI-Act-ready KI-Automatisierungen für kleine und mittelständische Unternehmen im DACH-Raum — Chatbots, KI-Telefonassistenten, Workflow-Automatisierung und KI-Schulungen. Besonders viel Erfahrung haben wir in Arztpraxen, bei Kieferorthopäden, Immobilienmaklern und Steuerberatern gesammelt; die Lösungen funktionieren in jeder Branche mit wiederkehrenden Abläufen.
 Gegründet: 01.01.2026

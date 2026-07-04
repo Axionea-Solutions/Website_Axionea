@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Footer from "@/components/Footer";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { PraxisHero } from "@/components/landing/praxis/PraxisHero";
 import { PraxisServiceGrid } from "@/components/landing/praxis/PraxisServiceGrid";
 import { PraxisRoadmap } from "@/components/landing/praxis/PraxisRoadmap";
@@ -85,6 +86,7 @@ export default function KiFuerKieferorthopaeden() {
                     <PraxisCTA ctaText={kfoCtaText} />
                 </div>
             </main>
+            <BreadcrumbSchema name="KI für Kieferorthopäden" path="/ki-fuer-kieferorthopaeden" />
             <Footer />
         </>
     );

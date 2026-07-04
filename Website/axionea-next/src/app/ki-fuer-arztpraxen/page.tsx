@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Footer from "@/components/Footer";
 import IndustryLanding from "@/components/landing/IndustryLanding";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
     title: "KI für Arztpraxen | DSGVO-konform, sofort einsetzbar — Axionea",
@@ -101,6 +102,7 @@ export default function KiFuerArztpraxen() {
                 ]}
                 ctaText="Bereit, deine Praxis-Telefonie zu entlasten?"
             />
+            <BreadcrumbSchema name="KI für Arztpraxen" path="/ki-fuer-arztpraxen" />
             <Footer />
         </>
     );

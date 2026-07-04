@@ -183,6 +183,7 @@ const serviceSchema = {
   ]
 };
 
+// Sitewide-Schemas (Layout): beschreiben die Organisation, nicht einzelne Seiten
 export default function StructuredData() {
     return (
         <>
@@ -198,6 +199,14 @@ export default function StructuredData() {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
             />
+        </>
+    );
+}
+
+// Nur auf der Startseite rendern — FAQ und Services sind dort sichtbarer Content
+export function HomeStructuredData() {
+    return (
+        <>
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}

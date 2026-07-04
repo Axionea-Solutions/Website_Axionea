@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Footer from "@/components/Footer";
 import IndustryLanding from "@/components/landing/IndustryLanding";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
     title: "KI für Steuerberater | Mandantenanfragen & Belege automatisieren — Axionea",
@@ -96,6 +97,7 @@ export default function KiFuerSteuerberater() {
                 ]}
                 ctaText="Mehr Beratung, weniger Verwaltung?"
             />
+            <BreadcrumbSchema name="KI für Steuerberater" path="/ki-fuer-steuerberater" />
             <Footer />
         </>
     );

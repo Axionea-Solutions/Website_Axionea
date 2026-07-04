@@ -30,7 +30,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.axionea-solutions.de"),
   title: "Axionea | KI-Automatisierung für den Mittelstand",
-  description: "KI-Automatisierung für den Mittelstand: Chatbots, KI-Telefonassistenten und Workflow-Automatisierung. DSGVO-konform, EU-Hosting, BAFA-förderfähig. Jetzt kostenloses Erstgespräch buchen.",
+  description: "KI-Automatisierung für den Mittelstand: Chatbots, Telefonassistenten & Workflows. DSGVO-konform, EU-Hosting, BAFA-förderfähig. Kostenloses Erstgespräch.",
   keywords: [
     "KI-Automatisierung KMU",
     "KI Agentur DACH",
