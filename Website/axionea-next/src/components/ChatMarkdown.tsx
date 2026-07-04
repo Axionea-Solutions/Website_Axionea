@@ -105,7 +105,7 @@ export default function ChatMarkdown({ content, onAction }: ChatMarkdownProps) {
                             key={action}
                             type="button"
                             onClick={() => onAction(action)}
-                            className="px-3 py-1.5 rounded-full text-xs font-semibold bg-sapphire text-white hover:bg-sapphire-hover transition-colors"
+                            className="min-h-[44px] px-4 py-2 rounded-full text-xs font-semibold bg-sapphire text-white hover:bg-sapphire-hover transition-colors"
                         >
                             {ACTION_LABELS[action]} →
                         </button>
