@@ -3,9 +3,36 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
+import ChatMarkdown, { ChatAction } from './ChatMarkdown';
+import Modal from './hubspot/Modal';
+import HubSpotForm from './hubspot/HubSpotForm';
+import HubSpotMeetings from './hubspot/HubSpotMeetings';
+
+const WELCOME_MESSAGE =
+    "Hi! Ich bin **Ax**, der digitale Assistent von Axionea. Frag mich zu Services, Förderung oder Datenschutz — oder starte direkt:\n\n[[roi]] [[termin]]";
 
 export default function ChatBot() {
     const [isOpen, setIsOpen] = useState(false);
+    const [isExpanded, setIsExpanded] = useState(false);
+    const [contactOpen, setContactOpen] = useState(false);
+    const [meetingOpen, setMeetingOpen] = useState(false);
+
+    // Aktions-Buttons aus Bot-Nachrichten ([[roi]] / [[termin]] / [[kontakt]])
+    const handleAction = (action: ChatAction) => {
+        if (action === "roi") {
+            setIsOpen(false);
+            setIsExpanded(false);
+            if (window.location.pathname === "/") {
+                document.getElementById("roi")?.scrollIntoView({ behavior: "smooth" });
+            } else {
+                window.location.href = "/#roi";
+            }
+        } else if (action === "termin") {
+            setMeetingOpen(true);
+        } else {
+            setContactOpen(true);
+        }
+    };
 
     // Native chat state instead of ai/react to fix Next.js 16 Turbopack module resolution
     const [messages, setMessages] = useState<{ id: string, role: string, content: string }[]>([]);
@@ -169,11 +196,14 @@ export default function ChatBot() {
 
     return (
         <>
-            {/* Mobile backdrop — tap to close */}
+            {/* Backdrop: Mobile immer; Desktop nur im vergrößerten Modus (dunkler + stärker geblurrt) */}
             {isOpen && (
                 <div
-                    className="fixed inset-0 z-[65] bg-black/20 backdrop-blur-sm sm:hidden"
-                    onClick={() => setIsOpen(false)}
+                    className={`fixed inset-0 z-[65] ${isExpanded ? "bg-black/60 backdrop-blur-md" : "bg-black/20 backdrop-blur-sm sm:hidden"}`}
+                    onClick={() => {
+                        setIsOpen(false);
+                        setIsExpanded(false);
+                    }}
                     aria-hidden="true"
                 />
             )}
@@ -190,7 +220,11 @@ export default function ChatBot() {
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 20, scale: 0.9 }}
                         transition={{ type: "spring", damping: 25, stiffness: 300 }}
-                        className="fixed z-[70] flex flex-col overflow-hidden bg-white/90 dark:bg-navy-900/95 backdrop-blur-xl border border-gray-200 dark:border-white/10 shadow-2xl inset-x-0 bottom-0 rounded-t-3xl h-[85vh] max-h-[85dvh] sm:inset-x-auto sm:right-6 sm:bottom-6 sm:rounded-2xl sm:h-[min(600px,calc(100dvh-3rem))] sm:w-[min(420px,calc(100vw-3rem))]"
+                        className={`fixed z-[70] flex flex-col overflow-hidden bg-white/90 dark:bg-navy-900/95 backdrop-blur-xl border border-gray-200 dark:border-white/10 shadow-2xl inset-x-0 bottom-0 rounded-t-3xl h-[85vh] max-h-[85dvh] sm:rounded-2xl ${
+                            isExpanded
+                                ? "sm:inset-x-0 sm:mx-auto sm:top-[6dvh] sm:bottom-auto sm:h-[88dvh] sm:max-h-none sm:w-[min(780px,calc(100vw-4rem))]"
+                                : "sm:inset-x-auto sm:right-6 sm:bottom-6 sm:h-[min(600px,calc(100dvh-3rem))] sm:w-[min(420px,calc(100vw-3rem))]"
+                        }`}
                     >
                         {/* Header */}
                         <div className="h-16 shrink-0 border-b border-gray-200 dark:border-white/10 flex items-center justify-between px-6 bg-sapphire/5">
@@ -207,33 +241,50 @@ export default function ChatBot() {
                                     <p className="text-[10px] text-green-500 font-medium tracking-wide uppercase">Online</p>
                                 </div>
                             </div>
-                            <button
-                                onClick={() => {
-                                    setIsOpen(false);
-                                    triggerRef.current?.focus();
-                                }}
-                                aria-label="Chat schließen"
-                                className="w-11 h-11 rounded-full hover:bg-gray-200 dark:hover:bg-white/10 flex items-center justify-center transition-colors text-gray-500"
-                            >
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
-                            </button>
+                            <div className="flex items-center gap-1">
+                                <button
+                                    onClick={() => setIsExpanded((v) => !v)}
+                                    aria-label={isExpanded ? "Chat verkleinern" : "Chat vergrößern"}
+                                    aria-pressed={isExpanded}
+                                    className="hidden sm:flex w-11 h-11 rounded-full hover:bg-gray-200 dark:hover:bg-white/10 items-center justify-center transition-colors text-gray-500"
+                                >
+                                    {isExpanded ? (
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M8 3v3a2 2 0 0 1-2 2H3" /><path d="M21 8h-3a2 2 0 0 1-2-2V3" /><path d="M3 16h3a2 2 0 0 1 2 2v3" /><path d="M16 21v-3a2 2 0 0 1 2-2h3" /></svg>
+                                    ) : (
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M15 3h6v6" /><path d="m21 3-7 7" /><path d="m3 21 7-7" /><path d="M9 21H3v-6" /></svg>
+                                    )}
+                                </button>
+                                <button
+                                    onClick={() => {
+                                        setIsOpen(false);
+                                        setIsExpanded(false);
+                                        triggerRef.current?.focus();
+                                    }}
+                                    aria-label="Chat schließen"
+                                    className="w-11 h-11 rounded-full hover:bg-gray-200 dark:hover:bg-white/10 flex items-center justify-center transition-colors text-gray-500"
+                                >
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
+                                </button>
+                            </div>
                         </div>
 
                         {/* Chat History */}
                         <div className="flex-1 overflow-y-auto p-4 space-y-4 scroll-smooth">
-                            {/* Initial Welcome Message */}
+                            {/* Initial Welcome Message — läuft durch denselben Renderer wie Bot-Antworten */}
                             {messages.length === 0 && (
                                 <div className="flex gap-3 justify-start">
                                     <div className="max-w-[80%] rounded-2xl p-3 px-4 bg-gray-100 dark:bg-navy-800 text-sm text-gray-800 dark:text-gray-200 rounded-tl-none">
-                                        Beep boop! Ich bin Ax, der digitale Assistent von Axionea. Wie kann ich dir heute mit KI und Automatisierung weiterhelfen? ✨
+                                        <ChatMarkdown content={WELCOME_MESSAGE} onAction={handleAction} />
                                     </div>
                                 </div>
                             )}
 
                             {messages.map((m) => (
                                 <div key={m.id} className={`flex gap-3 ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-                                    <div className={`max-w-[80%] rounded-2xl p-3 px-4 text-sm whitespace-pre-wrap ${m.role === 'user' ? 'bg-sapphire text-white rounded-tr-none' : 'bg-gray-100 dark:bg-navy-800 text-gray-800 dark:text-gray-200 rounded-tl-none'}`}>
-                                        {m.content}
+                                    <div className={`max-w-[80%] rounded-2xl p-3 px-4 text-sm ${m.role === 'user' ? 'bg-sapphire text-white rounded-tr-none whitespace-pre-wrap' : 'bg-gray-100 dark:bg-navy-800 text-gray-800 dark:text-gray-200 rounded-tl-none'}`}>
+                                        {m.role === 'assistant'
+                                            ? <ChatMarkdown content={m.content} onAction={handleAction} />
+                                            : m.content}
                                     </div>
                                 </div>
                             ))}
@@ -376,6 +427,14 @@ export default function ChatBot() {
                 />
 
             </motion.button>
+
+            {/* Modals für Chat-Aktionen ([[termin]] / [[kontakt]]) — Modal liegt auf z-80, über dem Chat-Panel (70) */}
+            <Modal open={meetingOpen} onClose={() => setMeetingOpen(false)} title="Kostenloses Erstgespräch buchen">
+                <HubSpotMeetings />
+            </Modal>
+            <Modal open={contactOpen} onClose={() => setContactOpen(false)} title="Kontakt aufnehmen">
+                <HubSpotForm />
+            </Modal>
         </>
     );
 }
