@@ -111,32 +111,6 @@ export default function HeroContent() {
                 </div>
             </div>
 
-            {/* Bottom: Mehr erfahren + Scroll Arrow */}
-            <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 1, delay: 1.2 }}
-                className="pb-6 z-20 flex flex-col items-center gap-1 pointer-events-auto"
-            >
-                <a href="#warum" className="text-gray-500 text-xs font-medium tracking-widest uppercase hover:text-gray-300 transition-colors">
-                    Mehr erfahren
-                </a>
-                <a href="#warum" className="block animate-[pulse-arrow_2.5s_ease-in-out_infinite]">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 100 40"
-                        fill="none"
-                        stroke="#0F52BA"
-                        strokeWidth="2.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="w-[80px] h-auto opacity-70 hover:stroke-sapphire-hover transition-colors"
-                    >
-                        <path d="M5 5 L 50 25 L 95 5" />
-                    </svg>
-                </a>
-            </motion.div>
-
             {/* Soft fade-out to next section — bridges Hero into IndustryTagsBand */}
             <div
                 aria-hidden="true"
