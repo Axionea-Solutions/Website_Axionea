@@ -8,6 +8,7 @@ import { ResultCard } from "./roi-calculator/ResultCard";
 import { SourceAccordion } from "./roi-calculator/SourceAccordion";
 import { AnimatedCounter } from "./roi-calculator/AnimatedCounter";
 import { AnimatedGraphic } from "./roi-calculator/AnimatedGraphic";
+import ReportRequestButton from "./roi-calculator/ReportRequestButton";
 import { calculateROI, CalculatorInput } from "./roi-calculator/roi-calculator.utils";
 import { useInView } from "@/hooks/useInView";
 import { BookingButton } from "./hubspot";
@@ -215,6 +216,14 @@ export default function ROICalculator() {
                                             <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
                                         </svg>
                                     </BookingButton>
+
+                                    {results.industryFactor && (
+                                        <ReportRequestButton
+                                            industryName={results.industryFactor.name_de}
+                                            teamSize={teamSize}
+                                            results={results}
+                                        />
+                                    )}
                                 </div>
 
                                 {/* Expanding Sources Section */}
