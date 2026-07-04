@@ -3,6 +3,7 @@ import Link from "next/link";
 import Footer from "@/components/Footer";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { LetterReveal } from "@/components/ui/LetterReveal";
+import FoerderCheck from "@/components/foerderung/FoerderCheck";
 
 export const metadata: Metadata = {
     title: "BAFA & Förderprogramme für KI-Projekte | Bis 50.000 € — Axionea",
@@ -208,6 +209,9 @@ export default function FoerderungPage() {
                         </p>
                     </div>
 
+                    {/* Interaktiver Förder-Check (Leadmagnet) */}
+                    <FoerderCheck />
+
                     {/* DE Programs */}
                     <h2
                         className="text-2xl md:text-3xl font-bold text-white mb-6 tracking-tight"
@@ -290,7 +294,7 @@ export default function FoerderungPage() {
                             Im kostenlosen Erstgespräch klären wir gemeinsam welche Programme bei dir passen — und ob sich für dich ein Stapeln mehrerer Programme lohnt.
                         </p>
                         <Link
-                            href="/#kontakt"
+                            href="#foerder-check"
                             className="inline-block px-8 py-4 rounded-full bg-sapphire text-white font-semibold text-lg hover:bg-sapphire-hover transition-all shadow-[0_0_30px_rgba(15,82,186,0.6)] hover:shadow-[0_0_40px_rgba(15,82,186,0.8)]"
                         >
                             Förder-Check starten →
