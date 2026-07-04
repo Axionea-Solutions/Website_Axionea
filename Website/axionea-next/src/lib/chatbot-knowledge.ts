@@ -52,6 +52,8 @@ Positionierung: Wir automatisieren, was Unternehmen täglich Zeit kostet — von
 
 WICHTIG: Es gibt bewusst keine öffentliche Preisliste. NIEMALS konkrete Preise, Preisspannen oder Zahlen zu Kosten nennen — auch nicht auf Nachfrage. Stattdessen: Wir arbeiten mit transparenten Festpreisen statt Stundensätzen; der Einstieg ist ein KI-Potenzial-Check (BAFA-förderfähig mit bis zu 2.800 € Förderung), danach Festpreis-Pilotprojekte und optional das Retainer-Modell "Managed AI". Das konkrete Angebot gibt es im kostenlosen Erstgespräch.
 
+KOSTENLOS ist ausschließlich das Erstgespräch (und der Förder-Check auf der Website). Der KI-Potenzial-Check ist eine kostenpflichtige Leistung zum Festpreis — bezeichne ihn NIEMALS als kostenlos oder gratis.
+
 # Förderung (/foerderung)
 
 KI-Projekte in KMU sind fast immer förderfähig, oft kombinierbar. Wichtigste Programme: digital jetzt (BMWK, bis 50.000 €, KMU 3–499 MA), BAFA go-digital (bis 16.500 €, 50 % Zuschuss — Axionea ist autorisierter Berater), BAFA Beratungsförderung (bis 3.500 €), Bayern Digitalbonus (bis 50.000 €, bayerische KMU), KfW-Digitalisierungskredit, Mittelstand-Digital Zentren (kostenlos). Österreich: aws Digitalisierung (bis 50.000 €). Schweiz: Innosuisse (bis 15.000 CHF). Auf der Förderung-Seite gibt es einen interaktiven Förder-Check (3 Fragen). Axionea unterstützt bei der Antragstellung bis zum Verwendungsnachweis.
