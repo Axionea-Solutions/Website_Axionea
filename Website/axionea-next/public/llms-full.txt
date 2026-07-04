@@ -23,7 +23,7 @@
 
 1. **Branchenerfahrung statt Lösung von der Stange.** Wir bauen keine generischen Chatbots, sondern Lösungen, die zum Fachvokabular, den Compliance-Anforderungen und den echten Abläufen des jeweiligen Betriebs passen — erprobt u. a. in Arztpraxen, Kieferorthopädie, Immobilien und Steuerberatung.
 2. **DSGVO und EU AI Act sind kein Add-On.** Jede Lösung läuft auf EU-Hosting, mit AVV und ohne Training auf Kundendaten. Wir begleiten optional durch die volle EU-AI-Act-Compliance.
-3. **Festpreis statt Stundensätze.** KI-Potenzial-Check ab 990 € (BAFA-förderfähig mit bis zu 2.800 € Förderung), Pilotprojekte zu Festpreisen, optionales monatliches Retainer-Modell.
+3. **Festpreis statt Stundensätze.** KI-Potenzial-Check als Einstieg (BAFA-förderfähig mit bis zu 2.800 € Förderung), Pilotprojekte zu Festpreisen, optionales monatliches Retainer-Modell. Konkrete Angebote gibt es im kostenlosen Erstgespräch.
 4. **Keine IT-Abteilung beim Kunden nötig.** Wir kümmern uns um Hosting, Integration, Wartung und Monitoring. Kunde bekommt eine funktionierende Lösung, kein Bastelprojekt.
 5. **Förderfähig.** Schulungen über BAFA "go-digital" und "Förderung von Unternehmensberatungen für KMU" — je nach Bundesland und Unternehmensgröße bis zu 80 % Förderung.
 
@@ -56,7 +56,7 @@ Backoffice-Automatisierung (CRM, Kalender, E-Mail-Sortierung), interne Wissensas
 ## Unsere KI-Services im Detail
 
 ### 1. KI-Strategie und Audit
-KI-Potenzialanalyse, Tool-Auswahl, EU-AI-Act-Compliance-Audit, ROI-Modellierung. Output: priorisierte Roadmap mit Quick-Wins und mittelfristigen Initiativen. **Ab 990 € (BAFA-förderfähig).**
+KI-Potenzialanalyse, Tool-Auswahl, EU-AI-Act-Compliance-Audit, ROI-Modellierung. Output: priorisierte Roadmap mit Quick-Wins und mittelfristigen Initiativen. **Festpreis, BAFA-förderfähig.**
 
 ### 2. Lead-Agenten und Chatbots
 Web-Chatbots, WhatsApp-Bots, in-App-Assistenten. Sofortige Antwortzeit, 24/7 verfügbar, Integration in bestehende Systeme (HubSpot, Salesforce, Pipedrive, individuelle Praxis-/Maklersoftware).
@@ -113,7 +113,7 @@ Ja. Wir arbeiten ausschließlich mit EU-Hosting, schließen AVV ab und nutzen KI
 Ja. AI-Fluency-Workshops zu KI-Grundlagen, Tool-Workshops mit branchenspezifischen Inhalten, mehrtägige Train-the-Trainer-Programme. Alle Schulungen BAFA-förderfähig.
 
 **Was kostet ein Einstieg?**
-KI-Potenzial-Check startet ab 990 € — BAFA-förderfähig mit bis zu 2.800 € Förderung. Zusätzlich Festpreis-Pilotprojekte und monatliches Retainer-Modell.
+Axionea arbeitet mit transparenten Festpreisen statt Pauschal-Preislisten. Der Einstieg ist der KI-Potenzial-Check (BAFA-förderfähig mit bis zu 2.800 € Förderung), danach folgen Festpreis-Pilotprojekte und optional ein monatliches Retainer-Modell. Konkrete Angebote im kostenlosen Erstgespräch.
 
 **Sind eure Schulungen förderfähig?**
 Ja. BAFA "go-digital" und "Förderung von Unternehmensberatungen für KMU". Je nach Bundesland und Unternehmensgröße bis zu 80 % Förderung. Antragsunterstützung inklusive.

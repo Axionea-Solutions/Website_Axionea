@@ -6,7 +6,7 @@ Gegründet: 01.01.2026
 Standort: Gaimersheim, Bayern, Deutschland
 
 ## Unsere KI-Services
-1. KI-Strategie & Audit (Potenzialanalyse, Tool-Auswahl, EU-AI-Act-Compliance) — ab 990 €, BAFA-förderfähig
+1. KI-Strategie & Audit (Potenzialanalyse, Tool-Auswahl, EU-AI-Act-Compliance) — Festpreis, BAFA-förderfähig
 2. Chatbots & Termin-Assistenten (24/7, Web/WhatsApp, DSGVO-konform)
 3. KI-Telefonassistent (Voice AI für Terminbuchungen & FAQ)
 4. Backoffice-Automatisierung (CRM, Kalender, E-Mail — Integration statt Umstieg)

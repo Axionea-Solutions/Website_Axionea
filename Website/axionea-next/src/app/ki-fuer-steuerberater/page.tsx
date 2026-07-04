@@ -91,7 +91,7 @@ export default function KiFuerSteuerberater() {
                     },
                     {
                         question: "Was kostet das ungefähr?",
-                        answer: "KI-Potenzial-Check ab 990 € (BAFA-förderfähig mit bis zu 2.800 € Förderung). Mandanten-Assistent-Pilot ab ca. 3.900 € Festpreis, Beleg-Vorsortierung ab ca. 2.400 €. Danach Retainer ab 490 €/Monat — typischer ROI in unter 3 Monaten.",
+                        answer: "Das hängt vom Umfang ab — pauschale Preislisten gibt es bei uns nicht. Der Einstieg ist ein KI-Potenzial-Check (BAFA-förderfähig mit bis zu 2.800 € Förderung), danach wisst ihr genau, was sich für eure Kanzlei lohnt. Pilotprojekte setzen wir zum Festpreis um — euer konkretes Angebot bekommt ihr im kostenlosen Erstgespräch.",
                     },
                 ]}
                 ctaText="Mehr Beratung, weniger Verwaltung?"

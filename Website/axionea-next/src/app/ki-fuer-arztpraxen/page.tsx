@@ -96,7 +96,7 @@ export default function KiFuerArztpraxen() {
                     },
                     {
                         question: "Was kostet das ungefähr?",
-                        answer: "KI-Potenzial-Check ab 990 € (BAFA-förderfähig mit bis zu 80 % Förderung). Pilotprojekte zu Festpreisen, danach optional Retainer-Modell ab ca. 490 €/Monat für Betrieb und Optimierung.",
+                        answer: "Das hängt von euren Anforderungen ab — pauschale Preislisten gibt es bei uns nicht. Der Einstieg ist ein KI-Potenzial-Check (BAFA-förderfähig mit bis zu 80 % Förderung), Pilotprojekte setzen wir zum Festpreis um, optional mit Retainer für Betrieb und Optimierung. Euer konkretes Angebot bekommt ihr im kostenlosen Erstgespräch.",
                     },
                 ]}
                 ctaText="Bereit, deine Praxis-Telefonie zu entlasten?"

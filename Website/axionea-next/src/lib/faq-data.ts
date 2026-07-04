@@ -34,7 +34,7 @@ export const faqs: FaqEntry[] = [
     },
     {
         question: "Was kostet ein Einstieg mit Axionea?",
-        answer: "Unser KI-Potenzial-Check startet ab 990 € — BAFA-förderfähig mit bis zu 2.800 € Förderung. Danach wisst ihr genau, was sich lohnt, bevor ihr investiert. Daneben bieten wir Festpreis-Pilotprojekte und ein monatliches Retainer-Modell (Managed AI) an.",
+        answer: "Wir arbeiten mit transparenten Festpreisen statt Pauschal-Preislisten. Der Einstieg ist unser KI-Potenzial-Check — BAFA-förderfähig mit bis zu 2.800 € Förderung. Danach wisst ihr genau, was sich lohnt, bevor ihr investiert. Für die Umsetzung gibt es Festpreis-Pilotprojekte und ein monatliches Retainer-Modell (Managed AI) — euer konkretes Angebot bekommt ihr im kostenlosen Erstgespräch.",
     },
     {
         question: "Bietet ihr auch Schulungen für unser Team an?",

@@ -95,7 +95,6 @@ const localBusinessSchema = {
         "KI-Strategie Beratung",
         "Workflow Automatisierung",
     ],
-    priceRange: "Ab 990€",
     openingHoursSpecification: {
         "@type": "OpeningHoursSpecification",
         dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
