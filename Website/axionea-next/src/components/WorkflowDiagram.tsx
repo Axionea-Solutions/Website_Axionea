@@ -1,8 +1,11 @@
 "use client";
 
 import { LetterReveal } from "./ui/LetterReveal";
+import { useInView } from "@/hooks/useInView";
+import { revealStyle } from "@/lib/cardStyles";
 
 export default function WorkflowDiagram() {
+    const { ref, isInView } = useInView(0.1);
     return (
         <section id="workflow" className="py-16 md:py-24 px-6">
             <div className="max-w-6xl mx-auto">
@@ -29,7 +32,7 @@ export default function WorkflowDiagram() {
                 </div>
 
                 {/* Workflow Diagram */}
-                <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-0 max-w-[900px] mx-auto py-10">
+                <div ref={ref} style={revealStyle(isInView)} className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-0 max-w-[900px] mx-auto py-10">
 
                     {/* Input nodes (left) */}
                     <div className="flex flex-col gap-5 z-[2] shrink-0">
@@ -66,7 +69,7 @@ export default function WorkflowDiagram() {
                         <div className="workflow-core-wrapper relative">
                             {/* Pulse ring */}
                             <div className="absolute -inset-2 rounded-3xl border border-sapphire/20 animate-core-pulse" />
-                            <div className="w-[120px] h-[120px] rounded-2xl border-2 border-sapphire bg-card flex flex-col items-center justify-center gap-1 relative">
+                            <div className="w-[120px] h-[120px] rounded-2xl border-2 border-sapphire bg-white shadow-[0_4px_24px_-4px_rgba(0,0,0,0.08)] flex flex-col items-center justify-center gap-1 relative">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7 text-sapphire">
                                     <rect x="4" y="4" width="16" height="16" rx="2" ry="2" />
                                     <rect x="9" y="9" width="6" height="6" />
@@ -80,7 +83,7 @@ export default function WorkflowDiagram() {
                                     <line x1="1" y1="14" x2="4" y2="14" />
                                 </svg>
                                 <span className="text-sm font-bold text-sapphire" style={{ fontFamily: 'var(--font-syne)' }}>Axionea</span>
-                                <span className="text-[10px] text-muted-foreground">KI-Engine</span>
+                                <span className="text-[10px] text-slate-500">KI-Engine</span>
                             </div>
                         </div>
                     </div>
@@ -122,7 +125,7 @@ function WorkflowNode({
     label: string;
 }) {
     return (
-        <div className="flex items-center gap-2.5 px-5 py-3 rounded-xl border border-black/10 dark:border-white/10 bg-card min-w-[160px] hover:border-sapphire/40 transition-all duration-300">
+        <div className="flex items-center gap-2.5 px-5 py-3 rounded-2xl border border-slate-200 bg-white shadow-[0_4px_24px_-4px_rgba(0,0,0,0.08)] min-w-[160px] hover:border-sapphire/50 hover:shadow-[0_0_20px_rgba(15,82,186,0.25)] transition-all duration-300">
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -135,7 +138,7 @@ function WorkflowNode({
             >
                 {icon}
             </svg>
-            <span className="text-sm font-medium">{label}</span>
+            <span className="text-sm font-medium text-slate-800">{label}</span>
         </div>
     );
 }

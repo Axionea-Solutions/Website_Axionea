@@ -2,7 +2,8 @@ import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://www.axionea-solutions.de';
-    const homeLastModified = new Date('2026-05-21');
+    // Startseiten-Relaunch (Overhaul): Copy, Design-System, Hosting, ROI-Rechner, Navbar
+    const homeLastModified = new Date('2026-07-04');
     const industryLastModified = new Date('2026-05-21');
     const foerderungLastModified = new Date('2026-05-21');
     const legalLastModified = new Date('2026-01-15');
@@ -29,6 +30,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
         {
             url: `${baseUrl}/ki-fuer-makler`,
             lastModified: industryLastModified,
+            changeFrequency: 'monthly',
+            priority: 0.9,
+        },
+        {
+            url: `${baseUrl}/ki-fuer-steuerberater`,
+            lastModified: homeLastModified,
             changeFrequency: 'monthly',
             priority: 0.9,
         },

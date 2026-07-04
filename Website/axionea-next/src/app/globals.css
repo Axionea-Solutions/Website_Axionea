@@ -54,6 +54,16 @@
   --color-amber-hover: #F59E0B;
   --color-ice-blue: #D6E6F3;
   --color-powder-blue: #A6C5D7;
+
+  /* Dunkle Flächen (ChatBot, Panels) — statt hardcodierter Hex-Werte */
+  --color-navy-900: #070d1a;
+  --color-navy-800: #0f172a;
+  --color-navy-700: #0a1628;
+
+  /* Helle Ergebnis-Kacheln (ROI-Rechner) */
+  --color-tint-blue: #F0F4FF;
+  --color-tint-red: #FFF0F0;
+  --color-tint-green: #F0FFF4;
 }
 
 html {

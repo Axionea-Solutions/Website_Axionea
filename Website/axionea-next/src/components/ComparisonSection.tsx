@@ -7,25 +7,25 @@ import { ContactButton } from "./hubspot";
 
 
 const axioneaFeatures = [
-    "Echtes Developer-Wissen (kein 'VibeCoding')",
-    "Konzern-Governance & IT-Sicherheit",
-    "Nachhaltiges Change Management",
-    "Tiefes Enterprise AI-Wissen",
-    "Maßgeschneiderte KI-Architekturen",
-    "Skalierbare System-Integration",
-    "Autonome KI-Agenten & Chatbots",
-    "Laufende Team-Befähigung",
+    "Echte Entwickler — keine zusammengeklickten Bastellösungen",
+    "DSGVO-konform & EU-Hosting — deine Daten bleiben sicher",
+    "Erprobt in echten Betrieben — von der Praxis bis zur Kanzlei",
+    "Fairer Festpreis — wir behalten deinen ROI im Blick",
+    "Läuft mit deiner bestehenden Software — kein Umstieg",
+    "KI-Telefonassistent & Chatbots, die wirklich helfen",
+    "Wir schulen dein Team verständlich",
+    "Wir bleiben dabei — auch nach dem Start",
 ];
 
 const othersFeatures = [
-    "Zusammenkopierter 'VibeCode'",
-    "Schatten-IT & Compliance-Risiken",
-    "Projekte enden nach dem Go-Live",
-    "Oberflächliches Prompting",
-    "Generische Einheitslösungen",
-    "Fehlende Skalierbarkeit",
-    "Standard-Chatbots ohne Kontext",
-    "Keine langfristige Betreuung",
+    "Zusammenkopierte Bastellösungen",
+    "Unklarer Datenschutz, Daten in Drittländern",
+    "Lösung von der Stange ohne Branchenwissen",
+    "Versteckte Kosten, kein Blick auf den ROI",
+    "Insellösung — alles muss umgestellt werden",
+    "Standard-Chatbot ohne echten Nutzen",
+    "Tool hingestellt, Team allein gelassen",
+    "Nach dem Start nicht mehr erreichbar",
 ];
 
 export default function ComparisonSection() {
@@ -49,7 +49,7 @@ export default function ComparisonSection() {
                         <LetterReveal text="Präzision vs. Standard" />
                     </h2>
                     <p className="text-muted-foreground text-lg max-w-xl mx-auto">
-                        <LetterReveal text="Sieh, wie unsere KI die Konkurrenz in Geschwindigkeit und Qualität übertrifft" delay={0.2} stagger={0.015} />
+                        <LetterReveal text="Warum Unternehmen lieber mit einem Spezialisten arbeiten als mit einer Agentur von der Stange" delay={0.2} stagger={0.015} />
                     </p>
                 </div>
 
@@ -58,8 +58,8 @@ export default function ComparisonSection() {
                     ref={ref}
                     style={{
                         opacity: isInView ? 1 : 0,
-                        transform: isInView ? "translateY(0)" : "translateY(20px)",
-                        transition: "all 1s cubic-bezier(0.16, 1, 0.3, 1)",
+                        transform: isInView ? "translateY(0)" : "translateY(16px)",
+                        transition: "all 0.7s cubic-bezier(0.16, 1, 0.3, 1)",
                     }}
                 >
                     <div className="rounded-3xl border border-slate-200 bg-white shadow-[0_4px_24px_-4px_rgba(0,0,0,0.08)] overflow-hidden transition-all duration-500 hover:border-sapphire/50 hover:shadow-[0_0_20px_rgba(15,82,186,0.25),0_0_50px_rgba(15,82,186,0.12)]">
@@ -94,12 +94,15 @@ export default function ComparisonSection() {
                                     {/* Shine effect */}
                                     <div className="absolute inset-0 z-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-[150%] skew-x-[-20deg] group-hover:translate-x-[150%] transition-transform duration-1000 ease-in-out" />
 
-                                    <span className="relative z-10 transition-colors duration-300">Jetzt starten</span>
+                                    <span className="relative z-10 transition-colors duration-300">Kostenlos beraten lassen</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 relative z-10 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
                                         <line x1="7" y1="17" x2="17" y2="7" />
                                         <polyline points="7 7 17 7 17 17" />
                                     </svg>
                                 </ContactButton>
+                                <p className="mt-3 text-xs text-slate-500 text-center">
+                                    Unverbindlich · keine Technik nötig · in 15 Minuten weißt du, ob sich KI für dich lohnt
+                                </p>
                             </div>
 
                             {/* Others Column */}

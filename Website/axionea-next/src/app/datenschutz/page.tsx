@@ -46,7 +46,7 @@ export default function Datenschutz() {
                     </svg>
                     Zurück zur Startseite
                 </Link>
-                <h1 className="text-4xl md:text-5xl font-bold mb-12 tracking-tight" style={{ fontFamily: 'var(--font-syne)' }}>
+                <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-12 tracking-tight break-words hyphens-auto" style={{ fontFamily: 'var(--font-syne)' }}>
                     Datenschutzerklärung
                 </h1>
 

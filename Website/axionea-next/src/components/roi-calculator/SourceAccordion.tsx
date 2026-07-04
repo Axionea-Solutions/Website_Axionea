@@ -37,7 +37,7 @@ export function SourceAccordion({ industry }: SourceAccordionProps) {
                     >
                         <div className="pt-4 pb-2 text-xs sm:text-sm text-slate-500 space-y-4">
                             <p>
-                                Die Berechnungen basieren auf publizierten Studien von McKinsey & Company und EY (Ernst & Young).
+                                Die Berechnungen basieren auf publizierten Studien und Erhebungen u. a. von McKinsey & Company, EY, Bitkom, dem ifo Institut, KfW Research und dem MIT.
                                 {industry && (
                                     <span>
                                         {" "}Die branchenspezifischen Automatisierungsfaktoren für <strong>{industry.name_de}</strong> stammen aus:
@@ -64,8 +64,9 @@ export function SourceAccordion({ industry }: SourceAccordionProps) {
                             <div className="space-y-2">
                                 <p><strong>Allgemeine Methodik:</strong></p>
                                 <ul className="list-disc pl-4 space-y-1">
-                                    <li>Die Realisierungsrate von 25% ohne professionelle Begleitung basiert auf McKinsey-Analysen, nach denen Unternehmen bei digitalen Transformationen lediglich 25% der angestrebten Kosteneinsparungen realisieren (McKinsey, &quot;Bits, Bytes und Butter&quot;, Sept. 2025).</li>
-                                    <li>Der Wert von 70% Realisierung mit Axionea ist ein konservatives Ziel basierend auf branchenüblichen Benchmarks für professionell begleitete Automatisierungsprojekte.</li>
+                                    <li>Die Realisierungsrate von 25% ohne professionelle Begleitung basiert auf McKinsey-Analysen, nach denen Unternehmen bei digitalen Transformationen lediglich 25% der angestrebten Kosteneinsparungen realisieren (McKinsey, &quot;Bits, Bytes und Butter&quot;, Sept. 2025). Eine MIT-Analyse von 300 Unternehmens-Deployments kommt zum selben Muster: Nur ~5% der GenAI-Piloten erreichen messbare Ergebniswirkung — extern begleitete Umsetzungen sind dabei etwa doppelt so erfolgreich wie interne Alleingänge (MIT NANDA, &quot;The GenAI Divide&quot;, Aug. 2025).</li>
+                                    <li>Der Wert von 70% Realisierung mit Axionea ist ein konservatives Ziel basierend auf branchenüblichen Benchmarks für professionell begleitete Automatisierungsprojekte — kein garantiertes Ergebnis.</li>
+                                    <li>Die Amortisationsschätzung setzt den typischen Projektumfang (Potenzial-Check + Pilotprojekt) ins Verhältnis zur zusätzlich realisierten monatlichen Einsparung. Das konkrete Angebot erstellen wir nach dem kostenlosen Erstgespräch.</li>
                                     <li>Die Stundenkosten umfassen den vollständigen Arbeitgeberbeitrag (Brutto + AG-Anteile).</li>
                                 </ul>
                                 <p className="mt-4 italic opacity-80">

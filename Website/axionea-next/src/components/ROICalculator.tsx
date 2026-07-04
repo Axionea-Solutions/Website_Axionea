@@ -1,7 +1,6 @@
 ﻿"use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { LetterReveal } from "./ui/LetterReveal";
 import { IndustrySelector } from "./roi-calculator/IndustrySelector";
 import { InputSlider } from "./roi-calculator/InputSlider";
@@ -64,15 +63,15 @@ export default function ROICalculator() {
                     <h2
                         className="text-[clamp(28px,6vw,52px)] font-sans font-medium tracking-tight leading-tight mb-4 break-words hyphens-auto"
                     >
-                        <LetterReveal text="Berechnen Sie Ihren " />
+                        <LetterReveal text="Berechne dein " />
                         <br className="hidden sm:block" />
                         <span className="text-sapphire">
-                            <LetterReveal text="Verlust durch Ineffizienz" delay={0.3} />
+                            <LetterReveal text="Einsparpotenzial" delay={0.3} />
                         </span>
                     </h2>
                     <p className="text-slate-500 text-lg max-w-2xl mx-auto leading-relaxed">
                         <LetterReveal
-                            text="Finden Sie heraus, wie viel Geld Ihr Unternehmen aktuell jeden Monat für manuelle, repetitive Aufgaben verbrennt – basierend auf echten Branchendaten von McKinsey & EY"
+                            text="Finde heraus, wie viel Zeit und Geld manuelle Routine-Aufgaben dein Unternehmen jeden Monat kosten — und was davon realistisch automatisierbar ist. Basierend auf Branchendaten von McKinsey, EY, Bitkom & ifo."
                             delay={0.6}
                             stagger={0.015}
                         />
@@ -84,10 +83,10 @@ export default function ROICalculator() {
                     ref={ref}
                     style={{
                         opacity: isInView ? 1 : 0,
-                        transform: isInView ? "translateY(0)" : "translateY(20px)",
-                        transition: "all 1s cubic-bezier(0.16, 1, 0.3, 1)",
+                        transform: isInView ? "translateY(0)" : "translateY(16px)",
+                        transition: "all 0.7s cubic-bezier(0.16, 1, 0.3, 1)",
                     }}
-                    className="rounded-[2.5rem] border border-slate-200  bg-white  shadow-2xl overflow-hidden backdrop-blur-sm"
+                    className="rounded-3xl border border-slate-200 bg-white shadow-2xl overflow-hidden backdrop-blur-sm"
                 >
                     <div className="grid grid-cols-1 lg:grid-cols-12 divide-y lg:divide-y-0 lg:divide-x divide-slate-200 ">
 
@@ -97,7 +96,7 @@ export default function ROICalculator() {
 
                             <div className="space-y-8">
                                 <InputSlider
-                                    label="Wie viele Mitarbeitende hat Ihr Team?"
+                                    label="Wie viele Mitarbeitende hat dein Team?"
                                     value={teamSize}
                                     min={1}
                                     max={100}
@@ -140,10 +139,10 @@ export default function ROICalculator() {
                                         </svg>
                                     </div>
                                     <h3 className="text-xl font-sans font-medium tracking-tight text-slate-900 mb-2">
-                                        Wählen Sie Ihre Branche
+                                        Wähle deine Branche
                                     </h3>
                                     <p className="text-slate-500 max-w-md">
-                                        Um die detaillierten McKinsey & EY Potenziale zu sehen, wählen Sie bitte links Ihre Branche aus.
+                                        Um die studienbasierten Branchen-Potenziale zu sehen, wähle links deine Branche aus.
                                     </p>
                                 </div>
                             ) : null}
@@ -152,7 +151,7 @@ export default function ROICalculator() {
                             <div className={`transition-opacity duration-500 ${!industryId ? "opacity-30 blur-sm" : "opacity-100"}`}>
                                 <div className="mb-10 text-center lg:text-left">
                                     <p className="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-2">
-                                        Ihre monatlichen Kosten für repetitive Arbeit
+                                        Deine monatlichen Kosten für repetitive Arbeit
                                     </p>
                                     <div className="text-5xl sm:text-6xl md:text-7xl font-sans font-medium tracking-tight text-slate-900 drop-shadow-sm flex items-center justify-center lg:justify-start">
                                         <AnimatedCounter value={results.monthlyRepetitiveCost} />
@@ -169,7 +168,7 @@ export default function ROICalculator() {
                                         label="Mögliche Kostensenkung"
                                         progressPercent={100}
                                         colorClass="bg-blue-500"
-                                        bgClass="bg-[#F0F4FF] dark:bg-blue-900/10"
+                                        bgClass="bg-tint-blue dark:bg-blue-900/10"
                                         delay={0.1}
                                     />
                                     <ResultCard
@@ -178,16 +177,16 @@ export default function ROICalculator() {
                                         label="Tatsächliche Realisierung"
                                         progressPercent={25}
                                         colorClass="bg-red-500"
-                                        bgClass="bg-[#FFF0F0] dark:bg-red-900/10"
+                                        bgClass="bg-tint-red dark:bg-red-900/10"
                                         delay={0.2}
                                     />
                                     <ResultCard
                                         title="Mit Axionea (Begleitet)"
                                         valueMin={Math.round(results.realizationWith)}
-                                        label="Sichere Realisierung"
+                                        label="Zielwert begleiteter Projekte"
                                         progressPercent={70}
                                         colorClass="bg-green-500"
-                                        bgClass="bg-[#F0FFF4] dark:bg-green-900/10"
+                                        bgClass="bg-tint-green dark:bg-green-900/10"
                                         delay={0.3}
                                     />
                                 </div>
@@ -195,15 +194,15 @@ export default function ROICalculator() {
                                 {/* Bottom Summary & CTA */}
                                 <div className="mt-auto flex flex-col items-center lg:items-start space-y-4 pt-6 border-t border-black/5 dark:border-white/5">
                                     <p className="text-lg text-slate-900 font-medium flex items-center gap-2">
-                                        Jährlicher Verlust durch Nichtstun:
-                                        <span className="font-sans font-medium tracking-tight text-red-500 ml-1">
+                                        Ungenutztes Einsparpotenzial pro Jahr:
+                                        <span className="font-sans font-medium tracking-tight text-amber-600 ml-1">
                                             ≈ <AnimatedCounter value={results.annualLossMin} /> <span className="font-sans font-normal mx-0.5">–</span> <AnimatedCounter value={results.annualLossMax} /> €
                                         </span>
                                     </p>
 
                                     {results.paybackMonths > 0 && (
                                         <p className="text-sm text-slate-500 flex items-center gap-2">
-                                            ROI mit Axionea: Amortisation ab <strong className="text-slate-900">Monat {results.paybackMonths}—{results.paybackMonths + 1}</strong>
+                                            ROI mit Axionea: Amortisation typischerweise ab <strong className="text-slate-900">Monat {results.paybackMonths}—{results.paybackMonths + 1}</strong>
                                         </p>
                                     )}
 

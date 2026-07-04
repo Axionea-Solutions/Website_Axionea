@@ -1,6 +1,7 @@
 "use client";
 
 import { createContext, useContext, useEffect, useState } from "react";
+import { MotionConfig } from "framer-motion";
 
 type Theme = "dark" | "light";
 
@@ -28,7 +29,6 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
         const initial = saved || "dark";
         // eslint-disable-next-line react-hooks/set-state-in-effect
         setTheme(initial);
-        // eslint-disable-next-line react-hooks/set-state-in-effect
         setMounted(true);
     }, []);
 
@@ -49,12 +49,14 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
     // Prevent flash — render children only after mount
     if (!mounted) {
-        return <>{children}</>;
+        return <MotionConfig reducedMotion="user">{children}</MotionConfig>;
     }
 
     return (
         <ThemeContext.Provider value={{ theme, toggleTheme }}>
-            {children}
+            {/* reducedMotion="user": framer-motion respektiert prefers-reduced-motion
+                global (Transform-Animationen aus, Opacity bleibt) */}
+            <MotionConfig reducedMotion="user">{children}</MotionConfig>
         </ThemeContext.Provider>
     );
 }

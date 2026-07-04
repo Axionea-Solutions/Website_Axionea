@@ -74,8 +74,8 @@ export default function ContactSection() {
                     className="grid grid-cols-1 lg:grid-cols-2 gap-10"
                     style={{
                         opacity: isInView ? 1 : 0,
-                        transform: isInView ? "translateY(0)" : "translateY(20px)",
-                        transition: "all 1s cubic-bezier(0.16, 1, 0.3, 1)",
+                        transform: isInView ? "translateY(0)" : "translateY(16px)",
+                        transition: "all 0.7s cubic-bezier(0.16, 1, 0.3, 1)",
                     }}
                 >
                     {/* Left: Contact Info Cards */}

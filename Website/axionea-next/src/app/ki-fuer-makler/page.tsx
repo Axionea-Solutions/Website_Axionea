@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Footer from "@/components/Footer";
 import IndustryLanding from "@/components/landing/IndustryLanding";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
     title: "KI für Immobilienmakler | Exposé-Anfragen 24/7 — Axionea",
@@ -88,11 +89,12 @@ export default function KiFuerMakler() {
                     },
                     {
                         question: "Was kostet das ungefähr?",
-                        answer: "KI-Potenzial-Check ab 990 € (BAFA-förderfähig). Exposé-Agent-Pilot ab ca. 3.900 € Festpreis. Dokumentenanalyse-Modul ab ca. 2.400 €. Danach Retainer ab 490 €/Monat — typischer ROI in <3 Monaten.",
+                        answer: "Das hängt vom Umfang ab — pauschale Preislisten gibt es bei uns nicht. Der Einstieg ist ein KI-Potenzial-Check (BAFA-förderfähig), Pilotprojekte setzen wir zum Festpreis um. Was das für dein Büro konkret heißt, klären wir im kostenlosen Erstgespräch.",
                     },
                 ]}
                 ctaText="Mehr Provision durch weniger Routine?"
             />
+            <BreadcrumbSchema name="KI für Immobilienmakler" path="/ki-fuer-makler" />
             <Footer />
         </>
     );

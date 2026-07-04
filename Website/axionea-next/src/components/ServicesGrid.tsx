@@ -390,19 +390,14 @@ function ServiceCard({
 }) {
     const { ref, isInView } = useInView(0.1);
 
-    const getTransform = () => {
-        if (index === 0 || index === 2) return "translateX(-30px)";
-        return "translateX(30px)";
-    };
-
     return (
         <div
             ref={ref}
             className={className}
             style={{
                 opacity: isInView ? 1 : 0,
-                transform: isInView ? "translateY(0)" : "translateY(30px)",
-                transition: `all 1.5s cubic-bezier(0.16, 1, 0.3, 1) ${index * 0.15}s`,
+                transform: isInView ? "translateY(0)" : "translateY(16px)",
+                transition: `all 0.7s cubic-bezier(0.16, 1, 0.3, 1) ${index * 0.08}s`,
             }}
         >
             <div className="group relative h-full rounded-3xl border border-slate-200 bg-white transition-all duration-500 hover:border-sapphire/50 hover:shadow-[0_0_20px_rgba(15,82,186,0.25),0_0_50px_rgba(15,82,186,0.12)] hover:-translate-y-1 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.08)] overflow-hidden">
@@ -453,7 +448,7 @@ export default function ServicesGrid() {
                         <LetterReveal text="Unsere KI-Services" />
                     </h2>
                     <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-                        <LetterReveal text="KI-Funktionen, die dein Unternehmen auf das nächste Level bringen" delay={0.2} stagger={0.015} />
+                        <LetterReveal text="Konkrete KI-Werkzeuge für deinen Arbeitsalltag — vom ersten Kundenkontakt bis zum Backoffice" delay={0.2} stagger={0.015} />
                     </p>
                 </div>
 
@@ -467,14 +462,14 @@ export default function ServicesGrid() {
                     />
                     <ServiceCard
                         index={1}
-                        title="Lead-Agenten & Chatbots"
-                        description="Terminvereinbarung, Patienten-FAQ oder Erst-Qualifizierung von Makler-Leads — unsere Agenten antworten sofort, 24/7 und immer freundlich."
+                        title="Chatbots & Termin-Assistenten"
+                        description="Terminvereinbarung, Kundenfragen oder Vorab-Einordnung neuer Anfragen — unsere Assistenten antworten sofort, rund um die Uhr und immer freundlich."
                         illustration={<ChatbotIllustration />}
                     />
                     <ServiceCard
                         index={2}
-                        title="Voice Agents (KI-Telefonie)"
-                        description="Die Praxis klingelt ununterbrochen? Unser KI-Telefon-Assistent nimmt Anrufe entgegen, beantwortet Fragen und legt Termine direkt in eurem System an."
+                        title="KI-Telefonassistent"
+                        description="Das Telefon klingelt ununterbrochen? Unser KI-Telefon-Assistent nimmt Anrufe entgegen, beantwortet Fragen und legt Termine direkt in eurem System an."
                         illustration={<ManagedAIIllustration />}
                     />
                     <ServiceCard
@@ -485,20 +480,20 @@ export default function ServicesGrid() {
                     />
                     <ServiceCard
                         index={4}
-                        title="Wissensassistenten (RAG)"
-                        description="Kein langes Suchen mehr. Ein interner Chatbot, der all eure Dokumente, Exposés oder Behandlungsrichtlinien kennt und sofort Antworten liefert."
+                        title="Interner Wissens-Chatbot"
+                        description="Kein langes Suchen mehr. Ein interner Assistent, der all eure Dokumente, Richtlinien und Abläufe kennt und sofort Antworten liefert."
                         illustration={<ContentGenIllustration />}
                     />
                     <ServiceCard
                         index={5}
                         title="Branchen-KI-Tools"
-                        description="Wir implementieren spezialisierte KI-Lösungen wie automatische Exposé-Texter, KI-Dokumentation für Ärzte oder Bildverbesserung für Immobilien."
+                        description="Spezialisierte KI-Lösungen für deine Branche — zum Beispiel automatische Exposé-Texte für Makler oder KI-Dokumentation für Praxen."
                         illustration={<IndustryIllustration />}
                     />
                     <ServiceCard
                         index={6}
                         title="KI-Schulungen"
-                        description="Wir machen dein Team KI-fit. AI-Fluency-Workshops, Tool-Trainings und Train-the-Trainer-Programme — BAFA-förderfähig und praxisorientiert."
+                        description="Wir machen dein Team KI-fit. Praxisnahe KI-Schulungen, Tool-Trainings und Schulung eurer internen KI-Verantwortlichen — BAFA-förderfähig."
                         illustration={<TrainingIllustration />}
                         className="md:col-span-2 lg:col-span-1 lg:col-start-2"
                     />

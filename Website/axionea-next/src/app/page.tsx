@@ -12,10 +12,12 @@ import ComparisonSection from '@/components/ComparisonSection';
 import ROICalculator from '@/components/ROICalculator';
 import ContactSection from '@/components/ContactSection';
 import InteractiveParticles from '@/components/ui/InteractiveParticles';
+import { HomeStructuredData } from '@/components/StructuredData';
 
 export default function Home() {
   return (
     <main className="relative min-h-screen w-full bg-background text-foreground flex flex-col pt-28 md:pt-32 overflow-hidden">
+      <HomeStructuredData />
       <InteractiveParticles />
       <HeroContent />
 
@@ -27,14 +29,14 @@ export default function Home() {
       {/* Why Choose Us Section */}
       <WhyChooseUs />
 
-      {/* ROI Calculator — right after WhyChooseUs */}
+      {/* Sicheres Hosting & Compliance — prominent direkt nach den Vorteilen */}
+      <ComplianceBadges />
+
+      {/* ROI Calculator */}
       <ROICalculator />
 
       {/* Services Grid Section */}
       <ServicesGrid />
-
-      {/* Trust & Compliance Badges */}
-      <ComplianceBadges />
 
       {/* Process Steps Section */}
       <ProcessSteps />

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Footer from "@/components/Footer";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { LetterReveal } from "@/components/ui/LetterReveal";
 
 export const metadata: Metadata = {
@@ -297,6 +298,7 @@ export default function FoerderungPage() {
                     </div>
                 </div>
             </main>
+            <BreadcrumbSchema name="Förderung & BAFA" path="/foerderung" />
             <Footer />
         </>
     );

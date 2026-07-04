@@ -140,19 +140,13 @@ function BenefitCard({
 }) {
     const { ref, isInView } = useInView(0.15);
 
-    const getInitialTransform = () => {
-        if (index % 3 === 0) return "translateX(-30px)";
-        if (index % 3 === 2) return "translateX(30px)";
-        return "translateY(30px)";
-    };
-
     return (
         <div
             ref={ref}
             style={{
                 opacity: isInView ? 1 : 0,
-                transform: isInView ? "translateY(0)" : "translateY(30px)",
-                transition: `all 1.5s cubic-bezier(0.16, 1, 0.3, 1) ${index * 0.25}s`,
+                transform: isInView ? "translateY(0)" : "translateY(16px)",
+                transition: `all 0.7s cubic-bezier(0.16, 1, 0.3, 1) ${index * 0.08}s`,
             }}
         >
             <div className="group relative h-full rounded-3xl border border-slate-200 bg-white transition-all duration-500 hover:border-sapphire/50 hover:shadow-[0_0_20px_rgba(15,82,186,0.25),0_0_50px_rgba(15,82,186,0.12)] hover:-translate-y-1 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.08)] overflow-hidden">
@@ -202,7 +196,7 @@ export default function WhyChooseUs() {
                         <LetterReveal text="Warum Axionea?" />
                     </h2>
                     <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-                        <LetterReveal text="Dein Partner für KI-Automatisierung — smarte Lösungen, die sofort wirken" delay={0.2} stagger={0.015} />
+                        <LetterReveal text="Die drei Sorgen, die wir dir abnehmen" delay={0.2} stagger={0.015} />
                     </p>
                 </div>
 
@@ -210,21 +204,21 @@ export default function WhyChooseUs() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
                     <BenefitCard
                         index={0}
-                        title="Echtzeit-Analysen"
-                        description="Deine Geschäftsdaten live aufbereitet — als verständliches Dashboard statt Excel-Chaos"
-                        illustration={<ClockIllustration />}
+                        title="Kein IT-Team? Brauchst du nicht"
+                        description="Kein Know-how, keine Zeit, kein Personal für KI — das ist die Regel, nicht die Ausnahme. Wir bauen, richten ein und erklären verständlich. Du lernst nichts Technisches."
+                        illustration={<SyncIllustration />}
                     />
                     <BenefitCard
                         index={1}
-                        title="KI-getriebenes Wachstum"
-                        description="Intelligentere Entscheidungen durch akkurate Echtzeit-Geschäftseinblicke und KI-Analysen"
-                        illustration={<BarChartIllustration />}
+                        title="Deine Daten bleiben deine Daten"
+                        description="EU-Hosting, DSGVO-konform, AVV inklusive — und keine KI-Trainings auf euren Kunden- oder Geschäftsdaten. Datenschutz ist bei uns Standard, nicht Aufpreis."
+                        illustration={<ClockIllustration />}
                     />
                     <BenefitCard
                         index={2}
-                        title="Sync in Echtzeit"
-                        description="Verbinde dein Team sofort — verfolge Fortschritte und Updates in Echtzeit"
-                        illustration={<SyncIllustration />}
+                        title="Fairer Preis · Echter ROI · Wir bleiben"
+                        description="Wir starten klein mit dem, was sich rechnet, behalten deinen ROI im Blick — und lassen dich nach dem Start nicht allein. Über die laufende Betreuung sind wir auch beim nächsten Schritt dabei."
+                        illustration={<BarChartIllustration />}
                     />
                 </div>
             </div>

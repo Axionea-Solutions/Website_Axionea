@@ -3,11 +3,12 @@
 import { useState } from "react";
 import { LetterReveal } from "./ui/LetterReveal";
 import { useInView } from "@/hooks/useInView";
+import { faqs } from "@/lib/faq-data";
 
 
 
 /* ──────────────── FAQ Item ──────────────── */
-function FAQItem({ question, answer, index }: { question: string; answer: string; index: number }) {
+function FAQItem({ question, answer, link, index }: { question: string; answer: string; link?: { href: string; label: string }; index: number }) {
     const [isOpen, setIsOpen] = useState(false);
     const { ref, isInView } = useInView(0.1);
 
@@ -17,8 +18,8 @@ function FAQItem({ question, answer, index }: { question: string; answer: string
             className="border-b border-slate-100 last:border-b-0"
             style={{
                 opacity: isInView ? 1 : 0,
-                transform: isInView ? "translateY(0)" : "translateY(10px)",
-                transition: `all 1s cubic-bezier(0.16, 1, 0.3, 1) ${index * 0.08}s`,
+                transform: isInView ? "translateY(0)" : "translateY(16px)",
+                transition: `all 0.7s cubic-bezier(0.16, 1, 0.3, 1) ${index * 0.08}s`,
             }}
         >
             <button
@@ -47,44 +48,17 @@ function FAQItem({ question, answer, index }: { question: string; answer: string
                         <p className="text-sm text-slate-600 leading-relaxed max-w-2xl">
                             {answer}
                         </p>
+                        {link && (
+                            <a href={link.href} className="inline-block mt-3 text-sm font-medium text-sapphire hover:text-sapphire-hover transition-colors">
+                                {link.label}
+                            </a>
+                        )}
                     </div>
                 </div>
             </div>
         </div>
     );
 }
-
-/* ──────────────── FAQ Data ──────────────── */
-const faqs = [
-    {
-        question: "Was genau macht Axionea?",
-        answer: "Axionea automatisiert Geschäftsprozesse mit KI — von Chatbots für die Terminvereinbarung über Voice-Agents für den Telefonsupport bis hin zu RAG-Wissensdatenbanken. Wir analysieren deine Abläufe und implementieren maßgeschneiderte KI-Lösungen.",
-    },
-    {
-        question: "Brauche ich technisches Wissen, um mit Axionea zu arbeiten?",
-        answer: "Nein, überhaupt nicht. Wir kümmern uns um die gesamte technische Umsetzung. Du brauchst keine IT-Abteilung und keine Programmierkenntnisse — wir erklären alles verständlich und richten alles für dich ein.",
-    },
-    {
-        question: "Wie lange dauert die Implementierung?",
-        answer: "Je nach Komplexität zwischen 2 und 6 Wochen. Ein einfacher KI-Chatbot für die Terminbuchung kann in wenigen Tagen live sein, während umfassende Workflow-Automatisierungen etwas mehr Zeit benötigen. Du bekommst einen klaren Zeitplan im Vorfeld.",
-    },
-    {
-        question: "Für welche Branchen ist Axionea geeignet?",
-        answer: "Wir haben uns auf Arztpraxen, Kieferorthopäden und Immobilienmakler spezialisiert. Unsere KI-Lösungen sind genau auf die täglichen Herausforderungen in diesen Branchen zugeschnitten, etwa bei Terminverwaltung, Patientensupport oder Immobilien-Exposés.",
-    },
-    {
-        question: "Ist eure KI DSGVO-konform für Arztpraxen?",
-        answer: "Ja. Wir arbeiten ausschließlich mit EU-Hosting, schließen Auftragsverarbeitungsverträge (AVV) ab und nutzen KI-Modelle ohne Training auf Kundendaten. Patientendaten werden niemals unkontrolliert verarbeitet. Auf Wunsch begleiten wir euch durch die vollständige EU-AI-Act-Compliance.",
-    },
-    {
-        question: "Was kostet ein Einstieg mit Axionea?",
-        answer: "Unser KI-Potenzial-Check startet ab 990 € — BAFA-förderfähig mit bis zu 2.800 € Förderung. Danach wisst ihr genau, was sich lohnt, bevor ihr investiert. Daneben bieten wir Festpreis-Pilotprojekte und ein monatliches Retainer-Modell (Managed AI) an.",
-    },
-    {
-        question: "Bietet ihr auch Schulungen für unser Team an?",
-        answer: "Ja, wir bieten spezielle KI-Schulungen, AI-Fluency-Workshops und Train-the-Trainer-Programme an. So stellen wir sicher, dass euer gesamtes Team die neuen Tools sicher und effizient nutzen kann.",
-    }
-];
 
 /* ──────────────── Main FAQ Section ──────────────── */
 export default function FAQ() {
@@ -115,7 +89,7 @@ export default function FAQ() {
                 {/* FAQ Accordion */}
                 <div className="rounded-3xl border border-slate-200 bg-white shadow-[0_4px_24px_-4px_rgba(0,0,0,0.08)] overflow-hidden transition-all duration-500 hover:border-sapphire/50 hover:shadow-[0_0_20px_rgba(15,82,186,0.25),0_0_50px_rgba(15,82,186,0.12)]">
                     {faqs.map((faq, i) => (
-                        <FAQItem key={i} question={faq.question} answer={faq.answer} index={i} />
+                        <FAQItem key={i} question={faq.question} answer={faq.answer} link={faq.link} index={i} />
                     ))}
                 </div>
             </div>

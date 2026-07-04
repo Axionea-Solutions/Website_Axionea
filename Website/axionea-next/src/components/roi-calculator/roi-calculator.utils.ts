@@ -31,8 +31,11 @@ export interface ROIDataSchema {
         realization_rate_with_axionea_source: string;
         revenue_realization_without_help: number;
         revenue_realization_source: string;
-        axionea_investment_multiplier: number;
-        axionea_investment_note: string;
+        check_investment_eur: number;
+        pilot_investment_min_eur: number;
+        pilot_investment_max_eur: number;
+        investment_scale_factor: number;
+        investment_note: string;
     };
     industries: Record<string, ROIIndustryFactor>;
     global_facts: Record<string, unknown>;
@@ -111,7 +114,13 @@ export function calculateROI(input: CalculatorInput): CalculatorResults {
     const annualLossMax = savingsPotentialMax * 12;
 
     // 6. Amortization / Payback
-    const axioneaInvestment = realizationWith * ROI_CONSTANTS.axionea_investment_multiplier;
+    // Investment = Check + Pilot; Pilotumfang skaliert mit der Einsparung,
+    // geklemmt auf die reale Projektspanne (Beträge nur intern, nie im UI)
+    const pilotInvestment = Math.min(
+        Math.max(realizationWith * ROI_CONSTANTS.investment_scale_factor, ROI_CONSTANTS.pilot_investment_min_eur),
+        ROI_CONSTANTS.pilot_investment_max_eur
+    );
+    const axioneaInvestment = ROI_CONSTANTS.check_investment_eur + pilotInvestment;
     const monthlyNetGain = realizationWith - realizationWithout;
 
     // Guard against divide by zero (should not happen if inputs > 0)

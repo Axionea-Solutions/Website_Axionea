@@ -11,14 +11,14 @@ export default function Preloader() {
         // Lock body scroll during preloader
         document.body.style.overflow = "hidden";
 
-        // Remove preloader smoothly after 2.2 seconds
+        // Remove preloader smoothly after 1.5 seconds
         const timer = setTimeout(() => {
             setIsVisible(false);
             // We re-enable scroll slightly before the animation fully ends for better UX
             setTimeout(() => {
                 document.body.style.overflow = "";
             }, 400);
-        }, 2200);
+        }, 1500);
 
         return () => {
             clearTimeout(timer);
@@ -34,7 +34,7 @@ export default function Preloader() {
                     initial={{ y: 0 }}
                     exit={{ y: "-100%" }}
                     transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
-                    className="fixed inset-0 z-[9999] bg-[#000000] flex flex-col items-center justify-center overflow-hidden"
+                    className="fixed inset-0 z-[90] bg-[#000000] flex flex-col items-center justify-center overflow-hidden"
                 >
                     {/* Glowing Logo Container */}
                     <div className="relative flex flex-col items-center justify-center">
@@ -57,7 +57,7 @@ export default function Preloader() {
                                 src="/assets/logo/Asset 4@4x.png"
                                 alt="Axionea Logo"
                                 width={64}
-                                height={64}
+                                height={57}
                                 priority
                                 className="object-contain drop-shadow-[0_0_20px_rgba(15,82,186,0.8)]"
                             />
@@ -69,7 +69,7 @@ export default function Preloader() {
                             <motion.div
                                 initial={{ scaleX: 0 }}
                                 animate={{ scaleX: 1 }}
-                                transition={{ duration: 2.2, ease: [0.25, 1, 0.5, 1] }}
+                                transition={{ duration: 1.5, ease: [0.25, 1, 0.5, 1] }}
                                 className="absolute top-0 left-0 h-full w-full bg-gradient-to-r from-sapphire to-cyan-400 rounded-full origin-left"
                             />
                         </div>

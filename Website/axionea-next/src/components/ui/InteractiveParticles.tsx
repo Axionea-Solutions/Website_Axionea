@@ -1,24 +1,53 @@
 "use client";
 
-import { useEffect, useMemo, useState, useRef, useCallback } from "react";
+import { useEffect, useMemo, useState, useRef, useCallback, useSyncExternalStore } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { type Container, type ISourceOptions, MoveDirection, OutMode } from "@tsparticles/engine";
 import { loadSlim } from "@tsparticles/slim";
 
+function subscribeReducedMotion(callback: () => void) {
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    mq.addEventListener("change", callback);
+    return () => mq.removeEventListener("change", callback);
+}
+
+function subscribeResize(callback: () => void) {
+    window.addEventListener("resize", callback);
+    return () => window.removeEventListener("resize", callback);
+}
+
 export default function InteractiveParticles() {
     const [init, setInit] = useState(false);
     const containerRef = useRef<HTMLDivElement>(null);
+    const particlesRef = useRef<Container | undefined>(undefined);
     const rafRef = useRef<number | null>(null);
     const lastScrollClass = useRef<string>("");
 
+    // prefers-reduced-motion: Partikel komplett deaktivieren — rechtlich/UX
+    // sauber und passt zum Compliance-Anspruch der Seite.
+    const reducedMotion = useSyncExternalStore(
+        subscribeReducedMotion,
+        () => window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+        () => false,
+    );
+
+    // Auf kleinen/schwachen Geräten Partikelzahl leicht drosseln —
+    // Desktop behält die volle Dichte (Eyecatcher).
+    const isMobile = useSyncExternalStore(
+        subscribeResize,
+        () => window.innerWidth < 768,
+        () => false,
+    );
+
     // This should be run only once per application lifetime
     useEffect(() => {
+        if (reducedMotion) return;
         initParticlesEngine(async (engine) => {
             await loadSlim(engine);
         }).then(() => {
             setInit(true);
         });
-    }, []);
+    }, [reducedMotion]);
 
     // Use direct DOM manipulation for scroll-driven style changes to avoid React re-renders
     useEffect(() => {
@@ -49,10 +78,15 @@ export default function InteractiveParticles() {
                         el.style.filter = "blur(4px)";
                         el.style.opacity = "0.4";
                         el.style.backgroundColor = "rgba(0,0,0,0.4)";
+                        // Rendering pausieren, solange die Partikel nur als
+                        // geblurrter Hintergrund dienen — spart Main-Thread-Zeit
+                        // beim Scrollen durch den Seiteninhalt.
+                        particlesRef.current?.pause();
                     } else {
                         el.style.filter = "blur(0px)";
                         el.style.opacity = "1";
                         el.style.backgroundColor = "transparent";
+                        particlesRef.current?.play();
                     }
                 }
             });
@@ -69,7 +103,7 @@ export default function InteractiveParticles() {
     }, [init]);
 
     const particlesLoaded = useCallback(async (container?: Container): Promise<void> => {
-        // noop
+        particlesRef.current = container;
     }, []);
 
     const options: ISourceOptions = useMemo(
@@ -130,7 +164,9 @@ export default function InteractiveParticles() {
                     density: {
                         enable: true,
                     },
-                    value: 120,
+                    // Desktop: volle Dichte (Eyecatcher). Mobile: leicht gedrosselt
+                    // für Batterie & Scroll-Performance.
+                    value: isMobile ? 70 : 120,
                 },
                 opacity: {
                     value: 0.3,
@@ -144,10 +180,10 @@ export default function InteractiveParticles() {
             },
             detectRetina: true,
         }),
-        [],
+        [isMobile],
     );
 
-    if (!init) return null;
+    if (!init || reducedMotion) return null;
 
     return (
         <div

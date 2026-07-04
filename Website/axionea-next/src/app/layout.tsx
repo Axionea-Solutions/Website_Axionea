@@ -1,6 +1,5 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Syne, DM_Sans } from "next/font/google";
-import Script from "next/script";
 import "./globals.css";
 import AnimatedNavbar from "@/components/AnimatedNavbar";
 import Preloader from "@/components/Preloader";
@@ -8,10 +7,7 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import ChatBot from "@/components/ChatBot";
 import CookieBanner from "@/components/CookieBanner";
 import StructuredData from "@/components/StructuredData";
-import {
-  HUBSPOT_FORM_SCRIPT_SRC,
-  HUBSPOT_MEETINGS_SCRIPT_SRC,
-} from "@/components/hubspot/config";
+import ConsentScripts from "@/components/ConsentScripts";
 
 const syne = Syne({
   variable: "--font-syne",
@@ -25,19 +21,29 @@ const dmSans = DM_Sans({
   display: "swap",
 });
 
+// Bildschirmtastatur (Mobile) verkleinert das Layout statt es zu überdecken —
+// wichtig für das Chat-Eingabefeld im Bottom-Sheet.
+export const viewport: Viewport = {
+  interactiveWidget: "resizes-content",
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.axionea-solutions.de"),
-  title: "Axionea | KI-Lösungen für Arztpraxen, Kieferorthopäden & Makler",
-  description: "KI-Automatisierung für Arztpraxen, Kieferorthopäden und Immobilienmakler. DSGVO-konform, EU-AI-Act-ready, praxiserprobt. Inkl. KI-Schulungen für dein Team. Jetzt kostenloses Erstgespräch buchen.",
+  title: "Axionea | KI-Automatisierung für den Mittelstand",
+  description: "KI-Automatisierung für den Mittelstand: Chatbots, Telefonassistenten & Workflows. DSGVO-konform, EU-Hosting, BAFA-förderfähig. Kostenloses Erstgespräch.",
   keywords: [
-    "KI für Arztpraxen",
-    "KI für Kieferorthopäden",
-    "KI für Immobilienmakler",
+    "KI-Automatisierung KMU",
+    "KI Agentur DACH",
+    "KI-Chatbot Unternehmen",
+    "KI-Telefonassistent",
     "KI-Schulung Mitarbeiter",
     "DSGVO KI",
     "EU AI Act",
     "KI Beratung Mittelstand",
-    "KI Agentur DACH"
+    "KI für Arztpraxen",
+    "KI für Kieferorthopäden",
+    "KI für Immobilienmakler",
+    "KI für Steuerberater"
   ],
   authors: [
     { name: "Maximilian Zvada", url: "https://www.axionea-solutions.de" },
@@ -68,15 +74,15 @@ export const metadata: Metadata = {
     type: "website",
     locale: "de_DE",
     url: "https://www.axionea-solutions.de",
-    title: "Axionea | KI-Lösungen für Arztpraxen, Kieferorthopäden & Makler",
-    description: "KI-Automatisierung mit Branchenfokus — DSGVO-konform, sofort einsetzbar, inkl. Team-Schulungen.",
+    title: "Axionea | KI-Automatisierung für den Mittelstand",
+    description: "KI-Automatisierung für den Mittelstand — DSGVO-konform, sofort einsetzbar, inkl. Team-Schulungen.",
     siteName: "Axionea",
     // OG-Image wird automatisch aus app/opengraph-image.tsx generiert
   },
   twitter: {
     card: "summary_large_image",
-    title: "Axionea | KI-Lösungen für Arztpraxen, Kieferorthopäden & Makler",
-    description: "KI-Automatisierung mit Branchenfokus — DSGVO-konform, sofort einsetzbar.",
+    title: "Axionea | KI-Automatisierung für den Mittelstand",
+    description: "KI-Automatisierung für den Mittelstand — DSGVO-konform, sofort einsetzbar.",
     creator: "@axionea",
     // Twitter-Image wird automatisch aus app/opengraph-image.tsx generiert
   },
@@ -109,14 +115,7 @@ export default function RootLayout({
           {children}
           <CookieBanner />
         </ThemeProvider>
-        <Script
-          src={HUBSPOT_FORM_SCRIPT_SRC}
-          strategy="afterInteractive"
-        />
-        <Script
-          src={HUBSPOT_MEETINGS_SCRIPT_SRC}
-          strategy="afterInteractive"
-        />
+        <ConsentScripts />
       </body>
     </html>
   );

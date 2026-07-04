@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useTheme } from "./ThemeProvider";
 import { BookingButton } from "./hubspot";
 
@@ -9,14 +10,16 @@ type NavLink = {
     label: string;
     href: string;
     ariaLabel: string;
+    // Erst ab xl zeigen — verhindert Kollision mit dem Logo auf schmalen Desktops
+    xlOnly?: boolean;
 };
 
-// Direkt in der Bar sichtbar (Desktop) — die wichtigsten Anlaufstellen
+// Direkt in der Bar sichtbar (Desktop) — das Kernangebot; Branchen-Referenzen liegen im Panel
 const PRIMARY_LINKS: NavLink[] = [
-    { label: "Arztpraxen", href: "/ki-fuer-arztpraxen", ariaLabel: "KI für Arztpraxen" },
-    { label: "Kieferorthopäden", href: "/ki-fuer-kieferorthopaeden", ariaLabel: "KI für Kieferorthopäden" },
-    { label: "Makler", href: "/ki-fuer-makler", ariaLabel: "KI für Makler" },
-    { label: "Förderung", href: "/foerderung", ariaLabel: "BAFA & Förderprogramme" },
+    { label: "Services", href: "/#services", ariaLabel: "Alle Services" },
+    { label: "Prozess", href: "/#prozess", ariaLabel: "Unser Prozess" },
+    { label: "ROI-Rechner", href: "/#roi", ariaLabel: "ROI-Rechner öffnen" },
+    { label: "Kontakt", href: "/#kontakt", ariaLabel: "Kontakt aufnehmen" },
 ];
 
 // Im Fächer-Panel: alle Sektionen der Hauptseite + Sub-Pages + Legal
@@ -31,6 +34,7 @@ const PANEL_SECTIONS: PanelSection[] = [
         title: "Plattform",
         links: [
             { label: "Warum Axionea", href: "/#warum", ariaLabel: "Warum Axionea" },
+            { label: "Sicheres Hosting", href: "/#hosting", ariaLabel: "Sicheres Hosting & Compliance" },
             { label: "ROI-Rechner", href: "/#roi", ariaLabel: "ROI-Rechner öffnen" },
             { label: "Services", href: "/#services", ariaLabel: "Alle Services" },
             { label: "Vergleich", href: "/#vergleich", ariaLabel: "Zum Vergleich" },
@@ -46,6 +50,7 @@ const PANEL_SECTIONS: PanelSection[] = [
             { label: "Arztpraxen", href: "/ki-fuer-arztpraxen", ariaLabel: "KI für Arztpraxen" },
             { label: "Kieferorthopäden", href: "/ki-fuer-kieferorthopaeden", ariaLabel: "KI für Kieferorthopäden" },
             { label: "Immobilienmakler", href: "/ki-fuer-makler", ariaLabel: "KI für Makler" },
+            { label: "Steuerberater", href: "/ki-fuer-steuerberater", ariaLabel: "KI für Steuerberater" },
         ],
     },
     {
@@ -123,8 +128,8 @@ export default function AnimatedNavbar() {
                         : "w-[96%] max-w-[1280px] top-[1.2em] md:top-[1.6em]"
                 } ${
                     isPanelOpen
-                        ? "opacity-0 -translate-y-2 pointer-events-none z-[96]"
-                        : "opacity-100 z-[99]"
+                        ? "opacity-0 -translate-y-2 pointer-events-none z-[45]"
+                        : "opacity-100 z-[50]"
                 }`}
                 aria-hidden={isPanelOpen}
             >
@@ -145,9 +150,11 @@ export default function AnimatedNavbar() {
                         }}
                         aria-label="Axionea Startseite"
                     >
-                        <img
+                        <Image
                             src="/assets/logo/Asset 3@4x.png"
                             alt="Axionea Logo"
+                            width={973}
+                            height={870}
                             className={`h-[38px] w-auto transition-all duration-500 ${isDark ? "brightness-0 invert" : ""}`}
                         />
                         <span
@@ -161,7 +168,7 @@ export default function AnimatedNavbar() {
                     {/* ─── Direkte Primary Links (mittig, lg+) ─── */}
                     <ul className="hidden lg:flex items-center gap-7 absolute left-1/2 -translate-x-1/2">
                         {PRIMARY_LINKS.map((link) => (
-                            <li key={link.href}>
+                            <li key={link.href} className={link.xlOnly ? "hidden xl:list-item" : ""}>
                                 <Link
                                     href={link.href}
                                     aria-label={link.ariaLabel}
@@ -207,7 +214,7 @@ export default function AnimatedNavbar() {
             {/* Backdrop */}
             <div
                 onClick={() => setIsPanelOpen(false)}
-                className={`fixed inset-0 z-[97] bg-black/55 backdrop-blur-sm transition-opacity duration-400 ${
+                className={`fixed inset-0 z-[55] bg-black/55 backdrop-blur-sm transition-opacity duration-400 ${
                     isPanelOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
                 }`}
                 aria-hidden="true"
@@ -219,7 +226,7 @@ export default function AnimatedNavbar() {
                 role="dialog"
                 aria-label="Erweiterte Navigation"
                 aria-modal="true"
-                className={`fixed top-0 right-0 bottom-0 z-[98] w-[88%] sm:w-[420px] max-w-full transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                className={`fixed top-0 right-0 bottom-0 z-[60] w-[88%] sm:w-[420px] max-w-full transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
                     isPanelOpen ? "translate-x-0" : "translate-x-full"
                 }`}
             >
@@ -235,9 +242,11 @@ export default function AnimatedNavbar() {
                             className="flex items-center gap-1 hover:opacity-80 transition-opacity"
                             aria-label="Axionea Startseite"
                         >
-                            <img
+                            <Image
                                 src="/assets/logo/Asset 3@4x.png"
                                 alt="Axionea Logo"
+                                width={973}
+                                height={870}
                                 className={`h-[34px] w-auto ${isDark ? "brightness-0 invert" : ""}`}
                             />
                             <span

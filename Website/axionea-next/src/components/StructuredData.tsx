@@ -4,9 +4,11 @@
  * Enthält:
  * - Organization Schema
  * - WebSite Schema mit SearchAction
- * - FAQPage Schema
+ * - FAQPage Schema (gespeist aus src/lib/faq-data.ts — identisch mit FAQ.tsx)
  * - LocalBusiness Schema
  */
+
+import { faqs } from "@/lib/faq-data";
 
 const organizationSchema = {
     "@context": "https://schema.org",
@@ -16,7 +18,7 @@ const organizationSchema = {
     "alternateName": "Axionea",
     "url": "https://www.axionea-solutions.de",
     "logo": "https://www.axionea-solutions.de/assets/logo/Asset%204@4x.png",
-    "description": "KI-Agentur mit Fokus auf Arztpraxen, Kieferorthopäden und Immobilienmakler. DSGVO-konform und EU-AI-Act-ready.",
+    "description": "KI-Automatisierungsagentur für den Mittelstand — Chatbots, KI-Telefonassistenten und Workflow-Automatisierung. DSGVO-konform und EU-AI-Act-ready, mit Referenzen aus Arztpraxen, Kieferorthopädie, Immobilien und Steuerberatung.",
     "foundingDate": "2026-01-01",
     "founders": [
       {"@type": "Person", "name": "Maximilian Zvada", "jobTitle": "CEO & Founder"},
@@ -58,7 +60,8 @@ const localBusinessSchema = {
     "@type": "ProfessionalService",
     "@id": "https://www.axionea-solutions.de/#localbusiness",
     name: "Axionea",
-    image: "https://www.axionea-solutions.de/og-image.png",
+    // Dynamisch generiertes OG-Image (app/opengraph-image.tsx)
+    image: "https://www.axionea-solutions.de/opengraph-image",
     url: "https://www.axionea-solutions.de",
     telephone: "+49-173-1726939",
     email: "info@axionea-solutions.de",
@@ -92,7 +95,6 @@ const localBusinessSchema = {
         "KI-Strategie Beratung",
         "Workflow Automatisierung",
     ],
-    priceRange: "Ab 990€",
     openingHoursSpecification: {
         "@type": "OpeningHoursSpecification",
         dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
@@ -104,67 +106,18 @@ const localBusinessSchema = {
     },
 };
 
+// FAQPage-Schema: exakt die sichtbaren Fragen aus FAQ.tsx (gemeinsame Quelle)
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Was genau macht Axionea?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Axionea automatisiert Geschäftsprozesse mit KI — von Kundensupport-Chatbots über Content-Generierung bis hin zu vollautomatisierten Workflows. Wir analysieren deine Abläufe und implementieren maßgeschneiderte KI-Lösungen."
-      }
+  "mainEntity": faqs.map((faq) => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer,
     },
-    {
-      "@type": "Question",
-      "name": "Brauche ich technisches Wissen, um mit Axionea zu arbeiten?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Nein, überhaupt nicht. Wir kümmern uns um die gesamte technische Umsetzung. Du brauchst keine IT-Abteilung und keine Programmierkenntnisse."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Ist eure KI DSGVO-konform für Arztpraxen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. Wir arbeiten ausschließlich mit EU-Hosting, schließen Auftragsverarbeitungsverträge ab und nutzen KI-Modelle ohne Training auf Kundendaten. Auf Wunsch begleiten wir euch durch die vollständige EU-AI-Act-Compliance."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Bietet Axionea auch Schulungen für Mitarbeitende an?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. Wir schulen euer Team in KI-Grundlagen, im praktischen Umgang mit Tools wie Claude und ChatGPT und in branchenspezifischen Anwendungen. Die Schulungen sind BAFA-förderfähig."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Was kostet ein Einstieg mit Axionea?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Unser KI-Potenzial-Check startet ab 990 € — BAFA-förderfähig mit bis zu 2.800 € Förderung. Daneben bieten wir Festpreis-Pilotprojekte und ein monatliches Retainer-Modell an."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wie laufen eure KI-Schulungen ab?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Wir bieten drei Formate an: einen halbtägigen AI-Fluency-Workshop zu KI-Grundlagen, einen tagesfüllenden Tool-Workshop mit branchenspezifischen Inhalten und ein mehrtägiges Train-the-Trainer-Programm. Alle Formate sind BAFA-förderfähig und können vor Ort oder remote durchgeführt werden."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Sind eure KI-Schulungen förderfähig?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. Unsere Schulungen sind BAFA-förderfähig (Modul „go-digital“ und „Förderung von Unternehmensberatungen für KMU“). Je nach Bundesland und Unternehmensgröße sind bis zu 80 % Förderung möglich. Wir unterstützen euch bei der Antragstellung."
-      }
-    }
-  ]
+  })),
 };
 
 const serviceSchema = {
@@ -181,10 +134,10 @@ const serviceSchema = {
     },
     {
       "@type": "Service",
-      "serviceType": "Lead-Agenten & Chatbots",
+      "serviceType": "Chatbots & Termin-Assistenten",
       "provider": {"@type": "Organization", "name": "Axionea Solutions GbR"},
       "areaServed": ["DE", "AT", "CH"],
-      "description": "Terminvereinbarung, Patienten-FAQ oder Erst-Qualifizierung von Makler-Leads — unsere Agenten antworten sofort, 24/7 und immer freundlich.",
+      "description": "Terminvereinbarung, Kundenfragen oder Vorab-Einordnung neuer Anfragen — unsere Assistenten antworten sofort, rund um die Uhr und immer freundlich.",
       "url": "https://www.axionea-solutions.de/#services"
     },
     {
@@ -192,7 +145,7 @@ const serviceSchema = {
       "serviceType": "Voice Agents (KI-Telefonie)",
       "provider": {"@type": "Organization", "name": "Axionea Solutions GbR"},
       "areaServed": ["DE", "AT", "CH"],
-      "description": "Die Praxis klingelt ununterbrochen? Unser KI-Telefon-Assistent nimmt Anrufe entgegen, beantwortet Fragen und legt Termine direkt in eurem System an.",
+      "description": "Das Telefon klingelt ununterbrochen? Unser KI-Telefon-Assistent nimmt Anrufe entgegen, beantwortet Fragen und legt Termine direkt in eurem System an.",
       "url": "https://www.axionea-solutions.de/#services"
     },
     {
@@ -208,7 +161,7 @@ const serviceSchema = {
       "serviceType": "Wissensassistenten (RAG)",
       "provider": {"@type": "Organization", "name": "Axionea Solutions GbR"},
       "areaServed": ["DE", "AT", "CH"],
-      "description": "Kein langes Suchen mehr. Ein interner Chatbot, der all eure Dokumente, Exposés oder Behandlungsrichtlinien kennt und sofort Antworten liefert.",
+      "description": "Kein langes Suchen mehr. Ein interner Assistent, der all eure Dokumente, Richtlinien und Abläufe kennt und sofort Antworten liefert.",
       "url": "https://www.axionea-solutions.de/#services"
     },
     {
@@ -216,7 +169,7 @@ const serviceSchema = {
       "serviceType": "Branchen-KI-Tools",
       "provider": {"@type": "Organization", "name": "Axionea Solutions GbR"},
       "areaServed": ["DE", "AT", "CH"],
-      "description": "Wir implementieren spezialisierte KI-Lösungen wie automatische Exposé-Texter, KI-Dokumentation für Ärzte oder Bildverbesserung für Immobilien.",
+      "description": "Spezialisierte KI-Lösungen für deine Branche — zum Beispiel automatische Exposé-Texte für Makler oder KI-Dokumentation für Praxen.",
       "url": "https://www.axionea-solutions.de/#services"
     },
     {
@@ -230,6 +183,7 @@ const serviceSchema = {
   ]
 };
 
+// Sitewide-Schemas (Layout): beschreiben die Organisation, nicht einzelne Seiten
 export default function StructuredData() {
     return (
         <>
@@ -245,6 +199,14 @@ export default function StructuredData() {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
             />
+        </>
+    );
+}
+
+// Nur auf der Startseite rendern — FAQ und Services sind dort sichtbarer Content
+export function HomeStructuredData() {
+    return (
+        <>
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}

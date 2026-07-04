@@ -1,28 +1,23 @@
 "use client";
 
-import { useEffect, useId } from "react";
-import { HUBSPOT_FORM, HUBSPOT_FORM_SCRIPT_SRC } from "./config";
+import { useId } from "react";
+import { HUBSPOT_FORM } from "./config";
+import { useConsent } from "@/lib/consent";
+import ConsentNotice from "./ConsentNotice";
 
 /**
  * HubSpot Form V3 Embed.
- * Der globale Script (siehe layout.tsx) erkennt .hs-form-frame Divs via MutationObserver
- * und rendert sie automatisch — auch wenn sie später (z.B. im Modal) gemountet werden.
- * Als Safety-Net injizieren wir das Script zusätzlich beim Mount, falls das Modal
- * vor dem globalen Script lädt.
+ * Der globale Script (siehe layout.tsx) wird genau einmal geladen und erkennt alle
+ * .hs-form-frame Divs — auch später (z.B. im Modal) gemountete — via MutationObserver
+ * und rendert sie automatisch. Diese Komponente injiziert das Script daher NICHT
+ * erneut: doppeltes Laden des Embeds verursacht Render-Races (leeres Formular).
  */
 export default function HubSpotForm() {
+    const consent = useConsent();
     const rawId = useId();
     const targetId = `hs-form-${rawId.replace(/:/g, "")}`;
 
-    useEffect(() => {
-        const script = document.createElement("script");
-        script.src = HUBSPOT_FORM_SCRIPT_SRC;
-        script.defer = true;
-        document.body.appendChild(script);
-        return () => {
-            script.remove();
-        };
-    }, []);
+    if (consent !== "all") return <ConsentNotice kind="form" />;
 
     return (
         <div

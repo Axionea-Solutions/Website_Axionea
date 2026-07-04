@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { createPortal } from "react-dom";
 
 interface ModalProps {
@@ -11,12 +11,6 @@ interface ModalProps {
 }
 
 export default function Modal({ open, onClose, title, children }: ModalProps) {
-    const [mounted, setMounted] = useState(false);
-
-    useEffect(() => {
-        setMounted(true);
-    }, []);
-
     useEffect(() => {
         if (!open) return;
         const onKey = (e: KeyboardEvent) => {
@@ -31,7 +25,9 @@ export default function Modal({ open, onClose, title, children }: ModalProps) {
         };
     }, [open, onClose]);
 
-    if (!open || !mounted) return null;
+    // open startet immer false und wird nur client-seitig per Klick true,
+    // daher rendert das Portal nie während SSR — kein mounted-State nötig.
+    if (!open || typeof document === "undefined") return null;
 
     return createPortal(
         <div
@@ -39,7 +35,7 @@ export default function Modal({ open, onClose, title, children }: ModalProps) {
             aria-modal="true"
             aria-label={title ?? "Dialog"}
             onClick={onClose}
-            className="fixed inset-0 z-[2147483647] flex items-center justify-center bg-black/70 backdrop-blur-sm p-3 sm:p-6"
+            className="fixed inset-0 z-[80] flex items-center justify-center bg-black/70 backdrop-blur-sm p-3 sm:p-6"
         >
             <div
                 onClick={(e) => e.stopPropagation()}

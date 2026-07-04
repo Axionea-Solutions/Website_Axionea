@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import { getConsent, setConsent } from "@/lib/consent";
 
 export default function CookieBanner() {
     const [isVisible, setIsVisible] = useState(false);
@@ -10,8 +11,7 @@ export default function CookieBanner() {
     useEffect(() => {
         // Read local storage only after mount to prevent hydration errors
         const timer = setTimeout(() => {
-            const consent = localStorage.getItem("axionea_cookie_consent");
-            if (!consent) {
+            if (!getConsent()) {
                 setIsVisible(true);
             }
         }, 1500); // Slight delay for better UX (doesn't block initial render)
@@ -20,12 +20,12 @@ export default function CookieBanner() {
     }, []);
 
     const acceptAll = () => {
-        localStorage.setItem("axionea_cookie_consent", "all");
+        setConsent("all");
         setIsVisible(false);
     };
 
     const acceptEssential = () => {
-        localStorage.setItem("axionea_cookie_consent", "essential");
+        setConsent("essential");
         setIsVisible(false);
     };
 
@@ -37,7 +37,7 @@ export default function CookieBanner() {
                     animate={{ y: 0, opacity: 1 }}
                     exit={{ y: 50, opacity: 0 }}
                     transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                    className="fixed bottom-4 left-4 right-4 md:left-auto md:right-8 md:bottom-8 z-[100] md:max-w-sm"
+                    className="fixed bottom-4 left-4 right-4 md:left-auto md:right-8 md:bottom-8 z-[75] md:max-w-sm"
                 >
                     <div className="p-5 md:p-6 rounded-2xl bg-white dark:bg-[#0a0f1d] border border-black/10 dark:border-white/10 shadow-[0_20px_40px_rgba(0,0,0,0.2)] backdrop-blur-xl">
                         <div className="flex items-start gap-4 mb-4">
@@ -46,7 +46,7 @@ export default function CookieBanner() {
                             </div>
                             <div>
                                 <h3 className="text-lg font-bold text-foreground mb-1" style={{ fontFamily: "var(--font-syne)" }}>
-                                    Ihre Privatsphäre
+                                    Deine Privatsphäre
                                 </h3>
                                 <p className="text-sm text-muted-foreground leading-relaxed">
                                     Wir nutzen Cookies zur Verbesserung der Website und für Analysen.

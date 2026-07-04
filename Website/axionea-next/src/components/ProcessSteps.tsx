@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useInView } from "@/hooks/useInView";
 import { BookingButton } from "./hubspot";
 import { LetterReveal } from "./ui/LetterReveal";
@@ -34,11 +35,11 @@ function ProcessCard({
             className={className}
             style={{
                 opacity: isInView ? 1 : 0,
-                transform: isInView ? "translateY(0)" : "translateY(30px)",
-                transition: `all 1.5s cubic-bezier(0.16, 1, 0.3, 1) ${index * 0.25}s`,
+                transform: isInView ? "translateY(0)" : "translateY(16px)",
+                transition: `all 0.7s cubic-bezier(0.16, 1, 0.3, 1) ${index * 0.08}s`,
             }}
         >
-            <div className="group relative h-full rounded-3xl border border-slate-200 bg-white transition-all duration-500 hover:border-sapphire/30 hover:shadow-xl hover:-translate-y-1 overflow-hidden">
+            <div className="group relative h-full rounded-3xl border border-slate-200 bg-white transition-all duration-500 hover:border-sapphire/50 hover:shadow-[0_0_20px_rgba(15,82,186,0.25),0_0_50px_rgba(15,82,186,0.12)] hover:-translate-y-1 overflow-hidden">
                 {/* Content section */}
                 <div className="relative p-6 pb-4">
                     {/* Icon */}
@@ -76,13 +77,12 @@ function ProcessCard({
 
                 {/* Image */}
                 <div className="relative mx-4 mb-4 rounded-2xl overflow-hidden border border-slate-100 bg-slate-50">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
+                    <Image
                         src={imageSrc}
                         alt={imageAlt ?? title}
                         width={1280}
                         height={800}
-                        loading="lazy"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                         className="w-full h-auto opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
                     />
                 </div>
@@ -120,11 +120,11 @@ function PartnershipCard({
             ref={ref}
             style={{
                 opacity: isInView ? 1 : 0,
-                transform: isInView ? "translateY(0)" : "translateY(30px)",
-                transition: `all 1.5s cubic-bezier(0.16, 1, 0.3, 1) ${index * 0.25}s`,
+                transform: isInView ? "translateY(0)" : "translateY(16px)",
+                transition: `all 0.7s cubic-bezier(0.16, 1, 0.3, 1) ${index * 0.08}s`,
             }}
         >
-            <div className="group relative h-full rounded-3xl border border-slate-200 bg-white transition-all duration-500 hover:border-sapphire/30 hover:shadow-xl hover:-translate-y-1 overflow-hidden">
+            <div className="group relative h-full rounded-3xl border border-slate-200 bg-white transition-all duration-500 hover:border-sapphire/50 hover:shadow-[0_0_20px_rgba(15,82,186,0.25),0_0_50px_rgba(15,82,186,0.12)] hover:-translate-y-1 overflow-hidden">
                 {/* Content section */}
                 <div className="relative p-6 pb-4">
                     <div className="flex items-center gap-4 mb-3">
@@ -165,13 +165,12 @@ function PartnershipCard({
 
                 {/* Image */}
                 <div className="relative mx-4 mb-4 mt-6 rounded-2xl overflow-hidden border border-slate-100 bg-slate-50">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
+                    <Image
                         src={imageSrc}
                         alt={imageAlt ?? title}
                         width={1280}
                         height={800}
-                        loading="lazy"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                         className="w-full h-auto opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
                     />
                 </div>
