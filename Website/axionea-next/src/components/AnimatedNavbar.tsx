@@ -14,12 +14,12 @@ type NavLink = {
     xlOnly?: boolean;
 };
 
-// Direkt in der Bar sichtbar (Desktop) — die wichtigsten Anlaufstellen
+// Direkt in der Bar sichtbar (Desktop) — das Kernangebot; Branchen-Referenzen liegen im Panel
 const PRIMARY_LINKS: NavLink[] = [
-    { label: "Arztpraxen", href: "/ki-fuer-arztpraxen", ariaLabel: "KI für Arztpraxen" },
-    { label: "Kieferorthopäden", href: "/ki-fuer-kieferorthopaeden", ariaLabel: "KI für Kieferorthopäden" },
-    { label: "Makler", href: "/ki-fuer-makler", ariaLabel: "KI für Makler" },
-    { label: "Steuerberater", href: "/ki-fuer-steuerberater", ariaLabel: "KI für Steuerberater", xlOnly: true },
+    { label: "Services", href: "/#services", ariaLabel: "Alle Services" },
+    { label: "Prozess", href: "/#prozess", ariaLabel: "Unser Prozess" },
+    { label: "ROI-Rechner", href: "/#roi", ariaLabel: "ROI-Rechner öffnen" },
+    { label: "Kontakt", href: "/#kontakt", ariaLabel: "Kontakt aufnehmen" },
 ];
 
 // Im Fächer-Panel: alle Sektionen der Hauptseite + Sub-Pages + Legal
