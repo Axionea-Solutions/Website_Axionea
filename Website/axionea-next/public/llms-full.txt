@@ -29,7 +29,7 @@
 
 ## Referenz-Branchen im Detail
 
-Eigene Detailseiten: /ki-fuer-arztpraxen, /ki-fuer-kieferorthopaeden, /ki-fuer-makler (Steuerberater-Seite folgt).
+Eigene Detailseiten: /ki-fuer-arztpraxen, /ki-fuer-kieferorthopaeden, /ki-fuer-makler, /ki-fuer-steuerberater.
 
 ### Arztpraxen und Kieferorthopäden
 **Typische Schmerzen:** Telefonleitung dauerklingelt, Personalmangel an der Rezeption, hohe No-Show-Rate, Patientenanfragen außerhalb der Sprechzeiten.

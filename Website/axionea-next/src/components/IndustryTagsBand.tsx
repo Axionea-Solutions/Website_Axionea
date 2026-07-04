@@ -2,13 +2,12 @@
 
 import Link from "next/link";
 
-// Referenz-Branchen mit eigener Landingpage werden verlinkt. Steuerberater
-// bekommt erst einen Link, sobald /ki-fuer-steuerberater existiert.
+// Referenz-Branchen mit eigener Landingpage werden verlinkt.
 const tags: { label: string; icon: string; key?: boolean; href?: string }[] = [
     { label: "Arztpraxen", icon: "M22 12h-4l-3 9L9 3l-3 9H2", key: true, href: "/ki-fuer-arztpraxen" },
     { label: "Kieferorthopäden", icon: "M12 5.5c-2-2-5-2.5-6 .5-1 3 1 6 2.5 9 .8 1.6 1.5 3 3.5 3s2.7-1.4 3.5-3c1.5-3 3.5-6 2.5-9-1-3-4-2.5-6-.5z", key: true, href: "/ki-fuer-kieferorthopaeden" },
     { label: "Immobilienmakler", icon: "M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z", key: true, href: "/ki-fuer-makler" },
-    { label: "Steuerberater", icon: "M4 19.5A2.5 2.5 0 016.5 17H20M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z", key: true },
+    { label: "Steuerberater", icon: "M4 19.5A2.5 2.5 0 016.5 17H20M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z", key: true, href: "/ki-fuer-steuerberater" },
     { label: "Rechtsanwälte", icon: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" },
     { label: "Beautystudios", icon: "M12 2a10 10 0 100 20 10 10 0 000-20z" },
     { label: "Handwerk", icon: "M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16" },
@@ -97,7 +96,7 @@ export default function IndustryTagsBand() {
                     Erprobte Lösungen für <Link href="/ki-fuer-arztpraxen" className="text-foreground font-medium underline underline-offset-4 decoration-sapphire/40 hover:decoration-sapphire transition-colors">Arztpraxen</Link>,{" "}
                     <Link href="/ki-fuer-kieferorthopaeden" className="text-foreground font-medium underline underline-offset-4 decoration-sapphire/40 hover:decoration-sapphire transition-colors">Kieferorthopäden</Link>,{" "}
                     <Link href="/ki-fuer-makler" className="text-foreground font-medium underline underline-offset-4 decoration-sapphire/40 hover:decoration-sapphire transition-colors">Makler</Link> &amp;{" "}
-                    <span className="text-foreground font-medium">Steuerberater</span> — die Technik dahinter funktioniert überall, wo Abläufe sich wiederholen.
+                    <Link href="/ki-fuer-steuerberater" className="text-foreground font-medium underline underline-offset-4 decoration-sapphire/40 hover:decoration-sapphire transition-colors">Steuerberater</Link> — die Technik dahinter funktioniert überall, wo Abläufe sich wiederholen.
                 </p>
             </div>
 

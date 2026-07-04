@@ -10,6 +10,8 @@ type NavLink = {
     label: string;
     href: string;
     ariaLabel: string;
+    // Erst ab xl zeigen — verhindert Kollision mit dem Logo auf schmalen Desktops
+    xlOnly?: boolean;
 };
 
 // Direkt in der Bar sichtbar (Desktop) — die wichtigsten Anlaufstellen
@@ -17,6 +19,7 @@ const PRIMARY_LINKS: NavLink[] = [
     { label: "Arztpraxen", href: "/ki-fuer-arztpraxen", ariaLabel: "KI für Arztpraxen" },
     { label: "Kieferorthopäden", href: "/ki-fuer-kieferorthopaeden", ariaLabel: "KI für Kieferorthopäden" },
     { label: "Makler", href: "/ki-fuer-makler", ariaLabel: "KI für Makler" },
+    { label: "Steuerberater", href: "/ki-fuer-steuerberater", ariaLabel: "KI für Steuerberater", xlOnly: true },
     { label: "Förderung", href: "/foerderung", ariaLabel: "BAFA & Förderprogramme" },
 ];
 
@@ -48,6 +51,7 @@ const PANEL_SECTIONS: PanelSection[] = [
             { label: "Arztpraxen", href: "/ki-fuer-arztpraxen", ariaLabel: "KI für Arztpraxen" },
             { label: "Kieferorthopäden", href: "/ki-fuer-kieferorthopaeden", ariaLabel: "KI für Kieferorthopäden" },
             { label: "Immobilienmakler", href: "/ki-fuer-makler", ariaLabel: "KI für Makler" },
+            { label: "Steuerberater", href: "/ki-fuer-steuerberater", ariaLabel: "KI für Steuerberater" },
         ],
     },
     {
@@ -165,7 +169,7 @@ export default function AnimatedNavbar() {
                     {/* ─── Direkte Primary Links (mittig, lg+) ─── */}
                     <ul className="hidden lg:flex items-center gap-7 absolute left-1/2 -translate-x-1/2">
                         {PRIMARY_LINKS.map((link) => (
-                            <li key={link.href}>
+                            <li key={link.href} className={link.xlOnly ? "hidden xl:list-item" : ""}>
                                 <Link
                                     href={link.href}
                                     aria-label={link.ariaLabel}

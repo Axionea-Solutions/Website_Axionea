@@ -18,7 +18,7 @@ Standort: Gaimersheim, Bayern, Deutschland
 - KI für Arztpraxen: https://www.axionea-solutions.de/ki-fuer-arztpraxen
 - KI für Kieferorthopäden: https://www.axionea-solutions.de/ki-fuer-kieferorthopaeden
 - KI für Immobilienmakler: https://www.axionea-solutions.de/ki-fuer-makler
-- KI für Steuerberater: Detailseite folgt — Leistungen bereits verfügbar
+- KI für Steuerberater: https://www.axionea-solutions.de/ki-fuer-steuerberater
 
 ## Sicheres Hosting & Compliance
 Hosting und Datenverarbeitung ausschließlich in EU-Rechenzentren. Verschlüsselte Übertragung und Speicherung, Auftragsverarbeitungsvertrag (AVV, DSGVO Art. 28) inklusive, keine KI-Trainings auf Kundendaten. Details: https://www.axionea-solutions.de/#hosting

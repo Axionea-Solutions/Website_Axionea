@@ -34,6 +34,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.9,
         },
         {
+            url: `${baseUrl}/ki-fuer-steuerberater`,
+            lastModified: homeLastModified,
+            changeFrequency: 'monthly',
+            priority: 0.9,
+        },
+        {
             url: `${baseUrl}/foerderung`,
             lastModified: foerderungLastModified,
             changeFrequency: 'monthly',
