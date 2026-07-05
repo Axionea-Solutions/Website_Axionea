@@ -9,7 +9,33 @@ import HubSpotForm from './hubspot/HubSpotForm';
 import HubSpotMeetings from './hubspot/HubSpotMeetings';
 
 const WELCOME_MESSAGE =
-    "Hi! Ich bin **Ax**, der digitale Assistent von Axionea. Frag mich zu Services, Förderung oder Datenschutz — oder starte direkt:\n\n[[roi]] [[termin]]";
+    "Hi! Ich bin **Ax**, der digitale Assistent von Axionea. Frag mich zu Services oder Datenschutz, lass dir dein Einsparpotenzial berechnen oder mach den Förder-Check — tippen oder einfach über das Mikrofon sprechen.\n\n[[roi]] [[termin]]";
+
+// Web Speech API: minimale Typen (nicht vollständig in lib.dom enthalten)
+interface SpeechRecognitionEventLike {
+    results: ArrayLike<ArrayLike<{ transcript: string }>>;
+}
+interface SpeechRecognitionLike {
+    lang: string;
+    interimResults: boolean;
+    continuous: boolean;
+    onresult: ((e: SpeechRecognitionEventLike) => void) | null;
+    onend: (() => void) | null;
+    onerror: (() => void) | null;
+    start(): void;
+    stop(): void;
+    abort(): void;
+}
+type SpeechRecognitionConstructor = new () => SpeechRecognitionLike;
+
+function getSpeechRecognition(): SpeechRecognitionConstructor | null {
+    if (typeof window === "undefined") return null;
+    const w = window as unknown as {
+        SpeechRecognition?: SpeechRecognitionConstructor;
+        webkitSpeechRecognition?: SpeechRecognitionConstructor;
+    };
+    return w.SpeechRecognition ?? w.webkitSpeechRecognition ?? null;
+}
 
 export default function ChatBot() {
     const [isOpen, setIsOpen] = useState(false);
@@ -133,6 +159,56 @@ export default function ChatBot() {
     const panelRef = useRef<HTMLDivElement>(null);
     const inputRef = useRef<HTMLInputElement>(null);
     const triggerRef = useRef<HTMLButtonElement>(null);
+
+    // Spracheingabe (Web Speech API) — Button erscheint nur, wenn der Browser sie kann
+    const [isListening, setIsListening] = useState(false);
+    const [voiceSupported, setVoiceSupported] = useState(false);
+    const recognitionRef = useRef<SpeechRecognitionLike | null>(null);
+
+    useEffect(() => {
+        setVoiceSupported(getSpeechRecognition() !== null);
+    }, []);
+
+    // Erkennung stoppen, wenn der Chat geschlossen wird
+    useEffect(() => {
+        if (!isOpen && recognitionRef.current) {
+            recognitionRef.current.abort();
+            recognitionRef.current = null;
+            setIsListening(false);
+        }
+    }, [isOpen]);
+
+    const toggleVoice = () => {
+        if (isListening) {
+            recognitionRef.current?.stop();
+            return;
+        }
+        const SR = getSpeechRecognition();
+        if (!SR) return;
+        const recognition = new SR();
+        recognition.lang = "de-DE";
+        recognition.interimResults = true;
+        recognition.continuous = false;
+        recognition.onresult = (e) => {
+            let transcript = "";
+            for (let i = 0; i < e.results.length; i++) {
+                transcript += e.results[i][0].transcript;
+            }
+            setInput(transcript);
+        };
+        recognition.onend = () => {
+            setIsListening(false);
+            recognitionRef.current = null;
+            inputRef.current?.focus();
+        };
+        recognition.onerror = () => {
+            setIsListening(false);
+            recognitionRef.current = null;
+        };
+        recognitionRef.current = recognition;
+        recognition.start();
+        setIsListening(true);
+    };
 
     // Auto-scroll to bottom of chat
     useEffect(() => {
@@ -328,6 +404,25 @@ export default function ChatBot() {
                                     }}
                                     disabled={isLoading}
                                 />
+                                {voiceSupported && (
+                                    <button
+                                        type="button"
+                                        onClick={toggleVoice}
+                                        aria-label={isListening ? "Spracheingabe stoppen" : "Spracheingabe starten"}
+                                        aria-pressed={isListening}
+                                        className={`rounded-xl w-11 h-11 flex items-center justify-center transition-colors shrink-0 border ${
+                                            isListening
+                                                ? "bg-red-500 border-red-500 text-white animate-pulse"
+                                                : "bg-gray-50 dark:bg-navy-700 border-gray-200 dark:border-white/10 text-gray-500 hover:text-sapphire hover:border-sapphire/40"
+                                        }`}
+                                    >
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                                            <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z" />
+                                            <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
+                                            <line x1="12" x2="12" y1="19" y2="22" />
+                                        </svg>
+                                    </button>
+                                )}
                                 <button
                                     type="submit"
                                     disabled={isLoading || !input.trim()}

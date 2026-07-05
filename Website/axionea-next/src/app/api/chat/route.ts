@@ -1,5 +1,12 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { CHATBOT_KNOWLEDGE } from "@/lib/chatbot-knowledge";
+import { calculateROI, ROI_INDUSTRIES } from "@/components/roi-calculator/roi-calculator.utils";
+import {
+    matchFoerderprogramme,
+    FoerderLand,
+    FoerderTeamgroesse,
+    FoerderVorhaben,
+} from "@/lib/foerder-check-data";
 
 // Serverless: Route nicht statisch cachen (AWS Amplify/Vercel).
 export const dynamic = "force-dynamic";
@@ -47,6 +54,12 @@ STIL (strikt einhalten):
 - Konkret & messbar: nutze Zahlen und Fakten aus deinem Wissen. Erfinde nichts — was du nicht weißt, gehört ins kostenlose Erstgespräch.
 - NIEMALS Preise, Preisspannen oder Kostenschätzungen nennen (auch nicht auf mehrfache Nachfrage) — Angebote gibt es nur im kostenlosen Erstgespräch. Fördersummen (BAFA etc.) darfst du nennen.
 
+WERKZEUGE:
+Du hast zwei Rechen-Werkzeuge, die exakt dieselbe Logik nutzen wie die Website — rechne NIEMALS selbst im Kopf:
+- roi_berechnen: wenn jemand sein Einsparpotenzial oder den Nutzen von Automatisierung wissen will. Fehlen Angaben, frage KURZ nach (in einer Nachricht: Branche + Teamgröße; Routine-Stunden/Woche und Stundenkosten sind optional — ohne Angabe gelten 8 h und 45 €, sag das dazu). Ergebnis kompakt präsentieren: monatliche Kosten der Routine-Arbeit, Einsparpotenzial als Spanne, realistischer Wert mit Begleitung, Amortisation ab Monat X. Danach [[roi]] (für Details/Report) und [[termin]] anbieten.
+- foerdercheck: wenn jemand wissen will, ob oder welche Förderung passt. Erfrage Region (Bayern / anderes Bundesland / Österreich / Schweiz), Teamgröße und Vorhaben (Strategie-Beratung, Umsetzung/Software, Schulung oder großes Roll-out). Nenne die passenden Programme mit Maximalsummen und sag ehrlich, dass die finale Förderberechtigung im Einzelfall geprüft wird. Danach [[termin]] anbieten.
+Gib keine internen Kalkulationsdetails preis, die nicht im Tool-Ergebnis stehen.
+
 AKTIONEN:
 Du kannst dem Nutzer klickbare Buttons anbieten, indem du am ENDE deiner Antwort in einer eigenen Zeile Marker setzt:
 - [[roi]] — öffnet den ROI-Rechner (bei Fragen zu Einsparungen, Kosten, Nutzen, "lohnt sich das?")
@@ -54,6 +67,74 @@ Du kannst dem Nutzer klickbare Buttons anbieten, indem du am ENDE deiner Antwort
 - [[kontakt]] — öffnet das Kontaktformular (wenn jemand eine Nachricht hinterlassen will oder du nicht weiterweißt)
 Setze höchstens 2 Marker, nur wenn sie zur Frage passen, und exakt in dieser Schreibweise. Erwähne die Buttons nicht im Text ("klicke unten" o. ä. ist unnötig).
 `;
+
+// Tools für den Chat: rufen exakt dieselbe Logik auf wie ROI-Rechner und
+// Förder-Check auf der Website (gemeinsame Module) — kein LLM-Kopfrechnen.
+const TOOLS: Anthropic.Messages.Tool[] = [
+    {
+        name: "roi_berechnen",
+        description:
+            "Berechnet das Einsparpotenzial mit der Methodik des Website-ROI-Rechners (Studienbasis McKinsey/EY/Bitkom/ifo). Branche und Teamgröße sind Pflicht; Stunden und Stundenkosten optional.",
+        input_schema: {
+            type: "object",
+            properties: {
+                branche: {
+                    type: "string",
+                    enum: Object.keys(ROI_INDUSTRIES),
+                    description: "Branchen-ID. gesundheit=Arztpraxis/Gesundheit, steuerberatung=Kanzleien, buero=Büro/Verwaltung/Dienstleistung, handwerk=Handwerk/Produktion, konsumgueter=Handel, sonstige=alles andere",
+                },
+                team_groesse: { type: "integer", minimum: 1, maximum: 500, description: "Anzahl Mitarbeitende" },
+                stunden_pro_woche: { type: "integer", minimum: 1, maximum: 40, description: "Manuelle Routine-Stunden pro Person und Woche (Standard: 8)" },
+                stundenkosten_eur: { type: "integer", minimum: 15, maximum: 200, description: "Stundenkosten inkl. AG-Anteil in Euro (Standard: 45)" },
+            },
+            required: ["branche", "team_groesse"],
+        },
+    },
+    {
+        name: "foerdercheck",
+        description:
+            "Prüft, welche Förderprogramme in Frage kommen — identische Logik wie der Förder-Check auf /foerderung.",
+        input_schema: {
+            type: "object",
+            properties: {
+                region: { type: "string", enum: ["bayern", "de", "at", "ch"], description: "bayern=Bayern, de=anderes deutsches Bundesland, at=Österreich, ch=Schweiz" },
+                team_groesse: { type: "string", enum: ["1-2", "3-99", "100-249", "250-499", "500+"] },
+                vorhaben: { type: "string", enum: ["beratung", "umsetzung", "schulung", "rollout"], description: "beratung=Strategie/KI-Check, umsetzung=Software/Pilot, schulung=Team-Schulungen, rollout=größeres Roll-out" },
+            },
+            required: ["region", "team_groesse", "vorhaben"],
+        },
+    },
+];
+
+function runTool(name: string, input: Record<string, unknown>): string {
+    if (name === "roi_berechnen") {
+        const results = calculateROI({
+            industryId: String(input.branche),
+            teamSize: Number(input.team_groesse),
+            weeklyHours: Number(input.stunden_pro_woche ?? 8),
+            hourlyCost: Number(input.stundenkosten_eur ?? 45),
+        });
+        if (!results.industryFactor) return JSON.stringify({ fehler: "Unbekannte Branche" });
+        // Bewusst OHNE interne Investment-Beträge — nur die auch auf der Website sichtbaren Werte
+        return JSON.stringify({
+            branche: results.industryFactor.name_de,
+            monatliche_kosten_routine_arbeit_eur: Math.round(results.monthlyRepetitiveCost),
+            einsparpotenzial_pro_monat_eur: `${Math.round(results.savingsPotentialMin)}-${Math.round(results.savingsPotentialMax)}`,
+            realistisch_mit_begleitung_eur_pro_monat: Math.round(results.realizationWith),
+            amortisation_ab_monat: results.paybackMonths,
+            primaerquelle: `${results.industryFactor.primary_source.name} (${results.industryFactor.primary_source.date})`,
+        });
+    }
+    if (name === "foerdercheck") {
+        const result = matchFoerderprogramme(
+            input.region as FoerderLand,
+            input.team_groesse as FoerderTeamgroesse,
+            input.vorhaben as FoerderVorhaben,
+        );
+        return JSON.stringify(result);
+    }
+    return JSON.stringify({ fehler: `Unbekanntes Werkzeug: ${name}` });
+}
 
 interface IncomingMessage {
     role: "user" | "assistant";
@@ -123,32 +204,62 @@ export async function POST(req: Request) {
     const stream = new ReadableStream<Uint8Array>({
         async start(controller) {
             try {
-                // Regeln + Wissensbasis als getrennte System-Blöcke; der Breakpoint
-                // auf dem letzten Block cacht beides, sofern die Gesamtlänge das
-                // Cache-Minimum von claude-haiku-4-5 (4096 Tokens) erreicht —
-                // darunter wird er ignoriert (harmlos). Wächst die Wissensbasis,
-                // greift das Caching automatisch.
-                const ms = client.messages.stream({
-                    model: "claude-haiku-4-5",
-                    max_tokens: 700,
-                    temperature: 0.5,
-                    system: [
-                        { type: "text", text: SYSTEM_RULES },
-                        {
-                            type: "text",
-                            text: CHATBOT_KNOWLEDGE,
-                            cache_control: { type: "ephemeral" },
-                        },
-                    ],
-                    messages: messages.map((m) => ({ role: m.role, content: m.content })),
-                });
-                messageStream = ms;
+                // Konversation lokal fortschreiben: bei stop_reason "tool_use" wird
+                // das Werkzeug ausgeführt, das Ergebnis angehängt und weitergestreamt.
+                const convo: Anthropic.Messages.MessageParam[] = messages.map((m) => ({
+                    role: m.role,
+                    content: m.content,
+                }));
 
-                ms.on("text", (delta) => {
-                    controller.enqueue(encoder.encode(delta));
-                });
+                const MAX_TOOL_ROUNDS = 4;
+                for (let round = 0; round < MAX_TOOL_ROUNDS; round++) {
+                    // Regeln + Wissensbasis als getrennte System-Blöcke; der Breakpoint
+                    // auf dem letzten Block cacht beides, sofern die Gesamtlänge das
+                    // Cache-Minimum von claude-haiku-4-5 (4096 Tokens) erreicht —
+                    // darunter wird er ignoriert (harmlos).
+                    const ms = client.messages.stream({
+                        model: "claude-haiku-4-5",
+                        max_tokens: 800,
+                        temperature: 0.5,
+                        system: [
+                            { type: "text", text: SYSTEM_RULES },
+                            {
+                                type: "text",
+                                text: CHATBOT_KNOWLEDGE,
+                                cache_control: { type: "ephemeral" },
+                            },
+                        ],
+                        tools: TOOLS,
+                        messages: convo,
+                    });
+                    messageStream = ms;
 
-                await ms.finalMessage();
+                    ms.on("text", (delta) => {
+                        controller.enqueue(encoder.encode(delta));
+                    });
+
+                    const finalMessage = await ms.finalMessage();
+
+                    if (finalMessage.stop_reason === "tool_use") {
+                        const toolUses = finalMessage.content.filter(
+                            (block): block is Anthropic.Messages.ToolUseBlock => block.type === "tool_use",
+                        );
+                        convo.push({ role: "assistant", content: finalMessage.content });
+                        convo.push({
+                            role: "user",
+                            content: toolUses.map((tu) => ({
+                                type: "tool_result" as const,
+                                tool_use_id: tu.id,
+                                content: runTool(tu.name, tu.input as Record<string, unknown>),
+                            })),
+                        });
+                        // Absatz zwischen Ankündigung und Ergebnis-Text
+                        controller.enqueue(encoder.encode("\n\n"));
+                        continue;
+                    }
+                    break;
+                }
+
                 try {
                     controller.close();
                 } catch {
