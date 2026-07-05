@@ -2,103 +2,24 @@
 
 import { useState } from "react";
 import ContactButton from "../hubspot/ContactButton";
+import {
+    FoerderLand,
+    FoerderTeamgroesse,
+    FoerderVorhaben,
+    matchFoerderprogramme,
+} from "@/lib/foerder-check-data";
 
-type Land = "bayern" | "de" | "at" | "ch";
-type Teamgroesse = "1-2" | "3-99" | "100-249" | "250-499" | "500+";
-type Vorhaben = "beratung" | "umsetzung" | "schulung" | "rollout";
+// Matching-Regeln liegen in src/lib/foerder-check-data.ts — gemeinsame Quelle
+// mit dem Chatbot-Tool (api/chat), damit beide identisch prüfen.
 
-interface CheckProgram {
-    name: string;
-    maxLabel: string;
-    /** Maximale Fördersumme in € für die "bis zu"-Headline (0 = Kredit/kostenlos) */
-    maxEur: number;
-    hint: string;
-    match: (land: Land, team: Teamgroesse, vorhaben: Vorhaben) => boolean;
-}
-
-// Vereinfachte Matching-Regeln — Detailbedingungen stehen in den Programmkarten
-// darunter; verbindlich ist immer der offizielle Programmtext (siehe Disclaimer).
-const CHECK_PROGRAMS: CheckProgram[] = [
-    {
-        name: "digital jetzt",
-        maxLabel: "bis 50.000 €",
-        maxEur: 50000,
-        hint: "Investitionen in KI-Software inkl. Mitarbeiter-Qualifizierung, 30–50 % Zuschuss",
-        match: (land, team, vorhaben) =>
-            (land === "de" || land === "bayern") &&
-            ["3-99", "100-249", "250-499"].includes(team) &&
-            (vorhaben === "umsetzung" || vorhaben === "schulung"),
-    },
-    {
-        name: "BAFA go-digital",
-        maxLabel: "bis 16.500 €",
-        maxEur: 16500,
-        hint: "50 % Zuschuss auf Beratung & Umsetzung — wir sind autorisierter Berater",
-        match: (land, team, vorhaben) =>
-            (land === "de" || land === "bayern") &&
-            (team === "1-2" || team === "3-99") &&
-            vorhaben !== "rollout",
-    },
-    {
-        name: "BAFA Beratungsförderung für KMU",
-        maxLabel: "bis 3.500 €",
-        maxEur: 3500,
-        hint: "50–80 % der Beratungskosten für KI-Strategie und -Audit",
-        match: (land, team, vorhaben) =>
-            (land === "de" || land === "bayern") &&
-            ["1-2", "3-99", "100-249"].includes(team) &&
-            vorhaben === "beratung",
-    },
-    {
-        name: "Bayern Digitalbonus",
-        maxLabel: "bis 50.000 €",
-        maxEur: 50000,
-        hint: "Bayern-spezifisch, kombinierbar mit Bundesprogrammen",
-        match: (land, team, vorhaben) =>
-            land === "bayern" &&
-            (team === "3-99" || team === "100-249") &&
-            vorhaben === "umsetzung",
-    },
-    {
-        name: "KfW-Digitalisierungskredit",
-        maxLabel: "bis 25 Mio. €",
-        maxEur: 0,
-        hint: "Zinsverbilligte Finanzierung für größere Roll-outs",
-        match: (land, _team, vorhaben) =>
-            (land === "de" || land === "bayern") && vorhaben === "rollout",
-    },
-    {
-        name: "Mittelstand-Digital Zentren",
-        maxLabel: "kostenlos",
-        maxEur: 0,
-        hint: "Kostenlose Erstberatung und Workshops in der Strategie-Phase",
-        match: (land, _team, vorhaben) =>
-            (land === "de" || land === "bayern") && vorhaben === "beratung",
-    },
-    {
-        name: "aws Digitalisierung",
-        maxLabel: "bis 50.000 €",
-        maxEur: 50000,
-        hint: "50–70 % Förderung für österreichische KMU",
-        match: (land) => land === "at",
-    },
-    {
-        name: "Innosuisse Innovationsschecks",
-        maxLabel: "bis 15.000 CHF",
-        maxEur: 15000,
-        hint: "Für KI-Machbarkeitsstudien mit Forschungspartner",
-        match: (land) => land === "ch",
-    },
-];
-
-const LAND_OPTIONS: { value: Land; label: string }[] = [
+const LAND_OPTIONS: { value: FoerderLand; label: string }[] = [
     { value: "bayern", label: "Bayern" },
     { value: "de", label: "Anderes Bundesland" },
     { value: "at", label: "Österreich" },
     { value: "ch", label: "Schweiz" },
 ];
 
-const TEAM_OPTIONS: { value: Teamgroesse; label: string }[] = [
+const TEAM_OPTIONS: { value: FoerderTeamgroesse; label: string }[] = [
     { value: "1-2", label: "1–2" },
     { value: "3-99", label: "3–99" },
     { value: "100-249", label: "100–249" },
@@ -106,7 +27,7 @@ const TEAM_OPTIONS: { value: Teamgroesse; label: string }[] = [
     { value: "500+", label: "500+" },
 ];
 
-const VORHABEN_OPTIONS: { value: Vorhaben; label: string }[] = [
+const VORHABEN_OPTIONS: { value: FoerderVorhaben; label: string }[] = [
     { value: "beratung", label: "Strategie & KI-Check" },
     { value: "umsetzung", label: "Umsetzung & Software" },
     { value: "schulung", label: "Team-Schulungen" },
@@ -149,15 +70,14 @@ function OptionRow<T extends string>({
 }
 
 export default function FoerderCheck() {
-    const [land, setLand] = useState<Land | null>(null);
-    const [team, setTeam] = useState<Teamgroesse | null>(null);
-    const [vorhaben, setVorhaben] = useState<Vorhaben | null>(null);
+    const [land, setLand] = useState<FoerderLand | null>(null);
+    const [team, setTeam] = useState<FoerderTeamgroesse | null>(null);
+    const [vorhaben, setVorhaben] = useState<FoerderVorhaben | null>(null);
 
     const complete = land !== null && team !== null && vorhaben !== null;
-    const matches = complete
-        ? CHECK_PROGRAMS.filter((p) => p.match(land, team, vorhaben))
-        : [];
-    const maxSum = matches.reduce((acc, p) => Math.max(acc, p.maxEur), 0);
+    const result = complete ? matchFoerderprogramme(land, team, vorhaben) : null;
+    const matches = result?.programme ?? [];
+    const maxSum = result?.maxSummeEur ?? 0;
 
     // Kontext in die URL — HubSpot speichert die Conversion-URL der Einsendung,
     // damit kommt der Lead qualifiziert (Region, Größe, Vorhaben) im CRM an
