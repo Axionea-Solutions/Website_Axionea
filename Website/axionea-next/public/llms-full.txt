@@ -25,7 +25,7 @@
 2. **DSGVO und EU AI Act sind kein Add-On.** Jede Lösung läuft auf EU-Hosting, mit AVV und ohne Training auf Kundendaten. Wir begleiten optional durch die volle EU-AI-Act-Compliance.
 3. **Festpreis statt Stundensätze.** KI-Potenzial-Check als Einstieg (BAFA-förderfähig mit bis zu 2.800 € Förderung), Pilotprojekte zu Festpreisen, optionales monatliches Retainer-Modell. Konkrete Angebote gibt es im kostenlosen Erstgespräch.
 4. **Keine IT-Abteilung beim Kunden nötig.** Wir kümmern uns um Hosting, Integration, Wartung und Monitoring. Kunde bekommt eine funktionierende Lösung, kein Bastelprojekt.
-5. **Förderfähig.** Schulungen über BAFA "go-digital" und "Förderung von Unternehmensberatungen für KMU" — je nach Bundesland und Unternehmensgröße bis zu 80 % Förderung.
+5. **Förderfähig.** Beratung über die BAFA-"Förderung von Unternehmensberatungen für KMU" — je nach Bundesland bis zu 80 % der Beratungskosten.
 
 ## Referenz-Branchen im Detail
 
@@ -116,7 +116,7 @@ Ja. AI-Fluency-Workshops zu KI-Grundlagen, Tool-Workshops mit branchenspezifisch
 Axionea arbeitet mit transparenten Festpreisen statt Pauschal-Preislisten. Der Einstieg ist der KI-Potenzial-Check (BAFA-förderfähig mit bis zu 2.800 € Förderung), danach folgen Festpreis-Pilotprojekte und optional ein monatliches Retainer-Modell. Konkrete Angebote im kostenlosen Erstgespräch.
 
 **Sind eure Schulungen förderfähig?**
-Ja. BAFA "go-digital" und "Förderung von Unternehmensberatungen für KMU". Je nach Bundesland und Unternehmensgröße bis zu 80 % Förderung. Antragsunterstützung inklusive.
+Teilweise. Beratung fördert die BAFA über die "Förderung von Unternehmensberatungen für KMU" mit je nach Bundesland 50 bis 80 % der Kosten. Für Schulungen gibt es je nach Bundesland eigene Programme, kostenlose Workshops bieten die Mittelstand-Digital Zentren. Was passt, klären wir im Erstgespräch, Antragsunterstützung inklusive.
 
 ## Kontakt
 

@@ -56,7 +56,7 @@ KOSTENLOS ist ausschließlich das Erstgespräch (und der Förder-Check auf der W
 
 # Förderung (/foerderung)
 
-KI-Projekte in KMU sind fast immer förderfähig, oft kombinierbar. Wichtigste Programme: digital jetzt (BMWK, bis 50.000 €, KMU 3–499 MA), BAFA go-digital (bis 16.500 €, 50 % Zuschuss — Axionea ist autorisierter Berater), BAFA Beratungsförderung (bis 3.500 €), Bayern Digitalbonus (bis 50.000 €, bayerische KMU), KfW-Digitalisierungskredit, Mittelstand-Digital Zentren (kostenlos). Österreich: aws Digitalisierung (bis 50.000 €). Schweiz: Innosuisse (bis 15.000 CHF). Auf der Förderung-Seite gibt es einen interaktiven Förder-Check (3 Fragen). Axionea unterstützt bei der Antragstellung bis zum Verwendungsnachweis.
+Für KI-Projekte in KMU gibt es mehrere Förderwege, teils kombinierbar. Wichtigste Programme: BAFA Beratungsförderung (bis 3.500 €, 50–80 % der Beratungskosten), Bayern Digitalbonus (bis 50.000 €, bayerische KMU), KfW-Digitalisierungs- und Innovationskredit (zinsverbilligt), Mittelstand-Digital Zentren (kostenlos). Die Programme „digital jetzt“ (bis Ende 2023) und „go-digital“ (bis Ende 2024) sind ausgelaufen: NIEMALS empfehlen und auf Nachfrage sagen, dass sie ausgelaufen sind. Österreich: aws Digitalisierung (bis 50.000 €). Schweiz: Innosuisse (bis 15.000 CHF). Auf der Förderung-Seite gibt es einen interaktiven Förder-Check (3 Fragen). Axionea unterstützt bei der Antragstellung bis zum Verwendungsnachweis.
 
 # ROI-Rechner (/#roi)
 

@@ -6,16 +6,16 @@ import { LetterReveal } from "@/components/ui/LetterReveal";
 import FoerderCheck from "@/components/foerderung/FoerderCheck";
 
 export const metadata: Metadata = {
-    title: "BAFA & Förderprogramme für KI-Projekte | Bis 50.000 € — Axionea",
-    description: "BAFA go-digital, digital jetzt, KfW-Kredite, Bayern Digitalbonus — wir erklären alle Förderprogramme für KI-Projekte in KMU und unterstützen bei der Antragstellung.",
+    title: "BAFA & Förderprogramme für KI-Projekte | KfW, Länder — Axionea",
+    description: "BAFA-Beratungsförderung, KfW-Kredite, Bayern Digitalbonus, Mittelstand-Digital — wir erklären die Förderprogramme für KI-Projekte in KMU und unterstützen bei der Antragstellung.",
     keywords: [
         "BAFA Förderung KI",
-        "BAFA go-digital",
-        "digital jetzt Förderung",
+        "BAFA Beratungsförderung",
         "KI Förderung KMU",
         "Digitalbonus Bayern",
         "KfW Digitalisierungskredit",
         "Förderung Mittelstand KI",
+        "Mittelstand-Digital",
     ],
     alternates: { canonical: "https://www.axionea-solutions.de/foerderung" },
     openGraph: {
@@ -36,26 +36,8 @@ interface Programme {
     badge?: "TOP" | "NEU" | "LAND";
 }
 
+// Stand 07.10.2026: „digital jetzt“ (bis 31.12.2023) und „go-digital“ (bis 31.12.2024) sind ausgelaufen und entfernt.
 const programs: Programme[] = [
-    {
-        name: "digital jetzt",
-        sponsor: "Bundesministerium für Wirtschaft und Klimaschutz (BMWK)",
-        maxAmount: "bis 50.000 €",
-        quote: "30–50 % Förderquote",
-        target: "KMU mit 3–499 Mitarbeitenden",
-        description: "Das größte Förderprogramm für Digitalisierungs-Investitionen in KMU. Förderfähig sind Investitionen in digitale Technologien (inkl. KI-Software) und die Qualifizierung der Mitarbeitenden. KI-Projekte erhalten oft die höchste Förderquote (bis 50 %).",
-        link: "https://www.bmwk.de/Redaktion/DE/Dossier/digital-jetzt.html",
-        badge: "TOP",
-    },
-    {
-        name: "BAFA go-digital",
-        sponsor: "Bundesamt für Wirtschaft und Ausfuhrkontrolle (BAFA)",
-        maxAmount: "bis 16.500 €",
-        quote: "50 % auf max. 30 Beratertage à 1.100 €",
-        target: "KMU mit <100 Mitarbeitenden",
-        description: `Beratungsförderung für Digitalisierungs- und IT-Sicherheits-Projekte. Beratungs- und Umsetzungs­leistungen autorisierter Berater (wir sind authorisiert) werden zu 50 % bezuschusst. Modul „Digitalisierte Geschäftsprozesse" eignet sich für KI-Einführungen.`,
-        link: "https://www.bafa.de/DE/Wirtschaft/Beratung_Finanzierung/go-digital/go_digital_node.html",
-    },
     {
         name: "BAFA Beratungs­förderung für KMU",
         sponsor: "Bundesamt für Wirtschaft und Ausfuhrkontrolle (BAFA)",
@@ -191,11 +173,11 @@ export default function FoerderungPage() {
                                 textShadow: '0 0 16px rgba(125,211,252,0.5), 0 0 40px rgba(56,189,248,0.4), 0 0 90px rgba(15,82,186,0.4)',
                             }}
                         >
-                            <LetterReveal text="Bis zu 50.000 € Förderung für dein KI-Projekt" />
+                            <LetterReveal text="Förderprogramme für dein KI-Projekt" />
                         </h1>
                         <p className="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
                             <LetterReveal
-                                text="BAFA, digital jetzt, KfW, Bayern Digitalbonus — wir kennen die Programme und unterstützen bei der Antragstellung."
+                                text="BAFA, KfW, Mittelstand-Digital und Landesprogramme wie der Bayern Digitalbonus — wir kennen die Programme und unterstützen bei der Antragstellung."
                                 delay={0.2}
                                 stagger={0.012}
                             />
@@ -205,7 +187,7 @@ export default function FoerderungPage() {
                     {/* Intro */}
                     <div className="max-w-3xl mx-auto mb-12">
                         <p className="text-gray-300 text-base md:text-lg leading-relaxed">
-                            KI-Projekte in deutschen KMU sind fast immer förderfähig — oft sogar mehrfach kombinierbar. Das Problem ist nicht die fehlende Förderung, sondern dass viele Unternehmen die passenden Programme nicht kennen oder den Antrags­prozess scheuen. Hier ist die Übersicht der relevantesten Programme für KI-Vorhaben in KMU im DACH-Raum — sortiert nach Höhe und Zugänglichkeit.
+                            Für KI-Projekte in KMU gibt es mehrere Förderwege — vom Zuschuss für die Beratung bis zum zinsgünstigen Kredit für die Umsetzung. Oft ist nicht die fehlende Förderung das Problem, sondern dass viele Unternehmen die passenden Programme nicht kennen oder den Antrags­prozess scheuen. Hier ist die Übersicht der relevantesten Programme für KI-Vorhaben in KMU im DACH-Raum.
                         </p>
                     </div>
 
@@ -247,7 +229,7 @@ export default function FoerderungPage() {
                             Wie wir unterstützen
                         </h2>
                         <p className="text-gray-300 mb-6 leading-relaxed">
-                            Wir sind autorisierter Berater im BAFA go-digital-Programm und kennen die anderen Förder­landschaften aus erster Hand. Konkret heißt das:
+                            Wir kennen die Förder­programme und begleiten dich vom ersten Check bis zum Verwendungs­nachweis. Konkret heißt das:
                         </p>
                         <ul className="space-y-3 text-gray-300">
                             <li className="flex gap-3">
@@ -272,7 +254,7 @@ export default function FoerderungPage() {
                                 <svg className="w-5 h-5 text-sapphire shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7" />
                                 </svg>
-                                <span><strong className="text-white">Stapelbar denken</strong> — bei größeren Projekten kombinieren wir mehrere Programme (z.B. BAFA-Beratung für die Strategie + digital jetzt für die Implementierung).</span>
+                                <span><strong className="text-white">Stapelbar denken</strong> — bei größeren Projekten kombinieren wir mehrere Programme (z.B. BAFA-Beratung für die Strategie + ein Landesprogramm oder KfW-Kredit für die Umsetzung).</span>
                             </li>
                         </ul>
                     </div>
