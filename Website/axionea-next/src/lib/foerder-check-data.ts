@@ -1,6 +1,8 @@
 // Gemeinsame Förder-Check-Logik — genutzt vom interaktiven Check auf
 // /foerderung UND vom Chatbot-Tool (api/chat). Eine Quelle, ein Ergebnis.
 // Vereinfachte Matching-Regeln; verbindlich ist der offizielle Programmtext.
+// Stand 07.10.2026: „digital jetzt“ (Richtlinie bis 31.12.2023) und „go-digital“
+// (beendet zum 31.12.2024) sind ausgelaufen und entfernt.
 
 export type FoerderLand = "bayern" | "de" | "at" | "ch";
 export type FoerderTeamgroesse = "1-2" | "3-99" | "100-249" | "250-499" | "500+";
@@ -16,26 +18,6 @@ export interface CheckProgram {
 }
 
 export const CHECK_PROGRAMS: CheckProgram[] = [
-    {
-        name: "digital jetzt",
-        maxLabel: "bis 50.000 €",
-        maxEur: 50000,
-        hint: "Investitionen in KI-Software inkl. Mitarbeiter-Qualifizierung, 30–50 % Zuschuss",
-        match: (land, team, vorhaben) =>
-            (land === "de" || land === "bayern") &&
-            ["3-99", "100-249", "250-499"].includes(team) &&
-            (vorhaben === "umsetzung" || vorhaben === "schulung"),
-    },
-    {
-        name: "BAFA go-digital",
-        maxLabel: "bis 16.500 €",
-        maxEur: 16500,
-        hint: "50 % Zuschuss auf Beratung & Umsetzung — wir sind autorisierter Berater",
-        match: (land, team, vorhaben) =>
-            (land === "de" || land === "bayern") &&
-            (team === "1-2" || team === "3-99") &&
-            vorhaben !== "rollout",
-    },
     {
         name: "BAFA Beratungsförderung für KMU",
         maxLabel: "bis 3.500 €",
@@ -60,17 +42,17 @@ export const CHECK_PROGRAMS: CheckProgram[] = [
         name: "KfW-Digitalisierungskredit",
         maxLabel: "bis 25 Mio. €",
         maxEur: 0,
-        hint: "Zinsverbilligte Finanzierung für größere Roll-outs",
+        hint: "Zinsverbilligte Finanzierung für Digitalisierungs- und Innovationsvorhaben",
         match: (land, _team, vorhaben) =>
-            (land === "de" || land === "bayern") && vorhaben === "rollout",
+            (land === "de" || land === "bayern") && (vorhaben === "rollout" || vorhaben === "umsetzung"),
     },
     {
         name: "Mittelstand-Digital Zentren",
         maxLabel: "kostenlos",
         maxEur: 0,
-        hint: "Kostenlose Erstberatung und Workshops in der Strategie-Phase",
+        hint: "Kostenlose Erstberatung, Workshops und Schulungen zur Digitalisierung",
         match: (land, _team, vorhaben) =>
-            (land === "de" || land === "bayern") && vorhaben === "beratung",
+            (land === "de" || land === "bayern") && (vorhaben === "beratung" || vorhaben === "schulung"),
     },
     {
         name: "aws Digitalisierung",
