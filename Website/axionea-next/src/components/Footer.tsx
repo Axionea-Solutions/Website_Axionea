@@ -75,7 +75,7 @@ export default function Footer() {
                     AXIONEA
                 </h2>
                 <p className="text-muted-foreground text-lg mb-8 max-w-md">
-                    KI-Automatisierung für den Mittelstand — DSGVO-konform, messbar und persönlich betreut.
+                    KI-Automatisierung für den Mittelstand — EU-gehostet, messbar und persönlich betreut.
                 </p>
 
                 {/* CTA Button — öffnet HubSpot Kontaktformular im Modal */}

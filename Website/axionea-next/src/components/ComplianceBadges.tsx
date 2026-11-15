@@ -14,12 +14,12 @@ const facts = [
     },
     {
         title: "Durchgehend verschlüsselt",
-        description: "Verschlüsselte Übertragung (TLS) und verschlüsselte Speicherung — Stand der Technik nach DSGVO Art. 32.",
+        description: "Verschlüsselte Übertragung (TLS) und verschlüsselte Speicherung.",
         icon: <Lock className="w-6 h-6 text-sapphire" aria-hidden="true" />,
     },
     {
-        title: "AVV & DSGVO Art. 28",
-        description: "Auftragsverarbeitungsvertrag inklusive. Keine KI-Trainings auf euren Kunden- oder Geschäftsdaten.",
+        title: "Vertrag zur Auftragsverarbeitung",
+        description: "AVV nach Art. 28 DSGVO mit jedem Projekt. Keine KI-Trainings auf euren Kunden- oder Geschäftsdaten.",
         icon: <FileCheck className="w-6 h-6 text-sapphire" aria-hidden="true" />,
     },
     {
@@ -68,10 +68,10 @@ export default function ComplianceBadges() {
                         SICHERES HOSTING
                     </span>
                     <h2 className="text-[clamp(32px,5vw,56px)] font-bold tracking-tight leading-tight mb-4" style={{ fontFamily: "var(--font-syne)" }}>
-                        <LetterReveal text="Sicheres Hosting & Compliance" />
+                        <LetterReveal text="Sicheres Hosting & Datenschutz" />
                     </h2>
                     <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-                        <LetterReveal text="Deine KI läuft auf sicherer Infrastruktur in Europa — DSGVO-konform, EU-AI-Act-ready und ohne dass deine Daten je zum Trainingsmaterial werden." delay={0.2} stagger={0.015} />
+                        <LetterReveal text="Deine KI läuft in EU-Rechenzentren, mit Vertrag zur Auftragsverarbeitung und ohne dass deine Daten zum Trainingsmaterial werden." delay={0.2} stagger={0.015} />
                     </p>
                 </div>
 

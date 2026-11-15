@@ -457,7 +457,7 @@ export default function ServicesGrid() {
                     <ServiceCard
                         index={0}
                         title="KI-Strategie & Audit"
-                        description="Von KI-Potenzialanalyse über EU-AI-Act-Compliance bis zur Tool-Auswahl — wir zeigen dir genau wo KI bei dir Sinn macht. BAFA-förderfähig."
+                        description="Von der KI-Potenzialanalyse bis zur Tool-Auswahl — wir zeigen dir genau, wo KI bei dir Sinn macht. Förderung je nach Beruf, Bundesland und Programm möglich."
                         illustration={<StrategyIllustration />}
                     />
                     <ServiceCard
@@ -493,7 +493,7 @@ export default function ServicesGrid() {
                     <ServiceCard
                         index={6}
                         title="KI-Schulungen"
-                        description="Wir machen dein Team KI-fit. Praxisnahe KI-Schulungen, Tool-Trainings und Schulung eurer internen KI-Verantwortlichen — BAFA-förderfähig."
+                        description="Wir machen dein Team KI-fit. Praxisnahe KI-Schulungen, Tool-Trainings und Schulung eurer internen KI-Verantwortlichen."
                         illustration={<TrainingIllustration />}
                         className="md:col-span-2 lg:col-span-1 lg:col-start-2"
                     />

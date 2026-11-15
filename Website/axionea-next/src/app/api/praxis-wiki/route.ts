@@ -60,7 +60,7 @@ PRAXIS-ORGANISATION:
 - Notfälle werden erkannt und priorisiert ans Team weitergeleitet.
 
 DATENSCHUTZ:
-- Patientendaten werden DSGVO-konform und EU-gehostet verarbeitet; sensible Daten (DSGVO Art. 9) erhalten besonderen Schutz.
+- Patientendaten werden EU-gehostet und mit Vertrag zur Auftragsverarbeitung verarbeitet.
 
 Halte dich strikt an diese Wissensbasis. Erfinde keine Preise, Fristen oder Behandlungsdetails, die hier nicht stehen — sage stattdessen "Das klärt am besten das Praxisteam".`;
 

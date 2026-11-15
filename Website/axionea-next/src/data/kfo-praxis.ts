@@ -226,13 +226,12 @@ export const kfoServiceCards: PraxisServiceCard[] = [
         phase: "Inklusive",
         title: "Schulungs-Workshop für das ganze Team",
         description:
-            "Vier-Modul-Workshop, halbtags, vor Ort oder remote. Aus skeptischen Mitarbeitenden werden Anwender:innen. BAFA-förderfähig.",
+            "Vier-Modul-Workshop, halbtags, vor Ort oder remote. Aus skeptischen Mitarbeitenden werden Anwender:innen.",
         features: [
             "Modul 1: KI verstehen ohne Jargon",
             "Modul 2: Prompt-Engineering hands-on",
             "Modul 3: Quick Wins für den Praxisalltag",
             "Modul 4: Eigene Use Cases identifizieren",
-            "BAFA-Antrag wird mit begleitet",
             "Optional vor Ort",
         ],
         iconKey: "users",
@@ -276,7 +275,7 @@ export const kfoPhases: PraxisPhase[] = [
 
 export const kfoRoadmapBanner = {
     claim: "Wir bauen nicht einmal und verschwinden. Wir bleiben dran.",
-    subtitle: "Durchlaufend: Partnerschaft, monatliche Reports, Team-Schulung, BAFA-Begleitung",
+    subtitle: "Durchlaufend: Partnerschaft, monatliche Reports, Team-Schulung, Förder-Check",
 };
 
 /* ──────────── Knowledge-Base-Architektur ──────────── */
@@ -296,7 +295,7 @@ export const knowledgeSources: KnowledgeSource[] = [
 
 export const knowledgeBase = {
     title: "Knowledge Base · euer zentrales Praxis-Gehirn",
-    subtitle: "DSGVO-konform · EU-gehostet · rollenbasierter Zugriff",
+    subtitle: "AVV · EU-gehostet · rollenbasierter Zugriff",
     categories: [
         { title: "Behandlungs-Wiki", detail: "SOPs · Standards · Specials" },
         { title: "Abrechnung & FAQs", detail: "GOZ · BEMA · Patienten-FAQs" },
@@ -330,12 +329,12 @@ export const kfoDifferentiators: PraxisDifferentiator[] = [
         iconKey: "vault",
     },
     {
-        title: "BAFA-Antrag inklusive",
-        description: "Bis zu 2.800 € Förderung.",
+        title: "Förder-Check inklusive",
+        description: "Wir prüfen, welche Programme passen.",
         iconKey: "badgeEuro",
     },
     {
-        title: "DSGVO & EU-Hosting",
+        title: "AVV & EU-Hosting",
         description: "Patientendaten bleiben sicher.",
         iconKey: "shieldCheck",
     },
@@ -355,24 +354,24 @@ export const kfoDifferentiators: PraxisDifferentiator[] = [
 
 export const kfoTrustIntro = {
     eyebrow: "FÖRDERUNG & SICHERHEIT",
-    title: "Gefördert starten · Sicher betrieben",
-    subtitle: "Bis zu 2.800 € BAFA-Förderung und DSGVO als Standard — nicht als Aufpreis",
+    title: "Förderung prüfen · Sicher betreiben",
+    subtitle: "Förderung je nach Bundesland und Programm, AVV und EU-Hosting als Standard — nicht als Aufpreis",
 };
 
 export const kfoTrustCards: TrustCard[] = [
     {
-        title: "BAFA-Förderung",
+        title: "Förderung",
         iconKey: "badgeEuro",
         points: [
-            "Bis zu 2.800 € pro Antrag",
-            "Wir begleiten den Antragsprozess",
-            "Förderfähig: Beratung, Implementierung, Schulung",
+            "Ob eine Förderung passt, hängt von Bundesland und Programm ab",
+            "Ob gefördert wird, entscheidet die Förderstelle",
+            "Erste Einschätzung in 30 Sekunden im Förder-Check",
         ],
-        ctaLabel: "Förderung prüfen lassen",
-        ctaHref: "/#kontakt",
+        ctaLabel: "Förder-Check starten",
+        ctaHref: "/foerderung#foerder-check",
     },
     {
-        title: "DSGVO & Sicherheit",
+        title: "Datenschutz & Sicherheit",
         iconKey: "shieldCheck",
         points: [
             "AVV als Standard mit jedem Projekt",
@@ -400,7 +399,7 @@ export const kfoFaqs: PraxisFAQ[] = [
     {
         question: "Wie wird die DSGVO bei sensiblen Gesundheitsdaten gewahrt?",
         answer:
-            "EU-Hosting, AVV, keine Trainingsnutzung der Daten. Patienten geben explizit Einwilligung vor dem Bilder-Upload. Das gesamte System ist auf DSGVO Art. 9 (besondere Kategorien) ausgelegt.",
+            "EU-Hosting, AVV, keine Trainingsnutzung der Daten. Patienten geben explizit Einwilligung vor dem Bilder-Upload.",
     },
     {
         question: "Integriert ihr in unser PVS?",

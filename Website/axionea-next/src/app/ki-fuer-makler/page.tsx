@@ -5,7 +5,7 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
     title: "KI für Immobilienmakler | Exposé-Anfragen 24/7 — Axionea",
-    description: "KI-Lösungen für Immobilienmakler: 24/7 Exposé-Anfragen, automatische Lead-Qualifizierung, Dokumentenanalyse. Mehr Zeit für Vor-Ort-Termine. DSGVO-konform.",
+    description: "KI-Lösungen für Immobilienmakler: 24/7 Exposé-Anfragen, automatische Lead-Qualifizierung, Dokumentenanalyse. Mehr Zeit für Vor-Ort-Termine. EU-Hosting und AVV.",
     keywords: [
         "KI für Makler",
         "KI Immobilienmakler",
@@ -85,11 +85,11 @@ export default function KiFuerMakler() {
                     },
                     {
                         question: "Wie ist das mit der DSGVO bei Interessenten-Daten?",
-                        answer: "EU-Hosting, AVV, keine Training-Nutzung der Daten. Wir setzen außerdem auf transparente Bot-Kennzeichnung gemäß EU AI Act — Interessenten wissen immer, mit wem sie schreiben.",
+                        answer: "EU-Hosting, AVV, keine Training-Nutzung der Daten. Wir setzen außerdem auf transparente Bot-Kennzeichnung — Interessenten wissen immer, mit wem sie schreiben.",
                     },
                     {
                         question: "Was kostet das ungefähr?",
-                        answer: "Das hängt vom Umfang ab — pauschale Preislisten gibt es bei uns nicht. Der Einstieg ist ein KI-Potenzial-Check (BAFA-förderfähig), Pilotprojekte setzen wir zum Festpreis um. Was das für dein Büro konkret heißt, klären wir im kostenlosen Erstgespräch.",
+                        answer: "Das hängt vom Umfang ab — pauschale Preislisten gibt es bei uns nicht. Der Einstieg ist ein KI-Potenzial-Check, Pilotprojekte setzen wir zum Festpreis um. Was das für dein Büro konkret heißt, klären wir im kostenlosen Erstgespräch. Ob eine Förderung in Frage kommt, hängt von Beruf, Bundesland und Programm ab, eine erste Einschätzung gibt der Förder-Check auf unserer Förderseite.",
                     },
                 ]}
                 ctaText="Mehr Provision durch weniger Routine?"

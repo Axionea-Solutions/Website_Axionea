@@ -68,7 +68,7 @@ export default async function Image() {
                     }}
                 >
                     <span style={{ color: "#4d94ff", fontSize: "14px", fontWeight: 600, letterSpacing: "3px", textTransform: "uppercase" }}>
-                        KI-AUTOMATISIERUNG · SOFORT EINSETZBAR · DSGVO-KONFORM
+                        KI-AUTOMATISIERUNG · SOFORT EINSETZBAR · EU-HOSTING
                     </span>
                 </div>
 

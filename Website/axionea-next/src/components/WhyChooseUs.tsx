@@ -211,7 +211,7 @@ export default function WhyChooseUs() {
                     <BenefitCard
                         index={1}
                         title="Deine Daten bleiben deine Daten"
-                        description="EU-Hosting, DSGVO-konform, AVV inklusive — und keine KI-Trainings auf euren Kunden- oder Geschäftsdaten. Datenschutz ist bei uns Standard, nicht Aufpreis."
+                        description="EU-Hosting, AVV inklusive — und keine KI-Trainings auf euren Kunden- oder Geschäftsdaten. Datenschutz ist bei uns Standard, nicht Aufpreis."
                         illustration={<ClockIllustration />}
                     />
                     <BenefitCard

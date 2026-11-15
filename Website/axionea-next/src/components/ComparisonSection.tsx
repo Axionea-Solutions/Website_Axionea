@@ -8,7 +8,7 @@ import { ContactButton } from "./hubspot";
 
 const axioneaFeatures = [
     "Echte Entwickler — keine zusammengeklickten Bastellösungen",
-    "DSGVO-konform & EU-Hosting — deine Daten bleiben sicher",
+    "EU-Hosting & Vertrag zur Auftragsverarbeitung — deine Daten bleiben sicher",
     "Erprobt in echten Betrieben — von der Praxis bis zur Kanzlei",
     "Fairer Festpreis — wir behalten deinen ROI im Blick",
     "Läuft mit deiner bestehenden Software — kein Umstieg",

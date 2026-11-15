@@ -5,7 +5,7 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
     title: "KI für Steuerberater | Mandantenanfragen & Belege automatisieren — Axionea",
-    description: "KI-Lösungen für Steuerkanzleien: Mandanten-Assistent für Standardfragen, automatische Beleg-Vorsortierung, Fristen-Erinnerungen. DSGVO-konform, EU-Hosting. Kostenloses Erstgespräch.",
+    description: "KI-Lösungen für Steuerkanzleien: Mandanten-Assistent für Standardfragen, automatische Beleg-Vorsortierung, Fristen-Erinnerungen. EU-Hosting, Vertrag zur Auftragsverarbeitung. Kostenloses Erstgespräch.",
     keywords: [
         "KI für Steuerberater",
         "KI Steuerkanzlei",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     alternates: { canonical: "https://www.axionea-solutions.de/ki-fuer-steuerberater" },
     openGraph: {
         title: "KI für Steuerberater | Axionea",
-        description: "Mandanten-Assistent, Beleg-Vorsortierung, Fristen-Automatik — DSGVO-konform, sofort einsetzbar.",
+        description: "Mandanten-Assistent, Beleg-Vorsortierung, Fristen-Automatik — EU-Hosting, sofort einsetzbar.",
         url: "https://www.axionea-solutions.de/ki-fuer-steuerberater",
     },
 };
@@ -88,11 +88,11 @@ export default function KiFuerSteuerberater() {
                     },
                     {
                         question: "Was passiert bei fachlichen oder heiklen Mandantenfragen?",
-                        answer: "Der Assistent beantwortet nur Organisatorisches (Fristen, Unterlagen, Status) und gibt keine Steuerberatung. Fachliche Fragen erkennt er und übergibt sie priorisiert an euer Team — der Mandant weiß dabei jederzeit, dass er mit einem Assistenten schreibt (EU-AI-Act-konforme Kennzeichnung).",
+                        answer: "Der Assistent beantwortet nur Organisatorisches (Fristen, Unterlagen, Status) und gibt keine Steuerberatung. Fachliche Fragen erkennt er und übergibt sie priorisiert an euer Team — der Mandant weiß dabei jederzeit, dass er mit einem Assistenten schreibt.",
                     },
                     {
                         question: "Was kostet das ungefähr?",
-                        answer: "Das hängt vom Umfang ab — pauschale Preislisten gibt es bei uns nicht. Der Einstieg ist ein KI-Potenzial-Check (BAFA-förderfähig mit bis zu 2.800 € Förderung), danach wisst ihr genau, was sich für eure Kanzlei lohnt. Pilotprojekte setzen wir zum Festpreis um — euer konkretes Angebot bekommt ihr im kostenlosen Erstgespräch.",
+                        answer: "Das hängt vom Umfang ab — pauschale Preislisten gibt es bei uns nicht. Der Einstieg ist ein KI-Potenzial-Check, danach wisst ihr genau, was sich für eure Kanzlei lohnt. Pilotprojekte setzen wir zum Festpreis um — euer konkretes Angebot bekommt ihr im kostenlosen Erstgespräch. Ob für eure Kanzlei eine Förderung in Frage kommt, etwa ein KfW-Kredit mit Zuschuss, hängt von Bundesland und Vorhaben ab, ob gefördert wird, entscheidet die Förderstelle.",
                     },
                 ]}
                 ctaText="Mehr Beratung, weniger Verwaltung?"

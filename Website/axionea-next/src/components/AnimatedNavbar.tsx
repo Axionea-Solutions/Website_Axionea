@@ -34,7 +34,7 @@ const PANEL_SECTIONS: PanelSection[] = [
         title: "Plattform",
         links: [
             { label: "Warum Axionea", href: "/#warum", ariaLabel: "Warum Axionea" },
-            { label: "Sicheres Hosting", href: "/#hosting", ariaLabel: "Sicheres Hosting & Compliance" },
+            { label: "Sicheres Hosting", href: "/#hosting", ariaLabel: "Sicheres Hosting & Datenschutz" },
             { label: "ROI-Rechner", href: "/#roi", ariaLabel: "ROI-Rechner öffnen" },
             { label: "Services", href: "/#services", ariaLabel: "Alle Services" },
             { label: "Vergleich", href: "/#vergleich", ariaLabel: "Zum Vergleich" },
@@ -56,7 +56,7 @@ const PANEL_SECTIONS: PanelSection[] = [
     {
         title: "Support",
         links: [
-            { label: "Förderung & BAFA", href: "/foerderung", ariaLabel: "BAFA & Förderprogramme" },
+            { label: "Förderung", href: "/foerderung", ariaLabel: "Förderprogramme und Förder-Check" },
             { label: "Kontakt", href: "/#kontakt", ariaLabel: "Kontakt aufnehmen" },
             { label: "Impressum", href: "/impressum", ariaLabel: "Impressum" },
             { label: "Datenschutz", href: "/datenschutz", ariaLabel: "Datenschutz" },

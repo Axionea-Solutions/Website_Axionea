@@ -20,7 +20,7 @@ import {
 export const metadata: Metadata = {
     title: "KI für Kieferorthopäden | Aligner-Anfragen automatisieren — Axionea",
     description:
-        "KI-Lösungen für Kieferorthopädie-Praxen: Aligner-Anfragen 24/7, Konsultations-Routing, automatische Recall-Erinnerungen. DSGVO-konform, sofort einsetzbar.",
+        "KI-Lösungen für Kieferorthopädie-Praxen: Aligner-Anfragen 24/7, Konsultations-Routing, automatische Recall-Erinnerungen. EU-Hosting, sofort einsetzbar.",
     keywords: [
         "KI für Kieferorthopäden",
         "Aligner Anfragen automatisieren",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: "KI für Kieferorthopäden | Axionea",
         description:
-            "DSGVO-konforme KI für Aligner-Anfragen, Recalls, Konsultations-Routing — sofort einsetzbar.",
+            "KI für Aligner-Anfragen, Recalls, Konsultations-Routing — EU-Hosting, sofort einsetzbar.",
         url: "https://www.axionea-solutions.de/ki-fuer-kieferorthopaeden",
     },
 };

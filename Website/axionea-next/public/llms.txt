@@ -1,29 +1,29 @@
 # Axionea — KI-Automatisierung für den Mittelstand
 
-> Axionea entwickelt DSGVO-konforme KI-Automatisierungen für KMU im DACH-Raum: Chatbots, KI-Telefonassistenten, Workflow-Automatisierung und Schulungen — EU-Hosting, Festpreise, BAFA-förderfähig.
+> Axionea entwickelt KI-Automatisierungen für KMU im DACH-Raum: Chatbots, KI-Telefonassistenten, Workflow-Automatisierung und Schulungen — EU-Hosting, Vertrag zur Auftragsverarbeitung, Festpreise.
 
 ## Wichtigste Seiten
 
 - [Startseite](https://www.axionea-solutions.de/): Services, ROI-Rechner, sicheres Hosting, FAQ
-- [Förderung & BAFA](https://www.axionea-solutions.de/foerderung): Förderprogramme für KI-Projekte (bis 50.000 €)
+- [Förderung](https://www.axionea-solutions.de/foerderung): Förderprogramme für KI-Projekte mit Förder-Check
 - [KI für Arztpraxen](https://www.axionea-solutions.de/ki-fuer-arztpraxen): Telefonassistent, Terminbuchung, Praxis-Automatisierung
 - [KI für Kieferorthopäden](https://www.axionea-solutions.de/ki-fuer-kieferorthopaeden): Praxis-Wiki, Patientenkommunikation
 - [KI für Immobilienmakler](https://www.axionea-solutions.de/ki-fuer-makler): Exposé-Anfragen, Lead-Qualifizierung, Dokumentenanalyse
 - [KI für Steuerberater](https://www.axionea-solutions.de/ki-fuer-steuerberater): Mandanten-Assistent, Beleg-Vorsortierung, Fristen-Automatik
 
 ## Über uns
-Axionea entwickelt praxiserprobte, DSGVO-konforme und EU-AI-Act-ready KI-Automatisierungen für kleine und mittelständische Unternehmen im DACH-Raum — Chatbots, KI-Telefonassistenten, Workflow-Automatisierung und KI-Schulungen. Besonders viel Erfahrung haben wir in Arztpraxen, bei Kieferorthopäden, Immobilienmaklern und Steuerberatern gesammelt; die Lösungen funktionieren in jeder Branche mit wiederkehrenden Abläufen.
+Axionea entwickelt praxiserprobte KI-Automatisierungen mit EU-Hosting und Vertrag zur Auftragsverarbeitung für kleine und mittelständische Unternehmen im DACH-Raum — Chatbots, KI-Telefonassistenten, Workflow-Automatisierung und KI-Schulungen. Besonders viel Erfahrung haben wir in Arztpraxen, bei Kieferorthopäden, Immobilienmaklern und Steuerberatern gesammelt; die Lösungen funktionieren in jeder Branche mit wiederkehrenden Abläufen.
 Gegründet: 01.01.2026
 Standort: Gaimersheim, Bayern, Deutschland
 
 ## Unsere KI-Services
-1. KI-Strategie & Audit (Potenzialanalyse, Tool-Auswahl, EU-AI-Act-Compliance) — Festpreis, BAFA-förderfähig
-2. Chatbots & Termin-Assistenten (24/7, Web/WhatsApp, DSGVO-konform)
+1. KI-Strategie & Audit (Potenzialanalyse, Tool-Auswahl, ROI-Modellierung) — Festpreis
+2. Chatbots & Termin-Assistenten (24/7, Web/WhatsApp, EU-Hosting)
 3. KI-Telefonassistent (Voice AI für Terminbuchungen & FAQ)
 4. Backoffice-Automatisierung (CRM, Kalender, E-Mail — Integration statt Umstieg)
 5. Interne Wissens-Chatbots (Antworten aus euren eigenen Dokumenten)
 6. Branchen-KI-Tools (z. B. Exposé-Texter für Makler, KI-Dokumentation für Praxen)
-7. KI-Schulungen (AI-Fluency-Workshops, Tool-Trainings, Train-the-Trainer — BAFA-förderfähig)
+7. KI-Schulungen (AI-Fluency-Workshops, Tool-Trainings, Train-the-Trainer)
 
 ## Referenz-Branchen (eigene Detailseiten)
 - KI für Arztpraxen: https://www.axionea-solutions.de/ki-fuer-arztpraxen
@@ -31,7 +31,7 @@ Standort: Gaimersheim, Bayern, Deutschland
 - KI für Immobilienmakler: https://www.axionea-solutions.de/ki-fuer-makler
 - KI für Steuerberater: https://www.axionea-solutions.de/ki-fuer-steuerberater
 
-## Sicheres Hosting & Compliance
+## Sicheres Hosting & Datenschutz
 Hosting und Datenverarbeitung ausschließlich in EU-Rechenzentren. Verschlüsselte Übertragung und Speicherung, Auftragsverarbeitungsvertrag (AVV, DSGVO Art. 28) inklusive, keine KI-Trainings auf Kundendaten. Details: https://www.axionea-solutions.de/#hosting
 
 ## Prozess
@@ -41,7 +41,7 @@ Hosting und Datenverarbeitung ausschließlich in EU-Rechenzentren. Verschlüssel
 Danach: langfristige Betreuung und Team-Schulung.
 
 ## Förderung
-BAFA-Förderung für Beratung und Schulungen — bis zu 2.800 € Zuschuss möglich. Details: https://www.axionea-solutions.de/foerderung
+Ob eine Förderung in Frage kommt, hängt von Beruf, Bundesland und Programm ab, und ob gefördert wird, entscheidet die Förderstelle. Eine erste Einschätzung gibt der Förder-Check: https://www.axionea-solutions.de/foerderung
 
 ## Kontakt
 Website: https://www.axionea-solutions.de
