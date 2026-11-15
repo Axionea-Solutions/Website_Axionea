@@ -337,7 +337,7 @@ export default function ProcessSteps() {
                             "AI-Fluency-Workshops für alle Mitarbeitenden",
                             "Branchenspezifische Tool-Trainings",
                             "Train-the-Trainer für interne KI-Botschafter",
-                            "BAFA-förderfähig — bis zu 80 % Förderung möglich",
+                            "Förderung je nach Bundesland und Programm möglich — siehe Förder-Check",
                         ]}
                         imageSrc="/assets/process/card-05-schulungen-v2.svg"
                         imageAlt="Axionea KI-Schulungen — Academy Dashboard mit Lernpfad, 4D-Framework und Zertifikaten"

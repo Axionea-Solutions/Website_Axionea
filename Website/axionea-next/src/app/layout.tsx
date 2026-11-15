@@ -30,7 +30,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.axionea-solutions.de"),
   title: "Axionea | KI-Automatisierung für den Mittelstand",
-  description: "KI-Automatisierung für den Mittelstand: Chatbots, Telefonassistenten & Workflows. DSGVO-konform, EU-Hosting, BAFA-förderfähig. Kostenloses Erstgespräch.",
+  description: "KI-Automatisierung für den Mittelstand: Chatbots, Telefonassistenten & Workflows. EU-Hosting, Vertrag zur Auftragsverarbeitung, Förder-Check. Kostenloses Erstgespräch.",
   keywords: [
     "KI-Automatisierung KMU",
     "KI Agentur DACH",
@@ -38,7 +38,6 @@ export const metadata: Metadata = {
     "KI-Telefonassistent",
     "KI-Schulung Mitarbeiter",
     "DSGVO KI",
-    "EU AI Act",
     "KI Beratung Mittelstand",
     "KI für Arztpraxen",
     "KI für Kieferorthopäden",
@@ -75,14 +74,14 @@ export const metadata: Metadata = {
     locale: "de_DE",
     url: "https://www.axionea-solutions.de",
     title: "Axionea | KI-Automatisierung für den Mittelstand",
-    description: "KI-Automatisierung für den Mittelstand — DSGVO-konform, sofort einsetzbar, inkl. Team-Schulungen.",
+    description: "KI-Automatisierung für den Mittelstand — EU-Hosting, sofort einsetzbar, inkl. Team-Schulungen.",
     siteName: "Axionea",
     // OG-Image wird automatisch aus app/opengraph-image.tsx generiert
   },
   twitter: {
     card: "summary_large_image",
     title: "Axionea | KI-Automatisierung für den Mittelstand",
-    description: "KI-Automatisierung für den Mittelstand — DSGVO-konform, sofort einsetzbar.",
+    description: "KI-Automatisierung für den Mittelstand — EU-Hosting, sofort einsetzbar.",
     creator: "@axionea",
     // Twitter-Image wird automatisch aus app/opengraph-image.tsx generiert
   },

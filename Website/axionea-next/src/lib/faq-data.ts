@@ -28,13 +28,13 @@ export const faqs: FaqEntry[] = [
         answer: "Für jede Branche, in der wiederkehrende Abläufe Zeit kosten — Terminverwaltung, Kundenanfragen, Dokumentenarbeit. Besonders viel Erfahrung haben wir in Arztpraxen, bei Kieferorthopäden, Immobilienmaklern und Steuerberatern gesammelt.",
     },
     {
-        question: "Ist eure KI DSGVO-konform?",
-        answer: "Ja. Wir arbeiten ausschließlich mit EU-Hosting, schließen Auftragsverarbeitungsverträge (AVV) ab und nutzen KI-Modelle ohne Training auf euren Daten. Sensible Daten werden niemals unkontrolliert verarbeitet. Auf Wunsch begleiten wir euch durch die vollständige EU-AI-Act-Compliance.",
-        link: { href: "/#hosting", label: "Mehr zu sicherem Hosting & Compliance →" },
+        question: "Wie schützt ihr unsere Daten?",
+        answer: "Wir arbeiten ausschließlich mit EU-Hosting, schließen Auftragsverarbeitungsverträge (AVV) ab und nutzen KI-Modelle ohne Training auf euren Daten. Sensible Daten werden niemals unkontrolliert verarbeitet.",
+        link: { href: "/#hosting", label: "Mehr zu sicherem Hosting →" },
     },
     {
         question: "Was kostet ein Einstieg mit Axionea?",
-        answer: "Wir arbeiten mit transparenten Festpreisen statt Pauschal-Preislisten. Der Einstieg ist unser KI-Potenzial-Check — BAFA-förderfähig mit bis zu 2.800 € Förderung. Danach wisst ihr genau, was sich lohnt, bevor ihr investiert. Für die Umsetzung gibt es Festpreis-Pilotprojekte und ein monatliches Retainer-Modell (Managed AI) — euer konkretes Angebot bekommt ihr im kostenlosen Erstgespräch.",
+        answer: "Wir arbeiten mit transparenten Festpreisen statt Pauschal-Preislisten. Der Einstieg ist unser KI-Potenzial-Check. Danach wisst ihr genau, was sich lohnt, bevor ihr investiert. Für die Umsetzung gibt es Festpreis-Pilotprojekte und ein monatliches Retainer-Modell (Managed AI) — euer konkretes Angebot bekommt ihr im kostenlosen Erstgespräch. Ob eine Förderung in Frage kommt, hängt von Beruf, Bundesland und Programm ab, eine erste Einschätzung gibt der Förder-Check auf unserer Förderseite.",
     },
     {
         question: "Bietet ihr auch Schulungen für unser Team an?",

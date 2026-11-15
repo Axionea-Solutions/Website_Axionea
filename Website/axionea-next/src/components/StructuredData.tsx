@@ -18,7 +18,7 @@ const organizationSchema = {
     "alternateName": "Axionea",
     "url": "https://www.axionea-solutions.de",
     "logo": "https://www.axionea-solutions.de/assets/logo/Asset%204@4x.png",
-    "description": "KI-Automatisierungsagentur für den Mittelstand — Chatbots, KI-Telefonassistenten und Workflow-Automatisierung. DSGVO-konform und EU-AI-Act-ready, mit Referenzen aus Arztpraxen, Kieferorthopädie, Immobilien und Steuerberatung.",
+    "description": "KI-Automatisierungsagentur für den Mittelstand — Chatbots, KI-Telefonassistenten und Workflow-Automatisierung mit EU-Hosting und Vertrag zur Auftragsverarbeitung. Referenzen aus Arztpraxen, Kieferorthopädie, Immobilien und Steuerberatung.",
     "foundingDate": "2026-01-01",
     "founders": [
       {"@type": "Person", "name": "Maximilian Zvada", "jobTitle": "CEO & Founder"},
@@ -129,7 +129,7 @@ const serviceSchema = {
       "serviceType": "KI-Strategie & Audit",
       "provider": {"@type": "Organization", "name": "Axionea Solutions GbR"},
       "areaServed": ["DE", "AT", "CH"],
-      "description": "Von KI-Potenzialanalyse über EU-AI-Act-Compliance bis zur Tool-Auswahl — wir zeigen dir genau wo KI bei dir Sinn macht. BAFA-förderfähig.",
+      "description": "Von der KI-Potenzialanalyse bis zur Tool-Auswahl — wir zeigen dir genau, wo KI bei dir Sinn macht. Förderung je nach Beruf, Bundesland und Programm möglich.",
       "url": "https://www.axionea-solutions.de/#services"
     },
     {
@@ -177,7 +177,7 @@ const serviceSchema = {
       "serviceType": "KI-Schulungen",
       "provider": {"@type": "Organization", "name": "Axionea Solutions GbR"},
       "areaServed": ["DE", "AT", "CH"],
-      "description": "Wir machen dein Team KI-fit. AI-Fluency-Workshops, Tool-Trainings und Train-the-Trainer-Programme — BAFA-förderfähig und praxisorientiert.",
+      "description": "Wir machen dein Team KI-fit. AI-Fluency-Workshops, Tool-Trainings und Train-the-Trainer-Programme — praxisorientiert.",
       "url": "https://www.axionea-solutions.de/#schulungen"
     }
   ]

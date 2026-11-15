@@ -7,7 +7,7 @@ import FoerderCheck from "@/components/foerderung/FoerderCheck";
 
 export const metadata: Metadata = {
     title: "BAFA & Förderprogramme für KI-Projekte | KfW, Länder — Axionea",
-    description: "BAFA-Beratungsförderung, KfW-Kredite, Bayern Digitalbonus, Mittelstand-Digital — wir erklären die Förderprogramme für KI-Projekte in KMU und unterstützen bei der Antragstellung.",
+    description: "BAFA-Beratungsförderung, KfW-Förderkredit, Digitalbonus Bayern, Mittelstand-Digital — wir erklären Förderprogramme für KI-Projekte in KMU. Ob gefördert wird, entscheidet die Förderstelle.",
     keywords: [
         "BAFA Förderung KI",
         "BAFA Beratungsförderung",
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     alternates: { canonical: "https://www.axionea-solutions.de/foerderung" },
     openGraph: {
         title: "BAFA & Förderprogramme für KI-Projekte | Axionea",
-        description: "Übersicht aller Förderprogramme für KI-Einführung in KMU — von BAFA bis Land Bayern. Mit Antragsunterstützung.",
+        description: "Überblick über Förderprogramme für die KI-Einführung in KMU — mit Förder-Check. Ob gefördert wird, hängt von Beruf, Bundesland und Programm ab.",
         url: "https://www.axionea-solutions.de/foerderung",
     },
 };
@@ -36,65 +36,66 @@ interface Programme {
     badge?: "TOP" | "NEU" | "LAND";
 }
 
-// Stand 07.10.2026: „digital jetzt“ (bis 31.12.2023) und „go-digital“ (bis 31.12.2024) sind ausgelaufen und entfernt.
+// Stand 13.11.2026, geprüft an den Seiten der Fördergeber. Ausgelaufen und entfernt: „digital jetzt“ (bis 31.12.2023),
+// „go-digital“ (bis 31.12.2024), KMU.DIGITAL und aws Digitalisierung (Österreich).
 const programs: Programme[] = [
     {
         name: "BAFA Beratungs­förderung für KMU",
         sponsor: "Bundesamt für Wirtschaft und Ausfuhrkontrolle (BAFA)",
-        maxAmount: "bis 3.500 €",
-        quote: "50–80 % der Beratungs­kosten",
-        target: "KMU mit <250 Mitarbeitenden",
-        description: "Allgemeine Unternehmens­beratung — auch für KI-Strategie und -Audit nutzbar. In den neuen Bundesländern und Berlin höhere Förderquote (80 %), in den alten Bundesländern 50 %.",
+        maxAmount: "bis 2.800 €",
+        quote: "Je nach Region 50 % bis 1.750 € oder 80 % bis 2.800 €",
+        target: "KMU unter 250 Beschäftigten",
+        description: "Zuschuss zu einer Unternehmens­beratung, auch zu Digitalisierung und KI. Nicht antrags­berechtigt sind Steuer- und Rechts­beratung, Wirtschafts­prüfung und Notare. Bei Arzt- und Zahnarzt­praxen fördert das BAFA nur Beratung zur Qualitäts­sicherung. Seminare, Workshops und Gruppen­veranstaltungen fördert das BAFA nicht. Antrag vor dem Vertrag, der Berater muss beim BAFA registriert sein. Die Richtlinie wurde bis Ende 2028 verlängert.",
         link: "https://www.bafa.de/DE/Wirtschaft/Beratung_Finanzierung/Unternehmensberatung/unternehmensberatung_node.html",
     },
     {
-        name: "Bayern Digitalbonus",
+        name: "Digitalbonus Bayern",
         sponsor: "Bayerisches Staats­ministerium für Wirtschaft",
-        maxAmount: "bis 50.000 €",
-        quote: "30–50 % je nach Variante",
-        target: "Bayerische KMU mit 3–249 Mitarbeitenden",
-        description: "Bayern-spezifische Förderung für Digitalisierungs-Investitionen und IT-Sicherheit. Drei Varianten: Standard (10.000 €), Plus (50.000 €) und Kredit. Antragstellung über IHK München / Bayern Innovativ.",
-        link: "https://www.digitalbonus.bayern/",
+        maxAmount: "bis 30.000 €",
+        quote: "bis 50 %",
+        target: "Gewerbliche Unternehmen in Bayern unter 50 Beschäftigten",
+        description: "Zuschuss für Digitalisierungs­vorhaben: Standard bis 7.500 €, Plus bis 30.000 €. Freie Berufe und Arzt­praxen sind ausgeschlossen. Beratung und Schulung nur zusammen mit einer Umsetzung. Antrag online bei der Bezirks­regierung, Programm bis 31.12.2027.",
+        link: "https://www.digitalbonus.bayern/foerderprogramm/",
         badge: "LAND",
     },
     {
-        name: "KfW-Digitalisierungs- und Innovationskredit",
+        name: "KfW ERP-Förderkredit Digitalisierung (511/512)",
         sponsor: "Kreditanstalt für Wiederaufbau (KfW)",
-        maxAmount: "bis 25 Mio. €",
-        quote: "Zinsverbilligter Kredit, ggf. mit Tilgungs­zuschuss",
-        target: "Etablierte Unternehmen (>2 Jahre am Markt)",
-        description: "Niedrig­verzinste Finanzierung für Digitalisierungs- und Innovationsvorhaben. Geeignet für größere KI-Roll-outs oder Plattform-Investitionen mit längerem Amortisations­horizont.",
-        link: "https://www.kfw.de/inlandsfoerderung/Unternehmen/Erweitern-Festigen/Digitalisierung-%26-Innovation/",
+        maxAmount: "Kredit mit Zuschuss",
+        quote: "3 % oder 5 % Zuschuss je nach Stufe",
+        target: "Unternehmen, auch Freiberufler",
+        description: "Kredit über die Hausbank, je nach Stufe mit 3 % oder 5 % Zuschuss, höchstens 200.000 €. 5 % gibt es unter anderem für KI mit eigenen Daten, Standard­software mit eingebauter KI zählt nicht. Antrag vor Beginn des Vorhabens.",
+        link: "https://www.kfw.de/inlandsfoerderung/Unternehmen/Innovation-und-Digitalisierung/F%C3%B6rderprodukte/ERP-F%C3%B6rderkredit-Digitalisierung-(511-512)/",
     },
     {
         name: "Mittelstand-Digital Zentren",
-        sponsor: "Bundesministerium für Wirtschaft (BMWK)",
+        sponsor: "Bundes­wirtschafts­ministerium",
         maxAmount: "kostenlos",
-        quote: "100 % staatlich finanziert",
+        quote: "Kostenlos und anbieter­neutral",
         target: "Alle KMU",
-        description: "Bundesweites Netz von 28 Kompetenzzentren — kostenlose Beratung, Demos, Workshops, Pilotprojekte zur Digitalisierung. Kein Ersatz für Implementierung, aber wertvoll für die Strategie-Phase.",
+        description: "Bundesweites Netz von Zentren mit kostenloser Beratung, Demos und Workshops zur Digitalisierung, aber kein Geld für eigene Projekte. Das bisherige Netz endet Ende 2026, im Januar 2027 startet ein neues.",
         link: "https://www.mittelstand-digital.de/",
     },
 ];
 
 const austriaSwitzerlandPrograms: Programme[] = [
     {
-        name: "aws Digitalisierung",
-        sponsor: "Austria Wirtschafts­service (Österreich)",
-        maxAmount: "bis 50.000 €",
-        quote: "50–70 % Förderung",
-        target: "Österreichische KMU",
-        description: "Förderung für Digitalisierungs- und KI-Projekte in österreichischen KMU. Antragstellung über aws.",
-        link: "https://www.aws.at/aws-digitalisierung/",
+        name: "Regionale Programme in Österreich",
+        sponsor: "Wien, Niederösterreich, Kärnten (Österreich)",
+        maxAmount: "je nach Land",
+        quote: "20–50 % je nach Programm",
+        target: "KMU in Wien, Niederösterreich und Kärnten",
+        description: "KMU.DIGITAL und aws Digitalisierung sind beendet. Bis 31.12.2026 laufen noch: Wien, Förderung Digitalisierung (50 %, höchstens 50.000 €), Niederösterreich, digi4Wirtschaft (20 %, höchstens 25.000 €), und Kärnten, Umsetzung.KI (30 %, höchstens 10.000 €), jeweils nur, solange Budget vorhanden ist. Für Weiterbildung gibt es die FFG Skills Schecks (50 %, höchstens 5.000 € je Person, Einreichung bis 15.12.2026).",
+        link: "https://wirtschaftsagentur.at/aktuelle-foerderungen-der-wirtschaftsagentur-wien/foerderung-digitalisierung/",
     },
     {
-        name: "Innosuisse — Innovationsschecks",
+        name: "Innosuisse — Innovationsscheck",
         sponsor: "Schweizerische Agentur für Innovationsförderung (Schweiz)",
         maxAmount: "bis 15.000 CHF",
-        quote: "100 % der Forschungs-Stunden bei Forschungspartnern",
+        quote: "Das Geld geht an den Forschungs­partner",
         target: "Schweizer KMU",
-        description: "Erste Innovationsprojekte — geeignet für KI-Machbarkeits­studien und Prototypen mit einer Forschungsinstitution als Partner.",
-        link: "https://www.innosuisse.admin.ch/de/foerderung-innovation/innovationsprojekte",
+        description: "Bis 15.000 CHF für eine Vorstudie, nur mit Schweizer Forschungs­partner. Einen Bundes­zuschuss für die Einführung von KI gibt es nicht.",
+        link: "https://www.innosuisse.admin.ch/de/innovationsscheck",
     },
 ];
 
@@ -177,7 +178,7 @@ export default function FoerderungPage() {
                         </h1>
                         <p className="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
                             <LetterReveal
-                                text="BAFA, KfW, Mittelstand-Digital und Landesprogramme wie der Bayern Digitalbonus — wir kennen die Programme und unterstützen bei der Antragstellung."
+                                text="Bund, Länder und Kredite — welches Programm passt, hängt von Beruf, Bundesland und Vorhaben ab. Der Förder-Check zeigt dir in 30 Sekunden, was in Frage kommt."
                                 delay={0.2}
                                 stagger={0.012}
                             />
@@ -187,7 +188,7 @@ export default function FoerderungPage() {
                     {/* Intro */}
                     <div className="max-w-3xl mx-auto mb-12">
                         <p className="text-gray-300 text-base md:text-lg leading-relaxed">
-                            Für KI-Projekte in KMU gibt es mehrere Förderwege — vom Zuschuss für die Beratung bis zum zinsgünstigen Kredit für die Umsetzung. Oft ist nicht die fehlende Förderung das Problem, sondern dass viele Unternehmen die passenden Programme nicht kennen oder den Antrags­prozess scheuen. Hier ist die Übersicht der relevantesten Programme für KI-Vorhaben in KMU im DACH-Raum.
+                            Für KI-Projekte in KMU gibt es mehrere Förderwege — vom Zuschuss für die Beratung bis zum zinsgünstigen Kredit für die Umsetzung. Ob ein Programm passt, hängt von Beruf, Bundesland, Größe und Vorhaben ab, und ob gefördert wird, entscheidet die Förder­stelle. Hier ist ein Überblick über Programme, die für KI-Vorhaben in KMU im DACH-Raum in Frage kommen, geprüft am 13.11.2026.
                         </p>
                     </div>
 
@@ -254,14 +255,14 @@ export default function FoerderungPage() {
                                 <svg className="w-5 h-5 text-sapphire shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7" />
                                 </svg>
-                                <span><strong className="text-white">Stapelbar denken</strong> — bei größeren Projekten kombinieren wir mehrere Programme (z.B. BAFA-Beratung für die Strategie + ein Landesprogramm oder KfW-Kredit für die Umsetzung).</span>
+                                <span><strong className="text-white">Stapelbar denken</strong> — bei größeren Projekten prüfen wir, ob sich mehrere Programme kombinieren lassen, zum Beispiel eine geförderte Beratung für die Strategie und ein Landes­programm oder der KfW-Kredit für die Umsetzung.</span>
                             </li>
                         </ul>
                     </div>
 
                     {/* Disclaimer */}
                     <div className="text-xs text-gray-500 mb-12 leading-relaxed">
-                        <strong>Wichtig:</strong> Förder­bedingungen, -höhen und -fristen ändern sich regelmäßig. Die hier genannten Zahlen sind der Stand bei Veröffentlichung dieser Seite und dienen der ersten Orientierung. Verbindlich ist immer der offizielle Programm­text bei der jeweiligen Förder­stelle. Die Förder­berechtigung ist im Einzelfall zu prüfen.
+                        <strong>Wichtig:</strong> Förder­bedingungen, -höhen und -fristen ändern sich regelmäßig. Die hier genannten Zahlen sind der Stand vom 13.11.2026 und dienen der ersten Orientierung. Verbindlich ist immer der offizielle Programm­text bei der jeweiligen Förder­stelle. Ob gefördert wird, entscheidet die Förder­stelle im Einzelfall.
                     </div>
 
                     {/* CTA */}
@@ -284,7 +285,7 @@ export default function FoerderungPage() {
                     </div>
                 </div>
             </main>
-            <BreadcrumbSchema name="Förderung & BAFA" path="/foerderung" />
+            <BreadcrumbSchema name="Förderung" path="/foerderung" />
             <Footer />
         </>
     );

@@ -4,8 +4,8 @@ import IndustryLanding from "@/components/landing/IndustryLanding";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
-    title: "KI für Arztpraxen | DSGVO-konform, sofort einsetzbar — Axionea",
-    description: "KI-Lösungen für Arztpraxen: Telefon-Assistent, WhatsApp-Bot, automatische Erinnerungen gegen No-Shows. DSGVO-konform, EU-Hosting, EU-AI-Act-ready. Kostenloses Erstgespräch.",
+    title: "KI für Arztpraxen | EU-Hosting, sofort einsetzbar — Axionea",
+    description: "KI-Lösungen für Arztpraxen: Telefon-Assistent, WhatsApp-Bot, automatische Erinnerungen gegen No-Shows. EU-Hosting, Vertrag zur Auftragsverarbeitung. Kostenloses Erstgespräch.",
     keywords: [
         "KI für Arztpraxen",
         "KI Praxis",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     alternates: { canonical: "https://www.axionea-solutions.de/ki-fuer-arztpraxen" },
     openGraph: {
         title: "KI für Arztpraxen | Axionea",
-        description: "DSGVO-konforme KI für Patientenanfragen, Terminbuchung, Anamnese — sofort einsetzbar.",
+        description: "KI für Patientenanfragen, Terminbuchung, Anamnese — EU-Hosting, sofort einsetzbar.",
         url: "https://www.axionea-solutions.de/ki-fuer-arztpraxen",
     },
 };
@@ -54,7 +54,7 @@ export default function KiFuerArztpraxen() {
                 chip="ARZTPRAXEN"
                 chipIcon={ChipIcon}
                 headline="KI für Arztpraxen"
-                subline="Telefon, WhatsApp, Erinnerungen — alles automatisiert, DSGVO-konform, sofort einsetzbar."
+                subline="Telefon, WhatsApp, Erinnerungen — alles automatisiert, EU-gehostet, sofort einsetzbar."
                 intro="Die Praxis klingelt durchgehend, die Rezeption ist überlastet, und die No-Show-Quote frisst Umsatz. Wir bauen KI-Systeme, die genau diese Engpässe lösen — von der ersten Patientenanfrage bis zur Termin-Erinnerung. EU-Hosting, AVV-Standard, ohne Training auf Patientendaten."
                 stats={[
                     { value: "24/7", label: "Erreichbarkeit ohne zusätzliches Personal" },
@@ -69,7 +69,7 @@ export default function KiFuerArztpraxen() {
                     },
                     {
                         title: "WhatsApp- & Web-Chatbot",
-                        description: "Patientenanfragen via WhatsApp oder Website-Chat. Vorab-Anamnese, FAQ, Terminvergabe — DSGVO-konform integriert.",
+                        description: "Patientenanfragen via WhatsApp oder Website-Chat. Vorab-Anamnese, FAQ, Terminvergabe — mit EU-Hosting und AVV integriert.",
                         icon: ChatIcon,
                     },
                     {
@@ -81,7 +81,7 @@ export default function KiFuerArztpraxen() {
                 faqs={[
                     {
                         question: "Wie funktioniert das mit der DSGVO bei Patientendaten?",
-                        answer: "Alle Daten bleiben in der EU (Hosting in Deutschland oder Frankreich), wir schließen einen Auftrags­verarbeitungs­vertrag ab und nutzen ausschließlich KI-Modelle, die nicht auf deinen Daten trainieren. Auf Wunsch begleiten wir euch zusätzlich durch die volle EU-AI-Act-Compliance.",
+                        answer: "Alle Daten bleiben in der EU (Hosting in Deutschland oder Frankreich), wir schließen einen Auftrags­verarbeitungs­vertrag ab und nutzen ausschließlich KI-Modelle, die nicht auf deinen Daten trainieren.",
                     },
                     {
                         question: "Kann der Telefon-Assistent unsere Praxis-Software bedienen?",
@@ -97,7 +97,7 @@ export default function KiFuerArztpraxen() {
                     },
                     {
                         question: "Was kostet das ungefähr?",
-                        answer: "Das hängt von euren Anforderungen ab — pauschale Preislisten gibt es bei uns nicht. Der Einstieg ist ein KI-Potenzial-Check (BAFA-förderfähig mit bis zu 80 % Förderung), Pilotprojekte setzen wir zum Festpreis um, optional mit Retainer für Betrieb und Optimierung. Euer konkretes Angebot bekommt ihr im kostenlosen Erstgespräch.",
+                        answer: "Das hängt von euren Anforderungen ab — pauschale Preislisten gibt es bei uns nicht. Der Einstieg ist ein KI-Potenzial-Check, Pilotprojekte setzen wir zum Festpreis um, optional mit Retainer für Betrieb und Optimierung. Euer konkretes Angebot bekommt ihr im kostenlosen Erstgespräch. Ob für eure Praxis eine Förderung in Frage kommt, hängt von Bundesland und Programm ab, eine erste Einschätzung gibt der Förder-Check auf unserer Förderseite.",
                     },
                 ]}
                 ctaText="Bereit, deine Praxis-Telefonie zu entlasten?"

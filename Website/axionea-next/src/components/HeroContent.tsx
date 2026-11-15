@@ -24,7 +24,7 @@ export default function HeroContent() {
                         transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
                         className="inline-flex items-center gap-2 text-[11px] sm:text-xs font-semibold tracking-[3px] uppercase text-[#4d94ff] mb-6 bg-sapphire/15 px-5 py-2.5 rounded-full border border-sapphire/30"
                     >
-                        KI-Automatisierung · Sofort einsetzbar · DSGVO-konform
+                        KI-Automatisierung · Sofort einsetzbar · EU-Hosting
                     </motion.span>
 
                     {/* Title */}
@@ -90,9 +90,9 @@ export default function HeroContent() {
                     >
                         {[
                             { label: "Standort Deutschland" },
-                            { label: "DSGVO-konform", href: "#hosting" },
-                            { label: "EU AI Act Ready", href: "#hosting" },
-                            { label: "BAFA-förderfähig" },
+                            { label: "EU-Hosting", href: "#hosting" },
+                            { label: "AVV inklusive", href: "#hosting" },
+                            { label: "Förder-Check", href: "/foerderung#foerder-check" },
                         ].map(({ label, href }) => (
                             <li key={label} className="flex items-center gap-2 justify-center sm:justify-start">
                                 <svg className="w-4 h-4 text-sapphire shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">

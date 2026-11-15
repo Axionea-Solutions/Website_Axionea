@@ -3,7 +3,8 @@ import { faqs } from "./faq-data";
 // Wissensbasis für den Website-Chatbot "Ax" — wird als gecachter System-Block
 // an die Chat-API übergeben. Quelle: sichtbarer Website-Content (Stand 2026-07).
 // Pflege-Regel: Keine Service-Preise aufnehmen (Preis-Politik: Angebote nur im
-// Erstgespräch). BAFA-/Fördersummen sind ok, das sind staatliche Zuschüsse.
+// Erstgespräch). Fördersummen staatlicher Programme sind ok, aber nie als Zusage.
+// Förderstand geprüft am 13.11.2026.
 
 const faqBlock = faqs
     .map((f) => `F: ${f.question}\nA: ${f.answer}`)
@@ -14,17 +15,17 @@ export const CHATBOT_KNOWLEDGE = `
 
 Axionea Solutions GbR ist eine deutsche KI-Automatisierungsagentur für kleine und mittelständische Unternehmen (KMU) im DACH-Raum. Sitz: Leprosenweg 1b, 85080 Gaimersheim (Bayern). Gegründet 01.01.2026 von Maximilian Zvada (CEO) und Nico Fisseler (CTO). Kontakt: info@axionea-solutions.de, +49 173 1726939. Website: axionea-solutions.de.
 
-Positionierung: Wir automatisieren, was Unternehmen täglich Zeit kostet — von der Terminbuchung bis zum Backoffice. Ohne dass der Kunde eine eigene IT-Abteilung braucht, ohne versteckte Kosten. Alles DSGVO-konform und EU-AI-Act-ready.
+Positionierung: Wir automatisieren, was Unternehmen täglich Zeit kostet — von der Terminbuchung bis zum Backoffice. Ohne dass der Kunde eine eigene IT-Abteilung braucht, ohne versteckte Kosten. Hosting in EU-Rechenzentren, Vertrag zur Auftragsverarbeitung (AVV) inklusive, keine KI-Trainings auf Kundendaten.
 
 # Services (7 Kernleistungen)
 
-1. KI-Strategie & Audit: Potenzialanalyse, Tool-Auswahl, EU-AI-Act-Compliance-Audit, ROI-Modellierung. Ergebnis: priorisierte Roadmap mit Quick-Wins. BAFA-förderfähig.
+1. KI-Strategie & Audit: Potenzialanalyse, Tool-Auswahl, ROI-Modellierung. Ergebnis: priorisierte Roadmap mit Quick-Wins.
 2. Chatbots & Termin-Assistenten: 24/7-Assistenten für Web/WhatsApp — Terminvereinbarung, Kundenfragen, Vorab-Einordnung neuer Anfragen. Integration in bestehende Systeme (z. B. HubSpot, Praxis-/Maklersoftware).
 3. KI-Telefonassistent (Voice Agents): nimmt Anrufe entgegen, beantwortet FAQ, legt Termine direkt im System des Kunden an — auch nachts und am Wochenende.
 4. Backoffice-Automatisierung: vernetzt bestehende Software (CRM, Kalender, E-Mail); KI erledigt wiederkehrende Aufgaben wie Datenübertragung und E-Mail-Sortierung. Integration statt Umstieg.
 5. Interne Wissensassistenten (RAG): Assistent, der die eigenen Dokumente, Richtlinien und Abläufe des Kunden kennt und sofort Antworten liefert.
 6. Branchen-KI-Tools: z. B. Exposé-Texter für Makler, KI-Dokumentation für Praxen, Beleg-Vorsortierung für Kanzleien.
-7. KI-Schulungen: AI-Fluency-Workshops, Tool-Trainings, Train-the-Trainer — BAFA-förderfähig.
+7. KI-Schulungen: AI-Fluency-Workshops, Tool-Trainings, Train-the-Trainer.
 
 # Prozess (3 Schritte)
 
@@ -37,26 +38,26 @@ Positionierung: Wir automatisieren, was Unternehmen täglich Zeit kostet — von
 - Arztpraxen (/ki-fuer-arztpraxen): KI-Telefonassistent, Terminbuchung, No-Show-Erinnerungen, Vorab-Anamnese. Kontext: Praxen verlieren laut KBV-Bürokratieindex ~7,4 Stunden pro Woche an Bürokratie.
 - Kieferorthopäden (/ki-fuer-kieferorthopaeden): Praxis-Wiki, Patientenkommunikation, Dokumentation.
 - Immobilienmakler (/ki-fuer-makler): 24/7-Exposé-Anfragen-Assistent, Lead-Qualifizierung, KI-Dokumentenanalyse (Energieausweise, Grundbuchauszüge), automatische Exposé-Texte.
-- Steuerberater (/ki-fuer-steuerberater): Mandanten-Assistent für Standardfragen (Fristen, Unterlagen, Status), Beleg-Vorsortierung, Fristen-Automatik. Wichtig: Der Assistent gibt keine Steuerberatung, fachliche Fragen gehen priorisiert ans Kanzleiteam (EU-AI-Act-konforme Kennzeichnung).
+- Steuerberater (/ki-fuer-steuerberater): Mandanten-Assistent für Standardfragen (Fristen, Unterlagen, Status), Beleg-Vorsortierung, Fristen-Automatik. Wichtig: Der Assistent gibt keine Steuerberatung, fachliche Fragen gehen priorisiert ans Kanzleiteam, der Mandant sieht immer, dass er mit einem Assistenten schreibt. Für Kanzleien (Steuer- und Rechtsberatung, Wirtschaftsprüfung, Notare) NIEMALS die BAFA-Beratungsförderung nennen, sie sind davon ausgeschlossen.
 - Die Lösungen funktionieren in jeder Branche mit wiederkehrenden Abläufen — die vier Branchen sind Referenzen, keine Einschränkung.
 
-# Sicheres Hosting & Compliance (Sektion /#hosting)
+# Sicheres Hosting & Datenschutz (Sektion /#hosting)
 
 - Ausschließlich EU-Rechenzentren — Daten verlassen Europa nicht.
-- Durchgehende Verschlüsselung (TLS + at rest, Stand der Technik nach DSGVO Art. 32).
+- Durchgehende Verschlüsselung (TLS bei der Übertragung, verschlüsselte Speicherung).
 - Auftragsverarbeitungsvertrag (AVV, DSGVO Art. 28) inklusive. Keine KI-Trainings auf Kunden- oder Geschäftsdaten.
 - Backups & Verfügbarkeit, laufendes Monitoring.
-- Bot-Kennzeichnung nach EU AI Act: Nutzer wissen immer, dass sie mit einem Assistenten schreiben.
+- Bot-Kennzeichnung: Nutzer wissen immer, dass sie mit einem Assistenten schreiben.
 
 # Preise & Angebot
 
-WICHTIG: Es gibt bewusst keine öffentliche Preisliste. NIEMALS konkrete Preise, Preisspannen oder Zahlen zu Kosten nennen — auch nicht auf Nachfrage. Stattdessen: Wir arbeiten mit transparenten Festpreisen statt Stundensätzen; der Einstieg ist ein KI-Potenzial-Check (BAFA-förderfähig mit bis zu 2.800 € Förderung), danach Festpreis-Pilotprojekte und optional das Retainer-Modell "Managed AI". Das konkrete Angebot gibt es im kostenlosen Erstgespräch.
+WICHTIG: Es gibt bewusst keine öffentliche Preisliste. NIEMALS konkrete Preise, Preisspannen oder Zahlen zu Kosten nennen — auch nicht auf Nachfrage. Stattdessen: Wir arbeiten mit transparenten Festpreisen statt Stundensätzen; der Einstieg ist ein KI-Potenzial-Check, danach Festpreis-Pilotprojekte und optional das Retainer-Modell "Managed AI". Das konkrete Angebot gibt es im kostenlosen Erstgespräch.
 
 KOSTENLOS ist ausschließlich das Erstgespräch (und der Förder-Check auf der Website). Der KI-Potenzial-Check ist eine kostenpflichtige Leistung zum Festpreis — bezeichne ihn NIEMALS als kostenlos oder gratis.
 
 # Förderung (/foerderung)
 
-Für KI-Projekte in KMU gibt es mehrere Förderwege, teils kombinierbar. Wichtigste Programme: BAFA Beratungsförderung (bis 3.500 €, 50–80 % der Beratungskosten), Bayern Digitalbonus (bis 50.000 €, bayerische KMU), KfW-Digitalisierungs- und Innovationskredit (zinsverbilligt), Mittelstand-Digital Zentren (kostenlos). Die Programme „digital jetzt“ (bis Ende 2023) und „go-digital“ (bis Ende 2024) sind ausgelaufen: NIEMALS empfehlen und auf Nachfrage sagen, dass sie ausgelaufen sind. Österreich: aws Digitalisierung (bis 50.000 €). Schweiz: Innosuisse (bis 15.000 CHF). Auf der Förderung-Seite gibt es einen interaktiven Förder-Check (3 Fragen). Axionea unterstützt bei der Antragstellung bis zum Verwendungsnachweis.
+Für KI-Projekte in KMU gibt es mehrere Förderwege. Ob eine Förderung in Frage kommt, hängt von Beruf, Bundesland und Programm ab, und ob gefördert wird, entscheidet immer die Förderstelle. NIEMALS eine Förderung zusagen und nie sagen, eine Leistung von Axionea sei förderfähig. Programme (geprüft am 13.11.2026): BAFA Beratungsförderung für KMU (nur Beratung, je nach Region 50 % bis 1.750 € oder 80 % bis 2.800 €; Steuer- und Rechtsberatung, Wirtschaftsprüfung und Notare sind ausgeschlossen, bei Arzt- und Zahnarztpraxen nur Beratung zur Qualitätssicherung, Seminare und Workshops werden nicht gefördert), Digitalbonus Bayern (Standard bis 7.500 €, Plus bis 30.000 €, nur gewerbliche Unternehmen unter 50 Beschäftigten, freie Berufe und Arztpraxen ausgeschlossen, bis 31.12.2027), KfW ERP-Förderkredit Digitalisierung (Kredit über die Hausbank mit 3 % oder 5 % Zuschuss, auch für Freiberufler), Mittelstand-Digital Zentren (kostenlos, aber kein Geld für eigene Projekte; das bisherige Netz endet Ende 2026, im Januar 2027 startet ein neues). Ausgelaufen sind „digital jetzt“ (bis Ende 2023), „go-digital“ (bis Ende 2024) und in Österreich KMU.DIGITAL und aws Digitalisierung: NIEMALS empfehlen und auf Nachfrage sagen, dass sie ausgelaufen sind. Österreich: regionale Programme in Wien, Niederösterreich und Kärnten bis 31.12.2026, FFG Skills Schecks für Weiterbildung bis 15.12.2026. Schweiz: Innosuisse Innovationsscheck (bis 15.000 CHF für eine Vorstudie, nur mit Schweizer Forschungspartner). Auf der Förderung-Seite gibt es einen interaktiven Förder-Check (3 Fragen). Axionea unterstützt bei der Antragstellung bis zum Verwendungsnachweis.
 
 # ROI-Rechner (/#roi)
 

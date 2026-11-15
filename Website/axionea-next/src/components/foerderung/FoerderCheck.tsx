@@ -136,7 +136,7 @@ export default function FoerderCheck() {
                                 ))}
                             </ul>
                             <p className="text-xs text-gray-500 mb-6">
-                                Erste Orientierung ohne Gewähr — die Förderberechtigung prüfen wir im Detail. Verbindlich ist der offizielle Programmtext.
+                                Erste Orientierung ohne Gewähr, Stand 13.11.2026. Ob gefördert wird, hängt von Beruf, Bundesland und Programm ab und entscheidet die Förderstelle. Verbindlich ist der offizielle Programmtext.
                             </p>
                             <ContactButton
                                 title="Kostenlosen Förder-Check anfordern"
@@ -150,10 +150,10 @@ export default function FoerderCheck() {
                     ) : (
                         <>
                             <p className="text-white text-lg font-bold mb-3" style={{ fontFamily: "var(--font-syne)" }}>
-                                Kein Standard-Programm passt exakt — aber es gibt fast immer einen Weg
+                                Kein Programm aus unserer Übersicht passt
                             </p>
                             <p className="text-gray-300 text-sm mb-6">
-                                Für deine Konstellation lohnt sich der Blick auf Sonderprogramme oder die Kombination mehrerer Bausteine. Das klären wir am schnellsten im kostenlosen Erstgespräch.
+                                Für deine Angaben passt keines der hier gelisteten Programme. Ob es andere Wege gibt, etwa ein Programm deines Bundeslands, klären wir im kostenlosen Erstgespräch.
                             </p>
                             <ContactButton
                                 title="Kostenlosen Förder-Check anfordern"

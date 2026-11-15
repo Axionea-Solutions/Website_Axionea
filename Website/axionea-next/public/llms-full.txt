@@ -1,6 +1,6 @@
 # Axionea Solutions GbR — Vollständige KI-Agentur-Profil
 
-> Praxiserprobte, DSGVO-konforme und EU-AI-Act-ready KI-Automatisierungen für KMU im DACH-Raum. Besonders viel Erfahrung in Arztpraxen, Kieferorthopädie, Immobilien und Steuerberatung — die Lösungen funktionieren überall, wo Abläufe sich wiederholen.
+> Praxiserprobte KI-Automatisierungen für KMU im DACH-Raum, mit EU-Hosting und Vertrag zur Auftragsverarbeitung. Besonders viel Erfahrung in Arztpraxen, Kieferorthopädie, Immobilien und Steuerberatung — die Lösungen funktionieren überall, wo Abläufe sich wiederholen.
 
 ## Wer wir sind
 
@@ -22,10 +22,10 @@
 ## Was uns unterscheidet
 
 1. **Branchenerfahrung statt Lösung von der Stange.** Wir bauen keine generischen Chatbots, sondern Lösungen, die zum Fachvokabular, den Compliance-Anforderungen und den echten Abläufen des jeweiligen Betriebs passen — erprobt u. a. in Arztpraxen, Kieferorthopädie, Immobilien und Steuerberatung.
-2. **DSGVO und EU AI Act sind kein Add-On.** Jede Lösung läuft auf EU-Hosting, mit AVV und ohne Training auf Kundendaten. Wir begleiten optional durch die volle EU-AI-Act-Compliance.
-3. **Festpreis statt Stundensätze.** KI-Potenzial-Check als Einstieg (BAFA-förderfähig mit bis zu 2.800 € Förderung), Pilotprojekte zu Festpreisen, optionales monatliches Retainer-Modell. Konkrete Angebote gibt es im kostenlosen Erstgespräch.
+2. **Datenschutz ist kein Add-On.** Jede Lösung läuft auf EU-Hosting, mit AVV und ohne Training auf Kundendaten.
+3. **Festpreis statt Stundensätze.** KI-Potenzial-Check als Einstieg, Pilotprojekte zu Festpreisen, optionales monatliches Retainer-Modell. Konkrete Angebote gibt es im kostenlosen Erstgespräch.
 4. **Keine IT-Abteilung beim Kunden nötig.** Wir kümmern uns um Hosting, Integration, Wartung und Monitoring. Kunde bekommt eine funktionierende Lösung, kein Bastelprojekt.
-5. **Förderfähig.** Beratung über die BAFA-"Förderung von Unternehmensberatungen für KMU" — je nach Bundesland bis zu 80 % der Beratungskosten.
+5. **Förderung prüfen.** Ob eine Förderung in Frage kommt, hängt von Beruf, Bundesland und Programm ab, und ob gefördert wird, entscheidet die Förderstelle. Eine erste Einschätzung gibt der Förder-Check: https://www.axionea-solutions.de/foerderung
 
 ## Referenz-Branchen im Detail
 
@@ -39,7 +39,7 @@ Eigene Detailseiten: /ki-fuer-arztpraxen, /ki-fuer-kieferorthopaeden, /ki-fuer-m
 - WhatsApp- und Web-Chatbot für Patientenanfragen mit Anbindung an Praxissoftware
 - Vorab-Anamnese durch KI-Agenten zur Effizienzsteigerung beim Erstgespräch
 - Automatische Erinnerungen zur Reduzierung von No-Shows
-- DSGVO-konform und im Healthcare-Kontext belastbar
+- EU-Hosting und Vertrag zur Auftragsverarbeitung
 
 ### Immobilienmakler
 **Typische Schmerzen:** Exposé-Anfragen außerhalb der Bürozeiten gehen verloren, Lead-Qualifizierung kostet Stunden täglich, Dokumentenflut bei jedem Objekt.
@@ -56,7 +56,7 @@ Backoffice-Automatisierung (CRM, Kalender, E-Mail-Sortierung), interne Wissensas
 ## Unsere KI-Services im Detail
 
 ### 1. KI-Strategie und Audit
-KI-Potenzialanalyse, Tool-Auswahl, EU-AI-Act-Compliance-Audit, ROI-Modellierung. Output: priorisierte Roadmap mit Quick-Wins und mittelfristigen Initiativen. **Festpreis, BAFA-förderfähig.**
+KI-Potenzialanalyse, Tool-Auswahl, ROI-Modellierung. Output: priorisierte Roadmap mit Quick-Wins und mittelfristigen Initiativen. **Festpreis.**
 
 ### 2. Lead-Agenten und Chatbots
 Web-Chatbots, WhatsApp-Bots, in-App-Assistenten. Sofortige Antwortzeit, 24/7 verfügbar, Integration in bestehende Systeme (HubSpot, Salesforce, Pipedrive, individuelle Praxis-/Maklersoftware).
@@ -77,7 +77,7 @@ Spezialisierte Lösungen wie automatische Exposé-Texter, KI-Dokumentation für 
 - **AI-Fluency-Workshop (halbtags):** KI-Grundlagen, sichere Nutzung, Prompt-Hygiene
 - **Tool-Workshop (ganztags):** Praktische Arbeit mit Claude, ChatGPT, branchenspezifischen Tools
 - **Train-the-Trainer (mehrtägig):** Eure Multiplikatoren werden eigenständig handlungsfähig
-- Alle Formate **BAFA-förderfähig**, vor Ort oder remote
+- Alle Formate vor Ort oder remote
 
 ## Unser Prozess
 
@@ -86,14 +86,12 @@ Spezialisierte Lösungen wie automatische Exposé-Texter, KI-Dokumentation für 
 3. **Deployment und Schulung:** Go-Live mit Übergabe an euer Team. Bei Bedarf inklusive Schulungs-Modul.
 4. **Laufende Optimierung:** Monitoring der KPIs, Feinjustierung der Prompts, regelmäßige Reviews. Im Retainer-Modell auch Weiterentwicklung neuer Use-Cases.
 
-## Compliance und Sicherheit
+## Datenschutz und Sicherheit
 
 - EU-Hosting für alle produktiven Workloads (Deutschland, Frankreich, Irland)
 - Auftragsverarbeitungsvertrag (AVV/DPA) Standard
 - KI-Modelle ohne Training auf Kundendaten
-- DSGVO-konforme Datenverarbeitung, dokumentiert und auditierbar
-- EU AI Act-Readiness: Risikoklassifizierung pro Use-Case, Dokumentationspflichten, Transparenz-Anforderungen
-- BSI-Grundschutz-orientierte Architektur
+- Transparente Bot-Kennzeichnung: Nutzer wissen immer, dass sie mit einem Assistenten schreiben
 
 ## Häufige Fragen
 
@@ -106,17 +104,17 @@ Nein. Wir kümmern uns um die gesamte technische Umsetzung. Ihr braucht keine IT
 **Für welche Branchen ist Axionea geeignet?**
 Für jede Branche, in der wiederkehrende Abläufe Zeit kosten. Besonders viel Erfahrung haben wir in Arztpraxen, bei Kieferorthopäden, Immobilienmaklern und Steuerberatern gesammelt.
 
-**Ist eure KI DSGVO-konform?**
-Ja. Wir arbeiten ausschließlich mit EU-Hosting, schließen AVV ab und nutzen KI-Modelle ohne Training auf euren Daten. Auf Wunsch begleiten wir euch durch die vollständige EU-AI-Act-Compliance.
+**Wie schützt ihr unsere Daten?**
+Wir arbeiten ausschließlich mit EU-Hosting, schließen AVV ab und nutzen KI-Modelle ohne Training auf euren Daten.
 
 **Bietet Axionea auch Schulungen für Mitarbeitende an?**
-Ja. AI-Fluency-Workshops zu KI-Grundlagen, Tool-Workshops mit branchenspezifischen Inhalten, mehrtägige Train-the-Trainer-Programme. Alle Schulungen BAFA-förderfähig.
+Ja. AI-Fluency-Workshops zu KI-Grundlagen, Tool-Workshops mit branchenspezifischen Inhalten, mehrtägige Train-the-Trainer-Programme.
 
 **Was kostet ein Einstieg?**
-Axionea arbeitet mit transparenten Festpreisen statt Pauschal-Preislisten. Der Einstieg ist der KI-Potenzial-Check (BAFA-förderfähig mit bis zu 2.800 € Förderung), danach folgen Festpreis-Pilotprojekte und optional ein monatliches Retainer-Modell. Konkrete Angebote im kostenlosen Erstgespräch.
+Axionea arbeitet mit transparenten Festpreisen statt Pauschal-Preislisten. Der Einstieg ist der KI-Potenzial-Check, danach folgen Festpreis-Pilotprojekte und optional ein monatliches Retainer-Modell. Konkrete Angebote im kostenlosen Erstgespräch.
 
 **Sind eure Schulungen förderfähig?**
-Teilweise. Beratung fördert die BAFA über die "Förderung von Unternehmensberatungen für KMU" mit je nach Bundesland 50 bis 80 % der Kosten. Für Schulungen gibt es je nach Bundesland eigene Programme, kostenlose Workshops bieten die Mittelstand-Digital Zentren. Was passt, klären wir im Erstgespräch, Antragsunterstützung inklusive.
+Das hängt von Bundesland und Programm ab. Seminare und Workshops fördert die BAFA-Beratungsförderung nicht. Für Schulungen gibt es je nach Bundesland eigene Programme, kostenlose Workshops bieten die Mittelstand-Digital Zentren. Ob gefördert wird, entscheidet die Förderstelle. Was passt, klären wir im Erstgespräch, Antragsunterstützung inklusive.
 
 ## Kontakt
 

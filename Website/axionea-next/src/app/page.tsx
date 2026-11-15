@@ -29,7 +29,7 @@ export default function Home() {
       {/* Why Choose Us Section */}
       <WhyChooseUs />
 
-      {/* Sicheres Hosting & Compliance — prominent direkt nach den Vorteilen */}
+      {/* Sicheres Hosting & Datenschutz — prominent direkt nach den Vorteilen */}
       <ComplianceBadges />
 
       {/* ROI Calculator */}

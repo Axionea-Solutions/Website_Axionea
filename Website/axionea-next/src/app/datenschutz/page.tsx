@@ -5,7 +5,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
     title: 'Datenschutz | Axionea Solutions',
-    description: 'Datenschutzerklärung der Axionea Solutions GbR. Wir verarbeiten Daten DSGVO-konform und ausschließlich in der EU.',
+    description: 'Datenschutzerklärung der Axionea Solutions GbR mit den Angaben zur Verarbeitung personenbezogener Daten auf dieser Website.',
     robots: {
         index: true,
         follow: true,
@@ -70,15 +70,8 @@ export default function Datenschutz() {
                         </p>
                     </section>
 
-                    <section className="mb-10">
-                        <h2 className="text-2xl font-bold mb-4">3. EU AI Act & Compliance</h2>
-                        <p className="mb-4 text-gray-300">
-                            Als Anbieter von modernen KI-Lösungen legen wir höchsten Wert auf ethische KI-Entwicklung und die Einhaltung aktueller sowie kommender EU-Richtlinien, insbesondere des EU AI Acts (Verordnung über künstliche Intelligenz). Unsere Systeme werden transparent und unter Einhaltung strenger Sicherheits- und Datenschutzstandards (DSGVO) entwickelt und bereitgestellt.
-                        </p>
-                    </section>
-
                      <section className="mb-10">
-                        <h2 className="text-2xl font-bold mb-4">4. Hinweis zur verantwortlichen Stelle</h2>
+                        <h2 className="text-2xl font-bold mb-4">3. Hinweis zur verantwortlichen Stelle</h2>
                         <p className="mb-4 text-gray-300">Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:</p>
                         <p className="mb-2"><strong>Axionea GbR (in Gründung)</strong></p>
                         <p className="mb-2">
